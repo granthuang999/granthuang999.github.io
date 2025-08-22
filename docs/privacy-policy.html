@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+                  <!DOCTYPE html>
 <html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
@@ -53,13 +53,58 @@ var _hmt = _hmt || [];
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "sh44c07wsg");
 </script>
-<!-- [新增] Google AdSense 核心脚本 -->
+<!-- Google AdSense 核心脚本 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
 </head>
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
-#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
+
+/* --- [关键修改] 页眉背景样式 --- */
+.page-header {
+    position: relative; /* 这是为了定位遮罩层 */
+    /* 从 config.json 读取背景图 URL */
+    background-image: url('./images/header-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem 1rem; /* 您可以根据喜好调整上下内边距 */
+    border-radius: 8px; /* 为页眉添加圆角 */
+    margin-bottom: 2rem; /* 页眉和下方内容的间距 */
+    color: white; /* 将页眉内的文字颜色设为白色 */
+    overflow: hidden; /* 确保遮罩的圆角生效 */
+    display:flex; /* 保持内部 flex 布局 */
+    padding-bottom:8px;
+    border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
+}
+
+/* 这会创建一个半透明的黑色遮罩层，让文字更易读 */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色遮罩 */
+    z-index: 1;
+}
+
+/* 这能确保页眉的实际内容（标题、按钮等）显示在遮罩层上方 */
+.page-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 将页眉中的链接文字也设为白色 */
+.page-header a {
+    color: white !important;
+}
+
+/* 将页眉中的SVG图标也填充为白色 */
+.page-header .octicon path {
+    fill: white;
+}
+/* --- 修改结束 --- */
 
 </style>
 
@@ -133,7 +178,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
 <body>
-    <div id="header">
+    <!-- [关键修改] 将 div#header 替换为 header.page-header -->
+    <header id="header" class="page-header">
 <h1 class="postTitle">隐私政策 / Privacy Policy</h1>
 <div class="title-right">
     <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
@@ -156,7 +202,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     </a>
 
 </div>
-</div>
+</header>
     <div id="content">
 <!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
