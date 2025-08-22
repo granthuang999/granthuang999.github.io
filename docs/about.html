@@ -71,36 +71,39 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
+    /* [新增] 在小屏幕上让页脚内容垂直排列 */
+    .post-footer { flex-direction: column; align-items: flex-start; }
 }
 
 
-/* 页脚布局容器 */
+/* --- [关键修改] --- */
+/* 1. 页脚布局容器 */
 .post-footer {
     display: flex;
     justify-content: space-between; /* 将内容推向两端 */
     align-items: center; /* 垂直居中对齐 */
-    flex-wrap: wrap; /* 在小屏幕上允许换行 */
-    gap: 16px; /* 在换行时提供间距 */
-    margin-top: 2rem;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    margin-top: 1.5rem; /* 减小与上方内容的间距 */
     padding-top: 1rem;
     border-top: 1px solid var(--borderColor-default, var(--color-border-default));
 }
 
-/* 行内分享按钮组 */
+/* 2. 行内分享按钮组 */
 .share-buttons-inline {
     display: flex;
     align-items: center;
-    gap: 8px; /* 按钮之间的间距 */
+    gap: 8px; 
 }
 
-/* 分享按钮 */
+/* 3. 分享按钮 */
 .share-button {
     display: inline-block;
-    padding: 4px 12px; /* 减小内边距 */
+    padding: 4px 12px; 
     border-radius: 6px;
     color: #ffffff !important;
     text-decoration: none;
-    font-size: 12px; /* 减小字体大小 */
+    font-size: 12px; 
     transition: opacity 0.3s;
     border: none;
 }
@@ -108,11 +111,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     opacity: 0.85;
 }
 
-/* bottomText 样式 */
+/* 4. bottomText 样式 (移除了 margin-left: auto) */
 .bottom-text-inline {
     font-size: small;
-    margin-left: auto; /* 确保它被推到最右边 */
-    white-space: nowrap; /* 防止文字换行 */
+    white-space: nowrap; 
 }
 
 /* 各平台品牌颜色 */
@@ -188,8 +190,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </li>
 </ul></div>
 
-<!-- 页脚：分享按钮和 bottomText -->
+<!-- --- [关键修改] --- -->
+<!-- 调整了 bottomText 和 share-buttons-inline 的顺序 -->
 <div class="post-footer">
+    <div class="bottom-text-inline"></div>
     <div class="share-buttons-inline">
         <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
         <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
@@ -197,11 +201,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
         <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
     </div>
-    <div class="bottom-text-inline"></div>
 </div>
 
-<!-- [新增] Google AdSense 广告单元 -->
-<div style="margin-top: 2rem; margin-bottom: 2rem;">
+<!-- Google AdSense 广告单元 -->
+<div style="margin-top: 2rem; margin-bottom: 1rem;"> <!-- 调整了与下方评论按钮的间距 -->
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -212,7 +215,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
          (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </div>
-<!-- [新增] 代码结束 -->
 
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
