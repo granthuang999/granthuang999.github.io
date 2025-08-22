@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     
-    <link rel="icon" href="https://www.futuremedia.work/favicon.svg"><script>
+    <link rel="icon" href="./images/favicon.png"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
@@ -19,7 +19,7 @@
 <p>最近在朋友圈看到一个同龄人发的状态：&quot;有房有车有存款，孩子也很优秀，但总感觉生活缺少什么。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.futuremedia.work/post/shu-ben-hua-de-yi-zhi-zhe-xue-%EF%BC%9A-zhong-nian-ren-de-jing-shen-zi-jiu-zhi-nan-%20-%20Schopenhauer%27s%20Philosophy%20of%20Will-%20Middle-aged%20People%27s%20Spiritual%20Self-rescue%20Guide.html">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg">
+<meta property="og:image" content="./images/banner.png">
 <title>叔本华的意志哲学：中年人的精神自救指南 / Schopenhauer's Philosophy of Will: Middle-aged People's Spiritual Self-rescue Guide</title>
 
 
@@ -42,12 +42,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 #comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
 @media (max-width: 600px) {
-    body {padding: 8px;}
-    .postTitle{font-size:24px;}
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
 }
 
 
-/* --- [新增] 分享按钮的 CSS 样式 --- */
+/* --- 分享按钮的 CSS 样式 --- */
 .share-buttons {
     clear: both; /* Ensures it appears below the floated bottomText */
     margin-top: 2rem;
@@ -81,7 +81,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
-/* --- [新增] 样式结束 --- */
+/* --- 样式结束 --- */
 </style>
 
 
@@ -91,28 +91,33 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">叔本华的意志哲学：中年人的精神自救指南 / Schopenhauer's Philosophy of Will: Middle-aged People's Spiritual Self-rescue Guide</h1>
 <div class="title-right">
-    <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    
-    <a href="https://github.com/granthuang999/granthuang999.github.io/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathIssue" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    
+    <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/granthuang999/granthuang999.github.io/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
 
-    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
 
 </div>
 </div>
     <div id="content">
+<!-- [新增] 文章页 Banner 图片 -->
+<div style="text-align: center; margin-bottom: 24px;">
+    <img src="./images/banner.png" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
+</div>
+
 <div class="markdown-body" id="postBody"><p><strong>Schopenhauer's philosophy of will provides profound survival wisdom for middle-aged people, helping them transcend material pursuits and achieve inner peace by understanding the nature of desire, cultivating aesthetic ability, and practicing compassion.</strong></p>
 <p>最近在朋友圈看到一个同龄人发的状态："有房有车有存款，孩子也很优秀，但总感觉生活缺少什么。"这种中年的精神空虚，恰恰是德国哲学家阿图尔·叔本华在两个世纪前就深刻洞察到的人生困境。他的意志哲学为我们这些在物质成功后仍感迷茫的中年人，提供了一条通往内心平静的路径。</p>
 <p>Recently, I saw a peer's social media post: "I have a house, car, and savings, my child is excellent, but I always feel something is missing in life." This middle-aged spiritual emptiness is exactly the life dilemma that German philosopher Arthur Schopenhauer profoundly understood two centuries ago. His philosophy of will provides us middle-aged people who still feel lost after material success with a path to inner peace.</p>
@@ -298,7 +303,7 @@ console.log("\n %c Gmeek last https://github.com/granthuang999/Gmeek \n","paddin
 </script>
 
 <script>
-// --- [新增] 分享功能的 JavaScript ---
+// --- 分享功能的 JavaScript ---
 document.addEventListener('DOMContentLoaded', function() {
     // 获取当前页面的 URL 和标题
     const postUrl = window.location.href;
@@ -326,13 +331,13 @@ document.addEventListener('DOMContentLoaded', function() {
         shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`;
     }
     if (shareWeibo) {
-        shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg`;
+        shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=./images/banner.png`;
     }
     if (shareTelegram) {
         shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`;
     }
 });
-// --- [新增] JavaScript 结束 ---
+// --- JavaScript 结束 ---
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
