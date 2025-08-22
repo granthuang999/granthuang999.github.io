@@ -70,6 +70,6 @@ Han's philosophy is particularly suitable for readers feeling lost in midlife. H
 韩炳哲, Byung-Chul Han, 疲劳社会, 中年哲学, 数字时代焦虑, 透明社会, 中年人自我成长, 哲学治愈
 
 
- ##{"timestamp":1753157714}##
+{"timestamp":1753157714}
 
-##{"slug": "Byung-Chul Han-The-Awakener-of-Burnout-Society"}##
+{"slug": "Byung-Chul Han-The-Awakener-of-Burnout-Society"}
