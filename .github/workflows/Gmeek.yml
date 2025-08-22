@@ -46,7 +46,6 @@ jobs:
       - name: Generate new html
         run: |
           echo "Forcefully removing the original 'static' file to prevent conflict..."
-          # [关键修改] 在复制前，先强制删除可能存在的 static 文件
           rm -f /opt/Gmeek/static
           
           echo "Applying customizations from this repository over the base theme..."
@@ -55,6 +54,16 @@ jobs:
           echo "Running the Gmeek script..."
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          
+          # --- [关键修改] ---
+          # 将 ads.txt 复制到最终的网站输出目录 (docs)
+          echo "Copying ads.txt to the output directory..."
+          if [ -f "/opt/Gmeek/ads.txt" ]; then
+            cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt
+          else
+            echo "ads.txt not found, skipping copy."
+          fi
+          # --- 修改结束 ---
           
           echo "Copying generated files back to the workspace..."
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
