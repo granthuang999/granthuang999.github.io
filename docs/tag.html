@@ -10,8 +10,8 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="未来传媒-Futuremedia.Work search page">
-<title>未来传媒-Futuremedia.Work - Tag</title>
+<meta name="description" content="未来传媒 专注中年 search page">
+<title>未来传媒 专注中年 - Tag</title>
 
 </head>
 <style>
@@ -76,7 +76,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <nav class="SideNav"></nav>
 <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://www.futuremedia.work">未来传媒-Futuremedia.Work</a><br>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://www.futuremedia.work">未来传媒 专注中年</a><br>
 <a href="https://www.futuremedia.work/about.html">About us</a> |
 <a href="https://www.futuremedia.work/terms-of-service.html">Terms of Service</a> |  
 <a href="https://www.futuremedia.work/privacy-policy.html">Privacy Ppolicy</a> |
@@ -241,7 +241,7 @@ function setClassDisplay(label){
     let lists = document.getElementsByClassName("lists");
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     tagTitle.innerHTML="Tag #"+label;
-    document.title=label+" - 未来传媒-Futuremedia.Work";
+    document.title=label+" - 未来传媒 专注中年";
     document.getElementsByClassName("subnav-search-input")[0].value='';
     if(label=="All"){
         for(let i = 0; i < lists.length; i++){lists[i].style.display='block';}
@@ -269,8 +269,8 @@ function searchShow(){
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
     tagTitle.innerHTML="Search #"+searchInput;
-    if(searchInput==''){document.title="Search - 未来传媒-Futuremedia.Work";}
-    else{document.title=searchInput+" - 未来传媒-Futuremedia.Work";}
+    if(searchInput==''){document.title="Search - 未来传媒 专注中年";}
+    else{document.title=searchInput+" - 未来传媒 专注中年";}
     let a=0;
     window.location.hash="#"+(searchInput);
     for(let i = 0; i < lists.length; i++){
