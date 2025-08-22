@@ -64,6 +64,14 @@ jobs:
             echo "ads.txt not found, skipping copy."
           fi
           # --- 修改结束 ---
+          # 将 robots.txt 复制到最终的网站输出目录 (docs)
+          echo "Copying robots.txt to the output directory..."
+          if [ -f "/opt/Gmeek/robots.txt" ]; then
+            cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt
+          else
+            echo "robots.txt not found, skipping copy."
+          fi
+          # --- 修改结束 ---
           
           echo "Copying generated files back to the workspace..."
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
