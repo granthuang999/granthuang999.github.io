@@ -14,7 +14,7 @@ jobs:
     if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
     permissions: write-all
     steps:
-      - name: Checkout # 检出包含 config.json 和 issue 的 granthuang999.github.io 仓库
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Pages
@@ -33,21 +33,23 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Clone Gmeek Theme # 步骤 1: 克隆基础主题
+      - name: Clone Gmeek Theme
         run: |
           echo "Cloning the Gmeek theme from https://github.com/granthuang999/Gmeek..."
           git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
-          # 这个步骤现在只是简单地克隆最新的主题代码，不再检查有问题的 git tags。
 
-      - name: Install dependencies # 步骤 2: 安装主题所需的依赖
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r /opt/Gmeek/requirements.txt
 
-      - name: Generate new html # 步骤 3: 运行生成脚本
+      - name: Generate new html
         run: |
+          echo "Forcefully removing the original 'static' file to prevent conflict..."
+          # [关键修改] 在复制前，先强制删除可能存在的 static 文件
+          rm -f /opt/Gmeek/static
+          
           echo "Applying customizations from this repository over the base theme..."
-          # 将此仓库（granthuang999.github.io）中的文件（如自定义的模板）覆盖到基础主题上
           cp -r ./* /opt/Gmeek/
           
           echo "Running the Gmeek script..."
@@ -55,17 +57,15 @@ jobs:
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
           echo "Copying generated files back to the workspace..."
-          # 将生成的结果（docs, backup, blogBase.json）复制回工作区，以便后续步骤提交
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
           
-      - name: update html # 步骤 4: 提交生成的静态文件
+      - name: update html
         run: |
           cd ${{ github.workspace }}
           git config --local user.email "$(jq -r ".email" config.json)"
           git config --local user.name "${{ github.repository_owner }}"
-          # 确保 docs 和 backup 目录存在，防止 git add 报错
           mkdir -p docs
           mkdir -p backup
           git add .
