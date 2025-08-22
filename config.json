@@ -6,7 +6,7 @@
     "displayTitle":"未来传媒-Futuremedia.Work",
 "homeUrl":"https://www.futuremedia.work",
 "faviconUrl": "./images/bb.png",
-"ogImage": "./images/big.png",
+"ogImage": "https://www.futuremedia.work/images/big.png",
 "bannerUrl": "./images/banner.png",
 "email":"futuremedia2090@gmail.com",
 "startSite":"7/16/2025",
