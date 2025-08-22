@@ -10,11 +10,11 @@ on:
 jobs:
   build:
     name: Generate blog
-    runs-on: ubuntu-latest # 使用 ubuntu-latest 以获得更好的兼容性
+    runs-on: ubuntu-latest
     if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
     permissions: write-all
     steps:
-      - name: Checkout
+      - name: Checkout # 检出包含 config.json 和 issue 的 granthuang999.github.io 仓库
         uses: actions/checkout@v4
 
       - name: Setup Pages
@@ -26,30 +26,48 @@ jobs:
           echo "====== check config.json file ======"
           cat config.json
           echo "====== check config.json end ======"
-          sudo apt-get install -y jq # 添加 -y 确保自动安装
+          sudo apt-get install -y jq
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.8
 
-      # --- [关键修改] ---
-      # 删除了原有的 "Clone source code" 步骤，因为 Checkout 步骤已经把所有文件都准备好了。
-      
-      - name: Install dependencies
+      - name: Clone Gmeek Theme # 步骤 1: 克隆基础主题
+        run: |
+          echo "Cloning the Gmeek theme from https://github.com/granthuang999/Gmeek..."
+          git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
+          # 这个步骤现在只是简单地克隆最新的主题代码，不再检查有问题的 git tags。
+
+      - name: Install dependencies # 步骤 2: 安装主题所需的依赖
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt # 直接使用仓库根目录的依赖文件
+          pip install -r /opt/Gmeek/requirements.txt
 
-      - name: Generate new html
+      - name: Generate new html # 步骤 3: 运行生成脚本
         run: |
-          # 直接在当前目录运行脚本，不再需要复制和切换目录
+          echo "Applying customizations from this repository over the base theme..."
+          # 将此仓库（granthuang999.github.io）中的文件（如自定义的模板）覆盖到基础主题上
+          cp -r ./* /opt/Gmeek/
+          
+          echo "Running the Gmeek script..."
+          cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
-      - name: update html
+          echo "Copying generated files back to the workspace..."
+          # 将生成的结果（docs, backup, blogBase.json）复制回工作区，以便后续步骤提交
+          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
+          cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
+          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
+          
+      - name: update html # 步骤 4: 提交生成的静态文件
         run: |
+          cd ${{ github.workspace }}
           git config --local user.email "$(jq -r ".email" config.json)"
           git config --local user.name "${{ github.repository_owner }}"
+          # 确保 docs 和 backup 目录存在，防止 git add 报错
+          mkdir -p docs
+          mkdir -p backup
           git add .
           git commit -a -m '🎉 auto update by Gmeek action' || echo "nothing to commit"
           git push || echo "nothing to push"
@@ -58,11 +76,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs/' # 确保路径末尾有斜杠
+          path: 'docs/'
           
   deploy:
     name: Deploy blog
-    runs-on: ubuntu-latest # 使用 ubuntu-latest
+    runs-on: ubuntu-latest
     needs: build
     permissions:
       contents: write
