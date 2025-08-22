@@ -32,6 +32,33 @@
 
 
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FDL6BTW5FM');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sh44c07wsg");
+</script>
+<!-- [新增] Google AdSense 核心脚本 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
 </head>
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
@@ -55,41 +82,53 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 }
 
 
-/* --- 分享按钮的 CSS 样式 --- */
-.share-buttons {
-    clear: both; /* Ensures it appears below the floated bottomText */
+/* 页脚布局容器 */
+.post-footer {
+    display: flex;
+    justify-content: space-between; /* 将内容推向两端 */
+    align-items: center; /* 垂直居中对齐 */
+    flex-wrap: wrap; /* 在小屏幕上允许换行 */
+    gap: 16px; /* 在换行时提供间距 */
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid var(--borderColor-default, var(--color-border-default));
-    text-align: center;
 }
-.share-buttons-title {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 10px;
+
+/* 行内分享按钮组 */
+.share-buttons-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 按钮之间的间距 */
 }
+
+/* 分享按钮 */
 .share-button {
     display: inline-block;
-    margin: 4px;
-    padding: 8px 16px;
+    padding: 4px 12px; /* 减小内边距 */
     border-radius: 6px;
-    color: #ffffff !important; /* 强制文字为白色 */
+    color: #ffffff !important;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px; /* 减小字体大小 */
     transition: opacity 0.3s;
     border: none;
 }
 .share-button:hover {
     opacity: 0.85;
-    color: #ffffff !important; /* 鼠标悬停时也强制为白色 */
 }
+
+/* bottomText 样式 */
+.bottom-text-inline {
+    font-size: small;
+    margin-left: auto; /* 确保它被推到最右边 */
+    white-space: nowrap; /* 防止文字换行 */
+}
+
 /* 各平台品牌颜色 */
 .share-button.x { background-color: #1DA1F2; }
 .share-button.facebook { background-color: #1877F2; }
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
-/* --- 样式结束 --- */
 </style>
 
 
@@ -121,7 +160,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<!-- [新增] 文章页 Banner 图片 -->
+<!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
     <img src="https://www.futuremedia.work/images/big.png" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
 </div>
@@ -276,16 +315,33 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>If you have any questions about these Terms of Service, please contact us:</p>
 <p><strong>邮箱 / Email</strong>: [<a href="mailto:futuremedia2090@gmail.com">futuremedia2090@gmail.com</a>](<a href="mailto:futuremedia2090@gmail.com">mailto:futuremedia2090@gmail.com</a>)</p>
 <p><strong>网站 / Website</strong>: <a href="https://futuremedia.work/" rel="nofollow">https://futuremedia.work/</a></p></div>
-<div style="font-size:small;margin-top:8px;float:right;">❤️ 本站文章皆为原创，若要转载文章请注明出处，谢谢！❤️</div>
 
-<div class="share-buttons">
-    <div class="share-buttons-title">分享到</div>
-    <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
-    <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
-    <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
-    <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
-    <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+<!-- 页脚：分享按钮和 bottomText -->
+<div class="post-footer">
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+    </div>
+    <div class="bottom-text-inline">❤️ 本站文章皆为原创，若要转载文章请注明出处，谢谢！❤️</div>
 </div>
+
+<!-- [新增] Google AdSense 广告单元 -->
+<div style="margin-top: 2rem; margin-bottom: 2rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+<!-- [新增] 代码结束 -->
+
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
@@ -346,39 +402,22 @@ console.log("\n %c Gmeek last https://github.com/granthuang999/Gmeek \n","paddin
 </script>
 
 <script>
-// --- 分享功能的 JavaScript ---
+// --- 分享功能的 JavaScript (无需改动) ---
 document.addEventListener('DOMContentLoaded', function() {
-    // 获取当前页面的 URL 和标题
     const postUrl = window.location.href;
     const postTitle = document.title;
-
-    // 对 URL 和标题进行编码，以防包含特殊字符
     const encodedUrl = encodeURIComponent(postUrl);
     const encodedTitle = encodeURIComponent(postTitle);
-
-    // 获取各个分享按钮的元素
     const shareX = document.getElementById('share-x');
     const shareFacebook = document.getElementById('share-facebook');
     const shareLinkedin = document.getElementById('share-linkedin');
     const shareWeibo = document.getElementById('share-weibo');
     const shareTelegram = document.getElementById('share-telegram');
-
-    // 动态生成并设置分享链接
-    if (shareX) {
-        shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
-    }
-    if (shareFacebook) {
-        shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-    }
-    if (shareLinkedin) {
-        shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`;
-    }
-    if (shareWeibo) {
-        shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`;
-    }
-    if (shareTelegram) {
-        shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`;
-    }
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
 });
 // --- JavaScript 结束 ---
 
