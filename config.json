@@ -1,9 +1,9 @@
 {
-    "title":"未来传媒-Futuremedia.Work",
-    "subTitle":"关注中年人Focus on middle-aged people",
+    "title":"未来传媒 专注中年",
+    "subTitle":"Futuremedia.Work，focus on middle-aged people",
     "avatarUrl":"./images/bb.png",
     "GMEEK_VERSION":"last",
-    "displayTitle":"未来传媒-Futuremedia.Work",
+    "displayTitle":"未来传媒 专注中年",
 "homeUrl":"https://www.futuremedia.work",
 "faviconUrl": "./images/bb.png",
 "ogImage": "https://www.futuremedia.work/images/big.png",
@@ -33,5 +33,5 @@
 "rssSplit":"sentence",
 "bottomText":"❤️ 本站文章皆为原创，若要转载文章请注明出处，谢谢！❤️",
 "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
-"needComment":0
+"needComment":1
 }
