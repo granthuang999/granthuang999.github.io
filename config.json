@@ -13,7 +13,7 @@
 "startSite":"7/16/2025",
 "onePageListNum":15,
 "singlePage":["about","link"],
-"hiddenPage":["terms-of-service","disclaimer","privacy-policy"],
+"hiddenPage":["terms-of-service","disclaimer","privacy-policy","finance-link","news-link","tools-link","studying-link","friend-link"],
 "commentLabelColor":"#006b75",
 "yearColorList":["#bc4c00", "#0969da", "#1f883d", "#A333D0"],
 "i18n":"CN",
