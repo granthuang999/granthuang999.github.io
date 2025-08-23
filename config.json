@@ -25,7 +25,7 @@
 "style":"",
 "script":"<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
 "head":"",
-"allHead":"",
+"allHead":"<script src='https://www.futuremedia.work/plugins/GmeekVercount.js'></script>",
 "indexStyle":"",
 "indexScript":"",
 "showPostSource":0,
