@@ -215,4 +215,4 @@ For middle-aged professionals planning to use Claude 5 Mini for commercial purpo
 **关键词 / Keywords:**
 
 Claude 5 Mini, 开源AI模型, 中年人AI应用, 本地AI部署, 数据隐私保护, AI成本控制, 专业AI助手, open source AI, middle-aged AI solutions, local AI deployment, data privacy, cost-effective AI
-##{"slug": "Anthropic-Claude-5-Mini-open-source, "timestamp": 1753798500, "quote": "Anthropic发布的Claude 5 Mini开源模型仅2B参数却达到接近GPT-3.5的性能，为中年人提供了低成本私有部署AI助手的机会，在数据安全和成本控制方面具有显著优势。"}
+##{"slug": "Anthropic-Claude-5-Mini-open-source", "timestamp": 1753798500, "quote": "Anthropic发布的Claude 5 Mini开源模型仅2B参数却达到接近GPT-3.5的性能，为中年人提供了低成本私有部署AI助手的机会，在数据安全和成本控制方面具有显著优势。"}
