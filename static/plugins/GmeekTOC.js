@@ -96,5 +96,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    console.log("\n %c GmeekTOC Plugins https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#C333D0;color:#fff");
+    console.log("\n %c GmeekTOC Plugins https://www.futuremedia.work \n","padding:5px 0;background:#C333D0;color:#fff");
 });
