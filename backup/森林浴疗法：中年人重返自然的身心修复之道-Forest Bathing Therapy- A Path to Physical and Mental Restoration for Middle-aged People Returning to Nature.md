@@ -107,4 +107,4 @@ Generally safe, but cardiovascular disease patients should practice under medica
 
 - 中文：森林浴、自然疗法、负氧离子、植物杀菌素、压力缓解、免疫提升
 - English: forest bathing, nature therapy, negative oxygen ions, phytoncides, stress relief, immune enhancement
-##{‘slug": "Forest-Bathing-Therapy", "timestamp": 1755749700}
+##{"slug": “forest-Bathing-Therapy", "timestamp": 1755749700}
