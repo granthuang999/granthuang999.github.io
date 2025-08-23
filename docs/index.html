@@ -45,6 +45,8 @@ var _hmt = _hmt || [];
 </script>
 <!-- [新增] Google AdSense 核心脚本 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
+<!-- [新增] 引入 TypeIt.js 库 -->
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 </head>
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
@@ -104,9 +106,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .title-left a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-weight: bold;font-family:Monaco;margin-left:8px;}
 .title-right{display:flex; margin-left:auto; align-items:center;}
 .title-right button{margin-right:8px;padding:16px;}
-
-/* --- [关键修改] --- */
-/* 减小了按钮的左右内边距，从 16px 减小到 8px，以节省空间 */
 .title-right .circle{padding: 14px 8px;}
 
 .SideNav{min-width: 360px;}
@@ -116,6 +115,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
 .listLabels{white-space:nowrap;display:flex;}
 .listLabels object{max-height:16px;max-width:24px;}
+
+/* [新增] 为打字动画效果设置最小高度，防止页面跳动 */
+#animated-subtitle {
+    min-height: 24px; /* 您可以根据字体大小调整 */
+}
 
 @media (max-width: 600px) {
     body {padding: 8px;}
@@ -158,11 +162,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </header>
     <div id="content">
+<!-- 主页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 16px;">
     <img src="./images/banner.png" style="max-width: 100%; border-radius: 8px;" alt="Website Banner">
 </div>
 
-<div style="margin-bottom: 16px;">专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</div>
+<!-- [关键修改] 将原来的副标题 div 替换为这个带 ID 的新 div -->
+<div id="animated-subtitle" style="margin-bottom: 16px;"></div>
+
 <nav class="SideNav border">
 <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/REITs-Investment.html">
     <div class="d-flex flex-items-center">
@@ -330,18 +337,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <span class="Label LabelTime" style="background-color:#0969da">2025-08-04</span>
     </div>
 </a>
-</nav>
-<!-- [新增] 主页列表末尾的广告单元 -->
-<div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-format="autorelaxed"
-         data-ad-client="ca-pub-3409938612356670"
-         data-ad-slot="1668586065"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div><nav class="paginate-container" aria-label="Pagination">
+</nav><nav class="paginate-container" aria-label="Pagination">
     <div class="pagination"><span class="previous_page" aria-disabled="true">上一页</span>
         <a class="next_page" rel="next" href="https://www.futuremedia.work/page2.html" aria-label="Next Page">下一页</a></div>
 </nav>
@@ -401,6 +397,18 @@ console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;ba
 </script>
 
 <script>
+// --- [新增] TypeIt.js 初始化脚本 ---
+document.addEventListener('DOMContentLoaded', function () {
+  new TypeIt('#animated-subtitle', {
+    // 从 blogBase 配置中动态获取副标题文字
+    strings: ["专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活"],
+    speed: 75, // 打字速度
+    waitUntilVisible: true, // 等到元素可见时才开始动画
+    cursor: false // 不显示打字光标
+  }).go();
+});
+// --- 新增结束 ---
+
 document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
 document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
 iconTOP=document.getElementsByClassName("svgTop1");
