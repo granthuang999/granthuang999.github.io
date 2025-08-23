@@ -55,29 +55,39 @@ jobs:
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
-          # --- [关键修改] ---
-          # 将 ads.txt 复制到最终的网站输出目录 (docs)
           echo "Copying ads.txt to the output directory..."
           if [ -f "/opt/Gmeek/ads.txt" ]; then
             cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt
           else
             echo "ads.txt not found, skipping copy."
           fi
-          # --- 修改结束 ---
-          # 将 robots.txt 复制到最终的网站输出目录 (docs)
+          
           echo "Copying robots.txt to the output directory..."
           if [ -f "/opt/Gmeek/robots.txt" ]; then
             cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt
           else
             echo "robots.txt not found, skipping copy."
           fi
-          # --- 修改结束 ---
           
           echo "Copying generated files back to the workspace..."
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
           
+      # --- [新增步骤 1] ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # --- [新增步骤 2] ---
+      - name: Index site with Pagefind
+        run: |
+          echo "Indexing content with Pagefind..."
+          # 下载并运行 Pagefind，为 docs 目录创建索引
+          # 索引文件会自动生成在 docs/pagefind/ 目录下
+          npx -y pagefind --site docs
+
       - name: update html
         run: |
           cd ${{ github.workspace }}
