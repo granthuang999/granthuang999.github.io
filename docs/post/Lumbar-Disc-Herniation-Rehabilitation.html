@@ -186,6 +186,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <img src="https://www.futuremedia.work/images/big.png" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
 </div>
 
+<!-- [新增] 为 TypeIt 动画预留的占位符 -->
+<div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
+
 <div class="markdown-body" id="postBody"><p><strong>Through scientific core stability training and spinal decompression exercises, middle-aged patients with lumbar disc herniation can significantly improve symptoms within 12 weeks, restore normal life and work capabilities, and avoid surgical risks.</strong></p>
 <p>三个月前，我因为腰椎间盘突出疼得无法正常走路，连弯腰拿东西都成了奢望。医生建议手术，但我想尝试保守治疗。经过12周的系统康复训练，现在我不仅能正常工作，还能进行轻度运动。这套康复方案或许能帮助有同样困扰的中年朋友。</p>
 <p>Three months ago, I was in such pain from a herniated disc that I couldn't walk normally, and even bending over to pick up objects became a luxury. The doctor recommended surgery, but I wanted to try conservative treatment. After 12 weeks of systematic rehabilitation training, I can now not only work normally but also engage in light exercise. This rehabilitation program might help middle-aged friends with similar troubles.</p>
@@ -453,7 +456,7 @@ Avoid: Prone position which increases lumbar pressure`</p>
     </script>
 </div>
 
-<!-- [关键修改] Giscus 评论代码 -->
+<!-- Giscus 评论代码 -->
 <div style="margin-top: 2rem;">
     <script src="https://giscus.app/client.js"
         data-repo="granthuang999/granthuang999.github.io"
@@ -471,7 +474,6 @@ Avoid: Prone position which increases lumbar pressure`</p>
         async>
     </script>
 </div>
-<!-- [修改结束] -->
 
 </div>
     <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
@@ -529,6 +531,41 @@ console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;ba
 </script>
 
 <script>
+// --- [新增] TypeIt.js 高级用法脚本 ---
+document.addEventListener('DOMContentLoaded', function() {
+    // 直接从模板渲染的数据中获取 'quote' 或 'daily_sentence'
+    const quoteText = "None";
+    const dailySentenceRaw = "None";
+
+    let typeitStrings = [];
+    if (quoteText && quoteText !== 'None') {
+        typeitStrings = [quoteText];
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+        // Gmeek 会把Python列表转成带'['和']'的字符串，我们需要处理一下
+        try {
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
+        } catch (e) {
+            console.error("无法解析 daily_sentence:", e);
+        }
+    }
+
+    // 确保有内容才执行动画
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true, // 模拟真人打字，速度会随机变化
+                 waitUntilVisible: true,
+                 breakLines: false, // 如果有多句话，在同一行显示
+             }).go();
+        }
+    }
+});
+// --- 新增结束 ---
+
 // --- 分享功能的 JavaScript ---
 document.addEventListener('DOMContentLoaded', function() {
     const postUrl = window.location.href;
@@ -550,8 +587,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 
-
-// --- [关键修改] 删除了所有 Utterances 相关的 JavaScript 代码 ---
 
 
 
