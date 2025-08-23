@@ -237,4 +237,4 @@ Arendt's philosophy tells us that middle age is not the beginning of decline, bu
 **关键词 / Keywords:**
 
 汉娜阿伦特, 行动哲学, 中年人公共参与, 政治哲学, vita activa, 公共空间, 中年人意义危机, Hannah Arendt, action philosophy, middle-aged public participation, political philosophy, public space, midlife meaning crisis
-##{"slug": "Hannah-Arendt-philosophy", "timestamp": 1753330500, "quote": "阿伦特的"行动"理论为中年人摆脱职场异化提供哲学武器，通过参与公共事务、发出独立声音和建立真实关系，重新找回工作和生活的深层意义。"}
+##{"slug": "Hannah-Arendt-philosophy", "timestamp": 1753330500, "quote": "阿伦特的行动理论为中年人摆脱职场异化提供哲学武器，通过参与公共事务、发出独立声音和建立真实关系，重新找回工作和生活的深层意义。"}
