@@ -85,4 +85,4 @@ FAQ
 
 - 人类简史，认知革命，想象秩序，叙事，数据主权
 - Sapiens, cognitive revolution, imagined order, narrative, data sovereignty
-##{"slug": "Sapiens-Reframing", "timestamp": 11755058500}
+##{"slug": "Sapiens-Reframing", "timestamp": 1755058500}
