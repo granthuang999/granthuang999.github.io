@@ -23,7 +23,7 @@
 "nightTheme":"dark_colorblind",
 "urlMode":"pinyin",
 "style":"",
-"script":"",
+"script":"<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
 "head":"",
 "allHead":"",
 "indexStyle":"",
