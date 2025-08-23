@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
-    
+    <script src='https://www.futuremedia.work/plugins/GmeekVercount.js'></script>
     <link rel="icon" href="./images/bb.png"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
@@ -114,38 +114,29 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .title-right .circle{padding: 14px 16px;margin-right:8px;}
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
 #postBody hr{height:2px;}
-#cmButton{height:48px;margin-top:48px;}
-#comments{margin-top:64px;}
 .g-emoji{font-size:24px;}
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
-    /* [新增] 在小屏幕上让页脚内容垂直排列 */
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
 
 
-/* --- [关键修改] --- */
-/* 1. 页脚布局容器 */
 .post-footer {
     display: flex;
-    justify-content: space-between; /* 将内容推向两端 */
-    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap; 
     gap: 16px; 
-    margin-top: 1.5rem; /* 减小与上方内容的间距 */
+    margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--borderColor-default, var(--color-border-default));
 }
-
-/* 2. 行内分享按钮组 */
 .share-buttons-inline {
     display: flex;
     align-items: center;
     gap: 8px; 
 }
-
-/* 3. 分享按钮 */
 .share-button {
     display: inline-block;
     padding: 4px 12px; 
@@ -159,14 +150,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button:hover {
     opacity: 0.85;
 }
-
-/* 4. bottomText 样式 (移除了 margin-left: auto) */
 .bottom-text-inline {
     font-size: small;
     white-space: nowrap; 
 }
-
-/* 各平台品牌颜色 */
 .share-button.x { background-color: #1DA1F2; }
 .share-button.facebook { background-color: #1877F2; }
 .share-button.linkedin { background-color: #0A66C2; }
@@ -185,12 +172,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    
-    <a href="https://github.com/granthuang999/granthuang999.github.io/issues/15" target="_blank" class="btn btn-invisible circle" title="Issue">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
     </a>
     
@@ -283,8 +264,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 ##{"slug": "Sapiens-Reframing", "timestamp": 1755058500}</li>
 </ul></div>
 
-<!-- --- [关键修改] --- -->
-<!-- 调整了 bottomText 和 share-buttons-inline 的顺序 -->
+<!-- 页脚：分享按钮和 bottomText -->
 <div class="post-footer">
     <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
     <div class="share-buttons-inline">
@@ -297,7 +277,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 
 <!-- Google AdSense 广告单元 -->
-<div style="margin-top: 2rem; margin-bottom: 1rem;"> <!-- 调整了与下方评论按钮的间距 -->
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -309,12 +289,28 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     </script>
 </div>
 
-
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
+<!-- [关键修改] Giscus 评论代码 -->
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<!-- [修改结束] -->
 
 </div>
-    <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒 专注中年</a><br>
+    <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
 <a href="https://www.futuremedia.work/about.html">About us</a> |
 <a href="https://www.futuremedia.work/terms-of-service.html">Terms of Service</a> |  
 <a href="https://www.futuremedia.work/privacy-policy.html">Privacy Ppolicy</a> |
@@ -369,7 +365,7 @@ console.log("\n %c Gmeek last https://github.com/granthuang999/Gmeek \n","paddin
 </script>
 
 <script>
-// --- 分享功能的 JavaScript (无需改动) ---
+// --- 分享功能的 JavaScript ---
 document.addEventListener('DOMContentLoaded', function() {
     const postUrl = window.location.href;
     const postTitle = document.title;
@@ -389,46 +385,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // --- JavaScript 结束 ---
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
 
 
-
-function openComments(){
-    cm=document.getElementById("comments");
-    cmButton=document.getElementById("cmButton");
-    cmButton.disabled=true;
-    cmButton.innerHTML="loading";
-    span=document.createElement("span");
-    span.setAttribute("class","AnimatedEllipsis");
-    cmButton.appendChild(span);
-
-    script=document.createElement("script");
-    script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","granthuang999/granthuang999.github.io");
-    script.setAttribute("issue-term","title");
-    
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
-    
-    script.setAttribute("crossorigin","anonymous");
-    script.setAttribute("async","");
-    cm.appendChild(script);
-
-    int=self.setInterval("iFrameLoading()",200);
-}
-
-function iFrameLoading(){
-    var utterances=document.getElementsByClassName('utterances');
-    if(utterances.length==1){
-        if(utterances[0].style.height!=""){
-            utterancesLoad=1;
-            int=window.clearInterval(int);
-            document.getElementById("cmButton").style.display="none";
-            console.log("utterances Load OK");
-        }
-    }
-}
+// --- [关键修改] 删除了所有 Utterances 相关的 JavaScript 代码 ---
 
 
 

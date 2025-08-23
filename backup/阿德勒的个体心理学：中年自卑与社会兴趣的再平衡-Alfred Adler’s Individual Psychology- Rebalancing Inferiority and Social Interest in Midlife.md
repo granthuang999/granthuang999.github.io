@@ -85,4 +85,4 @@ FAQ
 
 - 自卑感，补偿，生活风格，社会兴趣，个体心理学
 - inferiority, compensation, lifestyle, social interest, Individual Psychology
-##{"slug": "SAlfred-Adlers-Individual-Psychology", "timestamp": 1754972100}
+##{"slug": "Alfred-Adlers-Individual-Psychology", "timestamp": 1754972100}
