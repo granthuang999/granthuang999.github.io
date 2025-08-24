@@ -10,418 +10,210 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="```Gmeek-html
+<meta name="description" content="````Gmeek-html
 <!DOCTYPE html>
 <html lang='zh-CN' class='light'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>个人导航链接</title>
-    <script src='https://cdn.tailwindcss.com'></script>
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet'>
+    <script src='[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)'></script>
+    <link rel='preconnect' href='[https://fonts.googleapis.com](https://fonts.googleapis.com)'>
+    <link rel='preconnect' href='[https://fonts.gstatic.com](https://fonts.gstatic.com)' crossorigin>
+    <link href='[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap)' rel='stylesheet'>
     <style>
-        /* 使用 Inter 字体 */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* 滚动条美化 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #94a3b8;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-        /* 搜索框无结果时的占位符样式 */
-        #no-results {
-            display: none;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        .dark ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        #no-results { display: none; }
     </style>
 </head>
 <body class='bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300'>
-
     <div class='max-w-7xl mx-auto p-4 sm:p-6 lg:p-8'>
-        
-        <!-- 页面头部 -->
         <header class='flex justify-between items-center mb-8'>
             <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
-            <button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-300'>
+            <button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
                 <svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
                 <svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
             </button>
         </header>
-
-        <!-- 搜索框 -->
         <div class='mb-8'>
             <div class='relative'>
                 <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-                    <svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
-                        <path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' />
-                    </svg>
+                    <svg class='h-5 w-5 text-slate-400' xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
                 </div>
-                <input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md leading-5 bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:placeholder-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 sm:text-sm'>
+                <input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
             </div>
         </div>
-
-        <!-- 导航链接网格 -->
         <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-
-            <!-- 分类卡片模板 -->
             <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
                 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
-                
                 <div class='space-y-4'>
                     <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>常用/置顶</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>搜索引擎 (Google, Bing)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>主力邮箱 (Gmail, Outlook)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>即时通讯 (微信网页版, Telegram)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>云盘/笔记 (Google Drive, Notion, 飞书)</a>
+                            <a href='[https://www.google.com](https://www.google.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
+                            <a href='[https://www.bing.com](https://www.bing.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
+                            <a href='[https://mail.google.com](https://mail.google.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
+                            <a href='[https://web.telegram.org](https://web.telegram.org)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
+                            <a href='[https://www.notion.so](https://www.notion.so)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
                 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>工作与生产力</h2>
-                
                 <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>办公/协作</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>公司内部系统</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>项目管理 (Trello, Jira)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>在线文档 (Google Docs)</a>
-                        </div>
-                    </div>
                     <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>代码/开发</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>代码托管 (GitHub)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>开发文档 (MDN)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>云服务 (Vercel, Cloudflare)</a>
+                            <a href='[https://github.com](https://github.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
+                            <a href='[https://developer.mozilla.org](https://developer.mozilla.org)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
+                            <a href='[https://vercel.com](https://vercel.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
+                            <a href='[https://www.cloudflare.com](https://www.cloudflare.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
                         </div>
                     </div>
                      <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>设计/创意</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>设计工具 (Figma, Canva)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>素材资源 (Pexels)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>灵感收集 (Pinterest)</a>
+                            <a href='[https://www.figma.com](https://www.figma.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
+                            <a href='[https://www.canva.com](https://www.canva.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
+                            <a href='[https://www.pexels.com](https://www.pexels.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
                 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>学习与资讯</h2>
-                
                 <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>在线学习</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>课程平台 (Coursera)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>教程网站 (YouTube)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>语言学习 (Duolingo)</a>
-                        </div>
-                    </div>
                     <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>新闻/阅读</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>综合新闻 (Reuters, BBC)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>科技媒体 (TechCrunch)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>RSS阅读器 (Feedly)</a>
+                            <a href='[https://www.reuters.com](https://www.reuters.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Reuters</a>
+                            <a href='[https://techcrunch.com](https://techcrunch.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
+                            <a href='[https://feedly.com](https://feedly.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
                         </div>
                     </div>
                      <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>AI 工具</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>大语言模型 (ChatGPT, Gemini)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>AI绘画 (Midjourney)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>AI效率工具 (Fireflies.ai)</a>
+                            <a href='[https://chat.openai.com](https://chat.openai.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
+                            <a href='[https://gemini.google.com](https://gemini.google.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
+                            <a href='[https://www.midjourney.com](https://www.midjourney.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
-                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>生活与娱乐</h2>
-                <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>社交媒体</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>X (Twitter)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>LinkedIn</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>微博</a>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>影音娱乐</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>视频网站 (YouTube)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>音乐平台 (Spotify)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
-                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>购物与理财</h2>
-                 <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>购物/理财</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>电商平台 (Amazon, 淘宝)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>网上银行</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>投资平台</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
-                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>实用工具</h2>
-                <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>在线工具</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>格式转换</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>在线翻译</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>网速测试</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </main>
-
-        <!-- 搜索无结果时的提示 -->
         <div id='no-results' class='text-center py-16'>
             <h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'>无匹配结果</h3>
             <p class='text-slate-500 mt-2'>请尝试更换搜索关键词。">
 <meta property="og:title" content="个人导航">
-<meta property="og:description" content="```Gmeek-html
+<meta property="og:description" content="````Gmeek-html
 <!DOCTYPE html>
 <html lang='zh-CN' class='light'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>个人导航链接</title>
-    <script src='https://cdn.tailwindcss.com'></script>
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet'>
+    <script src='[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)'></script>
+    <link rel='preconnect' href='[https://fonts.googleapis.com](https://fonts.googleapis.com)'>
+    <link rel='preconnect' href='[https://fonts.gstatic.com](https://fonts.gstatic.com)' crossorigin>
+    <link href='[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap)' rel='stylesheet'>
     <style>
-        /* 使用 Inter 字体 */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* 滚动条美化 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #94a3b8;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-        /* 搜索框无结果时的占位符样式 */
-        #no-results {
-            display: none;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        .dark ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        #no-results { display: none; }
     </style>
 </head>
 <body class='bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300'>
-
     <div class='max-w-7xl mx-auto p-4 sm:p-6 lg:p-8'>
-        
-        <!-- 页面头部 -->
         <header class='flex justify-between items-center mb-8'>
             <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
-            <button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-300'>
+            <button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
                 <svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
                 <svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
             </button>
         </header>
-
-        <!-- 搜索框 -->
         <div class='mb-8'>
             <div class='relative'>
                 <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-                    <svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
-                        <path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' />
-                    </svg>
+                    <svg class='h-5 w-5 text-slate-400' xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
                 </div>
-                <input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md leading-5 bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:placeholder-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 sm:text-sm'>
+                <input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
             </div>
         </div>
-
-        <!-- 导航链接网格 -->
         <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-
-            <!-- 分类卡片模板 -->
             <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
                 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
-                
                 <div class='space-y-4'>
                     <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>常用/置顶</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>搜索引擎 (Google, Bing)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>主力邮箱 (Gmail, Outlook)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>即时通讯 (微信网页版, Telegram)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>云盘/笔记 (Google Drive, Notion, 飞书)</a>
+                            <a href='[https://www.google.com](https://www.google.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
+                            <a href='[https://www.bing.com](https://www.bing.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
+                            <a href='[https://mail.google.com](https://mail.google.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
+                            <a href='[https://web.telegram.org](https://web.telegram.org)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
+                            <a href='[https://www.notion.so](https://www.notion.so)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
                 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>工作与生产力</h2>
-                
                 <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>办公/协作</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>公司内部系统</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>项目管理 (Trello, Jira)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>在线文档 (Google Docs)</a>
-                        </div>
-                    </div>
                     <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>代码/开发</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>代码托管 (GitHub)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>开发文档 (MDN)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>云服务 (Vercel, Cloudflare)</a>
+                            <a href='[https://github.com](https://github.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
+                            <a href='[https://developer.mozilla.org](https://developer.mozilla.org)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
+                            <a href='[https://vercel.com](https://vercel.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
+                            <a href='[https://www.cloudflare.com](https://www.cloudflare.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
                         </div>
                     </div>
                      <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>设计/创意</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>设计工具 (Figma, Canva)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>素材资源 (Pexels)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>灵感收集 (Pinterest)</a>
+                            <a href='[https://www.figma.com](https://www.figma.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
+                            <a href='[https://www.canva.com](https://www.canva.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
+                            <a href='[https://www.pexels.com](https://www.pexels.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
                 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>学习与资讯</h2>
-                
                 <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>在线学习</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>课程平台 (Coursera)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>教程网站 (YouTube)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>语言学习 (Duolingo)</a>
-                        </div>
-                    </div>
                     <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>新闻/阅读</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>综合新闻 (Reuters, BBC)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>科技媒体 (TechCrunch)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>RSS阅读器 (Feedly)</a>
+                            <a href='[https://www.reuters.com](https://www.reuters.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Reuters</a>
+                            <a href='[https://techcrunch.com](https://techcrunch.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
+                            <a href='[https://feedly.com](https://feedly.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
                         </div>
                     </div>
                      <div>
                         <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>AI 工具</h3>
                         <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>大语言模型 (ChatGPT, Gemini)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>AI绘画 (Midjourney)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>AI效率工具 (Fireflies.ai)</a>
+                            <a href='[https://chat.openai.com](https://chat.openai.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
+                            <a href='[https://gemini.google.com](https://gemini.google.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
+                            <a href='[https://www.midjourney.com](https://www.midjourney.com)' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
-                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>生活与娱乐</h2>
-                <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>社交媒体</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>X (Twitter)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>LinkedIn</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>微博</a>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>影音娱乐</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>视频网站 (YouTube)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>音乐平台 (Spotify)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
-                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>购物与理财</h2>
-                 <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>购物/理财</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>电商平台 (Amazon, 淘宝)</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>网上银行</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>投资平台</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
-                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>实用工具</h2>
-                <div class='space-y-4'>
-                    <div>
-                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>在线工具</h3>
-                        <div class='flex flex-wrap gap-2'>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>格式转换</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>在线翻译</a>
-                            <a href='#' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200'>网速测试</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </main>
-
-        <!-- 搜索无结果时的提示 -->
         <div id='no-results' class='text-center py-16'>
             <h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'>无匹配结果</h3>
             <p class='text-slate-500 mt-2'>请尝试更换搜索关键词。">
@@ -605,245 +397,130 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
     &lt;title&gt;个人导航链接&lt;/title&gt;
-    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
-    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
-    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
+    &lt;script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"&gt;&lt;/script&gt;
+    &lt;link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)"&gt;
+    &lt;link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin&gt;
+    &lt;link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap)" rel="stylesheet"&gt;
     &lt;style&gt;
-        /* 使用 Inter 字体 */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* 滚动条美化 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #94a3b8;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-        /* 搜索框无结果时的占位符样式 */
-        #no-results {
-            display: none;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        .dark ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        #no-results { display: none; }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300"&gt;
-
     &lt;div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8"&gt;
-        
-        &lt;!-- 页面头部 --&gt;
         &lt;header class="flex justify-between items-center mb-8"&gt;
             &lt;h1 class="text-3xl font-bold text-slate-900 dark:text-white"&gt;个人导航&lt;/h1&gt;
-            &lt;button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-300"&gt;
+            &lt;button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700"&gt;
                 &lt;svg id="theme-icon-sun" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z"&gt;&lt;/path&gt;&lt;/svg&gt;
                 &lt;svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"&gt;&lt;/path&gt;&lt;/svg&gt;
             &lt;/button&gt;
         &lt;/header&gt;
-
-        &lt;!-- 搜索框 --&gt;
         &lt;div class="mb-8"&gt;
             &lt;div class="relative"&gt;
                 &lt;div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"&gt;
-                    &lt;svg class="h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"&gt;
-                        &lt;path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /&gt;
-                    &lt;/svg&gt;
+                    &lt;svg class="h-5 w-5 text-slate-400" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 20 20" fill="currentColor"&gt;&lt;path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /&gt;&lt;/svg&gt;
                 &lt;/div&gt;
-                &lt;input type="search" id="search-input" placeholder="快速搜索链接..." class="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md leading-5 bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:placeholder-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 sm:text-sm"&gt;
+                &lt;input type="search" id="search-input" placeholder="快速搜索链接..." class="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-
-        &lt;!-- 导航链接网格 --&gt;
         &lt;main id="link-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
-
-            &lt;!-- 分类卡片模板 --&gt;
             &lt;div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"&gt;
                 &lt;h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white"&gt;核心类别：日常高频&lt;/h2&gt;
-                
                 &lt;div class="space-y-4"&gt;
                     &lt;div&gt;
                         &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;常用/置顶&lt;/h3&gt;
                         &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;搜索引擎 (Google, Bing)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;主力邮箱 (Gmail, Outlook)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;即时通讯 (微信网页版, Telegram)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;云盘/笔记 (Google Drive, Notion, 飞书)&lt;/a&gt;
+                            &lt;a href="[https://www.google.com](https://www.google.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Google&lt;/a&gt;
+                            &lt;a href="[https://www.bing.com](https://www.bing.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Bing&lt;/a&gt;
+                            &lt;a href="[https://mail.google.com](https://mail.google.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Gmail&lt;/a&gt;
+                            &lt;a href="[https://web.telegram.org](https://web.telegram.org)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Telegram&lt;/a&gt;
+                            &lt;a href="[https://www.notion.so](https://www.notion.so)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Notion&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            
             &lt;div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"&gt;
                 &lt;h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white"&gt;工作与生产力&lt;/h2&gt;
-                
                 &lt;div class="space-y-4"&gt;
-                    &lt;div&gt;
-                        &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;办公/协作&lt;/h3&gt;
-                        &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;公司内部系统&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;项目管理 (Trello, Jira)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;在线文档 (Google Docs)&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
                     &lt;div&gt;
                         &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;代码/开发&lt;/h3&gt;
                         &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;代码托管 (GitHub)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;开发文档 (MDN)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;云服务 (Vercel, Cloudflare)&lt;/a&gt;
+                            &lt;a href="[https://github.com](https://github.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;GitHub&lt;/a&gt;
+                            &lt;a href="[https://developer.mozilla.org](https://developer.mozilla.org)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;MDN&lt;/a&gt;
+                            &lt;a href="[https://vercel.com](https://vercel.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Vercel&lt;/a&gt;
+                            &lt;a href="[https://www.cloudflare.com](https://www.cloudflare.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Cloudflare&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                      &lt;div&gt;
                         &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;设计/创意&lt;/h3&gt;
                         &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;设计工具 (Figma, Canva)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;素材资源 (Pexels)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;灵感收集 (Pinterest)&lt;/a&gt;
+                            &lt;a href="[https://www.figma.com](https://www.figma.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Figma&lt;/a&gt;
+                            &lt;a href="[https://www.canva.com](https://www.canva.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Canva&lt;/a&gt;
+                            &lt;a href="[https://www.pexels.com](https://www.pexels.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Pexels&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-
             &lt;div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"&gt;
                 &lt;h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white"&gt;学习与资讯&lt;/h2&gt;
-                
                 &lt;div class="space-y-4"&gt;
-                    &lt;div&gt;
-                        &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;在线学习&lt;/h3&gt;
-                        &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;课程平台 (Coursera)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;教程网站 (YouTube)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;语言学习 (Duolingo)&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
                     &lt;div&gt;
                         &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;新闻/阅读&lt;/h3&gt;
                         &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;综合新闻 (Reuters, BBC)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;科技媒体 (TechCrunch)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;RSS阅读器 (Feedly)&lt;/a&gt;
+                            &lt;a href="[https://www.reuters.com](https://www.reuters.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Reuters&lt;/a&gt;
+                            &lt;a href="[https://techcrunch.com](https://techcrunch.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;TechCrunch&lt;/a&gt;
+                            &lt;a href="[https://feedly.com](https://feedly.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Feedly&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                      &lt;div&gt;
                         &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;AI 工具&lt;/h3&gt;
                         &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;大语言模型 (ChatGPT, Gemini)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;AI绘画 (Midjourney)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;AI效率工具 (Fireflies.ai)&lt;/a&gt;
+                            &lt;a href="[https://chat.openai.com](https://chat.openai.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;ChatGPT&lt;/a&gt;
+                            &lt;a href="[https://gemini.google.com](https://gemini.google.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Gemini&lt;/a&gt;
+                            &lt;a href="[https://www.midjourney.com](https://www.midjourney.com)" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full"&gt;Midjourney&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-
-            &lt;div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"&gt;
-                &lt;h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white"&gt;生活与娱乐&lt;/h2&gt;
-                &lt;div class="space-y-4"&gt;
-                    &lt;div&gt;
-                        &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;社交媒体&lt;/h3&gt;
-                        &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;X (Twitter)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;LinkedIn&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;微博&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div&gt;
-                        &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;影音娱乐&lt;/h3&gt;
-                        &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;视频网站 (YouTube)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;音乐平台 (Spotify)&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-
-            &lt;div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"&gt;
-                &lt;h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white"&gt;购物与理财&lt;/h2&gt;
-                 &lt;div class="space-y-4"&gt;
-                    &lt;div&gt;
-                        &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;购物/理财&lt;/h3&gt;
-                        &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;电商平台 (Amazon, 淘宝)&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;网上银行&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;投资平台&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-
-            &lt;div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"&gt;
-                &lt;h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white"&gt;实用工具&lt;/h2&gt;
-                &lt;div class="space-y-4"&gt;
-                    &lt;div&gt;
-                        &lt;h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2"&gt;在线工具&lt;/h3&gt;
-                        &lt;div class="flex flex-wrap gap-2"&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;格式转换&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;在线翻译&lt;/a&gt;
-                            &lt;a href="#" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full transition-colors duration-200"&gt;网速测试&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            
         &lt;/main&gt;
-
-        &lt;!-- 搜索无结果时的提示 --&gt;
         &lt;div id="no-results" class="text-center py-16"&gt;
             &lt;h3 class="text-lg font-semibold text-slate-600 dark:text-slate-400"&gt;无匹配结果&lt;/h3&gt;
             &lt;p class="text-slate-500 mt-2"&gt;请尝试更换搜索关键词。&lt;/p&gt;
         &lt;/div&gt;
-
     &lt;/div&gt;
-
     &lt;script&gt;
         document.addEventListener('DOMContentLoaded', () =&gt; {
-            // --- 主题切换逻辑 ---
             const themeToggle = document.getElementById('theme-toggle');
             const sunIcon = document.getElementById('theme-icon-sun');
             const moonIcon = document.getElementById('theme-icon-moon');
             const htmlEl = document.documentElement;
-
-            // 检查本地存储的主题
             const currentTheme = localStorage.getItem('theme') || 'light';
             htmlEl.classList.toggle('dark', currentTheme === 'dark');
             sunIcon.classList.toggle('hidden', currentTheme === 'dark');
             moonIcon.classList.toggle('hidden', currentTheme !== 'dark');
-
             themeToggle.addEventListener('click', () =&gt; {
                 const isDark = htmlEl.classList.toggle('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
                 sunIcon.classList.toggle('hidden', isDark);
                 moonIcon.classList.toggle('hidden', !isDark);
             });
-
-            // --- 实时搜索逻辑 ---
             const searchInput = document.getElementById('search-input');
             const linkGrid = document.getElementById('link-grid');
             const categoryCards = document.querySelectorAll('.category-card');
             const noResults = document.getElementById('no-results');
-
             searchInput.addEventListener('input', (e) =&gt; {
                 const searchTerm = e.target.value.toLowerCase();
                 let hasVisibleCards = false;
-
                 categoryCards.forEach(card =&gt; {
                     const links = card.querySelectorAll('.link-item');
                     let hasVisibleLinks = false;
-
                     links.forEach(link =&gt; {
                         const linkText = link.textContent.toLowerCase();
                         if (linkText.includes(searchTerm)) {
@@ -853,7 +530,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
                             link.style.display = 'none';
                         }
                     });
-
                     if (hasVisibleLinks) {
                         card.style.display = '';
                         hasVisibleCards = true;
@@ -861,7 +537,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
                         card.style.display = 'none';
                     }
                 });
-
                 linkGrid.style.display = hasVisibleCards ? 'grid' : 'none';
                 noResults.style.display = hasVisibleCards ? 'none' : 'block';
             });
@@ -869,6 +544,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
+`
 </code></pre></div>
 
 <!-- 页脚：分享按钮和 bottomText -->
