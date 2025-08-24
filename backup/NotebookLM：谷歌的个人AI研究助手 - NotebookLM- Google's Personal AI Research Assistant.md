@@ -40,4 +40,4 @@ Still in early testing phase, may introduce paid models in the future. Accuracy 
 6. Upload your research materials (supports multiple formats)
 7. Wait for AI analysis and insight generation
 8. Use Audio Overview feature to create podcast-style summaries
-##{"slug": "NotebookLM-Google", "timestamp": 1752502500, "quote": "NotebookLM支持多种格式文档上传，包括PDF文件、网站链接、YouTube视频和音频文件。最独特的功能是音频概览，能将您的资料转换成引人入胜的"深度对话"，类似播客形式。"}
+##{"slug": "NotebookLM-Google", "timestamp": 1752502500, "quote": "NotebookLM支持多种格式文档上传，包括PDF文件、网站链接、YouTube视频和音频文件。最独特的功能是音频概览，能将您的资料转换成引人入胜的深度对话，类似播客形式。"}
