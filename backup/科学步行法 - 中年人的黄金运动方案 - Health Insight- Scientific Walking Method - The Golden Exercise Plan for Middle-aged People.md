@@ -108,7 +108,6 @@ Start with 15 minutes daily, increasing by 5 minutes weekly until reaching targe
 
 Use health apps or simple journals to record walking data, including time, distance, and mood changes. Positive feedback generates sustained motivation, making health a visible achievement.
 
-<ins/>
 
 **关键词 / Keywords**
 
