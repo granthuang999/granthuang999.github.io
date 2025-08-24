@@ -1,6 +1,4 @@
-![3.png](attachment:2878e50a-3695-406b-a7b6-ab2a6f31c5b9:3.png)
 
-Marcus Aurelius philosophy cover for middle-aged wisdom dialogue
 
 在人生的中年阶段，我们常常面临职业压力、家庭责任和内心困惑的三重挑战。古罗马皇帝马库斯·奥勒留（Marcus Aurelius, 121-180 CE）的斯多噶哲学，为现代中年人提供了珍贵的人生智慧。
 
