@@ -154,8 +154,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<!-- [关键修正] 添加 |safe 过滤器，以确保自定义样式能被正确渲染 -->
+<!-- [关键修正] 将自定义样式包裹在 <style> 标签内 -->
+<style>
 
+</style>
 
 
 
@@ -455,7 +457,9 @@ document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 
 
 </script>
-<!-- [关键修正] 添加 |safe 过滤器，以确保自定义脚本能被正确执行 -->
+<!-- [关键修正] 将自定义脚本包裹在 <script> 标签内 -->
+<script>
 <script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
+</script>
 
 </html>
