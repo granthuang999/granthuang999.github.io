@@ -111,45 +111,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
 #postBody hr{height:2px;}
 .g-emoji{font-size:24px;}
-
-/* [新增] 为TOC目录和文章主体布局 */
-.main-content-container {
-    display: flex;
-    flex-direction: row-reverse; /* 目录在右侧 */
-    gap: 24px;
-}
-.article-content {
-    flex-grow: 1;
-    min-width: 0; /* 防止内容溢出 */
-}
-.toc-container {
-    flex-shrink: 0;
-    width: 240px; /* 目录宽度 */
-    position: sticky;
-    top: 2rem; /* 滚动时固定在顶部 */
-    align-self: flex-start; /* 确保从顶部开始对齐 */
-    max-height: calc(100vh - 4rem); /* 防止目录过长 */
-    overflow-y: auto;
-}
-
-@media (max-width: 1024px) {
-    /* 在小屏幕上，将目录移动到文章上方 */
-    .main-content-container {
-        flex-direction: column;
-    }
-    .toc-container {
-        position: static;
-        width: 100%;
-        margin-bottom: 2rem;
-        max-height: none;
-    }
-}
-
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
+
 
 .post-footer {
     display: flex;
@@ -176,17 +143,22 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     transition: opacity 0.3s;
     border: none;
 }
-.share-button:hover { opacity: 0.85; }
-.bottom-text-inline { font-size: small; white-space: nowrap; }
+.share-button:hover {
+    opacity: 0.85;
+}
+.bottom-text-inline {
+    font-size: small;
+    white-space: nowrap; 
+}
 .share-button.x { background-color: #1DA1F2; }
 .share-button.facebook { background-color: #1877F2; }
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<style>
+<!-- [关键修改] 移除了外部的 <style> 标签 -->
 
-</style>
+
 
 
 <body>
@@ -195,12 +167,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1 class="postTitle">《反脆弱》：中年人的抗风险能力提升指南 / "Antifragile": Middle-aged People's Risk Resistance Enhancement Guide</h1>
 <div class="title-right">
     <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
     </a>
     
+
     <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
-        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
     </a>
+
 </div>
 </header>
     <div id="content">
@@ -212,15 +190,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
-<!-- [关键修改] 新增的主体内容容器 -->
-<div class="main-content-container">
-    <!-- 目录容器，TOC插件将在这里生成目录 -->
-    <aside class="toc-container">
-        <div id="GmeekTOC"></div>
-    </aside>
-    <!-- 文章内容容器 -->
-    <article class="article-content">
-        <div class="markdown-body" id="postBody"><p><strong>Nassim Taleb's "Antifragile" theory provides middle-aged people with new thinking for dealing with uncertainty, helping them become stronger in change by building antifragile systems, embracing randomness, and taking moderate risks.</strong></p>
+<div class="markdown-body" id="postBody"><p><strong>Nassim Taleb's "Antifragile" theory provides middle-aged people with new thinking for dealing with uncertainty, helping them become stronger in change by building antifragile systems, embracing randomness, and taking moderate risks.</strong></p>
 <p>去年公司突然宣布裁员，我看着一些工作了十几年的同事被迫离职，深感职场的不确定性。那时候我开始思考：作为中年人，如何在这个充满变化的世界中不仅生存，还能变得更强大？读完纳西姆·塔勒布的《反脆弱》后，我找到了答案。这本书不仅改变了我对风险的认识，更让我学会了如何在混乱中获得成长。</p>
 <p>Last year, when the company suddenly announced layoffs, I watched colleagues who had worked for over a decade being forced to leave, deeply feeling the uncertainty of the workplace. At that time, I began to think: as a middle-aged person, how can I not only survive but also become stronger in this world full of changes? After reading Nassim Taleb's "Antifragile," I found the answer. This book not only changed my understanding of risk but also taught me how to gain growth in chaos.</p>
 <h2><strong>理解反脆弱的核心概念 / Understanding the Core Concept of Antifragility</strong></h2>
@@ -377,29 +347,51 @@ Antifragile education values: Practical abilities, adaptability, innovative thin
 <p>反脆弱, 纳西姆塔勒布, 风险管理, 不确定性应对, 中年人发展, 杠铃策略, 黑天鹅事件, 适应性思维</p>
 
 ##{"slug": "Antifragile", "timestamp": 1753848900}</div>
-        
-        <!-- 页脚、广告、评论等都放在文章容器内 -->
-        <div class="post-footer">
-            <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
-            <div class="share-buttons-inline">
-                <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
-                <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
-                <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
-                <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
-                <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
-            </div>
-        </div>
 
-        <div style="margin-top: 2rem; margin-bottom: 1rem;">
-            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3409938612356670" data-ad-slot="9927006571"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-
-        <div style="margin-top: 2rem;">
-            <script src="https://giscus.app/client.js" data-repo="granthuang999/granthuang999.github.io" data-repo-id="R_kgDOPhhmjA" data-category="Announcements" data-category-id="DIC_kwDOPhhmjM4CuggD" data-mapping="url" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
-        </div>
-    </article>
+<!-- 页脚：分享按钮和 bottomText -->
+<div class="post-footer">
+    <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+    </div>
 </div>
+
+<!-- Google AdSense 广告单元 -->
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<!-- Giscus 评论代码 -->
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
 </div>
     <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
 <a href="https://www.futuremedia.work/about.html">关于本站</a> |
@@ -456,12 +448,62 @@ console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;ba
 </script>
 
 <script>
-// TypeIt.js, 分享功能, 图标加载等脚本...
-// (这部分与您现有的代码一致，为简洁省略，实际文件中应保留)
+// TypeIt.js 高级用法脚本
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteText = "None";
+    const dailySentenceRaw = "None";
+
+    let typeitStrings = [];
+    if (quoteText && quoteText !== 'None') {
+        typeitStrings = [quoteText];
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+        try {
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
+        } catch (e) {
+            console.error("无法解析 daily_sentence:", e);
+        }
+    }
+
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true,
+                 waitUntilVisible: true,
+                 breakLines: false,
+             }).go();
+        }
+    }
+});
+
+// 分享功能的 JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
 </script>
-<!-- [关键修改] 将自定义脚本包裹在 <script> 标签内 -->
-<script>
+<!-- [关键修改] 移除了外部的 <script> 标签 -->
 <script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
-</script>
 
 </html>

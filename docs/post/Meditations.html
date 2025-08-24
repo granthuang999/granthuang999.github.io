@@ -113,45 +113,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
 #postBody hr{height:2px;}
 .g-emoji{font-size:24px;}
-
-/* [新增] 为TOC目录和文章主体布局 */
-.main-content-container {
-    display: flex;
-    flex-direction: row-reverse; /* 目录在右侧 */
-    gap: 24px;
-}
-.article-content {
-    flex-grow: 1;
-    min-width: 0; /* 防止内容溢出 */
-}
-.toc-container {
-    flex-shrink: 0;
-    width: 240px; /* 目录宽度 */
-    position: sticky;
-    top: 2rem; /* 滚动时固定在顶部 */
-    align-self: flex-start; /* 确保从顶部开始对齐 */
-    max-height: calc(100vh - 4rem); /* 防止目录过长 */
-    overflow-y: auto;
-}
-
-@media (max-width: 1024px) {
-    /* 在小屏幕上，将目录移动到文章上方 */
-    .main-content-container {
-        flex-direction: column;
-    }
-    .toc-container {
-        position: static;
-        width: 100%;
-        margin-bottom: 2rem;
-        max-height: none;
-    }
-}
-
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
+
 
 .post-footer {
     display: flex;
@@ -178,17 +145,22 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     transition: opacity 0.3s;
     border: none;
 }
-.share-button:hover { opacity: 0.85; }
-.bottom-text-inline { font-size: small; white-space: nowrap; }
+.share-button:hover {
+    opacity: 0.85;
+}
+.bottom-text-inline {
+    font-size: small;
+    white-space: nowrap; 
+}
 .share-button.x { background-color: #1DA1F2; }
 .share-button.facebook { background-color: #1877F2; }
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<style>
+<!-- [关键修改] 移除了外部的 <style> 标签 -->
 
-</style>
+
 
 
 <body>
@@ -197,12 +169,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1 class="postTitle">《沉思录》的人生修炼 / Life Cultivation Through "Meditations"</h1>
 <div class="title-right">
     <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
-        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
     </a>
     
+
     <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
-        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
     </a>
+
 </div>
 </header>
     <div id="content">
@@ -214,15 +192,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
-<!-- [关键修改] 新增的主体内容容器 -->
-<div class="main-content-container">
-    <!-- 目录容器，TOC插件将在这里生成目录 -->
-    <aside class="toc-container">
-        <div id="GmeekTOC"></div>
-    </aside>
-    <!-- 文章内容容器 -->
-    <article class="article-content">
-        <div class="markdown-body" id="postBody"><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2b22d49d1df172981ad0ebb52c345eddf6734513b579f391e0951d48b9d797e0/68747470733a2f2f757365722d67656e2d6d656469612d6173736574732e73332e616d617a6f6e6177732e636f6d2f677074346f5f696d616765732f31613432376537382d323365642d346439322d616564662d3430326334303564643832622e706e67"><img src="https://camo.githubusercontent.com/2b22d49d1df172981ad0ebb52c345eddf6734513b579f391e0951d48b9d797e0/68747470733a2f2f757365722d67656e2d6d656469612d6173736574732e73332e616d617a6f6e6177732e636f6d2f677074346f5f696d616765732f31613432376537382d323365642d346439322d616564662d3430326334303564643832622e706e67" alt="Book recommendation cover for middle-aged daily reading list" data-canonical-src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/1a427e78-23ed-4d92-aedf-402c405dd82b.png" style="max-width: 100%;"></a></p>
+<div class="markdown-body" id="postBody"><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2b22d49d1df172981ad0ebb52c345eddf6734513b579f391e0951d48b9d797e0/68747470733a2f2f757365722d67656e2d6d656469612d6173736574732e73332e616d617a6f6e6177732e636f6d2f677074346f5f696d616765732f31613432376537382d323365642d346439322d616564662d3430326334303564643832622e706e67"><img src="https://camo.githubusercontent.com/2b22d49d1df172981ad0ebb52c345eddf6734513b579f391e0951d48b9d797e0/68747470733a2f2f757365722d67656e2d6d656469612d6173736574732e73332e616d617a6f6e6177732e636f6d2f677074346f5f696d616765732f31613432376537382d323365642d346439322d616564662d3430326334303564643832622e706e67" alt="Book recommendation cover for middle-aged daily reading list" data-canonical-src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/1a427e78-23ed-4d92-aedf-402c405dd82b.png" style="max-width: 100%;"></a></p>
 <p>在书籍浩如烟海的时代，什么样的书籍能够真正滋养中年人的心灵？马库斯·奥勒留的《沉思录》（Meditations）无疑是一部经得起时间考验的经典，为面临人生转折的中年人提供深刻的人生指导。</p>
 <p>In an era where books are as vast as smoke and sea, what kind of books can truly nourish the souls of middle-aged people? Marcus Aurelius's "Meditations" is undoubtedly a classic that has stood the test of time, providing profound life guidance for middle-aged people facing life transitions.</p>
 <h2><strong>为什么选择《沉思录》/ Why Choose "Meditations"</strong></h2>
@@ -314,29 +284,51 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><strong>关键词 / Keywords:</strong></p>
 <p>沉思录, 马库斯奥勒留, 中年人读书, 哲学经典, 人生修炼, Meditations, Marcus Aurelius, middle-aged reading, philosophical classics, life cultivation<br>
 ##{"slug": "Meditations", "timestamp": 1752761700, "quote": "《沉思录》不仅是一本书，更是一位智者朋友的人生指导。在中年的关键时期，它能帮助我们找到内心的平静和前进的方向。"}</p></div>
-        
-        <!-- 页脚、广告、评论等都放在文章容器内 -->
-        <div class="post-footer">
-            <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
-            <div class="share-buttons-inline">
-                <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
-                <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
-                <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
-                <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
-                <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
-            </div>
-        </div>
 
-        <div style="margin-top: 2rem; margin-bottom: 1rem;">
-            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3409938612356670" data-ad-slot="9927006571"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-
-        <div style="margin-top: 2rem;">
-            <script src="https://giscus.app/client.js" data-repo="granthuang999/granthuang999.github.io" data-repo-id="R_kgDOPhhmjA" data-category="Announcements" data-category-id="DIC_kwDOPhhmjM4CuggD" data-mapping="url" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
-        </div>
-    </article>
+<!-- 页脚：分享按钮和 bottomText -->
+<div class="post-footer">
+    <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+    </div>
 </div>
+
+<!-- Google AdSense 广告单元 -->
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<!-- Giscus 评论代码 -->
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
 </div>
     <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
 <a href="https://www.futuremedia.work/about.html">关于本站</a> |
@@ -393,12 +385,62 @@ console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;ba
 </script>
 
 <script>
-// TypeIt.js, 分享功能, 图标加载等脚本...
-// (这部分与您现有的代码一致，为简洁省略，实际文件中应保留)
+// TypeIt.js 高级用法脚本
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteText = "《沉思录》不仅是一本书，更是一位智者朋友的人生指导。在中年的关键时期，它能帮助我们找到内心的平静和前进的方向。";
+    const dailySentenceRaw = "None";
+
+    let typeitStrings = [];
+    if (quoteText && quoteText !== 'None') {
+        typeitStrings = [quoteText];
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+        try {
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
+        } catch (e) {
+            console.error("无法解析 daily_sentence:", e);
+        }
+    }
+
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true,
+                 waitUntilVisible: true,
+                 breakLines: false,
+             }).go();
+        }
+    }
+});
+
+// 分享功能的 JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
 </script>
-<!-- [关键修改] 将自定义脚本包裹在 <script> 标签内 -->
-<script>
+<!-- [关键修改] 移除了外部的 <script> 标签 -->
 <script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
-</script>
 
 </html>
