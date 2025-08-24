@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>未来传媒</title><link>https://www.futuremedia.work</link><description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description><copyright>未来传媒</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/images/bb.png</url><title>avatar</title><link>https://www.futuremedia.work</link></image><lastBuildDate>Sun, 24 Aug 2025 01:10:24 +0000</lastBuildDate><managingEditor>未来传媒</managingEditor><ttl>60</ttl><webMaster>未来传媒</webMaster><item><title>REITs投资：中年人房地产投资的新选择与财富增值策略/REITs Investment: A New Choice for Middle-aged Real Estate Investment and Wealth Appreciation Strategy</title><link>https://www.futuremedia.work/post/REITs-Investment.html</link><description>## **REITs基础概念与运作机制**
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>未来传媒</title><link>https://www.futuremedia.work</link><description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description><copyright>未来传媒</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/images/bb.png</url><title>avatar</title><link>https://www.futuremedia.work</link></image><lastBuildDate>Sun, 24 Aug 2025 01:35:43 +0000</lastBuildDate><managingEditor>未来传媒</managingEditor><ttl>60</ttl><webMaster>未来传媒</webMaster><item><title>REITs投资：中年人房地产投资的新选择与财富增值策略/REITs Investment: A New Choice for Middle-aged Real Estate Investment and Wealth Appreciation Strategy</title><link>https://www.futuremedia.work/post/REITs-Investment.html</link><description>## **REITs基础概念与运作机制**
 
 Basic Concepts and Operating Mechanisms of REITs
 
@@ -86,30 +86,8 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
 
 本免责声明适用于未来传媒网站（futuremedia.work）的所有内容和服务。</description><guid isPermaLink="true">https://www.futuremedia.work/disclaimer.html</guid><pubDate>Fri, 22 Aug 2025 02:06:41 +0000</pubDate></item><item><title>关于本站&amp;我/About us</title><link>https://www.futuremedia.work/about.html</link><description># 关于本站&amp;我(FM=FutureMedia)
 
-一个中年男人对于自由生活，未来的渴望与探索，本站是用来记录一个中年男人的哲思，读书，笔记，探索，畅想。</description><guid isPermaLink="true">https://www.futuremedia.work/about.html</guid><pubDate>Fri, 22 Aug 2025 02:07:44 +0000</pubDate></item><item><title>个人导航</title><link>https://www.futuremedia.work/link.html</link><description>```Gmeek-html
-&lt;!DOCTYPE html&gt;
-&lt;html lang='zh-CN' class='light'&gt;
-&lt;head&gt;
-    &lt;meta charset='UTF-8'&gt;
-    &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
-    &lt;title&gt;个人导航链接&lt;/title&gt;
-    &lt;script src='https://cdn.tailwindcss.com'&gt;&lt;/script&gt;
-    &lt;link rel='preconnect' href='https://fonts.googleapis.com'&gt;
-    &lt;link rel='preconnect' href='https://fonts.gstatic.com' crossorigin&gt;
-    &lt;link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap' rel='stylesheet'&gt;
-    &lt;style&gt;
-        body { font-family: 'Inter', sans-serif; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        .dark ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #475569; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
-        .dark ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        #no-results { display: none; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body class='bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300'&gt;
+一个中年男人对于自由生活，未来的渴望与探索，本站是用来记录一个中年男人的哲思，读书，笔记，探索，畅想。</description><guid isPermaLink="true">https://www.futuremedia.work/about.html</guid><pubDate>Fri, 22 Aug 2025 02:07:44 +0000</pubDate></item><item><title>个人导航</title><link>https://www.futuremedia.work/link.html</link><description>
+&lt;div class='bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300'&gt;
     &lt;div class='max-w-7xl mx-auto p-4 sm:p-6 lg:p-8'&gt;
         &lt;header class='flex justify-between items-center mb-8'&gt;
             &lt;h1 class='text-3xl font-bold text-slate-900 dark:text-white'&gt;个人导航&lt;/h1&gt;
@@ -183,9 +161,8 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
                             &lt;a href='https://www.midjourney.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Midjourney&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/div&gt;
+                     &lt;/div&gt;           
             &lt;/div&gt;
         &lt;/main&gt;
-        &lt;div id='no-results' class='text-center py-16'&gt;
-            &lt;h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'&gt;无匹配结果&lt;/h3&gt;
-            &lt;p class='text-slate-500 mt-2'&gt;请尝试更换搜索关键词。</description><guid isPermaLink="true">https://www.futuremedia.work/link.html</guid><pubDate>Sat, 23 Aug 2025 23:20:07 +0000</pubDate></item></channel></rss>
+                    &lt;/div&gt;
+    &lt;/div&gt;。</description><guid isPermaLink="true">https://www.futuremedia.work/link.html</guid><pubDate>Sat, 23 Aug 2025 23:20:07 +0000</pubDate></item></channel></rss>

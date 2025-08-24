@@ -1,153 +1,590 @@
-<!DOCTYPE html>
-<html lang="zh-CN" class="light">
+                 <!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人导航链接</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        .dark ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #475569; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
-        .dark ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        #no-results { display: none; }
-    </style>
-</head>
-<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-        <header class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-bold text-slate-900 dark:text-white">个人导航</h1>
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700">
-                <svg id="theme-icon-sun" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z"></path></svg>
-                <svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://www.futuremedia.work/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="/images/bb.png"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="
+<div class='bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300'>
+    <div class='max-w-7xl mx-auto p-4 sm:p-6 lg:p-8'>
+        <header class='flex justify-between items-center mb-8'>
+            <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
+            <button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
+                <svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
+                <svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
             </button>
         </header>
-        <div class="mb-8">
-            <div class="relative">
-                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg>
+        <div class='mb-8'>
+            <div class='relative'>
+                <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
+                    <svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
                 </div>
-                <input type="search" id="search-input" placeholder="快速搜索链接..." class="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm">
+                <input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
             </div>
         </div>
-        <main id="link-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
-                <h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">核心类别：日常高频</h2>
-                <div class="space-y-4">
+        <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
+                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
+                <div class='space-y-4'>
                     <div>
-                        <h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2">常用/置顶</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://www.google.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Google</a>
-                            <a href="https://www.bing.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Bing</a>
-                            <a href="https://mail.google.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Gmail</a>
-                            <a href="https://web.telegram.org" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Telegram</a>
-                            <a href="https://www.notion.so" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Notion</a>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>常用/置顶</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://www.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
+                            <a href='https://www.bing.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
+                            <a href='https://mail.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
+                            <a href='https://web.telegram.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
+                            <a href='https://www.notion.so' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
-                <h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">工作与生产力</h2>
-                <div class="space-y-4">
+            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
+                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>工作与生产力</h2>
+                <div class='space-y-4'>
                     <div>
-                        <h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2">代码/开发</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://github.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">GitHub</a>
-                            <a href="https://developer.mozilla.org" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">MDN</a>
-                            <a href="https://vercel.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Vercel</a>
-                            <a href="https://www.cloudflare.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Cloudflare</a>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>代码/开发</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://github.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
+                            <a href='https://developer.mozilla.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
+                            <a href='https://vercel.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
+                            <a href='https://www.cloudflare.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
                         </div>
                     </div>
                      <div>
-                        <h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2">设计/创意</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://www.figma.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Figma</a>
-                            <a href="https://www.canva.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Canva</a>
-                            <a href="https://www.pexels.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Pexels</a>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>设计/创意</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://www.figma.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
+                            <a href='https://www.canva.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
+                            <a href='https://www.pexels.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
-                <h2 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">学习与资讯</h2>
-                <div class="space-y-4">
+            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
+                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>学习与资讯</h2>
+                <div class='space-y-4'>
                     <div>
-                        <h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2">新闻/阅读</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://www.reuters.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Reuters</a>
-                            <a href="https://techcrunch.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">TechCrunch</a>
-                            <a href="https://feedly.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Feedly</a>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>新闻/阅读</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://www.reuters.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Reuters</a>
+                            <a href='https://techcrunch.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
+                            <a href='https://feedly.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
                         </div>
                     </div>
                      <div>
-                        <h3 class="font-semibold text-slate-600 dark:text-slate-400 mb-2">AI 工具</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://chat.openai.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">ChatGPT</a>
-                            <a href="https://gemini.google.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Gemini</a>
-                            <a href="https://www.midjourney.com" target="_blank" class="link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full">Midjourney</a>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>AI 工具</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://chat.openai.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
+                            <a href='https://gemini.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
+                            <a href='https://www.midjourney.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
                         </div>
                     </div>
-                </div>
+                     </div>           
             </div>
         </main>
-        <div id="no-results" class="text-center py-16">
-            <h3 class="text-lg font-semibold text-slate-600 dark:text-slate-400">无匹配结果</h3>
-            <p class="text-slate-500 mt-2">请尝试更换搜索关键词。</p>
+                    </div>
+    </div>。">
+<meta property="og:title" content="个人导航">
+<meta property="og:description" content="
+<div class='bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300'>
+    <div class='max-w-7xl mx-auto p-4 sm:p-6 lg:p-8'>
+        <header class='flex justify-between items-center mb-8'>
+            <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
+            <button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
+                <svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
+                <svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
+            </button>
+        </header>
+        <div class='mb-8'>
+            <div class='relative'>
+                <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
+                    <svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
+                </div>
+                <input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
+            </div>
         </div>
+        <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
+                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
+                <div class='space-y-4'>
+                    <div>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>常用/置顶</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://www.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
+                            <a href='https://www.bing.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
+                            <a href='https://mail.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
+                            <a href='https://web.telegram.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
+                            <a href='https://www.notion.so' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
+                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>工作与生产力</h2>
+                <div class='space-y-4'>
+                    <div>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>代码/开发</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://github.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
+                            <a href='https://developer.mozilla.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
+                            <a href='https://vercel.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
+                            <a href='https://www.cloudflare.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>设计/创意</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://www.figma.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
+                            <a href='https://www.canva.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
+                            <a href='https://www.pexels.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
+                <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>学习与资讯</h2>
+                <div class='space-y-4'>
+                    <div>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>新闻/阅读</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://www.reuters.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Reuters</a>
+                            <a href='https://techcrunch.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
+                            <a href='https://feedly.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>AI 工具</h3>
+                        <div class='flex flex-wrap gap-2'>
+                            <a href='https://chat.openai.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
+                            <a href='https://gemini.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
+                            <a href='https://www.midjourney.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
+                        </div>
+                    </div>
+                     </div>           
+            </div>
+        </main>
+                    </div>
+    </div>。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.futuremedia.work/link.html">
+<meta property="og:image" content="https://www.futuremedia.work/images/big.png">
+<title>个人导航</title>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FDL6BTW5FM');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sh44c07wsg");
+</script>
+<!-- [新增] Google AdSense 核心脚本 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
+<!-- [新增] 引入 TypeIt.js 库 -->
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+/* --- [关键修改] 页眉背景样式 --- */
+.page-header {
+    position: relative; /* 这是为了定位遮罩层 */
+    /* 从 config.json 读取背景图 URL */
+    background-image: url('/images/header-bg.png');
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem 1rem; /* 您可以根据喜好调整上下内边距 */
+    border-radius: 8px; /* 为页眉添加圆角 */
+    margin-bottom: 2rem; /* 页眉和下方内容的间距 */
+    color: white; /* 将页眉内的文字颜色设为白色 */
+    overflow: hidden; /* 确保遮罩的圆角生效 */
+    display:flex; /* 保持内部 flex 布局 */
+    padding-bottom:8px;
+    border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
+}
+
+/* 这会创建一个半透明的黑色遮罩层，让文字更易读 */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色遮罩 */
+    z-index: 1;
+}
+
+/* 这能确保页眉的实际内容（标题、按钮等）显示在遮罩层上方 */
+.page-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 将页眉中的链接文字也设为白色 */
+.page-header a {
+    color: white !important;
+}
+
+/* 将页眉中的SVG图标也填充为白色 */
+.page-header .octicon path {
+    fill: white;
+}
+/* --- 修改结束 --- */
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+    .post-footer { flex-direction: column; align-items: flex-start; }
+}
+
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--borderColor-default, var(--color-border-default));
+}
+.share-buttons-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.share-button {
+    display: inline-block;
+    padding: 4px 12px; 
+    border-radius: 6px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 12px; 
+    transition: opacity 0.3s;
+    border: none;
+}
+.share-button:hover {
+    opacity: 0.85;
+}
+.bottom-text-inline {
+    font-size: small;
+    white-space: nowrap; 
+}
+.share-button.x { background-color: #1DA1F2; }
+.share-button.facebook { background-color: #1877F2; }
+.share-button.linkedin { background-color: #0A66C2; }
+.share-button.weibo { background-color: #e6162d; }
+.share-button.telegram { background-color: #26A5E4; }
+</style>
+
+
+
+
+<body>
+    <!-- [关键修改] 将 div#header 替换为 header.page-header -->
+    <header id="header" class="page-header">
+<h1 class="postTitle">个人导航</h1>
+<div class="title-right">
+    <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</header>
+    <div id="content">
+<!-- 文章页 Banner 图片 -->
+<div style="text-align: center; margin-bottom: 24px;">
+    <img src="https://www.futuremedia.work/images/big.png" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
+</div>
+
+<!-- [新增] 为 TypeIt 动画预留的占位符 -->
+<div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
+
+<div class="markdown-body" id="postBody"><div>
+    <div>
+        
+            <h1>个人导航</h1>
+            
+                
+                
+            
+        
+        <div>
+            <div>
+                <div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+            <div>
+                <h2>核心类别：日常高频</h2>
+                <div>
+                    <div>
+                        <h3>常用/置顶</h3>
+                        <div>
+                            <a href="https://www.google.com" rel="nofollow">Google</a>
+                            <a href="https://www.bing.com" rel="nofollow">Bing</a>
+                            <a href="https://mail.google.com" rel="nofollow">Gmail</a>
+                            <a href="https://web.telegram.org" rel="nofollow">Telegram</a>
+                            <a href="https://www.notion.so" rel="nofollow">Notion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>工作与生产力</h2>
+                <div>
+                    <div>
+                        <h3>代码/开发</h3>
+                        <div>
+                            <a href="https://github.com">GitHub</a>
+                            <a href="https://developer.mozilla.org" rel="nofollow">MDN</a>
+                            <a href="https://vercel.com" rel="nofollow">Vercel</a>
+                            <a href="https://www.cloudflare.com" rel="nofollow">Cloudflare</a>
+                        </div>
+                    </div>
+                     <div>
+                        <h3>设计/创意</h3>
+                        <div>
+                            <a href="https://www.figma.com" rel="nofollow">Figma</a>
+                            <a href="https://www.canva.com" rel="nofollow">Canva</a>
+                            <a href="https://www.pexels.com" rel="nofollow">Pexels</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>学习与资讯</h2>
+                <div>
+                    <div>
+                        <h3>新闻/阅读</h3>
+                        <div>
+                            <a href="https://www.reuters.com" rel="nofollow">Reuters</a>
+                            <a href="https://techcrunch.com" rel="nofollow">TechCrunch</a>
+                            <a href="https://feedly.com" rel="nofollow">Feedly</a>
+                        </div>
+                    </div>
+                     <div>
+                        <h3>AI 工具</h3>
+                        <div>
+                            <a href="https://chat.openai.com" rel="nofollow">ChatGPT</a>
+                            <a href="https://gemini.google.com" rel="nofollow">Gemini</a>
+                            <a href="https://www.midjourney.com" rel="nofollow">Midjourney</a>
+                        </div>
+                    </div>
+                     </div>           
+            </div>
+        
+                    </div>
+    </div></div>
+
+<!-- 页脚：分享按钮和 bottomText -->
+<div class="post-footer">
+    <div class="bottom-text-inline"></div>
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
     </div>
+</div>
+
+<!-- Google AdSense 广告单元 -->
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('theme-toggle');
-            const sunIcon = document.getElementById('theme-icon-sun');
-            const moonIcon = document.getElementById('theme-icon-moon');
-            const htmlEl = document.documentElement;
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            htmlEl.classList.toggle('dark', currentTheme === 'dark');
-            sunIcon.classList.toggle('hidden', currentTheme === 'dark');
-            moonIcon.classList.toggle('hidden', currentTheme !== 'dark');
-            themeToggle.addEventListener('click', () => {
-                const isDark = htmlEl.classList.toggle('dark');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                sunIcon.classList.toggle('hidden', isDark);
-                moonIcon.classList.toggle('hidden', !isDark);
-            });
-            const searchInput = document.getElementById('search-input');
-            const linkGrid = document.getElementById('link-grid');
-            const categoryCards = document.querySelectorAll('.category-card');
-            const noResults = document.getElementById('no-results');
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                let hasVisibleCards = false;
-                categoryCards.forEach(card => {
-                    const links = card.querySelectorAll('.link-item');
-                    let hasVisibleLinks = false;
-                    links.forEach(link => {
-                        const linkText = link.textContent.toLowerCase();
-                        if (linkText.includes(searchTerm)) {
-                            link.style.display = '';
-                            hasVisibleLinks = true;
-                        } else {
-                            link.style.display = 'none';
-                        }
-                    });
-                    if (hasVisibleLinks) {
-                        card.style.display = '';
-                        hasVisibleCards = true;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-                linkGrid.style.display = hasVisibleCards ? 'grid' : 'none';
-                noResults.style.display = hasVisibleCards ? 'none' : 'block';
-            });
-        });
+         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+</div>
+
+<!-- Giscus 评论代码 -->
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
+<a href="https://www.futuremedia.work/about.html">关于本站</a> |
+<a href="https://www.futuremedia.work/terms-of-service.html">服务条款</a> |  
+<a href="https://www.futuremedia.work/privacy-policy.html">隐私政策</a> |
+<a href="https://www.futuremedia.work/disclaimer.html">免责声明</a> 
+</div>
+<div id="footer2">
+    <span id="runday"></span><span>维护：<a href="https://www.futuremedia.work" target="_blank">疯子</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("7/16/2025"!=""){
+    var startSite=new Date("7/16/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
 </body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+// --- [新增] TypeIt.js 高级用法脚本 ---
+document.addEventListener('DOMContentLoaded', function() {
+    // 直接从模板渲染的数据中获取 'quote' 或 'daily_sentence'
+    const quoteText = "None";
+    const dailySentenceRaw = "None";
+
+    let typeitStrings = [];
+    if (quoteText && quoteText !== 'None') {
+        typeitStrings = [quoteText];
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+        // Gmeek 会把Python列表转成带'['和']'的字符串，我们需要处理一下
+        try {
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
+        } catch (e) {
+            console.error("无法解析 daily_sentence:", e);
+        }
+    }
+
+    // 确保有内容才执行动画
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true, // 模拟真人打字，速度会随机变化
+                 waitUntilVisible: true,
+                 breakLines: false, // 如果有多句话，在同一行显示
+             }).go();
+        }
+    }
+});
+// --- 新增结束 ---
+
+// --- 分享功能的 JavaScript ---
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+// --- JavaScript 结束 ---
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+</script>
+<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
+
 </html>
