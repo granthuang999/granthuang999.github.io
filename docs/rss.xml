@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>未来传媒</title><link>https://www.futuremedia.work</link><description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description><copyright>未来传媒</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/images/bb.png</url><title>avatar</title><link>https://www.futuremedia.work</link></image><lastBuildDate>Sun, 24 Aug 2025 00:17:45 +0000</lastBuildDate><managingEditor>未来传媒</managingEditor><ttl>60</ttl><webMaster>未来传媒</webMaster><item><title>REITs投资：中年人房地产投资的新选择与财富增值策略/REITs Investment: A New Choice for Middle-aged Real Estate Investment and Wealth Appreciation Strategy</title><link>https://www.futuremedia.work/post/REITs-Investment.html</link><description>## **REITs基础概念与运作机制**
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>未来传媒</title><link>https://www.futuremedia.work</link><description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description><copyright>未来传媒</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/images/bb.png</url><title>avatar</title><link>https://www.futuremedia.work</link></image><lastBuildDate>Sun, 24 Aug 2025 00:23:36 +0000</lastBuildDate><managingEditor>未来传媒</managingEditor><ttl>60</ttl><webMaster>未来传媒</webMaster><item><title>REITs投资：中年人房地产投资的新选择与财富增值策略/REITs Investment: A New Choice for Middle-aged Real Estate Investment and Wealth Appreciation Strategy</title><link>https://www.futuremedia.work/post/REITs-Investment.html</link><description>## **REITs基础概念与运作机制**
 
 Basic Concepts and Operating Mechanisms of REITs
 
@@ -93,10 +93,10 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
     &lt;meta charset='UTF-8'&gt;
     &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
     &lt;title&gt;个人导航链接&lt;/title&gt;
-    &lt;script src='[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)'&gt;&lt;/script&gt;
-    &lt;link rel='preconnect' href='[https://fonts.googleapis.com](https://fonts.googleapis.com)'&gt;
-    &lt;link rel='preconnect' href='[https://fonts.gstatic.com](https://fonts.gstatic.com)' crossorigin&gt;
-    &lt;link href='[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap)' rel='stylesheet'&gt;
+    &lt;script src='https://cdn.tailwindcss.com'&gt;&lt;/script&gt;
+    &lt;link rel='preconnect' href='https://fonts.googleapis.com'&gt;
+    &lt;link rel='preconnect' href='https://fonts.gstatic.com' crossorigin&gt;
+    &lt;link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap' rel='stylesheet'&gt;
     &lt;style&gt;
         /* 使用 Inter 字体 */
         body {
@@ -148,7 +148,7 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
         &lt;div class='mb-8'&gt;
             &lt;div class='relative'&gt;
                 &lt;div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'&gt;
-                    &lt;svg class='h-5 w-5 text-slate-400' xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'&gt;
+                    &lt;svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'&gt;
                         &lt;path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /&gt;
                     &lt;/svg&gt;
                 &lt;/div&gt;
