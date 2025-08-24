@@ -76,8 +76,10 @@
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<!-- [关键修正] 添加 |safe 过滤器，以确保自定义样式能被正确渲染 -->
+<!-- [关键修正] 将自定义样式包裹在 <style> 标签内 -->
+<style>
 {{ blogBase['style']|safe }}
+</style>
 
 {% endblock %}
 {% block header %}
@@ -284,6 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
 {%- endif %}
 
 </script>
-<!-- [关键修正] 添加 |safe 过滤器，以确保自定义脚本能被正确执行 -->
+<!-- [关键修正] 将自定义脚本包裹在 <script> 标签内 -->
+<script>
 {{ blogBase['script']|safe }}
+</script>
 {% endblock %}
