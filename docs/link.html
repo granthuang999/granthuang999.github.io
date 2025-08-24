@@ -14,19 +14,7 @@
 <div class='max-w-7xl mx-auto'>
 <header class='flex justify-between items-center mb-8'>
 <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
-<button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
-<svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
-<svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
-</button>
 </header>
-<div class='mb-8'>
-<div class='relative'>
-<div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-<svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
-</div>
-<input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
-</div>
-</div>
 <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
@@ -87,27 +75,16 @@
 </div>
 </div>
 </main>
-<div id='no-results' class='text-center py-16'>
-<h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'>无匹配结果</h3>
-<p class='text-slate-500 mt-2'>请尝试更换搜索关键词。">
+</div>
+</div>
+
+##{'style': '.nav-page-container { font-family: 'Inter', sans-serif; }'}。">
 <meta property="og:title" content="导航链接">
 <meta property="og:description" content="<div class='nav-page-container'>
 <div class='max-w-7xl mx-auto'>
 <header class='flex justify-between items-center mb-8'>
 <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
-<button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
-<svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
-<svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
-</button>
 </header>
-<div class='mb-8'>
-<div class='relative'>
-<div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-<svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
-</div>
-<input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
-</div>
-</div>
 <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
@@ -168,9 +145,10 @@
 </div>
 </div>
 </main>
-<div id='no-results' class='text-center py-16'>
-<h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'>无匹配结果</h3>
-<p class='text-slate-500 mt-2'>请尝试更换搜索关键词。">
+</div>
+</div>
+
+##{'style': '.nav-page-container { font-family: 'Inter', sans-serif; }'}。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.futuremedia.work/link.html">
 <meta property="og:image" content="https://www.futuremedia.work/images/big.png">
@@ -314,7 +292,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </style>
 <!-- [关键修正] 将自定义样式包裹在 <style> 标签内 -->
 <style>
-.nav-page-container { font-family: 'Inter', sans-serif; } .nav-page-container ::-webkit-scrollbar { width: 8px; } .nav-page-container ::-webkit-scrollbar-track { background: #f1f5f9; } .nav-page-container .dark ::-webkit-scrollbar-track { background: #1e293b; } .nav-page-container ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; } .nav-page-container .dark ::-webkit-scrollbar-thumb { background: #475569; } #no-results { display: none; }
+.nav-page-container { font-family: 'Inter', sans-serif; }
 </style>
 
 
@@ -353,18 +331,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <h1>个人导航</h1>
 
-
-
-
-
-<div>
-<div>
-<div>
-
-</div>
-
-</div>
-</div>
 
 <div>
 <h2>核心类别：日常高频</h2>
@@ -425,13 +391,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
 
-<div id="user-content-no-results">
-<h3>无匹配结果</h3>
-<p>请尝试更换搜索关键词。</p>
 </div>
 </div>
-</div>
-<p>##{"style": ".nav-page-container { font-family: 'Inter', sans-serif; } .nav-page-container ::-webkit-scrollbar { width: 8px; } .nav-page-container ::-webkit-scrollbar-track { background: #f1f5f9; } .nav-page-container .dark ::-webkit-scrollbar-track { background: #1e293b; } .nav-page-container ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; } .nav-page-container .dark ::-webkit-scrollbar-thumb { background: #475569; } #no-results { display: none; }", "script": "(function() { const themeToggle = document.getElementById('theme-toggle'); if (!themeToggle) return; const sunIcon = document.getElementById('theme-icon-sun'); const moonIcon = document.getElementById('theme-icon-moon'); const htmlEl = document.documentElement; const applyTheme = (theme) =&gt; { htmlEl.classList.toggle('dark', theme === 'dark'); if(sunIcon &amp;&amp; moonIcon) { sunIcon.classList.toggle('hidden', theme === 'dark'); moonIcon.classList.toggle('hidden', theme !== 'dark'); } }; const currentTheme = localStorage.getItem('theme') || 'light'; applyTheme(currentTheme); themeToggle.addEventListener('click', () =&gt; { const isDark = htmlEl.classList.contains('dark'); const newTheme = isDark ? 'light' : 'dark'; localStorage.setItem('theme', newTheme); applyTheme(newTheme); }); const searchInput = document.getElementById('search-input'); const linkGrid = document.getElementById('link-grid'); const categoryCards = document.querySelectorAll('.category-card'); const noResults = document.getElementById('no-results'); if (!searchInput) return; searchInput.addEventListener('input', (e) =&gt; { const searchTerm = e.target.value.toLowerCase(); let hasVisibleCards = false; categoryCards.forEach(card =&gt; { const links = card.querySelectorAll('.link-item'); let hasVisibleLinks = false; links.forEach(link =&gt; { const linkText = link.textContent.toLowerCase(); if (linkText.includes(searchTerm)) { link.style.display = ''; hasVisibleLinks = true; } else { link.style.display = 'none'; } }); if (hasVisibleLinks) { card.style.display = ''; hasVisibleCards = true; } else { card.style.display = 'none'; } }); if(linkGrid) linkGrid.style.display = hasVisibleCards ? 'grid' : 'none'; if(noResults) noResults.style.display = hasVisibleCards ? 'none' : 'block'; }); })();"}</p></div>
+<p>##{"style": ".nav-page-container { font-family: 'Inter', sans-serif; }"}</p></div>
 
 <!-- 页脚：分享按钮和 bottomText -->
 <div class="post-footer">
@@ -590,7 +552,7 @@ document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 </script>
 <!-- [关键修正] 将自定义脚本包裹在 <script> 标签内 -->
 <script>
-<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>(function() { const themeToggle = document.getElementById('theme-toggle'); if (!themeToggle) return; const sunIcon = document.getElementById('theme-icon-sun'); const moonIcon = document.getElementById('theme-icon-moon'); const htmlEl = document.documentElement; const applyTheme = (theme) => { htmlEl.classList.toggle('dark', theme === 'dark'); if(sunIcon && moonIcon) { sunIcon.classList.toggle('hidden', theme === 'dark'); moonIcon.classList.toggle('hidden', theme !== 'dark'); } }; const currentTheme = localStorage.getItem('theme') || 'light'; applyTheme(currentTheme); themeToggle.addEventListener('click', () => { const isDark = htmlEl.classList.contains('dark'); const newTheme = isDark ? 'light' : 'dark'; localStorage.setItem('theme', newTheme); applyTheme(newTheme); }); const searchInput = document.getElementById('search-input'); const linkGrid = document.getElementById('link-grid'); const categoryCards = document.querySelectorAll('.category-card'); const noResults = document.getElementById('no-results'); if (!searchInput) return; searchInput.addEventListener('input', (e) => { const searchTerm = e.target.value.toLowerCase(); let hasVisibleCards = false; categoryCards.forEach(card => { const links = card.querySelectorAll('.link-item'); let hasVisibleLinks = false; links.forEach(link => { const linkText = link.textContent.toLowerCase(); if (linkText.includes(searchTerm)) { link.style.display = ''; hasVisibleLinks = true; } else { link.style.display = 'none'; } }); if (hasVisibleLinks) { card.style.display = ''; hasVisibleCards = true; } else { card.style.display = 'none'; } }); if(linkGrid) linkGrid.style.display = hasVisibleCards ? 'grid' : 'none'; if(noResults) noResults.style.display = hasVisibleCards ? 'none' : 'block'; }); })();
+<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
 </script>
 
 </html>
