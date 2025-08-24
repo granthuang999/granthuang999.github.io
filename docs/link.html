@@ -10,23 +10,11 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="<div class='nav-page-container'>
+<meta name="description" content="<div class='nav-page-container' style='font-family: 'Inter', sans-serif;'>
 <div class='max-w-7xl mx-auto'>
 <header class='flex justify-between items-center mb-8'>
 <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
-<button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
-<svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
-<svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
-</button>
 </header>
-<div class='mb-8'>
-<div class='relative'>
-<div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-<svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
-</div>
-<input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
-</div>
-</div>
 <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
@@ -34,11 +22,11 @@
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>常用/置顶</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://www.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
-<a href='https://www.bing.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
-<a href='https://mail.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
-<a href='https://web.telegram.org/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
-<a href='https://www.notion.so/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
+<a href='https://www.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
+<a href='https://www.bing.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
+<a href='https://mail.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
+<a href='https://web.telegram.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
+<a href='https://www.notion.so' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
 </div>
 </div>
 </div>
@@ -49,18 +37,18 @@
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>代码/开发</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://github.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
-<a href='https://developer.mozilla.org/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
-<a href='https://vercel.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
-<a href='https://www.cloudflare.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
+<a href='https://github.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
+<a href='https://developer.mozilla.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
+<a href='https://vercel.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
+<a href='https://www.cloudflare.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
 </div>
 </div>
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>设计/创意</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://www.figma.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
-<a href='https://www.canva.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
-<a href='https://www.pexels.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
+<a href='https://www.figma.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
+<a href='https://www.canva.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
+<a href='https://www.pexels.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
 </div>
 </div>
 </div>
@@ -72,42 +60,29 @@
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>新闻/阅读</h3>
 <div class='flex flex-wrap gap-2'>
 <a href='[可疑链接已删除]' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Reuters</a>
-<a href='https://techcrunch.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
-<a href='https://feedly.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
+<a href='https://techcrunch.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
+<a href='https://feedly.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
 </div>
 </div>
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>AI 工具</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://chat.openai.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
-<a href='https://gemini.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
-<a href='https://www.midjourney.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
+<a href='https://chat.openai.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
+<a href='https://gemini.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
+<a href='https://www.midjourney.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
 </div>
 </div>
 </div>
 </div>
 </main>
-<div id='no-results' class='text-center py-16'>
-<h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'>无匹配结果</h3>
-<p class='text-slate-500 mt-2'>请尝试更换搜索关键词。">
+</div>
+</div>。">
 <meta property="og:title" content="导航链接">
-<meta property="og:description" content="<div class='nav-page-container'>
+<meta property="og:description" content="<div class='nav-page-container' style='font-family: 'Inter', sans-serif;'>
 <div class='max-w-7xl mx-auto'>
 <header class='flex justify-between items-center mb-8'>
 <h1 class='text-3xl font-bold text-slate-900 dark:text-white'>个人导航</h1>
-<button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'>
-<svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'></path></svg>
-<svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path></svg>
-</button>
 </header>
-<div class='mb-8'>
-<div class='relative'>
-<div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-<svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /></svg>
-</div>
-<input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'>
-</div>
-</div>
 <main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 <div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'>
 <h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'>核心类别：日常高频</h2>
@@ -115,11 +90,11 @@
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>常用/置顶</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://www.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
-<a href='https://www.bing.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
-<a href='https://mail.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
-<a href='https://web.telegram.org/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
-<a href='https://www.notion.so/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
+<a href='https://www.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Google</a>
+<a href='https://www.bing.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Bing</a>
+<a href='https://mail.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gmail</a>
+<a href='https://web.telegram.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Telegram</a>
+<a href='https://www.notion.so' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Notion</a>
 </div>
 </div>
 </div>
@@ -130,18 +105,18 @@
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>代码/开发</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://github.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
-<a href='https://developer.mozilla.org/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
-<a href='https://vercel.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
-<a href='https://www.cloudflare.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
+<a href='https://github.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>GitHub</a>
+<a href='https://developer.mozilla.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>MDN</a>
+<a href='https://vercel.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Vercel</a>
+<a href='https://www.cloudflare.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Cloudflare</a>
 </div>
 </div>
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>设计/创意</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://www.figma.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
-<a href='https://www.canva.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
-<a href='https://www.pexels.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
+<a href='https://www.figma.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Figma</a>
+<a href='https://www.canva.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Canva</a>
+<a href='https://www.pexels.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Pexels</a>
 </div>
 </div>
 </div>
@@ -153,24 +128,23 @@
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>新闻/阅读</h3>
 <div class='flex flex-wrap gap-2'>
 <a href='[可疑链接已删除]' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Reuters</a>
-<a href='https://techcrunch.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
-<a href='https://feedly.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
+<a href='https://techcrunch.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>TechCrunch</a>
+<a href='https://feedly.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Feedly</a>
 </div>
 </div>
 <div>
 <h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'>AI 工具</h3>
 <div class='flex flex-wrap gap-2'>
-<a href='https://chat.openai.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
-<a href='https://gemini.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
-<a href='https://www.midjourney.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
+<a href='https://chat.openai.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>ChatGPT</a>
+<a href='https://gemini.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Gemini</a>
+<a href='https://www.midjourney.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'>Midjourney</a>
 </div>
 </div>
 </div>
 </div>
 </main>
-<div id='no-results' class='text-center py-16'>
-<h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'>无匹配结果</h3>
-<p class='text-slate-500 mt-2'>请尝试更换搜索关键词。">
+</div>
+</div>。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.futuremedia.work/link.html">
 <meta property="og:image" content="https://www.futuremedia.work/images/big.png">
@@ -314,7 +288,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </style>
 <!-- [关键修正] 将自定义样式包裹在 <style> 标签内 -->
 <style>
-.nav-page-container { font-family: Inter, sans-serif; } #no-results { display: none; }
+
 </style>
 
 
@@ -354,29 +328,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1>个人导航</h1>
 
 
-
-
-
-<div>
-<div>
-<div>
-
-</div>
-
-</div>
-</div>
-
 <div>
 <h2>核心类别：日常高频</h2>
 <div>
 <div>
 <h3>常用/置顶</h3>
 <div>
-<a href="https://www.google.com/" rel="nofollow">Google</a>
-<a href="https://www.bing.com/" rel="nofollow">Bing</a>
-<a href="https://mail.google.com/" rel="nofollow">Gmail</a>
-<a href="https://web.telegram.org/" rel="nofollow">Telegram</a>
-<a href="https://www.notion.so/" rel="nofollow">Notion</a>
+<a href="https://www.google.com" rel="nofollow">Google</a>
+<a href="https://www.bing.com" rel="nofollow">Bing</a>
+<a href="https://mail.google.com" rel="nofollow">Gmail</a>
+<a href="https://web.telegram.org" rel="nofollow">Telegram</a>
+<a href="https://www.notion.so" rel="nofollow">Notion</a>
 </div>
 </div>
 </div>
@@ -387,18 +349,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div>
 <h3>代码/开发</h3>
 <div>
-<a href="https://github.com/">GitHub</a>
-<a href="https://developer.mozilla.org/" rel="nofollow">MDN</a>
-<a href="https://vercel.com/" rel="nofollow">Vercel</a>
-<a href="https://www.cloudflare.com/" rel="nofollow">Cloudflare</a>
+<a href="https://github.com">GitHub</a>
+<a href="https://developer.mozilla.org" rel="nofollow">MDN</a>
+<a href="https://vercel.com" rel="nofollow">Vercel</a>
+<a href="https://www.cloudflare.com" rel="nofollow">Cloudflare</a>
 </div>
 </div>
 <div>
 <h3>设计/创意</h3>
 <div>
-<a href="https://www.figma.com/" rel="nofollow">Figma</a>
-<a href="https://www.canva.com/" rel="nofollow">Canva</a>
-<a href="https://www.pexels.com/" rel="nofollow">Pexels</a>
+<a href="https://www.figma.com" rel="nofollow">Figma</a>
+<a href="https://www.canva.com" rel="nofollow">Canva</a>
+<a href="https://www.pexels.com" rel="nofollow">Pexels</a>
 </div>
 </div>
 </div>
@@ -410,28 +372,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h3>新闻/阅读</h3>
 <div>
 <a href="[可疑链接已删除]">Reuters</a>
-<a href="https://techcrunch.com/" rel="nofollow">TechCrunch</a>
-<a href="https://feedly.com/" rel="nofollow">Feedly</a>
+<a href="https://techcrunch.com" rel="nofollow">TechCrunch</a>
+<a href="https://feedly.com" rel="nofollow">Feedly</a>
 </div>
 </div>
 <div>
 <h3>AI 工具</h3>
 <div>
-<a href="https://chat.openai.com/" rel="nofollow">ChatGPT</a>
-<a href="https://gemini.google.com/" rel="nofollow">Gemini</a>
-<a href="https://www.midjourney.com/" rel="nofollow">Midjourney</a>
+<a href="https://chat.openai.com" rel="nofollow">ChatGPT</a>
+<a href="https://gemini.google.com" rel="nofollow">Gemini</a>
+<a href="https://www.midjourney.com" rel="nofollow">Midjourney</a>
 </div>
 </div>
 </div>
 </div>
 
-<div id="user-content-no-results">
-<h3>无匹配结果</h3>
-<p>请尝试更换搜索关键词。</p>
 </div>
-</div>
-</div>
-<p>##{"style": ".nav-page-container { font-family: Inter, sans-serif; } #no-results { display: none; }", "script": "(function() { const themeToggle = document.getElementById('theme-toggle'); if (!themeToggle) return; const sunIcon = document.getElementById('theme-icon-sun'); const moonIcon = document.getElementById('theme-icon-moon'); const htmlEl = document.documentElement; const applyTheme = (theme) =&gt; { htmlEl.classList.toggle('dark', theme === 'dark'); if(sunIcon &amp;&amp; moonIcon) { sunIcon.classList.toggle('hidden', theme === 'dark'); moonIcon.classList.toggle('hidden', theme !== 'dark'); } }; const currentTheme = localStorage.getItem('theme') || 'light'; applyTheme(currentTheme); themeToggle.addEventListener('click', () =&gt; { const isDark = htmlEl.classList.contains('dark'); const newTheme = isDark ? 'light' : 'dark'; localStorage.setItem('theme', newTheme); applyTheme(newTheme); }); const searchInput = document.getElementById('search-input'); const linkGrid = document.getElementById('link-grid'); const categoryCards = document.querySelectorAll('.category-card'); const noResults = document.getElementById('no-results'); if (!searchInput) return; searchInput.addEventListener('input', (e) =&gt; { const searchTerm = e.target.value.toLowerCase(); let hasVisibleCards = false; categoryCards.forEach(card =&gt; { const links = card.querySelectorAll('.link-item'); let hasVisibleLinks = false; links.forEach(link =&gt; { const linkText = link.textContent.toLowerCase(); if (linkText.includes(searchTerm)) { link.style.display = ''; hasVisibleLinks = true; } else { link.style.display = 'none'; } }); if (hasVisibleLinks) { card.style.display = ''; hasVisibleCards = true; } else { card.style.display = 'none'; } }); if(linkGrid) linkGrid.style.display = hasVisibleCards ? 'grid' : 'none'; if(noResults) noResults.style.display = hasVisibleCards ? 'none' : 'block'; }); })();"}</p></div>
+</div></div>
 
 <!-- 页脚：分享按钮和 bottomText -->
 <div class="post-footer">
@@ -590,7 +547,7 @@ document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 </script>
 <!-- [关键修正] 将自定义脚本包裹在 <script> 标签内 -->
 <script>
-<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>(function() { const themeToggle = document.getElementById('theme-toggle'); if (!themeToggle) return; const sunIcon = document.getElementById('theme-icon-sun'); const moonIcon = document.getElementById('theme-icon-moon'); const htmlEl = document.documentElement; const applyTheme = (theme) => { htmlEl.classList.toggle('dark', theme === 'dark'); if(sunIcon && moonIcon) { sunIcon.classList.toggle('hidden', theme === 'dark'); moonIcon.classList.toggle('hidden', theme !== 'dark'); } }; const currentTheme = localStorage.getItem('theme') || 'light'; applyTheme(currentTheme); themeToggle.addEventListener('click', () => { const isDark = htmlEl.classList.contains('dark'); const newTheme = isDark ? 'light' : 'dark'; localStorage.setItem('theme', newTheme); applyTheme(newTheme); }); const searchInput = document.getElementById('search-input'); const linkGrid = document.getElementById('link-grid'); const categoryCards = document.querySelectorAll('.category-card'); const noResults = document.getElementById('no-results'); if (!searchInput) return; searchInput.addEventListener('input', (e) => { const searchTerm = e.target.value.toLowerCase(); let hasVisibleCards = false; categoryCards.forEach(card => { const links = card.querySelectorAll('.link-item'); let hasVisibleLinks = false; links.forEach(link => { const linkText = link.textContent.toLowerCase(); if (linkText.includes(searchTerm)) { link.style.display = ''; hasVisibleLinks = true; } else { link.style.display = 'none'; } }); if (hasVisibleLinks) { card.style.display = ''; hasVisibleCards = true; } else { card.style.display = 'none'; } }); if(linkGrid) linkGrid.style.display = hasVisibleCards ? 'grid' : 'none'; if(noResults) noResults.style.display = hasVisibleCards ? 'none' : 'block'; }); })();
+<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
 </script>
 
 </html>
