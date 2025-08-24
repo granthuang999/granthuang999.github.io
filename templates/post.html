@@ -20,45 +20,23 @@
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
 #postBody hr{height:2px;}
 .g-emoji{font-size:24px;}
-
-/* [新增] 为TOC目录和文章主体布局 */
-.main-content-container {
-    display: flex;
-    flex-direction: row-reverse; /* 目录在右侧 */
-    gap: 24px;
-}
-.article-content {
-    flex-grow: 1;
-    min-width: 0; /* 防止内容溢出 */
-}
-.toc-container {
-    flex-shrink: 0;
-    width: 240px; /* 目录宽度 */
-    position: sticky;
-    top: 2rem; /* 滚动时固定在顶部 */
-    align-self: flex-start; /* 确保从顶部开始对齐 */
-    max-height: calc(100vh - 4rem); /* 防止目录过长 */
-    overflow-y: auto;
-}
-
-@media (max-width: 1024px) {
-    /* 在小屏幕上，将目录移动到文章上方 */
-    .main-content-container {
-        flex-direction: column;
-    }
-    .toc-container {
-        position: static;
-        width: 100%;
-        margin-bottom: 2rem;
-        max-height: none;
-    }
-}
-
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
+{% if blogBase['highlight']!=0 -%}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}{% endif %}
 
 .post-footer {
     display: flex;
@@ -85,33 +63,45 @@
     transition: opacity 0.3s;
     border: none;
 }
-.share-button:hover { opacity: 0.85; }
-.bottom-text-inline { font-size: small; white-space: nowrap; }
+.share-button:hover {
+    opacity: 0.85;
+}
+.bottom-text-inline {
+    font-size: small;
+    white-space: nowrap; 
+}
 .share-button.x { background-color: #1DA1F2; }
 .share-button.facebook { background-color: #1877F2; }
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<style>
+<!-- [关键修改] 移除了外部的 <style> 标签 -->
 {{ blogBase['style']|safe }}
-</style>
-{% endblock %}
 
+{% endblock %}
 {% block header %}
 <h1 class="postTitle">{{ blogBase['postTitle'] }}</h1>
 <div class="title-right">
     <a href="{{ blogBase['homeUrl'] }}" id="buttonHome" class="btn btn-invisible circle" title="{{ i18n['home'] }}">
-        <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
     </a>
     {% if blogBase['showPostSource']==1 %}
     <a href="{{ blogBase['postSourceUrl'] }}" target="_blank" class="btn btn-invisible circle" title="Issue">
-        <svg class="octicon" width="16" height="16"><path id="pathIssue" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
     </a>
     {% endif %}
+
     <a class="btn btn-invisible circle" onclick="modeSwitch();" title="{{ i18n['switchTheme'] }}" {%- if blogBase['themeMode']=='fix' -%}style="display:none;"{%- endif -%}>
-        <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
     </a>
+
 </div>
 {% endblock %}
 
@@ -124,47 +114,176 @@
 <!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
-<!-- [关键修改] 新增的主体内容容器 -->
-<div class="main-content-container">
-    <!-- 目录容器，TOC插件将在这里生成目录 -->
-    <aside class="toc-container">
-        <div id="GmeekTOC"></div>
-    </aside>
-    <!-- 文章内容容器 -->
-    <article class="article-content">
-        <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
-        
-        <!-- 页脚、广告、评论等都放在文章容器内 -->
-        <div class="post-footer">
-            <div class="bottom-text-inline">{{ blogBase['bottomText'] }}</div>
-            <div class="share-buttons-inline">
-                <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
-                <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
-                <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
-                <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
-                <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
-            </div>
-        </div>
+<div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
-        <div style="margin-top: 2rem; margin-bottom: 1rem;">
-            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3409938612356670" data-ad-slot="9927006571"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-
-        <div style="margin-top: 2rem;">
-            <script src="https://giscus.app/client.js" data-repo="granthuang999/granthuang999.github.io" data-repo-id="R_kgDOPhhmjA" data-category="Announcements" data-category-id="DIC_kwDOPhhmjM4CuggD" data-mapping="url" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
-        </div>
-    </article>
+<!-- 页脚：分享按钮和 bottomText -->
+<div class="post-footer">
+    <div class="bottom-text-inline">{{ blogBase['bottomText'] }}</div>
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+    </div>
 </div>
+
+<!-- Google AdSense 广告单元 -->
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<!-- Giscus 评论代码 -->
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
 {% endblock %}
 
 {% block script %}
 <script>
-// TypeIt.js, 分享功能, 图标加载等脚本...
-// (这部分与您现有的代码一致，为简洁省略，实际文件中应保留)
+// TypeIt.js 高级用法脚本
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteText = "{{ blogBase['quote'] }}";
+    const dailySentenceRaw = "{{ blogBase['daily_sentence'] }}";
+
+    let typeitStrings = [];
+    if (quoteText && quoteText !== 'None') {
+        typeitStrings = [quoteText];
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+        try {
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
+        } catch (e) {
+            console.error("无法解析 daily_sentence:", e);
+        }
+    }
+
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true,
+                 waitUntilVisible: true,
+                 breakLines: false,
+             }).go();
+        }
+    }
+});
+
+// 分享功能的 JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source={{ blogBase['homeUrl'] }}`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic={{ blogBase['ogImage'] }}`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+{% if blogBase['showPostSource']==1 %}document.getElementById("pathIssue").setAttribute("d",IconList["github"]);{% endif %}
+
+{% if blogBase['highlight']!=0 -%}
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+{%- endif %}
+
 </script>
-<!-- [关键修改] 将自定义脚本包裹在 <script> 标签内 -->
-<script>
+<!-- [关键修改] 移除了外部的 <script> 标签 -->
 {{ blogBase['script']|safe }}
-</script>
 {% endblock %}
