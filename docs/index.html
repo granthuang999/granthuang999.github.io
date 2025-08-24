@@ -144,14 +144,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://www.futuremedia.work/about.html" class="btn btn-invisible circle" title="关于本站&我/About us">
-        <svg class="octicon" width="16" height="16" >
-            <path id="关于本站&我/About us" fill-rule="evenodd"></path>
-        </svg>
-    </a>
     <a href="https://www.futuremedia.work/link.html" class="btn btn-invisible circle" title="个人导航">
         <svg class="octicon" width="16" height="16" >
             <path id="个人导航" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    <a href="https://www.futuremedia.work/about.html" class="btn btn-invisible circle" title="关于本站&我/About us">
+        <svg class="octicon" width="16" height="16" >
+            <path id="关于本站&我/About us" fill-rule="evenodd"></path>
         </svg>
     </a>
     <a href="https://www.futuremedia.work/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
@@ -429,9 +429,9 @@ for(var i=0;i<iconPost.length;i++){
 
 
 
-document.getElementById("关于本站&我/About us").setAttribute("d",value=IconList["about"]);
-
 document.getElementById("个人导航").setAttribute("d",value=IconList["link"]);
+
+document.getElementById("关于本站&我/About us").setAttribute("d",value=IconList["about"]);
 
 </script>
 
