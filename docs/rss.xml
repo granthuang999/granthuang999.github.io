@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>未来传媒</title><link>https://www.futuremedia.work</link><description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description><copyright>未来传媒</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/images/bb.png</url><title>avatar</title><link>https://www.futuremedia.work</link></image><lastBuildDate>Sun, 24 Aug 2025 03:33:03 +0000</lastBuildDate><managingEditor>未来传媒</managingEditor><ttl>60</ttl><webMaster>未来传媒</webMaster><item><title>REITs投资：中年人房地产投资的新选择与财富增值策略/REITs Investment: A New Choice for Middle-aged Real Estate Investment and Wealth Appreciation Strategy</title><link>https://www.futuremedia.work/post/REITs-Investment.html</link><description>## **REITs基础概念与运作机制**
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>未来传媒</title><link>https://www.futuremedia.work</link><description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description><copyright>未来传媒</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/images/bb.png</url><title>avatar</title><link>https://www.futuremedia.work</link></image><lastBuildDate>Sun, 24 Aug 2025 04:03:05 +0000</lastBuildDate><managingEditor>未来传媒</managingEditor><ttl>60</ttl><webMaster>未来传媒</webMaster><item><title>REITs投资：中年人房地产投资的新选择与财富增值策略/REITs Investment: A New Choice for Middle-aged Real Estate Investment and Wealth Appreciation Strategy</title><link>https://www.futuremedia.work/post/REITs-Investment.html</link><description>## **REITs基础概念与运作机制**
 
 Basic Concepts and Operating Mechanisms of REITs
 
@@ -90,7 +90,19 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
 &lt;div class='max-w-7xl mx-auto'&gt;
 &lt;header class='flex justify-between items-center mb-8'&gt;
 &lt;h1 class='text-3xl font-bold text-slate-900 dark:text-white'&gt;个人导航&lt;/h1&gt;
+&lt;button id='theme-toggle' class='p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700'&gt;
+&lt;svg id='theme-icon-sun' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'&gt;&lt;path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z'&gt;&lt;/path&gt;&lt;/svg&gt;
+&lt;svg id='theme-icon-moon' class='h-6 w-6 hidden' fill='none' viewBox='0 0 24 24' stroke='currentColor'&gt;&lt;path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'&gt;&lt;/path&gt;&lt;/svg&gt;
+&lt;/button&gt;
 &lt;/header&gt;
+&lt;div class='mb-8'&gt;
+&lt;div class='relative'&gt;
+&lt;div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'&gt;
+&lt;svg class='h-5 w-5 text-slate-400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'&gt;&lt;path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd' /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;input type='search' id='search-input' placeholder='快速搜索链接...' class='block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-md bg-white dark:bg-slate-800 dark:border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm'&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'&gt;
 &lt;div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'&gt;
 &lt;h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'&gt;核心类别：日常高频&lt;/h2&gt;
@@ -98,11 +110,11 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
 &lt;div&gt;
 &lt;h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'&gt;常用/置顶&lt;/h3&gt;
 &lt;div class='flex flex-wrap gap-2'&gt;
-&lt;a href='https://www.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Google&lt;/a&gt;
-&lt;a href='https://www.bing.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Bing&lt;/a&gt;
-&lt;a href='https://mail.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Gmail&lt;/a&gt;
-&lt;a href='https://web.telegram.org/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Telegram&lt;/a&gt;
-&lt;a href='https://www.notion.so/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Notion&lt;/a&gt;
+&lt;a href='https://www.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Google&lt;/a&gt;
+&lt;a href='https://www.bing.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Bing&lt;/a&gt;
+&lt;a href='https://mail.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Gmail&lt;/a&gt;
+&lt;a href='https://web.telegram.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Telegram&lt;/a&gt;
+&lt;a href='https://www.notion.so' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Notion&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -113,18 +125,18 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
 &lt;div&gt;
 &lt;h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'&gt;代码/开发&lt;/h3&gt;
 &lt;div class='flex flex-wrap gap-2'&gt;
-&lt;a href='https://github.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;GitHub&lt;/a&gt;
-&lt;a href='https://developer.mozilla.org/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;MDN&lt;/a&gt;
-&lt;a href='https://vercel.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Vercel&lt;/a&gt;
-&lt;a href='https://www.cloudflare.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Cloudflare&lt;/a&gt;
+&lt;a href='https://github.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;GitHub&lt;/a&gt;
+&lt;a href='https://developer.mozilla.org' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;MDN&lt;/a&gt;
+&lt;a href='https://vercel.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Vercel&lt;/a&gt;
+&lt;a href='https://www.cloudflare.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Cloudflare&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
 &lt;h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'&gt;设计/创意&lt;/h3&gt;
 &lt;div class='flex flex-wrap gap-2'&gt;
-&lt;a href='https://www.figma.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Figma&lt;/a&gt;
-&lt;a href='https://www.canva.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Canva&lt;/a&gt;
-&lt;a href='https://www.pexels.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Pexels&lt;/a&gt;
+&lt;a href='https://www.figma.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Figma&lt;/a&gt;
+&lt;a href='https://www.canva.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Canva&lt;/a&gt;
+&lt;a href='https://www.pexels.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Pexels&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -136,22 +148,21 @@ Miro作为全球领先的在线协作白板平台，已经拥有超过3000万用
 &lt;h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'&gt;新闻/阅读&lt;/h3&gt;
 &lt;div class='flex flex-wrap gap-2'&gt;
 &lt;a href='[可疑链接已删除]' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Reuters&lt;/a&gt;
-&lt;a href='https://techcrunch.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;TechCrunch&lt;/a&gt;
-&lt;a href='https://feedly.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Feedly&lt;/a&gt;
+&lt;a href='https://techcrunch.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;TechCrunch&lt;/a&gt;
+&lt;a href='https://feedly.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Feedly&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;
 &lt;h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'&gt;AI 工具&lt;/h3&gt;
 &lt;div class='flex flex-wrap gap-2'&gt;
-&lt;a href='https://chat.openai.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;ChatGPT&lt;/a&gt;
-&lt;a href='https://gemini.google.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Gemini&lt;/a&gt;
-&lt;a href='https://www.midjourney.com/' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Midjourney&lt;/a&gt;
+&lt;a href='https://chat.openai.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;ChatGPT&lt;/a&gt;
+&lt;a href='https://gemini.google.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Gemini&lt;/a&gt;
+&lt;a href='https://www.midjourney.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Midjourney&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-。</description><guid isPermaLink="true">https://www.futuremedia.work/link.html</guid><pubDate>Sun, 24 Aug 2025 02:03:10 +0000</pubDate></item></channel></rss>
+&lt;div id='no-results' class='text-center py-16'&gt;
+&lt;h3 class='text-lg font-semibold text-slate-600 dark:text-slate-400'&gt;无匹配结果&lt;/h3&gt;
+&lt;p class='text-slate-500 mt-2'&gt;请尝试更换搜索关键词。</description><guid isPermaLink="true">https://www.futuremedia.work/link.html</guid><pubDate>Sun, 24 Aug 2025 02:03:10 +0000</pubDate></item></channel></rss>
