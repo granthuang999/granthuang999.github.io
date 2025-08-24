@@ -162,6 +162,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
+<!-- [关键修正] 添加 |safe 过滤器，以确保自定义样式能被正确渲染 -->
 
 
 
@@ -192,7 +193,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <img src="https://www.futuremedia.work/images/big.png" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
 </div>
 
-<!-- [新增] 为 TypeIt 动画预留的占位符 -->
+<!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
 <div class="markdown-body" id="postBody"><h2><strong>免责声明 / Disclaimer</strong></h2>
@@ -383,9 +384,8 @@ console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;ba
 </script>
 
 <script>
-// --- [新增] TypeIt.js 高级用法脚本 ---
+// TypeIt.js 高级用法脚本
 document.addEventListener('DOMContentLoaded', function() {
-    // 直接从模板渲染的数据中获取 'quote' 或 'daily_sentence'
     const quoteText = "None";
     const dailySentenceRaw = "None";
 
@@ -393,7 +393,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (quoteText && quoteText !== 'None') {
         typeitStrings = [quoteText];
     } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
-        // Gmeek 会把Python列表转成带'['和']'的字符串，我们需要处理一下
         try {
             const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
             typeitStrings = cleanedString.split(', ');
@@ -402,23 +401,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 确保有内容才执行动画
     if (typeitStrings.length > 0 && typeitStrings[0]) {
         const container = document.getElementById('typeit-animation-container');
         if(container) {
              new TypeIt(container, {
                  strings: typeitStrings,
                  speed: 75,
-                 lifeLike: true, // 模拟真人打字，速度会随机变化
+                 lifeLike: true,
                  waitUntilVisible: true,
-                 breakLines: false, // 如果有多句话，在同一行显示
+                 breakLines: false,
              }).go();
         }
     }
 });
-// --- 新增结束 ---
 
-// --- 分享功能的 JavaScript ---
+// 分享功能的 JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const postUrl = window.location.href;
     const postTitle = document.title;
@@ -435,7 +432,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
     if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
 });
-// --- JavaScript 结束 ---
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 
@@ -443,6 +439,7 @@ document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 
 
 </script>
+<!-- [关键修正] 添加 |safe 过滤器，以确保自定义脚本能被正确执行 -->
 <script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
 
 </html>
