@@ -58,15 +58,11 @@ jobs:
           echo "Copying ads.txt to the output directory..."
           if [ -f "/opt/Gmeek/ads.txt" ]; then
             cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt
-          else
-            echo "ads.txt not found, skipping copy."
           fi
           
           echo "Copying robots.txt to the output directory..."
           if [ -f "/opt/Gmeek/robots.txt" ]; then
             cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt
-          else
-            echo "robots.txt not found, skipping copy."
           fi
           
           echo "Copying generated files back to the workspace..."
@@ -83,6 +79,52 @@ jobs:
         run: |
           echo "Indexing content with Pagefind..."
           npx -y pagefind --site docs
+
+      - name: Prepare URL list for Submission
+        id: prepare_urls
+        run: |
+          echo "Preparing URL list for search engines..."
+          URL_LIST_FILE="urls.txt"
+          echo "https://www.futuremedia.work/" > $URL_LIST_FILE
+          find docs -name "*.html" | sed 's|docs/|https://www.futuremedia.work/|' >> $URL_LIST_FILE
+          echo "--- URL list to be submitted ---"
+          cat $URL_LIST_FILE
+          echo "--------------------------------"
+          echo "url_file=$URL_LIST_FILE" >> $GITHUB_OUTPUT
+
+      - name: Submit URLs to Baidu
+        if: ${{ secrets.BAIDU_TOKEN }}
+        run: |
+          echo "Submitting URLs to Baidu API..."
+          curl -H 'Content-Type:text/plain' --data-binary @${{ steps.prepare_urls.outputs.url_file }} "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ secrets.BAIDU_TOKEN }}"
+
+      - name: Submit URLs to Bing (IndexNow)
+        if: ${{ secrets.BING_API_KEY }}
+        run: |
+          echo "Submitting URLs to Bing IndexNow API..."
+          URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
+          JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ secrets.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ secrets.BING_API_KEY }}.txt", urlList: $urls}')
+          curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
+      
+      # [新增] 为 Google API 设置认证
+      - name: Authenticate to Google Cloud
+        if: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_API_KEY_JSON }}'
+
+      - name: Submit URLs to Google
+        if: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        run: |
+          echo "Submitting URLs to Google Indexing API..."
+          URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
+          ACCESS_TOKEN=$(gcloud auth print-access-token)
+          for url in $URL_LIST; do
+            echo "Submitting URL: $url"
+            curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+            --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
+            "https://indexing.googleapis.com/v3/urlNotifications:publish" || echo "Failed to submit $url to Google, continuing..."
+          done
 
       - name: update html
         run: |
@@ -101,26 +143,6 @@ jobs:
         with:
           path: 'docs/'
           
-      # --- [新增] 自动推送 URL 到百度 ---
-      - name: Submit URLs to Baidu
-        run: |
-          echo "Preparing URL list for Baidu..."
-          # 创建一个 urls.txt 文件，并首先放入您的主页和站点地图
-          echo "https://www.futuremedia.work/" > urls.txt
-          echo "https://www.futuremedia.work/rss.xml" >> urls.txt
-    
-          # 查找 docs 目录下的所有 html 文件，将它们转换为完整的 URL，并追加到文件中
-          find docs -name "*.html" | sed 's|docs/|https://www.futuremedia.work/|' >> urls.txt
-    
-          echo "--- URL list to be submitted ---"
-          cat urls.txt
-          echo "--------------------------------"
-    
-          echo "Submitting URLs to Baidu API..."
-          # 使用 curl 命令，通过 POST 请求提交 urls.txt 文件的内容
-          # 这里我们安全地引用了您在第一步中创建的 BAIDU_TOKEN
-          curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ secrets.BAIDU_TOKEN }}"
-
   deploy:
     name: Deploy blog
     runs-on: ubuntu-latest
