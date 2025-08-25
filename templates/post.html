@@ -312,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
 {%- endif %}
 
 </script>
+<!-- [关键修正] 将自定义脚本包裹在 <script> 标签内 -->
 <script>
 {{ blogBase['script']|safe }}
 </script>
