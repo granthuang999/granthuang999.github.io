@@ -93,28 +93,27 @@ jobs:
           echo "url_file=$URL_LIST_FILE" >> $GITHUB_OUTPUT
 
       - name: Submit URLs to Baidu
-        if: ${{ secrets.BAIDU_TOKEN }}
+        if: ${{ secrets.BAIDU_TOKEN != '' }}
         run: |
           echo "Submitting URLs to Baidu API..."
           curl -H 'Content-Type:text/plain' --data-binary @${{ steps.prepare_urls.outputs.url_file }} "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ secrets.BAIDU_TOKEN }}"
 
       - name: Submit URLs to Bing (IndexNow)
-        if: ${{ secrets.BING_API_KEY }}
+        if: ${{ secrets.BING_API_KEY != '' }}
         run: |
           echo "Submitting URLs to Bing IndexNow API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
           JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ secrets.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ secrets.BING_API_KEY }}.txt", urlList: $urls}')
           curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
       
-      # [关键修正] 移除了错误的单引号
       - name: Authenticate to Google Cloud
-        if: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        if: ${{ secrets.GOOGLE_API_KEY_JSON != '' }}
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
 
       - name: Submit URLs to Google
-        if: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        if: ${{ secrets.GOOGLE_API_KEY_JSON != '' }}
         run: |
           echo "Submitting URLs to Google Indexing API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
