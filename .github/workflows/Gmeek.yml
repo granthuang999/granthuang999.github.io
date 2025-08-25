@@ -106,12 +106,12 @@ jobs:
           JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ secrets.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ secrets.BING_API_KEY }}.txt", urlList: $urls}')
           curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
       
-      # [新增] 为 Google API 设置认证
+      # [关键修正] 移除了错误的单引号
       - name: Authenticate to Google Cloud
         if: ${{ secrets.GOOGLE_API_KEY_JSON }}
         uses: 'google-github-actions/auth@v2'
         with:
-          credentials_json: '${{ secrets.GOOGLE_API_KEY_JSON }}'
+          credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
 
       - name: Submit URLs to Google
         if: ${{ secrets.GOOGLE_API_KEY_JSON }}
