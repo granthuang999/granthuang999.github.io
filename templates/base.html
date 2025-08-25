@@ -7,14 +7,14 @@
     {{ blogBase['primerCSS'] }}
     {{ blogBase['allHead']|safe }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
-    
-    <!-- 为自定义页面加载 Tailwind CSS 和 Inter 字体 -->
+
+    <!-- [新增] 为自定义页面加载 Tailwind CSS 和 Inter 字体 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- 引入 TypeIt.js 库 -->
+    <!-- [新增] 引入 TypeIt.js 库 -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 
     {%- if blogBase['themeMode']=='manual' -%}
@@ -26,7 +26,7 @@
     
     {% block head %}{% endblock %}
 
-    <!-- 网站分析与广告代码 -->
+    <!-- [新增] 网站分析与广告代码 -->
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -55,7 +55,7 @@
     <!-- Google AdSense 核心脚本 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
     
-    <!-- WebSite 结构化数据 -->
+    <!-- [新增] WebSite 结构化数据 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -74,11 +74,11 @@
     </script>
 </head>
 <style>
-/* [关键修正] 恢复了body的居中样式 */
+/* [关键修正] 恢复了body的居中和基础样式 */
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
 
-/* 页眉背景样式 */
+/* [新增] 页眉背景样式 */
 .page-header {
     position: relative;
     background-image: url('{{ blogBase["headerBackgroundUrl"] }}');
@@ -116,13 +116,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 {% block style %}{% endblock %}
 
 <body>
+    <!-- [关键修正] 将 div#header 替换为 header.page-header，并移除了旧的 #header 样式 -->
     <header id="header" class="page-header">{% block header %}{% endblock %}</header>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">{% include 'footer.html' %}</div>
 </body>
 <script>
 var IconList={{ IconList|tojson }};
-var utterancesLoad=0;
+var utterancesLoad=0; // 虽然已迁移到Giscus，保留此变量以防旧脚本引用
 {% if blogBase['themeMode']=='manual' %}
 let themeSettings={
     "dark": ["dark","moon","#00f0ff","dark-blue"],
