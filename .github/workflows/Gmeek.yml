@@ -95,35 +95,36 @@ jobs:
       - name: Submit URLs to Baidu
         env:
           BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
-        if: env.BAIDU_TOKEN != ''
         run: |
+          if [ -z "${{ env.BAIDU_TOKEN }}" ]; then
+            echo "Baidu token not found, skipping submission."
+            exit 0
+          fi
           echo "Submitting URLs to Baidu API..."
           curl -H 'Content-Type:text/plain' --data-binary @${{ steps.prepare_urls.outputs.url_file }} "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
 
       - name: Submit URLs to Bing (IndexNow)
         env:
           BING_API_KEY: ${{ secrets.BING_API_KEY }}
-        if: env.BING_API_KEY != ''
         run: |
+          if [ -z "${{ env.BING_API_KEY }}" ]; then
+            echo "Bing API key not found, skipping submission."
+            exit 0
+          fi
           echo "Submitting URLs to Bing IndexNow API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
           JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ env.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ env.BING_API_KEY }}.txt", urlList: $urls}')
           curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
       
       - name: Authenticate to Google Cloud
-        env:
-          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
-        if: env.GOOGLE_API_KEY_JSON != ''
+        if: ${{ secrets.GOOGLE_API_KEY_JSON != '' }}
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          # [关键修正] 将 'scopes' 修改为正确的 'access_token_scopes'
           access_token_scopes: 'https://www.googleapis.com/auth/indexing'
 
       - name: Submit URLs to Google
-        env:
-          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
-        if: env.GOOGLE_API_KEY_JSON != ''
+        if: ${{ secrets.GOOGLE_API_KEY_JSON != '' }}
         run: |
           echo "Submitting URLs to Google Indexing API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
