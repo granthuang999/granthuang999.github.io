@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{ blogBase['primerCSS'] }}
-    {{ blogBase['allHead']|safe }}
+    {% include 'includes/custom_head.html' %}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
     
     <!-- 加载 Tailwind CSS 和 Inter 字体 -->
