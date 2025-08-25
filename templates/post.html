@@ -46,7 +46,6 @@
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
-    /* [新增] 在小屏幕上让页脚内容垂直排列 */
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
 {% if blogBase['highlight']!=0 -%}
@@ -101,6 +100,7 @@
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
+<!-- [关键修正] 将自定义样式包裹在 <style> 标签内 -->
 <style>
 {{ blogBase['style']|safe }}
 </style>
@@ -140,7 +140,8 @@
 <!-- [新增] 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
-<!-- [关键] 恢复了您原始的 postBody 结构，以确保TOC插件兼容性 -->
+<!-- [关键修正] 恢复了 TOC 插件所需的容器 -->
+<div id="GmeekTOC"></div>
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
 <!-- [修改] 将 bottomText 和分享按钮移入新的页脚容器 -->
@@ -197,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dailySentenceRaw = "{{ blogBase['daily_sentence']|tojson }}";
 
     let typeitStrings = [];
-    if (quoteText && quoteText !== 'None') {
+    if (quoteText && quoteText !== 'None' && quoteText !== 'null') {
         typeitStrings = [quoteText];
     } else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
         try {
@@ -242,8 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // 保留的原始脚本
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 {% if blogBase['showPostSource']==1 %}document.getElementById("pathIssue").setAttribute("d",IconList["github"]);{% endif %}
-
-// [修改] 移除了所有 Utterances 相关的 JavaScript 代码
 
 {% if blogBase['highlight']!=0 -%}
 document.addEventListener('DOMContentLoaded', () => {
