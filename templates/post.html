@@ -10,7 +10,7 @@
 <title>{{ blogBase['postTitle'] }}</title>
 {% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
 {{ blogBase['head']|safe }}
-<!-- Article 结构化数据 -->
+<!-- [新增] Article 结构化数据 -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -46,6 +46,7 @@
 @media (max-width: 600px) {
     body {padding: 8px;}
     .postTitle{font-size:24px;}
+    /* [新增] 在小屏幕上让页脚内容垂直排列 */
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
 {% if blogBase['highlight']!=0 -%}
@@ -61,6 +62,7 @@
     font-size: 12px;
 }{% endif %}
 
+/* [新增] 页脚和分享按钮样式 */
 .post-footer {
     display: flex;
     justify-content: space-between;
@@ -130,19 +132,18 @@
 {% endblock %}
 
 {% block content %}
-<!-- 文章页 Banner 图片 -->
+<!-- [新增] 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
     <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['postTitle'] }}">
 </div>
 
-<!-- 为 TypeIt 动画预留的占位符 -->
+<!-- [新增] 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
-<!-- [关键修正] 恢复了 TOC 插件所需的容器 -->
-<div id="GmeekTOC"></div>
+<!-- [关键] 恢复了您原始的 postBody 结构，以确保TOC插件兼容性 -->
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
-<!-- 页脚：分享按钮和 bottomText -->
+<!-- [修改] 将 bottomText 和分享按钮移入新的页脚容器 -->
 <div class="post-footer">
     <div class="bottom-text-inline">{{ blogBase['bottomText'] }}</div>
     <div class="share-buttons-inline">
@@ -154,7 +155,7 @@
     </div>
 </div>
 
-<!-- Google AdSense 广告单元 -->
+<!-- [新增] Google AdSense 广告单元 -->
 <div style="margin-top: 2rem; margin-bottom: 1rem;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
@@ -167,7 +168,7 @@
     </script>
 </div>
 
-<!-- Giscus 评论代码 -->
+<!-- [修改] Giscus 评论代码替换了旧的 Utterances -->
 <div style="margin-top: 2rem;">
     <script src="https://giscus.app/client.js"
         data-repo="granthuang999/granthuang999.github.io"
@@ -190,7 +191,7 @@
 
 {% block script %}
 <script>
-// TypeIt.js 高级用法脚本
+// [新增] TypeIt.js 高级用法脚本
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "{{ blogBase['quote'] }}";
     const dailySentenceRaw = "{{ blogBase['daily_sentence']|tojson }}";
@@ -220,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 分享功能的 JavaScript
+// [新增] 分享功能的 JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const postUrl = window.location.href;
     const postTitle = document.title;
@@ -238,8 +239,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
 });
 
+// 保留的原始脚本
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 {% if blogBase['showPostSource']==1 %}document.getElementById("pathIssue").setAttribute("d",IconList["github"]);{% endif %}
+
+// [修改] 移除了所有 Utterances 相关的 JavaScript 代码
 
 {% if blogBase['highlight']!=0 -%}
 document.addEventListener('DOMContentLoaded', () => {
