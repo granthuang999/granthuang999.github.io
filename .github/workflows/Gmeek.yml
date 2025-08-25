@@ -117,8 +117,8 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          # [关键修正] 明确请求 Indexing API 所需的权限范围
-          scopes: 'https://www.googleapis.com/auth/indexing'
+          # [关键修正] 将 'scopes' 修改为正确的 'access_token_scopes'
+          access_token_scopes: 'https://www.googleapis.com/auth/indexing'
 
       - name: Submit URLs to Google
         env:
