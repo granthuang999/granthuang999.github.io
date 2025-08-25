@@ -26,9 +26,8 @@
 .listLabels{white-space:nowrap;display:flex;}
 .listLabels object{max-height:16px;max-width:24px;}
 
-/* [新增] 为打字动画效果设置最小高度，防止页面跳动 */
 #animated-subtitle {
-    min-height: 24px; /* 您可以根据字体大小调整 */
+    min-height: 24px; /* 根据字体大小调整 */
 }
 
 @media (max-width: 600px) {
@@ -39,7 +38,7 @@
     .LabelTime{display:none;}
 }
 </style>
-{{ blogBase['indexStyle'] }}
+{{ blogBase['indexStyle']|safe }}
 {% endblock %}
 
 {% block header %}
@@ -89,10 +88,9 @@
 {% block content %}
 <!-- 主页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 16px;">
-    <img src="{{ blogBase['bannerUrl'] }}" style="max-width: 100%; border-radius: 8px;" alt="Website Banner">
+    <img src="{{ blogBase['bannerUrl'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['title'] }} Banner">
 </div>
 
-<!-- [关键修改] 将原来的副标题 div 替换为这个带 ID 的新 div -->
 <div id="animated-subtitle" style="margin-bottom: 16px;"></div>
 
 <nav class="SideNav border">
@@ -135,17 +133,15 @@
 
 {% block script %}
 <script>
-// --- [新增] TypeIt.js 初始化脚本 ---
+// TypeIt.js 初始化脚本
 document.addEventListener('DOMContentLoaded', function () {
   new TypeIt('#animated-subtitle', {
-    // 从 blogBase 配置中动态获取副标题文字
     strings: ["{{ blogBase['subTitle'] }}"],
-    speed: 75, // 打字速度
-    waitUntilVisible: true, // 等到元素可见时才开始动画
-    cursor: false // 不显示打字光标
+    speed: 75,
+    waitUntilVisible: true,
+    cursor: false
   }).go();
 });
-// --- 新增结束 ---
 
 document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
 document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
@@ -169,5 +165,7 @@ document.getElementById("{{ blogBase['singeListJson'][num]['postTitle'] }}").set
 {% endif -%}
 {%- endfor %}
 </script>
-{{ blogBase['indexScript'] }}
+<script>
+{{ blogBase['indexScript']|safe }}
+</script>
 {% endblock %}
