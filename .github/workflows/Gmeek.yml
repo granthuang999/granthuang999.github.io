@@ -74,18 +74,14 @@ jobs:
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
           
-      # --- [新增步骤 1] ---
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # --- [新增步骤 2] ---
       - name: Index site with Pagefind
         run: |
           echo "Indexing content with Pagefind..."
-          # 下载并运行 Pagefind，为 docs 目录创建索引
-          # 索引文件会自动生成在 docs/pagefind/ 目录下
           npx -y pagefind --site docs
 
       - name: update html
@@ -105,6 +101,26 @@ jobs:
         with:
           path: 'docs/'
           
+      # --- [新增] 自动推送 URL 到百度 ---
+      - name: Submit URLs to Baidu
+        run: |
+          echo "Preparing URL list for Baidu..."
+          # 创建一个 urls.txt 文件，并首先放入您的主页和站点地图
+          echo "https://www.futuremedia.work/" > urls.txt
+          echo "https://www.futuremedia.work/rss.xml" >> urls.txt
+    
+          # 查找 docs 目录下的所有 html 文件，将它们转换为完整的 URL，并追加到文件中
+          find docs -name "*.html" | sed 's|docs/|https://www.futuremedia.work/|' >> urls.txt
+    
+          echo "--- URL list to be submitted ---"
+          cat urls.txt
+          echo "--------------------------------"
+    
+          echo "Submitting URLs to Baidu API..."
+          # 使用 curl 命令，通过 POST 请求提交 urls.txt 文件的内容
+          # 这里我们安全地引用了您在第一步中创建的 BAIDU_TOKEN
+          curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ secrets.BAIDU_TOKEN }}"
+
   deploy:
     name: Deploy blog
     runs-on: ubuntu-latest
