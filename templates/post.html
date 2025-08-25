@@ -8,12 +8,12 @@
 <meta property="og:url" content="{{ blogBase['postUrl'] }}">
 <meta property="og:image" content="{{ blogBase['ogImage'] }}">
 <title>{{ blogBase['postTitle'] }}</title>
-{% if blogBase['highlight']==1 %}<link href="//[unpkg.com/@wooorm/starry-night@2.1.1/style/both.css](https://unpkg.com/@wooorm/starry-night@2.1.1/style/both.css)" rel="stylesheet" />{% endif %}
-{{ blogBase['head'] }}
-<!-- [新增] Article 结构化数据 -->
+{% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
+{{ blogBase['head']|safe }}
+<!-- Article 结构化数据 -->
 <script type="application/ld+json">
 {
-    "@context": "[https://schema.org](https://schema.org)",
+    "@context": "https://schema.org",
     "@type": "Article",
     "headline": "{{ blogBase.postTitle }}",
     "image": "{{ blogBase.ogImage }}",
@@ -132,7 +132,6 @@
 {% block content %}
 <!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
-    <!-- [关键修改] 优化了 alt 文本 -->
     <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['postTitle'] }}">
 </div>
 
@@ -168,7 +167,7 @@
 
 <!-- Giscus 评论代码 -->
 <div style="margin-top: 2rem;">
-    <script src="[https://giscus.app/client.js](https://giscus.app/client.js)"
+    <script src="https://giscus.app/client.js"
         data-repo="granthuang999/granthuang999.github.io"
         data-repo-id="R_kgDOPhhmjA"
         data-category="Announcements"
@@ -189,8 +188,125 @@
 
 {% block script %}
 <script>
-// TypeIt.js, 分享功能等脚本...
-// (这部分与您现有的代码一致，为简洁省略，实际文件中应保留)
+// TypeIt.js 高级用法脚本
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteText = "{{ blogBase['quote'] }}";
+    const dailySentenceRaw = "{{ blogBase['daily_sentence'] }}";
+
+    let typeitStrings = [];
+    if (quoteText && quoteText !== 'None') {
+        typeitStrings = [quoteText];
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+        try {
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
+        } catch (e) {
+            console.error("无法解析 daily_sentence:", e);
+        }
+    }
+
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true,
+                 waitUntilVisible: true,
+                 breakLines: false,
+             }).go();
+        }
+    }
+});
+
+// 分享功能的 JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source={{ blogBase['homeUrl'] }}`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic={{ blogBase['ogImage'] }}`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+{% if blogBase['showPostSource']==1 %}document.getElementById("pathIssue").setAttribute("d",IconList["github"]);{% endif %}
+
+{% if blogBase['highlight']!=0 -%}
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+{%- endif %}
+
 </script>
 <script>
 {{ blogBase['script']|safe }}
