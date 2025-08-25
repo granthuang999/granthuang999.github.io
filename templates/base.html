@@ -8,7 +8,7 @@
     {{ blogBase['allHead']|safe }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
     
-    <!-- 为导航页等加载 Tailwind CSS 和 Inter 字体 -->
+    <!-- 为自定义页面加载 Tailwind CSS 和 Inter 字体 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +36,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -43,6 +44,7 @@
       gtag('js', new Date());
       gtag('config', 'G-FDL6BTW5FM');
     </script>
+    <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -50,6 +52,7 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "sh44c07wsg");
     </script>
+    <!-- Google AdSense 核心脚本 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
     
     <!-- WebSite 结构化数据 -->
@@ -71,7 +74,7 @@
     </script>
 </head>
 <style>
-/* [关键修正] 恢复了body的居中样式 */
+/* 恢复body的居中样式 */
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
 
@@ -133,12 +136,11 @@ function changeTheme(mode, icon, color, utheme){
         themeSwitchIcon.setAttribute("d",value=IconList[icon]);
         themeSwitchIcon.parentNode.style.color=color;
     }
-    if(typeof giscus !== 'undefined' && giscus.getBoundingClientRect().width !== 0){
+    // 适配 Giscus 的主题切换
+    const giscusFrame = document.querySelector('iframe.giscus-frame');
+    if (giscusFrame) {
         const message = { setConfig: { theme: utheme } };
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (iframe) {
-            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
+        giscusFrame.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
     }
 }
 function modeSwitch(){
