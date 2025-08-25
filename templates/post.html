@@ -138,6 +138,8 @@
 <!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
+<!-- 恢复了 TOC 插件所需的容器 -->
+<div id="GmeekTOC"></div>
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
 <!-- 页脚：分享按钮和 bottomText -->
@@ -191,17 +193,17 @@
 // TypeIt.js 高级用法脚本
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "{{ blogBase['quote'] }}";
-    const dailySentenceRaw = "{{ blogBase['daily_sentence'] }}";
+    const dailySentenceRaw = "{{ blogBase['daily_sentence']|tojson }}"; // 使用 tojson 过滤器确保格式正确
 
     let typeitStrings = [];
     if (quoteText && quoteText !== 'None') {
         typeitStrings = [quoteText];
-    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
         try {
-            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
-            typeitStrings = cleanedString.split(', ');
+            // dailySentenceRaw 现在是一个有效的 JSON 字符串，可以直接解析
+            typeitStrings = JSON.parse(dailySentenceRaw);
         } catch (e) {
-            console.error("无法解析 daily_sentence:", e);
+            console.error("无法解析 daily_sentence:", dailySentenceRaw, e);
         }
     }
 
