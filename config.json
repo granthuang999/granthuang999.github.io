@@ -1,5 +1,6 @@
 {
     "title":"未来传媒",
+    "repo_name": "granthuang999/granthuang999.github.io",
     "subTitle":"专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活",
     "avatarUrl":"/images/bb.png",
     "GMEEK_VERSION":"last",
@@ -23,9 +24,9 @@
 "nightTheme":"dark_colorblind",
 "urlMode":"pinyin",
 "style":"",
-"script":"<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+"script":"<script src=\'/plugins/GmeekTOC.js\'></script>",
 "head":"",
-"allHead":"<script src='https://www.futuremedia.work/plugins/GmeekVercount.js'></script>",
+"allHead":"<script src='/plugins/GmeekVercount.js'></script><script src=\'https://cdn.tailwindcss.com\'></script><link rel=\'preconnect\' href=\'https://fonts.googleapis.com\'><link rel=\'preconnect\' href=\'https://fonts.gstatic.com\' crossorigin><link href=\'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\' rel=\'stylesheet\'>",
 "indexStyle":"",
 "indexScript":"",
 "showPostSource":0,
