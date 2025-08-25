@@ -5,19 +5,60 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{ blogBase['primerCSS'] }}
-    {{ blogBase['allHead'] }}
+    {{ blogBase['allHead']|safe }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
+    
+    <!-- [新增] 为导航页加载 Tailwind CSS 和 Inter 字体 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- [新增] 引入 TypeIt.js 库 -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
     {%- if blogBase['themeMode']=='manual' -%}
     <script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
     {%- endif -%}
+    
     {% block head %}{% endblock %}
+
+    <!-- [新增] 网站分析与广告代码 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FDL6BTW5FM');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "sh44c07wsg");
+    </script>
+    <!-- Google AdSense 核心脚本 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
+    
     <!-- [新增] WebSite 结构化数据 -->
     <script type="application/ld+json">
     {
-        "@context": "[https://schema.org](https://schema.org)",
+        "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "{{ blogBase.title }}",
         "url": "{{ blogBase.homeUrl }}",
@@ -35,6 +76,8 @@
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
+
+/* 页眉背景样式 */
 .page-header {
     position: relative;
     background-image: url('{{ blogBase["headerBackgroundUrl"] }}');
@@ -46,9 +89,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     color: white;
     overflow: hidden;
     display:flex;
-    padding-bottom:8px;
-    border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 优化边框在深色背景下的可见性 */
 }
+
 .page-header::before {
     content: '';
     position: absolute;
@@ -56,16 +99,19 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色遮罩 */
     z-index: 1;
 }
+
 .page-header > * {
     position: relative;
     z-index: 2;
 }
+
 .page-header a {
     color: white !important;
 }
+
 .page-header .octicon path {
     fill: white;
 }
@@ -78,7 +124,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="footer">{% include 'footer.html' %}</div>
 </body>
 <script>
-var IconList={{ IconList }};
+var IconList={{ IconList|tojson }};
 var utterancesLoad=0;
 {% if blogBase['themeMode']=='manual' %}
 let themeSettings={
@@ -88,9 +134,18 @@ let themeSettings={
 };
 function changeTheme(mode, icon, color, utheme){
     document.documentElement.setAttribute("data-color-mode",mode);
-    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
-    document.getElementById("themeSwitch").parentNode.style.color=color;
-    if(utterancesLoad==1){utterancesTheme(utheme);}
+    const themeSwitchIcon = document.getElementById("themeSwitch");
+    if (themeSwitchIcon) {
+        themeSwitchIcon.setAttribute("d",value=IconList[icon]);
+        themeSwitchIcon.parentNode.style.color=color;
+    }
+    if(typeof giscus !== 'undefined' && giscus.getBoundingClientRect().width !== 0){
+        const message = { setConfig: { theme: utheme } };
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+    }
 }
 function modeSwitch(){
     let currentMode=document.documentElement.getAttribute('data-color-mode');
@@ -100,14 +155,10 @@ function modeSwitch(){
         changeTheme(...themeSettings[newMode]);
     }
 }
-function utterancesTheme(theme){
-    const message={type:'set-theme',theme: theme};
-    const iframe=document.getElementsByClassName('utterances-frame')[0];
-    iframe.contentWindow.postMessage(message,'[https://utteranc.es](https://utteranc.es)');
-}
+let theme = localStorage.getItem("meek_theme") || "light";
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 {%- endif %}
-console.log("\n %c 疯子 {{ blogBase['GMEEK_VERSION'] }} [https://www.futuremedia.work](https://www.futuremedia.work) \n","padding:5px 0;background:#02d81d;color:#fff");
+console.log("\n %c 未来传媒 {{ blogBase['GMEEK_VERSION'] }} https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
 </script>
 {% block script %}{% endblock %}
 </html>
