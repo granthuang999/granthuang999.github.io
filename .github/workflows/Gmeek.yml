@@ -93,7 +93,6 @@ jobs:
           echo "url_file=$URL_LIST_FILE" >> $GITHUB_OUTPUT
 
       - name: Submit URLs to Baidu
-        # [关键修正] 使用 env 和更健壮的 if 条件
         env:
           BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
         if: env.BAIDU_TOKEN != ''
@@ -102,7 +101,6 @@ jobs:
           curl -H 'Content-Type:text/plain' --data-binary @${{ steps.prepare_urls.outputs.url_file }} "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
 
       - name: Submit URLs to Bing (IndexNow)
-        # [关键修正] 使用 env 和更健壮的 if 条件
         env:
           BING_API_KEY: ${{ secrets.BING_API_KEY }}
         if: env.BING_API_KEY != ''
@@ -113,16 +111,16 @@ jobs:
           curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
       
       - name: Authenticate to Google Cloud
-        # [关键修正] 使用 env 和更健壮的 if 条件
         env:
           GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
         if: env.GOOGLE_API_KEY_JSON != ''
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
+          # [关键修正] 明确请求 Indexing API 所需的权限范围
+          scopes: 'https://www.googleapis.com/auth/indexing'
 
       - name: Submit URLs to Google
-        # [关键修正] 使用 env 和更健壮的 if 条件
         env:
           GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
         if: env.GOOGLE_API_KEY_JSON != ''
