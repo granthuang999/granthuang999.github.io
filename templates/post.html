@@ -9,30 +9,7 @@
 <meta property="og:image" content="{{ blogBase['ogImage'] }}">
 <title>{{ blogBase['postTitle'] }}</title>
 {% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
-{{ blogBase['head']|safe }}
-<!-- [新增] Article 结构化数据 -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "{{ blogBase.postTitle }}",
-    "image": "{{ blogBase.ogImage }}",
-    "datePublished": "{{ blogBase.isoDate }}",
-    "author": {
-        "@type": "Person",
-        "name": "{{ blogBase.title }}"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "{{ blogBase.title }}",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "{{ blogBase.faviconUrl }}"
-        }
-    },
-    "description": "{{ blogBase.description }}"
-}
-</script>
+{{ blogBase['head'] }}
 {% endblock %}
 
 {% block style %}
@@ -61,7 +38,6 @@
     font-size: 12px;
 }{% endif %}
 
-/* [新增] 页脚和分享按钮样式 */
 .post-footer {
     display: flex;
     justify-content: space-between;
@@ -100,10 +76,8 @@
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<!-- [关键修正] 将自定义样式包裹在 <style> 标签内 -->
-<style>
+<!-- [关键修改] 移除了外部的 <style> 标签 -->
 {{ blogBase['style']|safe }}
-</style>
 
 {% endblock %}
 {% block header %}
@@ -132,19 +106,17 @@
 {% endblock %}
 
 {% block content %}
-<!-- [新增] 文章页 Banner 图片 -->
+<!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
-    <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['postTitle'] }}">
+    <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
 </div>
 
-<!-- [新增] 为 TypeIt 动画预留的占位符 -->
+<!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
-<!-- [关键修正] 恢复了 TOC 插件所需的容器 -->
-<div id="GmeekTOC"></div>
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
-<!-- [修改] 将 bottomText 和分享按钮移入新的页脚容器 -->
+<!-- 页脚：分享按钮和 bottomText -->
 <div class="post-footer">
     <div class="bottom-text-inline">{{ blogBase['bottomText'] }}</div>
     <div class="share-buttons-inline">
@@ -156,7 +128,7 @@
     </div>
 </div>
 
-<!-- [新增] Google AdSense 广告单元 -->
+<!-- Google AdSense 广告单元 -->
 <div style="margin-top: 2rem; margin-bottom: 1rem;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
@@ -169,7 +141,7 @@
     </script>
 </div>
 
-<!-- [修改] Giscus 评论代码替换了旧的 Utterances -->
+<!-- Giscus 评论代码 -->
 <div style="margin-top: 2rem;">
     <script src="https://giscus.app/client.js"
         data-repo="granthuang999/granthuang999.github.io"
@@ -192,19 +164,20 @@
 
 {% block script %}
 <script>
-// [新增] TypeIt.js 高级用法脚本
+// TypeIt.js 高级用法脚本
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "{{ blogBase['quote'] }}";
-    const dailySentenceRaw = "{{ blogBase['daily_sentence']|tojson }}";
+    const dailySentenceRaw = "{{ blogBase['daily_sentence'] }}";
 
     let typeitStrings = [];
-    if (quoteText && quoteText !== 'None' && quoteText !== 'null') {
+    if (quoteText && quoteText !== 'None') {
         typeitStrings = [quoteText];
-    } else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
         try {
-            typeitStrings = JSON.parse(dailySentenceRaw);
+            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
+            typeitStrings = cleanedString.split(', ');
         } catch (e) {
-            console.error("无法解析 daily_sentence:", dailySentenceRaw, e);
+            console.error("无法解析 daily_sentence:", e);
         }
     }
 
@@ -222,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// [新增] 分享功能的 JavaScript
+// 分享功能的 JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const postUrl = window.location.href;
     const postTitle = document.title;
@@ -240,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
 });
 
-// 保留的原始脚本
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 {% if blogBase['showPostSource']==1 %}document.getElementById("pathIssue").setAttribute("d",IconList["github"]);{% endif %}
 
@@ -312,8 +284,6 @@ document.addEventListener('DOMContentLoaded', () => {
 {%- endif %}
 
 </script>
-<!-- [关键修正] 将自定义脚本包裹在 <script> 标签内 -->
-<script>
+<!-- [关键修改] 移除了外部的 <script> 标签 -->
 {{ blogBase['script']|safe }}
-</script>
 {% endblock %}
