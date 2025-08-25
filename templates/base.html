@@ -8,13 +8,13 @@
     {{ blogBase['allHead']|safe }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
     
-    <!-- [新增] 为导航页加载 Tailwind CSS 和 Inter 字体 -->
+    <!-- 为导航页等加载 Tailwind CSS 和 Inter 字体 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- [新增] 引入 TypeIt.js 库 -->
+    <!-- 引入 TypeIt.js 库 -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 
     {%- if blogBase['themeMode']=='manual' -%}
@@ -26,7 +26,7 @@
     
     {% block head %}{% endblock %}
 
-    <!-- [新增] 网站分析与广告代码 -->
+    <!-- 网站分析与广告代码 -->
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -36,7 +36,6 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -44,7 +43,6 @@
       gtag('js', new Date());
       gtag('config', 'G-FDL6BTW5FM');
     </script>
-    <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -52,10 +50,9 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "sh44c07wsg");
     </script>
-    <!-- Google AdSense 核心脚本 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
     
-    <!-- [新增] WebSite 结构化数据 -->
+    <!-- WebSite 结构化数据 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -74,6 +71,7 @@
     </script>
 </head>
 <style>
+/* [关键修正] 恢复了body的居中样式 */
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
 
@@ -89,9 +87,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     color: white;
     overflow: hidden;
     display:flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 优化边框在深色背景下的可见性 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .page-header::before {
     content: '';
     position: absolute;
@@ -99,19 +96,16 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色遮罩 */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
 .page-header > * {
     position: relative;
     z-index: 2;
 }
-
 .page-header a {
     color: white !important;
 }
-
 .page-header .octicon path {
     fill: white;
 }
@@ -158,7 +152,7 @@ function modeSwitch(){
 let theme = localStorage.getItem("meek_theme") || "light";
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 {%- endif %}
-console.log("\n %c 未来传媒 {{ blogBase['GMEEK_VERSION'] }} https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+console.log("\n %c Gmeek {{ blogBase['GMEEK_VERSION'] }} https://github.com/granthuang999/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
 </script>
 {% block script %}{% endblock %}
 </html>
