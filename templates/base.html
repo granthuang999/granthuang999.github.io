@@ -1,73 +1,111 @@
-<!DOCTYPE html>
+                 <!DOCTYPE html>
 <html data-color-mode="light" data-dark-theme="{{ blogBase['nightTheme'] }}" data-light-theme="{{ blogBase['dayTheme'] }}" lang={% if blogBase['i18n']=='CN' %}"zh-CN"{% elif blogBase['i18n']=='RU' %}"ru"{% else -%}"en"{%- endif -%}>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{ blogBase['primerCSS'] }}
-    {% include 'includes/custom_head.html' %}
+    {{ blogBase['allHead'] }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
-    
-    <!-- 加载 Tailwind CSS 和 Inter 字体 -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- 引入 TypeIt.js 库 -->
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-
     {%- if blogBase['themeMode']=='manual' -%}
     <script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
     {%- endif -%}
-    
     {% block head %}{% endblock %}
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <!-- 网站分析与广告代码 -->
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FDL6BTW5FM');
-    </script>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "sh44c07wsg");
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
+  gtag('config', 'G-FDL6BTW5FM');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sh44c07wsg");
+</script>
+<!-- [新增] Google AdSense 核心脚本 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
+<!-- [新增] 引入 TypeIt.js 库 -->
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 </head>
 <style>
-/* 恢复body的居中和基础样式 */
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
-#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
+
+/* --- [关键修改] 页眉背景样式 --- */
+.page-header {
+    position: relative; /* 这是为了定位遮罩层 */
+    /* 从 config.json 读取背景图 URL */
+    background-image: url('{{ blogBase["headerBackgroundUrl"] }}');
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem 1rem; /* 您可以根据喜好调整上下内边距 */
+    border-radius: 8px; /* 为页眉添加圆角 */
+    margin-bottom: 2rem; /* 页眉和下方内容的间距 */
+    color: white; /* 将页眉内的文字颜色设为白色 */
+    overflow: hidden; /* 确保遮罩的圆角生效 */
+    display:flex; /* 保持内部 flex 布局 */
+    padding-bottom:8px;
+    border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
+}
+
+/* 这会创建一个半透明的黑色遮罩层，让文字更易读 */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色遮罩 */
+    z-index: 1;
+}
+
+/* 这能确保页眉的实际内容（标题、按钮等）显示在遮罩层上方 */
+.page-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 将页眉中的链接文字也设为白色 */
+.page-header a {
+    color: white !important;
+}
+
+/* 将页眉中的SVG图标也填充为白色 */
+.page-header .octicon path {
+    fill: white;
+}
+/* --- 修改结束 --- */
+
 </style>
 {% block style %}{% endblock %}
 
 <body>
-    <div id="header">{% block header %}{% endblock %}</div>
+    <!-- [关键修改] 将 div#header 替换为 header.page-header -->
+    <header id="header" class="page-header">{% block header %}{% endblock %}</header>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">{% include 'footer.html' %}</div>
 </body>
 <script>
-var IconList={{ IconList|tojson }};
-var utterancesLoad=0; // 虽然已迁移到Giscus，保留此变量以防旧脚本引用
+var IconList={{ IconList }};
+var utterancesLoad=0;
 {% if blogBase['themeMode']=='manual' %}
 let themeSettings={
     "dark": ["dark","moon","#00f0ff","dark-blue"],
@@ -76,17 +114,9 @@ let themeSettings={
 };
 function changeTheme(mode, icon, color, utheme){
     document.documentElement.setAttribute("data-color-mode",mode);
-    const themeSwitchIcon = document.getElementById("themeSwitch");
-    if (themeSwitchIcon) {
-        themeSwitchIcon.setAttribute("d",value=IconList[icon]);
-        themeSwitchIcon.parentNode.style.color=color;
-    }
-    // 适配 Giscus 的主题切换
-    const giscusFrame = document.querySelector('iframe.giscus-frame');
-    if (giscusFrame) {
-        const message = { setConfig: { theme: utheme } };
-        giscusFrame.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-    }
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
 }
 function modeSwitch(){
     let currentMode=document.documentElement.getAttribute('data-color-mode');
@@ -96,10 +126,14 @@ function modeSwitch(){
         changeTheme(...themeSettings[newMode]);
     }
 }
-let theme = localStorage.getItem("meek_theme") || "light";
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 {%- endif %}
-console.log("\n %c 未来传媒 {{ blogBase['GMEEK_VERSION'] }} https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+console.log("\n %c Gmeek {{ blogBase['GMEEK_VERSION'] }} https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
 </script>
 {% block script %}{% endblock %}
 </html>
