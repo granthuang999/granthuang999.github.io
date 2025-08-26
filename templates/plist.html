@@ -26,7 +26,6 @@
 .listLabels{white-space:nowrap;display:flex;}
 .listLabels object{max-height:16px;max-width:24px;}
 
-/* [新增] 为打字动画效果设置最小高度，防止页面跳动 */
 #animated-subtitle {
     min-height: 24px; /* 您可以根据字体大小调整 */
 }
@@ -89,17 +88,17 @@
 {% block content %}
 <!-- 主页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 16px;">
-    <img src="{{ blogBase['bannerUrl'] }}" style="max-width: 100%; border-radius: 8px;" alt="Website Banner">
+    <!-- [关键修改] 优化了 alt 文本 -->
+    <img src="{{ blogBase['bannerUrl'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['title'] }} Banner">
 </div>
 
-<!-- [关键修改] 将原来的副标题 div 替换为这个带 ID 的新 div -->
-<div id="animated-subtitle" style="margin-bottom: 16px;"></div>
+<div id="animated-subtitle" style="margin-bottom: 16px; text-align: center; font-style: italic;"></div>
 
 <nav class="SideNav border">
 {% for num in postListJson -%}
 <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="{{ postListJson[num]['postUrl']|e }}">
     <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop{{ postListJson[num]['top'] }}" d=""></path>
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop{{ postListJson[num]['top'] }}" d=""></path>
         </svg>
         <span class="listTitle">{{ postListJson[num]['postTitle']|e }}</span>
     </div>
@@ -135,17 +134,15 @@
 
 {% block script %}
 <script>
-// --- [新增] TypeIt.js 初始化脚本 ---
+// TypeIt.js 初始化脚本
 document.addEventListener('DOMContentLoaded', function () {
   new TypeIt('#animated-subtitle', {
-    // 从 blogBase 配置中动态获取副标题文字
     strings: ["{{ blogBase['subTitle'] }}"],
-    speed: 75, // 打字速度
-    waitUntilVisible: true, // 等到元素可见时才开始动画
-    cursor: false // 不显示打字光标
+    speed: 75,
+    waitUntilVisible: true,
+    cursor: false
   }).go();
 });
-// --- 新增结束 ---
 
 document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
 document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
