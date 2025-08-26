@@ -10,8 +10,8 @@
 <meta property="og:image" content="{{ blogBase['ogImage'] }}">
 <title>{{ blogBase['postTitle'] }}</title>
 {% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
-{{ blogBase['head']|safe }}
 <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "headline": "{{ blogBase.postTitle }}", "image": "{{ blogBase.ogImage }}", "datePublished": "{{ blogBase.isoDate }}", "author": { "@type": "Person", "name": "{{ blogBase.title }}" }, "publisher": { "@type": "Organization", "name": "{{ blogBase.title }}", "logo": { "@type": "ImageObject", "url": "{{ blogBase.faviconUrl }}" } }, "description": "{{ blogBase.description }}" } </script>
+{{ blogBase['head']|safe }}
 {% endblock %}
 
 {% block style %}
