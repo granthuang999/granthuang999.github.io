@@ -2,6 +2,8 @@
 
 {% block head %}
 <meta name="description" content="{{ blogBase['description'] }}">
+<!-- [新增] 添加 meta keywords 标签 -->
+{% if blogBase['keywords'] %}<meta name="keywords" content="{{ blogBase['keywords'] }}">{% endif %}
 <meta property="og:title" content="{{ blogBase['postTitle'] }}">
 <meta property="og:description" content="{{ blogBase['description'] }}">
 <meta property="og:type" content="article">
@@ -9,7 +11,7 @@
 <meta property="og:image" content="{{ blogBase['ogImage'] }}">
 <title>{{ blogBase['postTitle'] }}</title>
 {% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
-{{ blogBase['head'] }}
+{{ blogBase['head']|safe }}
 {% endblock %}
 
 {% block style %}
@@ -76,8 +78,9 @@
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 </style>
-<!-- [关键修改] 移除了外部的 <style> 标签 -->
+<style>
 {{ blogBase['style']|safe }}
+</style>
 
 {% endblock %}
 {% block header %}
@@ -108,7 +111,7 @@
 {% block content %}
 <!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
-    <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="Article Banner">
+    <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['postTitle'] }}">
 </div>
 
 <!-- 为 TypeIt 动画预留的占位符 -->
@@ -167,17 +170,16 @@
 // TypeIt.js 高级用法脚本
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "{{ blogBase['quote'] }}";
-    const dailySentenceRaw = "{{ blogBase['daily_sentence'] }}";
+    const dailySentenceRaw = "{{ blogBase['daily_sentence']|tojson }}";
 
     let typeitStrings = [];
-    if (quoteText && quoteText !== 'None') {
+    if (quoteText && quoteText !== 'None' && quoteText !== 'null') {
         typeitStrings = [quoteText];
-    } else if (dailySentenceRaw && dailySentenceRaw !== 'None') {
+    } else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
         try {
-            const cleanedString = dailySentenceRaw.replace(/[\[\]']/g, '');
-            typeitStrings = cleanedString.split(', ');
+            typeitStrings = JSON.parse(dailySentenceRaw);
         } catch (e) {
-            console.error("无法解析 daily_sentence:", e);
+            console.error("无法解析 daily_sentence:", dailySentenceRaw, e);
         }
     }
 
@@ -284,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 {%- endif %}
 
 </script>
-<!-- [关键修改] 移除了外部的 <script> 标签 -->
+<script>
 {{ blogBase['script']|safe }}
+</script>
 {% endblock %}
