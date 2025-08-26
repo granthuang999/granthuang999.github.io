@@ -77,6 +77,8 @@ jobs:
 
       - name: Index site with Pagefind
         run: |
+          echo "Setting up npm registry mirror..."
+          npm config set registry https://registry.npmmirror.com/
           echo "Indexing content with Pagefind..."
           npx -y pagefind --site docs
 
@@ -117,6 +119,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
+          access_token_scopes: 'https://www.googleapis.com/auth/indexing'
 
       - name: Submit URLs to Google
         env:
@@ -125,8 +128,7 @@ jobs:
         run: |
           echo "Submitting URLs to Google Indexing API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
-          # [关键修正] 在获取令牌时，明确申请 indexing 权限
-          ACCESS_TOKEN=$(gcloud auth print-access-token --scopes=https://www.googleapis.com/auth/indexing)
+          ACCESS_TOKEN=$(gcloud auth print-access-token)
           for url in $URL_LIST; do
             echo "Submitting URL: $url"
             curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
