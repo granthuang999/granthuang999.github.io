@@ -53,9 +53,7 @@ jobs:
           
           echo "Running the Gmeek script..."
           cd /opt/Gmeek/
-          
-          # [关键修正] 移除了 --issue_number 参数，强制所有触发都执行 runAll() 完整构建
-          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
           echo "Copying ads.txt to the output directory..."
           if [ -f "/opt/Gmeek/ads.txt" ]; then
@@ -121,6 +119,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
+          # [关键修正] 明确请求 Indexing API 所需的权限范围
           access_token_scopes: 'https://www.googleapis.com/auth/indexing'
 
       - name: Submit URLs to Google
