@@ -119,8 +119,6 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          # [关键修正] 明确请求 Indexing API 所需的权限范围
-          access_token_scopes: 'https://www.googleapis.com/auth/indexing'
 
       - name: Submit URLs to Google
         env:
@@ -129,7 +127,8 @@ jobs:
         run: |
           echo "Submitting URLs to Google Indexing API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
-          ACCESS_TOKEN=$(gcloud auth print-access-token)
+          # [关键修正] 在获取令牌时，明确申请 indexing 权限
+          ACCESS_TOKEN=$(gcloud auth print-access-token --scopes=https://www.googleapis.com/auth/indexing)
           for url in $URL_LIST; do
             echo "Submitting URL: $url"
             curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
