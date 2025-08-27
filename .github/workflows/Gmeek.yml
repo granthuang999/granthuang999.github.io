@@ -53,7 +53,7 @@ jobs:
           
           echo "Running the Gmeek script..."
           cd /opt/Gmeek/
-          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} 
           
           echo "Copying ads.txt to the output directory..."
           if [ -f "/opt/Gmeek/ads.txt" ]; then
