@@ -1,8 +1,8 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Corrected Version)
+# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final Verified Version)
 
 name: Sync to WeChat Official Account
 
-# 触发条件：当一个 Issue 被打上标签时触发
+# 触发条件：当一个 Issue 被打上 "Publish" 标签时触发
 on:
   issues:
     types: [labeled]
@@ -14,11 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync to WeChat Official Account MP
-        # 使用一个经过验证的、可靠的替代 Action
-        uses: chino-lu/wechat-mp-sync-action@main
+        # 使用经过验证的、当前活跃的 Action
+        uses: Ikaros-521/issues-to-wechat-mp@v1.2
         with:
-          # 注意：这里的参数名根据新的 Action 要求有所变化 (appId -> app_id)
+          # 您的公众号 AppID (请确保大小写正确)
           app_id: ${{ secrets.WECHAT_APPID }}
+          # 您的公众号 AppSecret
           app_secret: ${{ secrets.WECHAT_APPSECRET }}
+          # Issue 编号，自动获取
           issue_number: ${{ github.event.issue.number }}
+          # GitHub Token，自动提供
           github_token: ${{ secrets.GITHUB_TOKEN }}
