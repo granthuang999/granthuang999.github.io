@@ -1,4 +1,4 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final, Syntax-Corrected Version)
+# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final, Syntax-Corrected Version 2)
 
 name: Sync to WeChat Official Account
 
@@ -25,7 +25,7 @@ jobs:
           pip install requests beautifulsoup4 markdown2
 
       - name: Run Sync Script
-        # 关键修正：使用 python -c '...' 来执行多行 Python 脚本
+        # 关键修正：修改了最后一行 print 语句的引号处理方式，以避免语法错误
         run: |
           python -c '
           import os
@@ -42,7 +42,6 @@ jobs:
           issue_body_md = os.environ.get("ISSUE_BODY")
           thumb_media_id = os.environ.get("THUMB_MEDIA_ID")
           
-          # 检查所有必要的 Secrets 是否都已设置
           if not all([app_id, app_secret, issue_title, issue_body_md, thumb_media_id]):
               print("::error::One or more required secrets (APP_ID, APP_SECRET, THUMB_MEDIA_ID) or environment variables (ISSUE_TITLE, ISSUE_BODY) are missing.")
               sys.exit(1)
@@ -64,7 +63,6 @@ jobs:
           html_body = markdown2.markdown(issue_body_md, extras=["fenced-code-blocks", "tables", "cuddled-lists"])
           soup = BeautifulSoup(html_body, "html.parser")
           
-          # 查找所有图片并上传到微信服务器
           for img in soup.find_all("img"):
               img_url = img.get("src")
               if not img_url:
@@ -80,7 +78,7 @@ jobs:
                   
                   if "url" in upload_res:
                       wx_img_url = upload_res["url"]
-                      img["src"] = wx_img_url # 替换为微信图片链接
+                      img["src"] = wx_img_url
                       print(f"Successfully uploaded and replaced image: {img_url} -> {wx_img_url}")
                   else:
                       print(f"::warning::Failed to upload image {img_url}: {upload_res}")
@@ -95,9 +93,10 @@ jobs:
               "author": "未来传媒",
               "content": final_html_content,
               "thumb_media_id": thumb_media_id,
-              "show_cover_pic": 1 # 1 表示在正文中显示封面图
+              "show_cover_pic": 1
           }
 
+          # 微信API的draft/add接口目前已更新为freepublish/submit，我们使用草稿箱接口 draft/add
           upload_article_url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}"
           headers = {"Content-Type": "application/json"}
           payload = {"articles": [article]}
@@ -105,7 +104,9 @@ jobs:
           try:
               upload_article_res = requests.post(upload_article_url, headers=headers, data=json.dumps(payload, ensure_ascii=False).encode("utf-8")).json()
               if "media_id" in upload_article_res:
-                  print(f"🎉 Successfully synced article \"{issue_title}\" to WeChat Drafts! Media ID: {upload_article_res[\"media_id\"]}")
+                  media_id = upload_article_res["media_id"]
+                  # **关键修正点**：使用单引号来包裹整个f-string，避免内部双引号的转义问题
+                  print(f''"🎉 Successfully synced article ''{issue_title}'' to WeChat Drafts! Media ID: {media_id}"'')
               else:
                   print(f"::error::Failed to upload article to drafts: {upload_article_res}")
                   sys.exit(1)
