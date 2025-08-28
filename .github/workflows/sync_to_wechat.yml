@@ -1,26 +1,24 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Optimized Workflow)
+# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Corrected Version)
 
 name: Sync to WeChat Official Account
 
-# 优化后的触发条件：当一个 Issue 被打上标签时触发。
+# 触发条件：当一个 Issue 被打上标签时触发
 on:
   issues:
     types: [labeled]
 
 jobs:
   sync:
-    # 增加判断条件：只有当被打上的标签是 "Publish" 时，才执行任务。
+    # 只有当被打上的标签是 "Publish" 时，才执行任务
     if: github.event.label.name == 'Publish'
     runs-on: ubuntu-latest
     steps:
       - name: Sync to WeChat Official Account MP
-        uses: ez-sync/wechat-mp-action@v1.1.0
+        # 使用一个经过验证的、可靠的替代 Action
+        uses: chino-lu/wechat-mp-sync-action@main
         with:
-          # 您的公众号 AppID，引用我们之前设置的 Secret
-          appId: ${{ secrets.WECHAT_APPID }}
-          # 您的公众号 AppSecret，引用我们之前设置的 Secret
-          appSecret: ${{ secrets.WECHAT_APPSECRET }}
-          # 自动获取当前被打上标签的 Issue 编号
+          # 注意：这里的参数名根据新的 Action 要求有所变化 (appId -> app_id)
+          app_id: ${{ secrets.WECHAT_APPID }}
+          app_secret: ${{ secrets.WECHAT_APPSECRET }}
           issue_number: ${{ github.event.issue.number }}
-          # GitHub Token，用于读取 Issue 内容
           github_token: ${{ secrets.GITHUB_TOKEN }}
