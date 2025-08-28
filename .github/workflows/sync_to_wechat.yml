@@ -1,4 +1,4 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final, Syntax-Corrected Version 2)
+# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final Gmeek Version)
 
 name: Sync to WeChat Official Account
 
@@ -11,112 +11,17 @@ jobs:
     if: github.event.label.name == 'Publish'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Sync to WeChat Official Account MP
+        # 使用 Gmeek 作者官方开发的 Action
+        uses: Gmeek/wechat-mp-sync@v1.2.1
         with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 markdown2
-
-      - name: Run Sync Script
-        # 关键修正：修改了最后一行 print 语句的引号处理方式，以避免语法错误
-        run: |
-          python -c '
-          import os
-          import requests
-          import json
-          import markdown2
-          from bs4 import BeautifulSoup
-          import sys
-
-          # --- 1. 从环境变量获取安全信息 ---
-          app_id = os.environ.get("APP_ID")
-          app_secret = os.environ.get("APP_SECRET")
-          issue_title = os.environ.get("ISSUE_TITLE")
-          issue_body_md = os.environ.get("ISSUE_BODY")
-          thumb_media_id = os.environ.get("THUMB_MEDIA_ID")
-          
-          if not all([app_id, app_secret, issue_title, issue_body_md, thumb_media_id]):
-              print("::error::One or more required secrets (APP_ID, APP_SECRET, THUMB_MEDIA_ID) or environment variables (ISSUE_TITLE, ISSUE_BODY) are missing.")
-              sys.exit(1)
-
-          # --- 2. 获取 Access Token ---
-          token_url = f"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={app_id}&secret={app_secret}"
-          try:
-              token_res = requests.get(token_url).json()
-              if "access_token" not in token_res:
-                  print(f"::error::Failed to get access_token: {token_res}")
-                  sys.exit(1)
-              access_token = token_res["access_token"]
-              print("Successfully got access_token.")
-          except Exception as e:
-              print(f"::error::Exception when getting access_token: {e}")
-              sys.exit(1)
-
-          # --- 3. 处理 Markdown 和图片 ---
-          html_body = markdown2.markdown(issue_body_md, extras=["fenced-code-blocks", "tables", "cuddled-lists"])
-          soup = BeautifulSoup(html_body, "html.parser")
-          
-          for img in soup.find_all("img"):
-              img_url = img.get("src")
-              if not img_url:
-                  continue
-              try:
-                  img_response = requests.get(img_url)
-                  img_response.raise_for_status()
-                  img_content = img_response.content
-                  
-                  upload_url = f"https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={access_token}"
-                  files = {"media": ("image.jpg", img_content)}
-                  upload_res = requests.post(upload_url, files=files).json()
-                  
-                  if "url" in upload_res:
-                      wx_img_url = upload_res["url"]
-                      img["src"] = wx_img_url
-                      print(f"Successfully uploaded and replaced image: {img_url} -> {wx_img_url}")
-                  else:
-                      print(f"::warning::Failed to upload image {img_url}: {upload_res}")
-              except Exception as e:
-                  print(f"::warning::Exception when processing image {img_url}: {e}")
-
-          final_html_content = str(soup)
-
-          # --- 4. 构造并上传图文素材到草稿箱 ---
-          article = {
-              "title": issue_title,
-              "author": "未来传媒",
-              "content": final_html_content,
-              "thumb_media_id": thumb_media_id,
-              "show_cover_pic": 1
-          }
-
-          # 微信API的draft/add接口目前已更新为freepublish/submit，我们使用草稿箱接口 draft/add
-          upload_article_url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}"
-          headers = {"Content-Type": "application/json"}
-          payload = {"articles": [article]}
-          
-          try:
-              upload_article_res = requests.post(upload_article_url, headers=headers, data=json.dumps(payload, ensure_ascii=False).encode("utf-8")).json()
-              if "media_id" in upload_article_res:
-                  media_id = upload_article_res["media_id"]
-                  # **关键修正点**：使用单引号来包裹整个f-string，避免内部双引号的转义问题
-                  print(f''"🎉 Successfully synced article ''{issue_title}'' to WeChat Drafts! Media ID: {media_id}"'')
-              else:
-                  print(f"::error::Failed to upload article to drafts: {upload_article_res}")
-                  sys.exit(1)
-          except Exception as e:
-              print(f"::error::Exception when uploading article to drafts: {e}")
-              sys.exit(1)
-          '
-        env:
-          APP_ID: ${{ secrets.WECHAT_APPID }}
-          APP_SECRET: ${{ secrets.WECHAT_APPSECRET }}
-          THUMB_MEDIA_ID: ${{ secrets.WECHAT_THUMB_MEDIA_ID }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
+          # 您的公众号 AppID
+          app_id: ${{ secrets.WECHAT_APPID }}
+          # 您的公众号 AppSecret
+          app_secret: ${{ secrets.WECHAT_APPSECRET }}
+          # 您的封面图片 Media ID
+          thumb_media_id: ${{ secrets.WECHAT_THUMB_MEDIA_ID }}
+          # Issue 编号，自动获取
+          issue_number: ${{ github.event.issue.number }}
+          # GitHub Token，自动提供
+          github_token: ${{ secrets.GITHUB_TOKEN }}
