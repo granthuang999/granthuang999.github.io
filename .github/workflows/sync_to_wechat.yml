@@ -1,4 +1,4 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final Gmeek Version)
+# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final Verified Action)
 
 name: Sync to WeChat Official Account
 
@@ -12,16 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync to WeChat Official Account MP
-        # 使用 Gmeek 作者官方开发的 Action
-        uses: Gmeek/wechat-mp-sync@v1.2.1
+        # 使用经过最终验证的、当前活跃的 Action
+        # Repository: https://github.com/Ikaros-521/issues-to-wechat-mp
+        uses: Ikaros-521/issues-to-wechat-mp@v1.2
         with:
-          # 您的公众号 AppID
           app_id: ${{ secrets.WECHAT_APPID }}
-          # 您的公众号 AppSecret
           app_secret: ${{ secrets.WECHAT_APPSECRET }}
-          # 您的封面图片 Media ID
           thumb_media_id: ${{ secrets.WECHAT_THUMB_MEDIA_ID }}
-          # Issue 编号，自动获取
           issue_number: ${{ github.event.issue.number }}
-          # GitHub Token，自动提供
           github_token: ${{ secrets.GITHUB_TOKEN }}
