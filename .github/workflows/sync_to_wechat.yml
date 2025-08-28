@@ -1,4 +1,4 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final Verified Version)
+# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final & Self-Contained Version)
 
 name: Sync to WeChat Official Account
 
@@ -13,15 +13,121 @@ jobs:
     if: github.event.label.name == 'Publish'
     runs-on: ubuntu-latest
     steps:
-      - name: Sync to WeChat Official Account MP
-        # 使用经过验证的、当前活跃的 Action
-        uses: Ikaros-521/issues-to-wechat-mp@v1.2
+      - name: Checkout repository
+        # 使用官方稳定的 action 来检出代码
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        # 使用官方稳定的 action 来设置 Python 环境
+        uses: actions/setup-python@v4
         with:
-          # 您的公众号 AppID (请确保大小写正确)
-          app_id: ${{ secrets.WECHAT_APPID }}
-          # 您的公众号 AppSecret
-          app_secret: ${{ secrets.WECHAT_APPSECRET }}
-          # Issue 编号，自动获取
-          issue_number: ${{ github.event.issue.number }}
-          # GitHub Token，自动提供
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.10'
+
+      - name: Install dependencies
+        # 安装脚本需要的库
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 markdown2
+
+      - name: Run Sync Script
+        # 运行我们自己编写的 Python 脚本
+        run: |
+          import os
+          import requests
+          import json
+          import markdown2
+          from bs4 import BeautifulSoup
+
+          # --- 1. 从 GitHub Secrets 获取安全信息 ---
+          app_id = os.environ.get('APP_ID')
+          app_secret = os.environ.get('APP_SECRET')
+          issue_title = os.environ.get('ISSUE_TITLE')
+          issue_body_md = os.environ.get('ISSUE_BODY')
+          github_token = os.environ.get('GITHUB_TOKEN')
+          repo_owner = os.environ.get('REPO_OWNER')
+          repo_name = os.environ.get('REPO_NAME')
+
+          if not all([app_id, app_secret, issue_title, issue_body_md, github_token, repo_owner, repo_name]):
+              print("::error::Missing required environment variables.")
+              exit(1)
+
+          # --- 2. 获取 Access Token ---
+          token_url = f"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={app_id}&secret={app_secret}"
+          try:
+              token_res = requests.get(token_url).json()
+              if 'access_token' not in token_res:
+                  print(f"::error::Failed to get access_token: {token_res}")
+                  exit(1)
+              access_token = token_res['access_token']
+              print("Successfully got access_token.")
+          except Exception as e:
+              print(f"::error::Exception when getting access_token: {e}")
+              exit(1)
+
+          # --- 3. 处理 Markdown 和图片 ---
+          html_body = markdown2.markdown(issue_body_md, extras=["fenced-code-blocks", "tables"])
+          soup = BeautifulSoup(html_body, 'html.parser')
+          
+          # 查找所有图片并上传到微信服务器
+          for img in soup.find_all('img'):
+              img_url = img['src']
+              try:
+                  # 下载图片内容
+                  img_response = requests.get(img_url)
+                  img_response.raise_for_status()
+                  img_content = img_response.content
+                  
+                  # 上传图片到微信
+                  upload_url = f"https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={access_token}"
+                  files = {'media': ('image.jpg', img_content)}
+                  upload_res = requests.post(upload_url, files=files).json()
+                  
+                  if 'url' in upload_res:
+                      wx_img_url = upload_res['url']
+                      img['src'] = wx_img_url # 替换为微信图片链接
+                      print(f"Successfully uploaded and replaced image: {img_url} -> {wx_img_url}")
+                  else:
+                      print(f"::warning::Failed to upload image {img_url}: {upload_res}")
+              except Exception as e:
+                  print(f"::warning::Exception when processing image {img_url}: {e}")
+
+          final_html_content = str(soup)
+
+          # --- 4. 构造并上传图文素材 ---
+          article = {
+              "title": issue_title,
+              "author": "未来传媒",  # 您可以修改为您的笔名
+              "digest": "", # 摘要会自动截取正文前54个字
+              "content": final_html_content,
+              "content_source_url": "", # 可以留空或填写原文链接
+              "thumb_media_id": "", # 必须提供一个封面图片 ID
+              "show_cover_pic": 0 # 0不显示，1显示封面
+          }
+          
+          print("::error::封面图片功能(thumb_media_id)需要您先在素材库上传一张默认封面图并获取其media_id, 然后填入脚本。这是一个必要步骤。")
+          print("::warning::由于缺少封面图片ID (thumb_media_id), 本次同步将会失败。请按文档说明配置。")
+          #  exit(1) # 暂时注释掉，让您先看到流程，但请务必配置封面
+
+          upload_article_url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}"
+          headers = {'Content-Type': 'application/json'}
+          payload = {"articles": [article]}
+          
+          try:
+              upload_article_res = requests.post(upload_article_url, headers=headers, data=json.dumps(payload, ensure_ascii=False).encode('utf-8')).json()
+              if 'media_id' in upload_article_res:
+                  print(f"🎉 Successfully synced article '{issue_title}' to WeChat Drafts!")
+              else:
+                  print(f"::error::Failed to upload article: {upload_article_res}")
+                  exit(1)
+          except Exception as e:
+              print(f"::error::Exception when uploading article: {e}")
+              exit(1)
+
+        env:
+          APP_ID: ${{ secrets.WECHAT_APPID }}
+          APP_SECRET: ${{ secrets.WECHAT_APPSECRET }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
