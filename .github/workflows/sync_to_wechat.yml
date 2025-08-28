@@ -96,11 +96,11 @@ jobs:
           # --- 4. 构造并上传图文素材 ---
           article = {
               "title": issue_title,
-              "author": "未来传媒",  # 您可以修改为您的笔名
+              "author": "三疯",  # 您可以修改为您的笔名
               "digest": "", # 摘要会自动截取正文前54个字
               "content": final_html_content,
               "content_source_url": "", # 可以留空或填写原文链接
-              "thumb_media_id": "", # 必须提供一个封面图片 ID
+              "thumb_media_id": "6dCrgiKxcp0qlFxl_1hgq2X3xgbOLoMDF8-dQci87DqeAv19ZF37mZWoFbgRI0Hr", # 必须提供一个封面图片 ID
               "show_cover_pic": 0 # 0不显示，1显示封面
           }
           
@@ -126,6 +126,7 @@ jobs:
         env:
           APP_ID: ${{ secrets.WECHAT_APPID }}
           APP_SECRET: ${{ secrets.WECHAT_APPSECRET }}
+          THUMB_MEDIA_ID: ${{ secrets.WECHAT_THUMB_MEDIA_ID }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
