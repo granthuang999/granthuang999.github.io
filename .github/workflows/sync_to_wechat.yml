@@ -10,26 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Sync Service
-        # 关键修正：使用 Here Document (<<EOF) 来构造JSON，彻底避免引号和特殊字符问题
+        # 核心修正：不再使用Here Document和jq，直接在env中用toJSON()函数处理数据
+        # 这是处理包含特殊字符的字符串的最稳健方法
         run: |
-          # 准备 JSON payload
-          JSON_PAYLOAD=$(cat <<EOF
-          {
-            "app_id": "${{ secrets.WECHAT_APPID }}",
-            "app_secret": "${{ secrets.WECHAT_APPSECRET }}",
-            "thumb_media_id": "${{ secrets.WECHAT_THUMB_MEDIA_ID }}",
-            "issue_title": "${{ env.ISSUE_TITLE }}",
-            "issue_body": $(echo "${{ github.event.issue.body }}" | jq -R -s '.')
-          }
-          EOF
-          )
-
-          # 发送 curl 请求
           response=$(curl -s -w "\n%{http_code}" -X POST \
             -H "Authorization: Bearer ${{ secrets.SECRET_TOKEN }}" \
             -H "Content-Type: application/json" \
-            --data-binary "$JSON_PAYLOAD" \
-            "https://wechat-sync-service.onrender.com/sync")
+            -d '{
+              "app_id": "${{ secrets.WECHAT_APPID }}",
+              "app_secret": "${{ secrets.WECHAT_APPSECRET }}",
+              "thumb_media_id": "${{ secrets.WECHAT_THUMB_MEDIA_ID }}",
+              "issue_title": ${{ env.JSON_ESCAPED_ISSUE_TITLE }},
+              "issue_body": ${{ env.JSON_ESCAPED_ISSUE_BODY }}
+            }' \
+            "https://wechat-sync-service.onrender.com/sync/sync")
           
           http_code=$(tail -n1 <<< "$response")
           body=$(head -n-1 <<< "$response")
@@ -41,5 +35,6 @@ jobs:
             echo "🎉 Successfully triggered sync service! Response: $body"
           fi
         env:
-          # 使用 toJSON 来确保标题中的特殊字符被正确处理
-          ISSUE_TITLE: ${{ toJSON(github.event.issue.title) }}
+          # 使用 toJSON() 函数将标题和正文预先处理成安全的JSON字符串
+          JSON_ESCAPED_ISSUE_TITLE: ${{ toJSON(github.event.issue.title) }}
+          JSON_ESCAPED_ISSUE_BODY: ${{ toJSON(github.event.issue.body) }}
