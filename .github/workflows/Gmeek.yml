@@ -2,8 +2,6 @@ name: build Gmeek
 
 on:
   workflow_dispatch:
-  issues:
-    types: [opened, edited]
   schedule:
     - cron: "0 16 * * *"
     
