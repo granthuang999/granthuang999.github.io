@@ -23,7 +23,7 @@ jobs:
               "issue_title": ${{ env.JSON_ESCAPED_ISSUE_TITLE }},
               "issue_body": ${{ env.JSON_ESCAPED_ISSUE_BODY }}
             }' \
-            "https://wechat-sync-service.onrender.com/sync/sync")
+            "https://wechat-sync-service.onrender.com/sync")
           
           http_code=$(tail -n1 <<< "$response")
           body=$(head -n-1 <<< "$response")
