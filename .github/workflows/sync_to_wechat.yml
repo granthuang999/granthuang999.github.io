@@ -1,5 +1,3 @@
-# GitHub Action: Sync new articles from GitHub Issues to WeChat Official Account (Final Verified Action)
-
 name: Sync to WeChat Official Account
 
 on:
@@ -11,13 +9,28 @@ jobs:
     if: github.event.label.name == 'Publish'
     runs-on: ubuntu-latest
     steps:
-      - name: Sync to WeChat Official Account MP
-        # 使用经过最终验证的、当前活跃的 Action
-        # Repository: https://github.com/Ikaros-521/issues-to-wechat-mp
-        uses: Ikaros-521/issues-to-wechat-mp@v1.2
-        with:
-          app_id: ${{ secrets.WECHAT_APPID }}
-          app_secret: ${{ secrets.WECHAT_APPSECRET }}
-          thumb_media_id: ${{ secrets.WECHAT_THUMB_MEDIA_ID }}
-          issue_number: ${{ github.event.issue.number }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Trigger Sync Service
+        run: |
+          response=$(curl -s -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer ${{ secrets.SECRET_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "app_id": "${{ secrets.WECHAT_APPID }}",
+              "app_secret": "${{ secrets.WECHAT_APPSECRET }}",
+              "thumb_media_id": "${{ secrets.WECHAT_THUMB_MEDIA_ID }}",
+              "issue_title": "${{ env.ISSUE_TITLE }}",
+              "issue_body": ${{ toJSON(github.event.issue.body) }}
+            }' \
+            "https://wechat-sync-service.onrender.com/sync")
+
+          http_code=$(tail -n1 <<< "$response")
+          body=$(head -n-1 <<< "$response")
+
+          if [ "$http_code" -ne 200 ]; then
+            echo "::error::Failed to trigger sync service. Status: $http_code, Response: $body"
+            exit 1
+          else
+            echo "🎉 Successfully triggered sync service! Response: $body"
+          fi
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
