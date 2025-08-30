@@ -103,36 +103,37 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 /* --- 全局顶部导航栏样式 --- */
 .top-nav-bar {
-    background-color: rgba(51, 51, 51, 0.8);
-    backdrop-filter: blur(5px);
+    background-color: transparent; /* [核心修改] 背景完全透明 */
+    backdrop-filter: none; /* [核心修改] 移除毛玻璃效果 */
     padding: 10px 0;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: none; /* [核心修改] 移除阴影 */
 }
 .top-nav-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 15px;
     display: flex;
-    justify-content: space-between; /* [核心修改] 将“居中”改为“两端对齐” */
+    justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center; /* 确保垂直居中 */
+    align-items: center;
 }
 .top-nav-bar a {
-    color: white !important;
+    color: black !important; /* [核心修改] 字体改为黑色 */
     padding: 8px 12px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 增加字体颜色过渡 */
     border-radius: 4px;
 }
 .top-nav-bar a:hover {
-    background-color: rgba(85, 85, 85, 0.8);
+    background-color: rgba(0, 0, 0, 0.1); /* [核心修改] 悬停时背景改为浅黑色半透明 */
+    color: #333 !important; /* [可选] 悬停时字体颜色略深 */
 }
 body {
     padding-top: 60px !important; /* 为了避免导航栏遮挡原有内容 */
