@@ -2,6 +2,7 @@
 
 {% block head %}
 <meta name="description" content="{{ blogBase['description'] }}">
+<!-- [新增] 添加 meta keywords 标签 -->
 {% if blogBase['keywords'] %}<meta name="keywords" content="{{ blogBase['keywords'] }}">{% endif %}
 <meta property="og:title" content="{{ blogBase['postTitle'] }}">
 <meta property="og:description" content="{{ blogBase['description'] }}">
@@ -11,6 +12,7 @@
 <title>{{ blogBase['postTitle'] }}</title>
 {% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
 {{ blogBase['head']|safe }}
+<!-- [新增] Article 结构化数据 -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -40,8 +42,7 @@
 <style>
 .postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
 .title-right{display:flex;margin:auto 0 0 auto;}
-/* [修改] 调整了图标按钮的内边距，使其更协调 */
-.title-right .circle{padding: 14px 12px;margin-right:8px;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
 #postBody hr{height:2px;}
 .g-emoji{font-size:24px;}
@@ -107,54 +108,42 @@
 
 {% endblock %}
 {% block header %}
-<div class="title-left">
-    <a href="{{ blogBase['homeUrl'] }}" style="display: flex; align-items: center; text-decoration: none;">
-        <img src="{{ blogBase['avatarUrl'] }}" class="avatar circle" id="avatarImg" alt="avatar">
-        <div class="blogTitle" style="margin-left: 8px; font-size: 24px; color: white;">{{ blogBase['displayTitle'] }}</div>
-    </a>
-</div>
-
-<nav class="nav-menu">
-    {% for link in blogBase.navLinks %}
-        <a href="{{ blogBase.homeUrl }}{{ link.url }}" class="nav-item">{{ link.name }}</a>
-    {% endfor %}
-</nav>
-
+<h1 class="postTitle">{{ blogBase['postTitle'] }}</h1>
 <div class="title-right">
-    <a href="{{ blogBase['homeUrl'] }}/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="{{ i18n['Search'] }}">
+    <a href="{{ blogBase['homeUrl'] }}" id="buttonHome" class="btn btn-invisible circle" title="{{ i18n['home'] }}">
         <svg class="octicon" width="16" height="16">
-            <path id="pathSearch" fill-rule="evenodd"></path>
+            <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
     </a>
-    <a href="{{ blogBase['homeUrl'] }}/about.html" class="btn btn-invisible circle" title="关于本站&我/About Me">
+    {% if blogBase['showPostSource']==1 %}
+    <a href="{{ blogBase['postSourceUrl'] }}" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
-            <path id="pathAbout" fill-rule="evenodd"></path>
+            <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
     </a>
-    <a href="{{ blogBase['homeUrl'] }}/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
-        <svg class="octicon" width="16" height="16">
-            <path id="pathRSS" fill-rule="evenodd"></path>
-        </svg>
-    </a>
+    {% endif %}
+
     <a class="btn btn-invisible circle" onclick="modeSwitch();" title="{{ i18n['switchTheme'] }}" {%- if blogBase['themeMode']=='fix' -%}style="display:none;"{%- endif -%}>
         <svg class="octicon" width="16" height="16" >
             <path id="themeSwitch" fill-rule="evenodd"></path>
         </svg>
     </a>
+
 </div>
 {% endblock %}
 
 {% block content %}
+<!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
     <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['postTitle'] }}">
 </div>
 
-<h1 class="postTitle" style="text-align: center; margin-bottom: 1.5rem;">{{ blogBase['postTitle'] }}</h1>
-
+<!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
+<!-- 页脚：分享按钮和 bottomText -->
 <div class="post-footer">
     <div class="bottom-text-inline">{{ blogBase['bottomText'] }}</div>
     <div class="share-buttons-inline">
@@ -166,6 +155,7 @@
     </div>
 </div>
 
+<!-- Google AdSense 广告单元 -->
 <div style="margin-top: 2rem; margin-bottom: 1rem;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
@@ -178,6 +168,7 @@
     </script>
 </div>
 
+<!-- Giscus 评论代码 -->
 <div style="margin-top: 2rem;">
     <script src="https://giscus.app/client.js"
         data-repo="granthuang999/granthuang999.github.io"
@@ -248,11 +239,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
 });
 
-// [核心修改] 为文章页的Header图标赋予功能
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("pathAbout").setAttribute("d",IconList["about"]);
-document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
-
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+{% if blogBase['showPostSource']==1 %}document.getElementById("pathIssue").setAttribute("d",IconList["github"]);{% endif %}
 
 {% if blogBase['highlight']!=0 -%}
 document.addEventListener('DOMContentLoaded', () => {
@@ -322,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 {%- endif %}
 
 </script>
+
 {{ blogBase['script']|safe }}
 
 {% endblock %}
