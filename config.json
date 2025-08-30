@@ -32,23 +32,5 @@
 "rssSplit":"sentence",
 "bottomText":"❤️ 文章皆为原创，转载文章请注明出处！❤️",
 "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
-"needComment":1,
-"navLinks": [
-  {
-    "name": "身心健康",
-    "url": "/tag.html#中年健康Middle-aged health"
-  },
-  {
-    "name": "投资理财",
-    "url": "/tag.html#中年财富Middle-aged wealth"
-  },
-  {
-    "name": "学习成长",
-    "url": "/tag.html#中年成长Middle-aged growth"
-  },
-  {
-    "name": "前沿工具",
-    "url": "/tag.html#中年潮流Middle-aged trend"
-  }
-]
+"needComment":1
 }
