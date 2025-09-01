@@ -2,8 +2,6 @@ name: build Gmeek
 
 on:
   workflow_dispatch:
-  issues:
-    types: [opened, edited]
   schedule:
     - cron: "16 12 * * *"
     
@@ -11,11 +9,8 @@ jobs:
   build:
     name: Generate blog
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    permissions:
-      contents: write # 需要写权限来执行 git push
-      pages: write
-      id-token: write
+    if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,15 +44,14 @@ jobs:
       - name: Generate new html
         run: |
           echo "Forcefully removing the original 'static' file to prevent conflict..."
-          rm -rf /opt/Gmeek/static || true
+          rm -f /opt/Gmeek/static
           
           echo "Applying customizations from this repository over the base theme..."
           cp -r ./* /opt/Gmeek/
           
-          echo "Running the Gmeek script (full build)..."
+          echo "Running the Gmeek script..."
           cd /opt/Gmeek/
-          # [关键修正] 移除了 --issue_number 参数，强制所有触发都执行 runAll() 完整构建
-          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
           echo "Copying ads.txt to the output directory..."
           if [ -f "/opt/Gmeek/ads.txt" ]; then
@@ -86,75 +80,25 @@ jobs:
           echo "Indexing content with Pagefind..."
           npx -y pagefind --site docs
 
-      - name: update html
-        run: |
-          cd ${{ github.workspace }}
-          git config --local user.email "$(jq -r ".email" config.json)"
-          git config --local user.name "${{ github.repository_owner }}"
-          mkdir -p docs
-          mkdir -p backup
-          git add .
-          git commit -a -m '🎉 auto update by Gmeek action' || echo "nothing to commit"
-          git push || echo "nothing to push"
-          sleep 3
-          
-      - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: 'docs/'
-
-      - name: Prepare URL list artifact
+      - name: Prepare URL list for Submission
+        id: prepare_urls
         run: |
           echo "Preparing URL list for search engines..."
           URL_LIST_FILE="urls.txt"
           echo "https://www.futuremedia.work/" > $URL_LIST_FILE
           find docs -name "*.html" | sed 's|docs/|https://www.futuremedia.work/|' >> $URL_LIST_FILE
-          echo "--- URL list created ---"
+          echo "--- URL list to be submitted ---"
           cat $URL_LIST_FILE
-          echo "------------------------"
-      - name: Upload URL list artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: url-list
-          path: urls.txt
-          
-  deploy:
-    name: Deploy blog
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          echo "--------------------------------"
+          echo "url_file=$URL_LIST_FILE" >> $GITHUB_OUTPUT
 
-  submit-urls:
-    name: Submit URLs to Search Engines
-    runs-on: ubuntu-latest
-    needs: deploy 
-    steps:
-      - name: Download URL list artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: url-list
-
-      - name: Setup System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl jq
-      
       - name: Submit URLs to Baidu
         env:
           BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
         if: env.BAIDU_TOKEN != ''
         run: |
           echo "Submitting URLs to Baidu API..."
-          curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
+          curl -H 'Content-Type:text/plain' --data-binary @${{ steps.prepare_urls.outputs.url_file }} "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
 
       - name: Submit URLs to Bing (IndexNow)
         env:
@@ -162,7 +106,7 @@ jobs:
         if: env.BING_API_KEY != ''
         run: |
           echo "Submitting URLs to Bing IndexNow API..."
-          URL_LIST=$(cat urls.txt)
+          URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
           JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ env.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ env.BING_API_KEY }}.txt", urlList: $urls}')
           curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
       
@@ -180,7 +124,8 @@ jobs:
         if: env.GOOGLE_API_KEY_JSON != ''
         run: |
           echo "Submitting URLs to Google Indexing API..."
-          URL_LIST=$(cat urls.txt)
+          URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
+          # [关键修正] 在获取令牌时，明确申请 indexing 权限
           ACCESS_TOKEN=$(gcloud auth print-access-token --scopes=https://www.googleapis.com/auth/indexing)
           for url in $URL_LIST; do
             echo "Submitting URL: $url"
@@ -189,3 +134,92 @@ jobs:
             "https://indexing.googleapis.com/v3/urlNotifications:publish" || echo "Failed to submit $url to Google, continuing..."
           done
 
+      - name: update html
+        run: |
+          cd ${{ github.workspace }}
+          git config --local user.email "$(jq -r ".email" config.json)"
+          git config --local user.name "${{ github.repository_owner }}"
+          mkdir -p docs
+          mkdir -p backup
+          git add .
+          git commit -a -m '🎉 auto update by Gmeek action' || echo "nothing to commit"
+          git push || echo "nothing to push"
+          sleep 3
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/'
+
+      - name: Prepare URL list for Submission
+        id: prepare_urls
+        run: |
+          echo "Preparing URL list for search engines..."
+          URL_LIST_FILE="urls.txt"
+          echo "https://www.futuremedia.work/" > $URL_LIST_FILE
+          find docs -name "*.html" | sed 's|docs/|https://www.futuremedia.work/|' >> $URL_LIST_FILE
+          echo "--- URL list to be submitted ---"
+          cat $URL_LIST_FILE
+          echo "--------------------------------"
+          echo "url_file=$URL_LIST_FILE" >> $GITHUB_OUTPUT
+
+      - name: Submit URLs to Baidu
+        env:
+          BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
+        if: env.BAIDU_TOKEN != ''
+        run: |
+          echo "Submitting URLs to Baidu API..."
+          curl -H 'Content-Type:text/plain' --data-binary @${{ steps.prepare_urls.outputs.url_file }} "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
+
+      - name: Submit URLs to Bing (IndexNow)
+        env:
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        if: env.BING_API_KEY != ''
+        run: |
+          echo "Submitting URLs to Bing IndexNow API..."
+          URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
+          JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ env.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ env.BING_API_KEY }}.txt", urlList: $urls}')
+          curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
+      
+      - name: Authenticate to Google Cloud
+        env:
+          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        if: env.GOOGLE_API_KEY_JSON != ''
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
+
+      - name: Submit URLs to Google
+        env:
+          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        if: env.GOOGLE_API_KEY_JSON != ''
+        run: |
+          echo "Submitting URLs to Google Indexing API..."
+          URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
+          # [关键修正] 在获取令牌时，明确申请 indexing 权限
+          ACCESS_TOKEN=$(gcloud auth print-access-token --scopes=https://www.googleapis.com/auth/indexing)
+          for url in $URL_LIST; do
+            echo "Submitting URL: $url"
+            curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+            --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
+            "https://indexing.googleapis.com/v3/urlNotifications:publish" || echo "Failed to submit $url to Google, continuing..."
+          done
+          
+  deploy:
+    name: Deploy blog
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
