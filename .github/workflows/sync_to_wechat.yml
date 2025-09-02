@@ -22,7 +22,7 @@ jobs:
               "issue_body": ${{ env.JSON_ESCAPED_ISSUE_BODY }}
             }' \
             # [关键修正] 更新为您的 Google Cloud 服务地址
-            "https://wechat-sync-service-abcdefg-uc.a.run.app/sync")
+            "https://wechat-sync-service.onrender.com/sync")
           
           http_code=$(tail -n1 <<< "$response")
           body=$(head -n-1 <<< "$response")
