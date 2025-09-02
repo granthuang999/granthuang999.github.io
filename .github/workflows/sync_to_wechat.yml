@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Sync Service
-        # 核心修正：不再使用Here Document和jq，直接在env中用toJSON()函数处理数据
-        # 这是处理包含特殊字符的字符串的最稳健方法
         run: |
           response=$(curl -s -w "\n%{http_code}" -X POST \
             -H "Authorization: Bearer ${{ secrets.SECRET_TOKEN }}" \
@@ -23,7 +21,8 @@ jobs:
               "issue_title": ${{ env.JSON_ESCAPED_ISSUE_TITLE }},
               "issue_body": ${{ env.JSON_ESCAPED_ISSUE_BODY }}
             }' \
-            "https://wechat-sync-service.onrender.com/sync")
+            # [关键修正] 更新为您的 Google Cloud 服务地址
+            "https://wechat-sync-service-abcdefg-uc.a.run.app/sync")
           
           http_code=$(tail -n1 <<< "$response")
           body=$(head -n-1 <<< "$response")
@@ -35,6 +34,5 @@ jobs:
             echo "🎉 Successfully triggered sync service! Response: $body"
           fi
         env:
-          # 使用 toJSON() 函数将标题和正文预先处理成安全的JSON字符串
           JSON_ESCAPED_ISSUE_TITLE: ${{ toJSON(github.event.issue.title) }}
           JSON_ESCAPED_ISSUE_BODY: ${{ toJSON(github.event.issue.body) }}
