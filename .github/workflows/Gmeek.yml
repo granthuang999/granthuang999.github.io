@@ -109,7 +109,7 @@ jobs:
           echo "Submitting URLs to Bing IndexNow API..."
           URL_LIST=$(cat ${{ steps.prepare_urls.outputs.url_file }})
           JSON_PAYLOAD=$(jq -n --arg host "www.futuremedia.work" --arg key "${{ env.BING_API_KEY }}" --argjson urls "$(echo "$URL_LIST" | jq -R . | jq -s .)" '{host: $host, key: $key, keyLocation: "https://www.futuremedia.work/${{ env.BING_API_KEY }}.txt", urlList: $urls}')
-          curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
+          curl -i -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "https://api.indexnow.org/indexnow"
       
       - name: Authenticate to Google Cloud
         env:
