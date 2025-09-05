@@ -3,9 +3,9 @@ name: build Gmeek
 on:
   workflow_dispatch:
   schedule:
-    # It is recommended to run this once a day to better manage API quotas.
+    # 建议每天只运行一次，以更好地管理API配额
     - cron: "16 4 * * *"
-    
+
 jobs:
   build:
     name: Generate and Submit
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # A full git history is needed to commit the submitted URLs list back to the repo.
+          # 需要完整的git历史来提交状态文件
           fetch-depth: 0
 
       - name: Setup Pages
@@ -58,7 +58,7 @@ jobs:
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
           echo "Copying ads.txt to the output directory..."
-          if [ -f "/opt/G-meek/ads.txt" ]; then
+          if [ -f "/opt/Gmeek/ads.txt" ]; then
             cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt
           fi
           
@@ -84,18 +84,24 @@ jobs:
           echo "Indexing content with Pagefind..."
           npx -y pagefind --site docs
 
-      # --- Start of Optimized URL Submission Logic ---
+      # --- [优化] 智能URL提交逻辑开始 ---
 
       - name: 1. Prepare Full URL List (Sorted by Date)
         id: prepare_all_urls
         run: |
           echo "Generating a full list of all URLs, sorted by modification date..."
           ALL_URLS_FILE="all_urls.txt"
-          # Sorts all .html files by modification time (newest first).
+          
+          # 增加诊断步骤：列出docs目录内容，确认文件是否存在
+          echo "--- Listing contents of 'docs' directory ---"
+          ls -R docs
+          echo "------------------------------------------"
+          
+          # 按文件修改时间倒序排列，新文件在前
           find docs -name "*.html" -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2 | \
           sed 's|docs/|https://www.futuremedia.work/|' > $ALL_URLS_FILE
 
-          # Ensures the homepage is always at the top of the list for priority.
+          # 确保首页总是在最前面
           HOME_URL="https://www.futuremedia.work/"
           sed -i "\|$HOME_URL|d" $ALL_URLS_FILE
           echo "$HOME_URL" | cat - $ALL_URLS_FILE > tmp_file && mv tmp_file $ALL_URLS_FILE
@@ -115,8 +121,12 @@ jobs:
           mkdir -p backup
           touch $SUBMITTED_URLS_FILE
 
+          # 关键修复：在对比前，统一两个文件的换行符，去除Windows的\r
+          echo "Normalizing line endings for both URL lists..."
+          sed -i 's/\r$//' "$ALL_URLS_FILE"
+          sed -i 's/\r$//' "$SUBMITTED_URLS_FILE"
+
           echo "Calculating URLs to be submitted (All URLs - Already Submitted URLs)..."
-          # Creates a list of URLs that have not been submitted before.
           comm -23 <(sort "$ALL_URLS_FILE") <(sort "$SUBMITTED_URLS_FILE") > "$TO_SUBMIT_FILE"
           
           echo "--- URLs To Be Submitted in This Run (Priority: New > Backlog) ---"
@@ -131,8 +141,8 @@ jobs:
         if: env.BAIDU_TOKEN != '' && steps.prepare_submission_list.outputs.url_file != ''
         run: |
           echo "Submitting URLs to Baidu API..."
-          # Submits up to the top 2000 URLs from the to-do list.
           URLS_TO_SUBMIT_FILE="baidu_urls.txt"
+          # 从待办列表中取出前 2000 条进行提交
           head -n 2000 ${{ steps.prepare_submission_list.outputs.url_file }} > $URLS_TO_SUBMIT_FILE
           
           if [ -s $URLS_TO_SUBMIT_FILE ]; then
@@ -140,6 +150,7 @@ jobs:
             echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
           else
             echo "No new URLs to submit to Baidu."
+            echo "submitted_file=" >> $GITHUB_OUTPUT
           fi
 
       - name: Submit URLs to Bing (Legacy API)
@@ -150,11 +161,12 @@ jobs:
         run: |
           echo "Submitting URLs to Bing's direct Content Submission API..."
           URLS_TO_SUBMIT_FILE="bing_urls.txt"
-          # Submits up to the top 200 URLs from the to-do list.
+          # 从待办列表中取出前 200 条进行提交
           head -n 200 ${{ steps.prepare_submission_list.outputs.url_file }} > $URLS_TO_SUBMIT_FILE
 
           if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
             echo "No new URLs to submit to Bing."
+            echo "submitted_file=" >> $GITHUB_OUTPUT
             exit 0
           fi
           
@@ -166,7 +178,7 @@ jobs:
             curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "$BING_API_ENDPOINT" || echo "Failed to submit $url to Bing, continuing..."
           done
           echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
-
+      
       - name: Authenticate to Google Cloud
         env:
           GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
@@ -183,11 +195,12 @@ jobs:
         run: |
           echo "Submitting URLs to Google Indexing API..."
           URLS_TO_SUBMIT_FILE="google_urls.txt"
-          # Submits up to the top 100 URLs (Google's quota is often the strictest).
+          # 从待办列表中取出前 100 条 (Google配额通常最严格)
           head -n 100 ${{ steps.prepare_submission_list.outputs.url_file }} > $URLS_TO_SUBMIT_FILE
 
           if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
             echo "No new URLs to submit to Google."
+            echo "submitted_file=" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -200,34 +213,30 @@ jobs:
             "https://indexing.googleapis.com/v3/urlNotifications:publish" || echo "Failed to submit $url to Google, continuing..."
           done
           echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
-      
-      - name: 3. Update and Commit Submitted URLs History
+
+      - name: Update and Commit Site Content & Submission History
         run: |
           echo "Updating the history of submitted URLs..."
           SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
           
-          # Adds the URLs submitted in this run to the historical record.
+          # 将本次所有平台提交过的URL合并到历史记录中
           cat ${{ steps.submit_baidu.outputs.submitted_file }} \
               ${{ steps.submit_bing.outputs.submitted_file }} \
               ${{ steps.submit_google.outputs.submitted_file }} \
               $SUBMITTED_URLS_FILE | sort -u > tmp_file && mv tmp_file $SUBMITTED_URLS_FILE
-              
-          echo "Committing updated history file to the repository..."
+          
+          echo "Committing updated files to the repository..."
           cd ${{ github.workspace }}
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add $SUBMITTED_URLS_FILE
-          # Commits the updated history file only if it has changed.
-          git diff --quiet --exit-code $SUBMITTED_URLS_FILE || git commit -m "📈 Chore: Update submitted URLs history"
           
-          # Pushing all changes, including the history file and any blog updates.
-          # The original "update html" step is now integrated here for efficiency.
+          # 将所有需要持久化的文件（博客内容、提交历史等）添加到暂存区
           git add docs/ backup/ blogBase.json
-          git commit -a -m '🎉 auto update by Gmeek action' || echo "nothing to commit"
+          
+          # 创建一个commit，包含所有更改
+          git commit -m "🎉 auto update by Gmeek action & 📈 submitted URLs history" || echo "nothing to commit"
           git push || echo "nothing to push"
-
-      # --- End of Optimized URL Submission Logic ---
-
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
