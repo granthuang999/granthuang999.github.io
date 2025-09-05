@@ -6,7 +6,7 @@ on:
     - cron: "16 4 * * *"
 
 jobs:
-  # Job 1: Build the website and create the 'docs' artifact
+  # Job 1: Build the website and create the artifact
   build:
     name: Build Site
     runs-on: ubuntu-latest
@@ -55,20 +55,20 @@ jobs:
           npm config set registry https://registry.npmmirror.com/
           npx -y pagefind --site docs
 
-      - name: Upload artifact for submission and deployment
+      - name: Upload artifact for next jobs
         uses: actions/upload-artifact@v4
         with:
-          name: docs-and-backup
+          name: site-and-backup
           path: |
             docs/
             backup/
             blogBase.json
 
-  # Job 2: Download the artifact and submit URLs to search engines
+  # Job 2: Download artifact and submit URLs
   submit:
     name: Submit URLs
     runs-on: ubuntu-latest
-    needs: build # This job runs only after 'build' is successful
+    needs: build # Depends on the 'build' job
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -78,7 +78,7 @@ jobs:
       - name: Download built site artifact
         uses: actions/download-artifact@v4
         with:
-          name: docs-and-backup
+          name: site-and-backup
           path: ./
 
       - name: 1. Prepare Full URL List (Sorted by Date)
@@ -92,9 +92,6 @@ jobs:
           HOME_URL="https://www.futuremedia.work/"
           sed -i "\|$HOME_URL|d" $ALL_URLS_FILE
           echo "$HOME_URL" | cat - $ALL_URLS_FILE > tmp_file && mv tmp_file $ALL_URLS_FILE
-          echo "--- All URLs (Newest First) ---"
-          cat $ALL_URLS_FILE
-          echo "---------------------------------"
           echo "url_file=$ALL_URLS_FILE" >> $GITHUB_OUTPUT
 
       - name: 2. Prepare Submission List (New & Backlog)
@@ -115,46 +112,101 @@ jobs:
           echo "----------------------------------------"
           echo "url_file=$TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
 
-      # All submission steps remain here
       - name: Submit URLs to Baidu
         id: submit_baidu
-        # ... (Baidu submission logic remains the same)
+        env:
+          BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
+        if: env.BAIDU_TOKEN && steps.prepare_submission_list.outputs.url_file
+        run: |
+          URLS_TO_SUBMIT_FILE="baidu_urls.txt"
+          HOME_URL="https://www.futuremedia.work/"
+          echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
+          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 1999 >> $URLS_TO_SUBMIT_FILE
+          if [ -s $URLS_TO_SUBMIT_FILE ]; then
+            curl -H 'Content-Type:text/plain' --data-binary @$URLS_TO_SUBMIT_FILE "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
+            echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
+          else
+            echo "No new URLs to submit."
+            echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
+          fi
+
       - name: Submit URLs to Bing (Legacy API)
         id: submit_bing
-        # ... (Bing submission logic remains the same, including shuf -n 9)
+        env:
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        if: env.BING_API_KEY && steps.prepare_submission_list.outputs.url_file
+        run: |
+          URLS_TO_SUBMIT_FILE="bing_urls.txt"
+          HOME_URL="https://www.futuremedia.work/"
+          echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
+          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 9 >> $URLS_TO_SUBMIT_FILE
+          if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
+            echo "No new URLs to submit."
+            echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
+          BING_API_ENDPOINT="https://ssl.bing.com/webmaster/api.svc/json/SubmitUrl?apikey=${{ env.BING_API_KEY }}"
+          for url in $URL_LIST; do
+            JSON_PAYLOAD="{\"siteUrl\":\"https://www.futuremedia.work\",\"url\":\"$url\"}"
+            curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "$BING_API_ENDPOINT" || echo "Failed to submit $url, continuing..."
+          done
+          echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
+
       - name: Authenticate to Google Cloud
-        # ... (Google auth logic remains the same, with access_token_scopes)
+        env:
+          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        if: env.GOOGLE_API_KEY_JSON
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
+          access_token_scopes: https://www.googleapis.com/auth/indexing
+
       - name: Submit URLs to Google
         id: submit_google
-        # ... (Google submission logic remains the same)
+        env:
+          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
+        if: env.GOOGLE_API_KEY_JSON && steps.prepare_submission_list.outputs.url_file
+        run: |
+          URLS_TO_SUBMIT_FILE="google_urls.txt"
+          HOME_URL="https://www.futuremedia.work/"
+          echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
+          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 99 >> $URLS_TO_SUBMIT_FILE
+          if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
+            echo "No new URLs to submit."
+            echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
+          ACCESS_TOKEN=$(gcloud auth print-access-token)
+          for url in $URL_LIST; do
+            curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+            --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
+            "https://indexing.googleapis.com/v3/urlNotifications:publish" || echo "Failed to submit $url, continuing..."
+          done
+          echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
 
-      - name: Update and Commit Site Content & Submission History
+      - name: Update and Commit Submission History
         if: github.repository == 'granthuang999/granthuang999.github.io'
         run: |
-          echo "Updating the history of submitted URLs..."
           SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
           SUBMITTED_BAIDU=$( [ -s "${{ steps.submit_baidu.outputs.submitted_file }}" ] && echo "${{ steps.submit_baidu.outputs.submitted_file }}" )
           SUBMITTED_BING=$( [ -s "${{ steps.submit_bing.outputs.submitted_file }}" ] && echo "${{ steps.submit_bing.outputs.submitted_file }}" )
           SUBMITTED_GOOGLE=$( [ -s "${{ steps.submit_google.outputs.submitted_file }}" ] && echo "${{ steps.submit_google.outputs.submitted_file }}" )
-          
           cat $SUBMITTED_URLS_FILE $SUBMITTED_BAIDU $SUBMITTED_BING $SUBMITTED_GOOGLE \
               | sort -u > tmp_file && mv tmp_file $SUBMITTED_URLS_FILE
           
-          echo "Committing updated files to the repository..."
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
-          # We only need to add the updated backup file, as the docs/ content is handled by the deploy job
           git add backup/
-          
-          git commit -m "📈 Chore: Update submitted URLs history" || echo "nothing to commit"
-          git push || echo "nothing to push"
+          git diff --quiet --exit-code backup/submitted_urls.txt || git commit -m "📈 Chore: Update submitted URLs history"
+          git push
 
   # Job 3: Deploy the site to GitHub Pages
   deploy:
     name: Deploy Site
     runs-on: ubuntu-latest
-    needs: submit # This job runs only after 'submit' is successful
+    needs: submit # Depends on the 'submit' job
     permissions:
       pages: write
       id-token: write
@@ -168,7 +220,7 @@ jobs:
       - name: Download artifact for deployment
         uses: actions/download-artifact@v4
         with:
-          name: docs-and-backup
+          name: site-and-backup
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
