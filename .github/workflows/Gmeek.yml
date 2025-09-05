@@ -156,7 +156,7 @@ jobs:
 
           # 修正 #3：确保首页总是被提交
           echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
-          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 199 >> $URLS_TO_SUBMIT_FILE
+          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 9 >> $URLS_TO_SUBMIT_FILE
 
           if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
             echo "No new URLs to submit to Bing."
