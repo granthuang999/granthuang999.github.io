@@ -180,7 +180,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          scopes: https://www.googleapis.com/auth/indexing
+          access_token_scopes: https://www.googleapis.com/auth/indexing
 
       - name: Submit URLs to Google
         id: submit_google
