@@ -103,7 +103,7 @@ jobs:
           touch $SUBMITTED_URLS_FILE
           sed -i 's/\r$//' "$SUBMITTED_URLS_FILE"
           if [ -s "$SUBMITTED_URLS_FILE" ]; then
-            grep -Fxv -f "$SUBMITTED_URLS_FILE" "$ALL_URLS_FILE" > "$TO_SUBMIT_FILE"
+            grep -Fxv -f "$SUBMITTED_URLS_FILE" "$ALL_URLS_FILE" > "$TO_SUBMIT_FILE" || true
           else
             cp "$ALL_URLS_FILE" "$TO_SUBMIT_FILE"
           fi
