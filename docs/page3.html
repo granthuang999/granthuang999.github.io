@@ -1,7 +1,7 @@
-                 <!DOCTYPE html>
+<!DOCTYPE html>
 <html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/439c49a4efb78045d80bf9f0/script.js"></script> <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
@@ -27,7 +27,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -43,33 +42,49 @@ var _hmt = _hmt || [];
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "sh44c07wsg");
 </script>
-<!-- [新增] Google AdSense 核心脚本 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
-<!-- [新增] 引入 TypeIt.js 库 -->
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "未来传媒",
+    "url": "https://www.futuremedia.work",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.futuremedia.work/tag.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
 </head>
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
+  /* --- [新增] 页脚样式统一 --- */
+#footer, #footer a {
+    color: black !important; /* 将页脚本身以及页脚内的所有链接文字颜色强制设为黑色 */
+}
 
-/* --- [关键修改] 页眉背景样式 --- */
+/* 页眉背景样式 */
 .page-header {
-    position: relative; /* 这是为了定位遮罩层 */
-    /* 从 config.json 读取背景图 URL */
+    position: relative;
     background-image: url('/images/header-bg.png');
     background-size: cover;
     background-position: center center;
-    padding: 2rem 1rem; /* 您可以根据喜好调整上下内边距 */
-    border-radius: 8px; /* 为页眉添加圆角 */
-    margin-bottom: 2rem; /* 页眉和下方内容的间距 */
-    color: white; /* 将页眉内的文字颜色设为白色 */
-    overflow: hidden; /* 确保遮罩的圆角生效 */
-    display:flex; /* 保持内部 flex 布局 */
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: white;
+    overflow: hidden;
+    display:flex;
     padding-bottom:8px;
     border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
 }
 
-/* 这会创建一个半透明的黑色遮罩层，让文字更易读 */
 .page-header::before {
     content: '';
     position: absolute;
@@ -77,26 +92,60 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色遮罩 */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-/* 这能确保页眉的实际内容（标题、按钮等）显示在遮罩层上方 */
 .page-header > * {
     position: relative;
     z-index: 2;
 }
 
-/* 将页眉中的链接文字也设为白色 */
 .page-header a {
     color: white !important;
 }
 
-/* 将页眉中的SVG图标也填充为白色 */
 .page-header .octicon path {
     fill: white;
 }
-/* --- 修改结束 --- */
+
+/* --- 全局顶部导航栏样式 --- */
+.top-nav-bar {
+    background-color: transparent; /* [核心修改] 背景完全透明 */
+    backdrop-filter: none; /* [核心修改] 移除毛玻璃效果 */
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: none; /* [核心修改] 移除阴影 */
+}
+.top-nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.top-nav-bar a {
+    color: black !important; /* [核心修改] 字体改为黑色 */
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 增加字体颜色过渡 */
+    border-radius: 4px;
+}
+.top-nav-bar a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* [核心修改] 悬停时背景改为浅黑色半透明 */
+    color: #333 !important; /* [可选] 悬停时字体颜色略深 */
+}
+body {
+    padding-top: 60px !important; /* 为了避免导航栏遮挡原有内容 */
+}
 
 </style>
 
@@ -116,7 +165,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .listLabels{white-space:nowrap;display:flex;}
 .listLabels object{max-height:16px;max-width:24px;}
 
-/* [新增] 为打字动画效果设置最小高度，防止页面跳动 */
 #animated-subtitle {
     min-height: 24px; /* 您可以根据字体大小调整 */
 }
@@ -133,7 +181,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
 <body>
-    <!-- [关键修改] 将 div#header 替换为 header.page-header -->
+    <nav class="top-nav-bar">
+        <div class="top-nav-container">
+            <a href="https://www.futuremedia.work/">首页</a>
+            <a href="https://www.futuremedia.work/tag.html#身心健康">身心健康</a>
+            <a href="https://www.futuremedia.work/tag.html#投资理财">投资理财</a>
+            <a href="https://www.futuremedia.work/tag.html#学习成长">学习成长</a>
+            <a href="https://www.futuremedia.work/tag.html#潮流工具">潮流工具</a>
+            <a href="https://www.futuremedia.work/tag.html#其他话题">其他话题</a>
+            <a href="http://pansou.futuremedia.work">网盘搜索</a>
+            <a href="https://www.futuremedia.work/about.html">关于本站</a>
+            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
+        </div>
+    </nav>
+
     <header id="header" class="page-header">
 <div class="title-left">
     <img src="/images/bb.png" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">未来传媒</a></div>
@@ -169,177 +230,177 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <!-- 主页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 16px;">
-    <img src="/images/banner.png" style="max-width: 100%; border-radius: 8px;" alt="Website Banner">
+    <!-- [关键修改] 优化了 alt 文本 -->
+    <img src="/images/banner.png" style="max-width: 100%; border-radius: 8px;" alt="未来传媒 Banner">
 </div>
 
-<!-- [关键修改] 将原来的副标题 div 替换为这个带 ID 的新 div -->
-<div id="animated-subtitle" style="margin-bottom: 16px;"></div>
+<div id="animated-subtitle" style="margin-bottom: 16px; text-align: center; font-style: italic;"></div>
 
 <nav class="SideNav border">
-<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Hannah-Arendt-philosophy.html">
+<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Digital-Socializing.html">
     <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
-        <span class="listTitle">汉娜·阿伦特的&#34;行动&#34;哲学指引 / Hannah Arendt&#39;s Philosophy of &#34;Action&#34; Guidance</span>
+        <span class="listTitle">社交媒体AI助手革命：中年人的数字社交新时代</span>
     </div>
     <div class="listLabels">
         
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-24</span>
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-08-01</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Lumbar-Disc-Herniation-Rehabilitation.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">腰椎间盘突出的康复训练：中年人的脊柱自救方案</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#身心健康">身心健康</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-31</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Antifragile.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">《反脆弱》：中年人的抗风险能力提升指南</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#学习成长">学习成长</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-30</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Anthropic-Claude-5-Mini-open-source.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">Anthropic发布Claude 5 Mini开源模型</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-29</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Schopenhauer-Philosophy.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">叔本华的意志哲学：中年人的精神自救指南 </span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#学习成长">学习成长</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-29</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Meta-AI-Agent.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">Meta发布AI Agent新战略：重塑社交媒体未来 </span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-28</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Cursor-AI-Revitalizes.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">Cursor AI让中年程序员重新焕发职场活力</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-27</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/intermittent-fasting-guide.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">14:10间歇性禁食深度实践指南</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#身心健康">身心健康</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-26</span>
     </div>
 </a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Fireflies-ai-Smart-Meeting-Assistant.html">
     <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
-        <span class="listTitle">中国AI突破与全球竞争态势 /  Chinese AI Breakthroughs and Global Competition</span>
+        <span class="listTitle">Fireflies.ai智能会议助理 </span>
     </div>
     <div class="listLabels">
         
-        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#中年潮流Middle-aged trend">中年潮流Middle-aged trend</a></object></span>
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-24</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/chatgpt-tasks-smart-assistant.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">ChatGPT Tasks智能任务助手</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-24</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Hannah-Arendt-philosophy.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">汉娜·阿伦特的&#34;行动&#34;哲学指引 </span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#学习成长">学习成长</a></object></span>
+        <span class="Label LabelTime" style="background-color:#0969da">2025-07-24</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/china-ai-status.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">中国AI突破与全球竞争态势 </span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#潮流工具">潮流工具</a></object></span>
         <span class="Label LabelTime" style="background-color:#0969da">2025-07-23</span>
     </div>
 </a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Prostate-Care.html">
     <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
-        <span class="listTitle">前列腺保健的科学锻炼指南 /  Scientific Exercise Guide for Prostate Care</span>
+        <span class="listTitle">前列腺保健的科学锻炼指南</span>
     </div>
     <div class="listLabels">
         
-        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#中年健康Middle-aged health">中年健康Middle-aged health</a></object></span>
+        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#身心健康">身心健康</a></object></span>
         <span class="Label LabelTime" style="background-color:#0969da">2025-07-21</span>
     </div>
 </a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Deep-Thinking.html">
     <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
-        <span class="listTitle">《深度思考》提升决策智慧 /  &#34;Deep Thinking&#34; Enhancing Decision Wisdom</span>
+        <span class="listTitle">《深度思考》提升决策智慧 </span>
     </div>
     <div class="listLabels">
         
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
+        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#学习成长">学习成长</a></object></span>
         <span class="Label LabelTime" style="background-color:#0969da">2025-07-20</span>
     </div>
 </a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Aristotle.html">
     <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
-        <span class="listTitle">亚里士多德的实践智慧指引 / Aristotle&#39;s Practical Wisdom Guidance</span>
+        <span class="listTitle">亚里士多德的实践智慧指引 </span>
     </div>
     <div class="listLabels">
         
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
+        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#学习成长">学习成长</a></object></span>
         <span class="Label LabelTime" style="background-color:#0969da">2025-07-19</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Alzheimers-Prevention.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">运动预防阿尔茨海默病的科学指南 / Scientific Guide to Exercise for Alzheimer&#39;s Prevention</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#中年健康Middle-aged health">中年健康Middle-aged health</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-18</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Meditations.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">《沉思录》的人生修炼 / Life Cultivation Through &#34;Meditations&#34;</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-17</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Marcus-Aureliuss.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">马库斯·奥勒留的智慧指引 / Marcus Aurelius&#39;s Wisdom Guidance</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-16</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Notion-AI.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Notion AI智能助手 / Daily AI Tool for Middle-aged: Notion AI Smart Assistant</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#中年潮流Middle-aged trend">中年潮流Middle-aged trend</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-15</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/NotebookLM-Google.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">NotebookLM：谷歌的个人AI研究助手 / NotebookLM: Google&#39;s Personal AI Research Assistant</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#7a216a"><object><a style="color:#fff" href="tag.html#中年潮流Middle-aged trend">中年潮流Middle-aged trend</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-14</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Epicurus.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">伊壁鸠鲁：中年智慧的古希腊指南 / Epicurus: An Ancient Greek Guide to Midlife Wisdom</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-13</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Midlife-A-Philosophical-Guide.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">《中年：哲学指南》/ &#34;Midlife: A Philosophical Guide&#34;</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-12</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Five-Healthy-Habits.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">哈佛研究验证的五大健康习惯 / Five Healthy Habits Validated by Harvard Research</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#中年健康Middle-aged health">中年健康Middle-aged health</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-11</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Chrysalis-Wisdom.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">蝶蛹蜕变的智慧指南 / A Guide to Chrysalis Wisdom</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#aa5e1c"><object><a style="color:#fff" href="tag.html#中年成长Middle-aged growth">中年成长Middle-aged growth</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-09</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Scientific-Walking-Method.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">科学步行法 - 中年人的黄金运动方案 / Health Insight: Scientific Walking Method - The Golden Exercise Plan for Middle-aged People</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#f6591b"><object><a style="color:#fff" href="tag.html#中年健康Middle-aged health">中年健康Middle-aged health</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-07-08</span>
     </div>
 </a>
 </nav><nav class="paginate-container" aria-label="Pagination">
@@ -353,7 +414,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <a href="https://www.futuremedia.work/disclaimer.html">免责声明</a> 
 </div>
 <div id="footer2">
-    <span id="runday"></span><span>维护：<a href="https://www.futuremedia.work" target="_blank">疯子</a></span>
+    <span id="runday"></span><span>本站由<a href="mailto:futuremedia2090@gmail.com" target="_blank">疯子</a>维护</span>
 </div>
 
 <script>
@@ -397,21 +458,32 @@ function utterancesTheme(theme){
     iframe.contentWindow.postMessage(message,'https://utteranc.es');
 }
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
-console.log("\n %c Gmeek last https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+console.log("\n %c 未来传媒 last https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+
+// --- [新增] “收藏本站”功能脚本 ---
+function addFavorite() {
+    try {
+        window.external.addFavorite(window.location.href, document.title);
+    } catch (e) {
+        try {
+            window.sidebar.addPanel(document.title, window.location.href, "");
+        } catch (e) {
+            alert("抱歉，您的浏览器不支持自动收藏功能。\n请使用 Ctrl+D (Windows) 或 Command+D (Mac) 来手动收藏。");
+        }
+    }
+}
 </script>
 
 <script>
-// --- [新增] TypeIt.js 初始化脚本 ---
+// TypeIt.js 初始化脚本
 document.addEventListener('DOMContentLoaded', function () {
   new TypeIt('#animated-subtitle', {
-    // 从 blogBase 配置中动态获取副标题文字
     strings: ["专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活"],
-    speed: 75, // 打字速度
-    waitUntilVisible: true, // 等到元素可见时才开始动画
-    cursor: false // 不显示打字光标
+    speed: 75,
+    waitUntilVisible: true,
+    cursor: false
   }).go();
 });
-// --- 新增结束 ---
 
 document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
 document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);

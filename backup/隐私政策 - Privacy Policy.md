@@ -163,3 +163,4 @@ If you have any questions or concerns about this privacy policy, please contact 
 **邮箱 / Email**: [[futuremedia2090@gmail.com](mailto:futuremedia2090@gmail.com)](mailto:futuremedia2090@gmail.com)
 
 **网站 / Website**: [https://futuremedia.work/](https://futuremedia.work/)
+##{"ogImage": "https://www.futuremedia.work/images/Privacy-Policy.png", "keywords": "隐私政策, Privacy Policy, 信息收集, Cookie, Google Analytics, Google AdSense, 第三方服务, 信息保护, 用户权利, 数据保留", "description": "未来传媒的隐私政策阐明了网站会自动收集用户的IP地址和访问页面等信息，并通过Cookie及Google Analytics和AdSense等第三方服务来分析流量与展示广告，同时用户主动提供的个人信息将被用于改善服务，我们采取合理措施保护信息安全且除法律要求或获得用户同意外不会与第三方分享，用户则拥有更正、删除个人信息及撤回同意的权利。"}
