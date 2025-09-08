@@ -96,20 +96,19 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     color: black !important;
 }
 
-/* --- [MODIFIED] 页眉背景样式 --- */
 .page-header {
     position: relative;
     background-image: url('/images/header-bg.png');
     background-size: cover;
     background-position: center center;
-    padding: 1.5rem 1.5rem; /* 调整内边距以适应新布局 */
+    padding: 1.5rem 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
     color: white;
     overflow: hidden;
-    display: flex; /* 改为 flex 布局 */
-    flex-direction: column; /* 垂直排列 */
-    gap: 1.2rem; /* 在主内容和导航之间增加间距 */
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
 }
 
@@ -137,7 +136,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     fill: white;
 }
 
-/* --- [NEW] 新增页眉内部结构样式 --- */
 .header-main-content {
     display: flex;
     justify-content: space-between;
@@ -145,13 +143,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     width: 100%;
 }
 
+/* --- [MODIFIED] 移除了边框线和上边距 --- */
 .header-nav-menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px 12px;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.25); /* 分割线 */
+    /* border-top 和 padding-top 已被移除 */
 }
 
 .header-nav-menu a {
@@ -166,9 +164,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .header-nav-menu a:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
-
-/* --- [REMOVED] 删除了旧的 .top-nav-bar 相关样式 --- */
-
 </style>
 
 <style>
@@ -231,6 +226,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <header id="header" class="page-header">
+        <nav class="header-nav-menu">
+            <a href="https://www.futuremedia.work/">首页</a>
+            <a href="https://www.futuremedia.work/tag.html#身心健康">健康</a>
+            <a href="https://www.futuremedia.work/tag.html#投资理财">赚钱</a>
+            <a href="https://www.futuremedia.work/tag.html#学习成长">修行</a>
+            <a href="https://www.futuremedia.work/tag.html#潮流工具">未来</a>
+            <a href="https://www.futuremedia.work/tag.html#其他话题">其他</a>
+            <a href="http://pansou.futuremedia.work">网盘搜索</a>
+            <a href="https://www.futuremedia.work/about.html">关于本站</a>
+            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
+        </nav>
+
         <div class="header-main-content">
             
 
@@ -252,17 +259,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 
         </div>
-        <nav class="header-nav-menu">
-            <a href="https://www.futuremedia.work/">首页</a>
-            <a href="https://www.futuremedia.work/tag.html#身心健康">身心健康</a>
-            <a href="https://www.futuremedia.work/tag.html#投资理财">投资理财</a>
-            <a href="https://www.futuremedia.work/tag.html#学习成长">学习成长</a>
-            <a href="https://www.futuremedia.work/tag.html#潮流工具">潮流工具</a>
-            <a href="https://www.futuremedia.work/tag.html#其他话题">其他话题</a>
-            <a href="http://pansou.futuremedia.work">网盘搜索</a>
-            <a href="https://www.futuremedia.work/about.html">关于本站</a>
-            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
-        </nav>
     </header>
     
     <div id="content">
@@ -440,7 +436,6 @@ function utterancesTheme(theme){
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 console.log("\n %c 未来传媒 last https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
 
-// --- [新增] “收藏本站”功能脚本 ---
 function addFavorite() {
     try {
         window.external.addFavorite(window.location.href, document.title);
