@@ -1,14 +1,17 @@
 name: Submit URLs to Search Engines
 
 on:
-  workflow_dispatch: # 允许手动触发
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+  schedule:
+    # Optional: You can uncomment this to run it automatically on a schedule
+    # - cron: "0 18 * * *" # e.g., run every day at 6 PM UTC
 
 jobs:
   submit:
     name: Submit URLs
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 需要权限来提交更新后的历史文件
+      contents: write # Required to commit the updated history file
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,14 +22,15 @@ jobs:
         id: prepare_urls
         run: |
           echo "Fetching latest RSS feed to get all canonical URLs..."
-          # 从线上网站直接下载最新的rss.xml，确保URL来源最准确
+          # Fetches the live rss.xml and parses it to get a clean list of URLs
           curl -s https://www.futuremedia.work/rss.xml | grep '<link>' | sed -e 's/.*<link>\(.*\)<\/link>.*/\1/' > all_urls.txt
 
-          # 确保历史文件存在
+          # Ensure the history file and its directory exist
           SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
+          mkdir -p backup
           touch $SUBMITTED_URLS_FILE
           
-          # 过滤掉已提交的URL，得到待办事项列表
+          # Create the to-do list by filtering out URLs that have already been submitted
           TO_SUBMIT_FILE="to_submit_urls.txt"
           if [ -s "$SUBMITTED_URLS_FILE" ]; then
             grep -Fxv -f "$SUBMITTED_URLS_FILE" "all_urls.txt" > "$TO_SUBMIT_FILE" || true
@@ -47,16 +51,17 @@ jobs:
         run: |
           echo "Submitting to Baidu..."
           SUCCESS_FILE="baidu_success.txt"
-          # 随机抽取最多2000条进行提交
-          shuf -n 2000 ${{ steps.prepare_urls.outputs.url_file }} > temp_baidu_urls.txt
+          URLS_TO_SUBMIT_FILE="baidu_batch.txt"
+          # Randomly select up to 2000 URLs for this run
+          shuf -n 2000 ${{ steps.prepare_urls.outputs.url_file }} > $URLS_TO_SUBMIT_FILE
           
-          RESPONSE=$(curl -s -H 'Content-Type:text/plain' --data-binary @temp_baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}")
+          RESPONSE=$(curl -s -H 'Content-Type:text/plain' --data-binary @$URLS_TO_SUBMIT_FILE "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}")
           echo "Baidu API Response: $RESPONSE"
           
-          # 只有当返回包含 "success" 时，才认为本次提交的URL是成功的
+          # Only if the API response indicates success, we log the submitted URLs as successful
           if echo "$RESPONSE" | grep -q '"success"'; then
-            cp temp_baidu_urls.txt $SUCCESS_FILE
-            echo "Baidu submission successful."
+            cp $URLS_TO_SUBMIT_FILE $SUCCESS_FILE
+            echo "Baidu submission was successful for this batch."
           else
             echo "Baidu submission failed or had no successes."
           fi
@@ -70,64 +75,74 @@ jobs:
         run: |
           echo "Submitting to Bing..."
           SUCCESS_FILE="bing_success.txt"
-          URL_LIST=$(shuf -n 10 ${{ steps.prepare_urls.outputs.url_file }}) # 每天最多10条
+          # Randomly select up to 10 URLs for this run
+          URL_LIST=$(shuf -n 10 ${{ steps.prepare_urls.outputs.url_file }})
           
           for url in $URL_LIST; do
             RESPONSE=$(curl -s -X POST -H "Content-Type: application/json; charset=utf-8" \
               --data "{\"siteUrl\":\"https://www.futuremedia.work\",\"url\":\"$url\"}" \
               "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrl?apikey=${{ env.BING_API_KEY }}")
             echo "Bing API Response for $url: $RESPONSE"
-            # 只有当返回包含 "d":null 且不包含 "ErrorCode" 时，才算成功
+            # Only if the response contains "d":null and NOT "ErrorCode", it's a success
             if echo "$RESPONSE" | grep -q '"d":null' && ! echo "$RESPONSE" | grep -q '"ErrorCode"'; then
               echo "$url" >> $SUCCESS_FILE
             fi
           done
           echo "success_file=$SUCCESS_FILE" >> $GITHUB_OUTPUT
 
-      - name: 4. Submit to Google and Track Success
-        id: submit_google
+      - name: 4. Authenticate to Google Cloud
+        id: auth_google
         if: steps.prepare_urls.outputs.url_file && hashFiles(steps.prepare_urls.outputs.url_file) != ''
         env:
           GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          GCP_SA_EMAIL: ${{ secrets.GCP_SA_EMAIL }}
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
+
+      - name: 5. Submit to Google and Track Success
+        id: submit_google
+        if: steps.auth_google.conclusion == 'success'
+        env:
+          GCP_SA_EMAIL: ${{ secrets.GCP_SA_EMAIL }}
         run: |
           echo "Submitting to Google..."
           SUCCESS_FILE="google_success.txt"
+          # Randomly select up to 100 URLs for this run
           URL_LIST=$(shuf -n 100 ${{ steps.prepare_urls.outputs.url_file }})
           
           ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account="$GCP_SA_EMAIL" --scopes="https://www.googleapis.com/auth/indexing")
 
           for url in $URL_LIST; do
             RESPONSE=$(curl -s -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
-              --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
+              --data "{\"url\":\"$url\",\"type\":\"\":\"URL_UPDATED\"}" \
               "https://indexing.googleapis.com/v3/urlNotifications:publish")
             echo "Google API Response for $url: $RESPONSE"
-            # 只有当返回不包含 "error" 字段时，才算成功
+            # Only if the response does NOT contain an "error" field, it's a success
             if ! echo "$RESPONSE" | grep -q '"error"'; then
               echo "$url" >> $SUCCESS_FILE
             fi
           done
           echo "success_file=$SUCCESS_FILE" >> $GITHUB_OUTPUT
 
-      - name: 5. Update and Commit Submission History
+      - name: 6. Update and Commit Submission History
         if: github.repository == 'granthuang999/granthuang999.github.io'
         run: |
           echo "Updating the history of successfully submitted URLs..."
           SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
           
-          # 合并所有成功提交的URL到历史记录中
-          cat $SUBMITTED_URLS_FILE \
-              ${{ steps.submit_baidu.outputs.success_file || '/dev/null' }} \
-              ${{ steps.submit_bing.outputs.success_file || '/dev/null' }} \
-              ${{ steps.submit_google.outputs.success_file || '/dev/null' }} \
+          # Safely handle cases where success files might be empty
+          SUBMITTED_BAIDU=$( [ -s "${{ steps.submit_baidu.outputs.success_file }}" ] && echo "${{ steps.submit_baidu.outputs.success_file }}" )
+          SUBMITTED_BING=$( [ -s "${{ steps.submit_bing.outputs.success_file }}" ] && echo "${{ steps.submit_bing.outputs.success_file }}" )
+          SUBMITTED_GOOGLE=$( [ -s "${{ steps.submit_google.outputs.success_file }}" ] && echo "${{ steps.submit_google.outputs.success_file }}" )
+          
+          # Combine the old history with the newly successful URLs and de-duplicate
+          cat $SUBMITTED_URLS_FILE $SUBMITTED_BAIDU $SUBMITTED_BING $SUBMITTED_GOOGLE \
               | sort -u > tmp_file && mv tmp_file $SUBMITTED_URLS_FILE
           
           echo "Committing updated history file to the repository..."
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add $SUBMITTED_URLS_FILE
+          # Only commit and push if the history file has actually changed
           git diff --quiet --exit-code $SUBMITTED_URLS_FILE || git commit -m "📈 Chore: Update successfully submitted URLs history"
           git push
