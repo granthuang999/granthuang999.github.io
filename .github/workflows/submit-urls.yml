@@ -2,7 +2,7 @@ name: Submit URLs to Search Engines
 
 on:
   workflow_dispatch:
-  # schedule: # 如果需要定时运行，请将下面两行取消注释
+  # schedule:
   #   - cron: "0 18 * * *"
 
 jobs:
@@ -17,12 +17,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install XML Parser
+        run: |
+          echo "Installing xmllint..."
+          sudo apt-get update && sudo apt-get install -y libxml2-utils
+
       - name: 1. Prepare URL Lists from Live RSS
         id: prepare_urls
         run: |
-          echo "Fetching latest RSS feed with cache buster..."
-          curl -s "https://www.futuremedia.work/rss.xml?_=$(date +%s)" | grep '<link>' | sed -e 's/.*<link>\(.*\)<\/link>.*/\1/' > master_urls.txt
+          echo "Fetching latest RSS feed and parsing with xmllint..."
           
+          # 关键修复：使用 xmllint 和 XPath 精确提取所有文章链接，不再依赖 grep/sed
+          curl -s "https://www.futuremedia.work/rss.xml?_=$(date +%s)" | \
+          xmllint --xpath "//item/link/text()" - > master_urls.txt
+
           SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
           mkdir -p backup
           touch $SUBMITTED_URLS_FILE
@@ -39,6 +47,8 @@ jobs:
           echo "----------------------------------------"
           echo "url_file=$TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
 
+      # ... The rest of the steps (Baidu, Bing, Google submissions, and history update) remain exactly the same ...
+      
       - name: 2. Submit to Baidu and Track Success
         id: submit_baidu
         if: steps.prepare_urls.outputs.url_file && hashFiles(steps.prepare_urls.outputs.url_file) != ''
@@ -113,30 +123,29 @@ jobs:
         run: |
           echo "Updating the history of successfully submitted URLs..."
           
-          # 关键修复：将复杂的单行命令分解为更清晰、更稳健的多行脚本
+          update_history() {
+            local history_file=$1
+            local success_file_var=$2
+            local success_file_path=${!success_file_var}
+
+            if [ -n "$success_file_path" ] && [ -s "$success_file_path" ]; then
+              echo "Merging successes from $success_file_path into $history_file"
+              cat "$success_file_path" >> "$history_file"
+            fi
+          }
           
-          # 1. 创建一个临时文件，用于存放本次所有成功提交的URL
-          touch successes_this_run.txt
+          update_history "backup/submitted_baidu.txt" "STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE"
+          update_history "backup/submitted_bing.txt" "STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE"
+          update_history "backup/submitted_google.txt" "STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE"
 
-          # 2. 安全地将每个平台的成功文件内容追加到临时文件中
-          if [ -n "$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE" ] && [ -s "$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE" ]; then
-            cat "$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE" >> successes_this_run.txt
-          fi
-          if [ -n "$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE" ] && [ -s "$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE" ]; then
-            cat "$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE" >> successes_this_run.txt
-          fi
-          if [ -n "$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE" ] && [ -s "$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE" ]; then
-            cat "$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE" >> successes_this_run.txt
-          fi
-
-          # 3. 将本次成功的URL与旧的历史文件合并，并去重
-          cat backup/submitted_urls.txt successes_this_run.txt | sort -u > temp_history.txt
-          mv temp_history.txt backup/submitted_urls.txt
-
-          # 4. 提交更新后的历史文件
+          # De-duplicate all history files
+          sort -u -o "backup/submitted_baidu.txt" "backup/submitted_baidu.txt"
+          sort -u -o "backup/submitted_bing.txt" "backup/submitted_bing.txt"
+          sort -u -o "backup/submitted_google.txt" "backup/submitted_google.txt"
+          
           echo "Committing updated history file to the repository..."
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add backup/submitted_urls.txt
+          git add backup/
           git diff --quiet --cached --exit-code || git commit -m "📈 Chore: Update successfully submitted URLs history"
           git push
