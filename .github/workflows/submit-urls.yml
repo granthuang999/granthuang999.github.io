@@ -55,7 +55,7 @@ jobs:
           
           if echo "$RESPONSE" | grep -q '"success"'; then
             cp $URLS_TO_SUBMIT_FILE $SUCCESS_FILE
-            echo "Baidu submission successful."
+            echo "Baidu submission successful for this batch."
           fi
           echo "success_file=$SUCCESS_FILE" >> $GITHUB_OUTPUT
 
@@ -112,24 +112,31 @@ jobs:
         if: github.repository == 'granthuang999/granthuang999.github.io'
         run: |
           echo "Updating the history of successfully submitted URLs..."
-          SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
           
-          # 关键修复：使用环境变量代替 ${{...}} 语法，避免YAML解析错误
-          SUBMITTED_BAIDU=$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE
-          SUBMITTED_BING=$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE
-          SUBMITTED_GOOGLE=$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE
+          # 关键修复：将复杂的单行命令分解为更清晰、更稳健的多行脚本
           
-          # 安全地处理可能为空的文件路径
-          BAIDU_FILE_TO_CAT=$( [ -s "$SUBMITTED_BAIDU" ] && echo "$SUBMITTED_BAIDU" )
-          BING_FILE_TO_CAT=$( [ -s "$SUBMITTED_BING" ] && echo "$SUBMITTED_BING" )
-          GOOGLE_FILE_TO_CAT=$( [ -s "$SUBMITTED_GOOGLE" ] && echo "$SUBMITTED_GOOGLE" )
+          # 1. 创建一个临时文件，用于存放本次所有成功提交的URL
+          touch successes_this_run.txt
 
-          cat $SUBMITTED_URLS_FILE $BAIDU_FILE_TO_CAT $BING_FILE_TO_CAT $GOOGLE_FILE_TO_CAT \
-              | sort -u > tmp_file && mv tmp_file $SUBMITTED_URLS_FILE
-          
+          # 2. 安全地将每个平台的成功文件内容追加到临时文件中
+          if [ -n "$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE" ] && [ -s "$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE" ]; then
+            cat "$STEPS_SUBMIT_BAIDU_OUTPUTS_SUCCESS_FILE" >> successes_this_run.txt
+          fi
+          if [ -n "$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE" ] && [ -s "$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE" ]; then
+            cat "$STEPS_SUBMIT_BING_OUTPUTS_SUCCESS_FILE" >> successes_this_run.txt
+          fi
+          if [ -n "$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE" ] && [ -s "$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE" ]; then
+            cat "$STEPS_SUBMIT_GOOGLE_OUTPUTS_SUCCESS_FILE" >> successes_this_run.txt
+          fi
+
+          # 3. 将本次成功的URL与旧的历史文件合并，并去重
+          cat backup/submitted_urls.txt successes_this_run.txt | sort -u > temp_history.txt
+          mv temp_history.txt backup/submitted_urls.txt
+
+          # 4. 提交更新后的历史文件
           echo "Committing updated history file to the repository..."
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add $SUBMITTED_URLS_FILE
-          git diff --quiet --exit-code $SUBMITTED_URLS_FILE || git commit -m "📈 Chore: Update successfully submitted URLs history"
+          git add backup/submitted_urls.txt
+          git diff --quiet --cached --exit-code || git commit -m "📈 Chore: Update successfully submitted URLs history"
           git push
