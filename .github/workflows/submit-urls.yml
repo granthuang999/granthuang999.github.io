@@ -1,17 +1,16 @@
 name: Submit URLs to Search Engines
 
 on:
-  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
-  schedule:
-    # Optional: You can uncomment this to run it automatically on a schedule
-    # - cron: "0 18 * * *" # e.g., run every day at 6 PM UTC
+  workflow_dispatch: # 允许手动触发
+  # schedule: # 如果需要定时运行，请将下面两行取消注释
+  #   - cron: "0 18 * * *" 
 
 jobs:
   submit:
     name: Submit URLs
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to commit the updated history file
+      contents: write # 需要权限来提交更新后的历史文件
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,15 +21,15 @@ jobs:
         id: prepare_urls
         run: |
           echo "Fetching latest RSS feed to get all canonical URLs..."
-          # Fetches the live rss.xml and parses it to get a clean list of URLs
+          # 从线上网站直接下载最新的rss.xml，确保URL来源最准确
           curl -s https://www.futuremedia.work/rss.xml | grep '<link>' | sed -e 's/.*<link>\(.*\)<\/link>.*/\1/' > all_urls.txt
 
-          # Ensure the history file and its directory exist
+          # 确保历史文件存在
           SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
           mkdir -p backup
           touch $SUBMITTED_URLS_FILE
           
-          # Create the to-do list by filtering out URLs that have already been submitted
+          # 过滤掉已提交的URL，得到待办事项列表
           TO_SUBMIT_FILE="to_submit_urls.txt"
           if [ -s "$SUBMITTED_URLS_FILE" ]; then
             grep -Fxv -f "$SUBMITTED_URLS_FILE" "all_urls.txt" > "$TO_SUBMIT_FILE" || true
@@ -52,16 +51,16 @@ jobs:
           echo "Submitting to Baidu..."
           SUCCESS_FILE="baidu_success.txt"
           URLS_TO_SUBMIT_FILE="baidu_batch.txt"
-          # Randomly select up to 2000 URLs for this run
+          # 随机抽取最多2000条进行提交
           shuf -n 2000 ${{ steps.prepare_urls.outputs.url_file }} > $URLS_TO_SUBMIT_FILE
           
           RESPONSE=$(curl -s -H 'Content-Type:text/plain' --data-binary @$URLS_TO_SUBMIT_FILE "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}")
           echo "Baidu API Response: $RESPONSE"
           
-          # Only if the API response indicates success, we log the submitted URLs as successful
+          # 只有当返回包含 "success" 时，才认为本次提交的URL是成功的
           if echo "$RESPONSE" | grep -q '"success"'; then
             cp $URLS_TO_SUBMIT_FILE $SUCCESS_FILE
-            echo "Baidu submission was successful for this batch."
+            echo "Baidu submission successful for this batch."
           else
             echo "Baidu submission failed or had no successes."
           fi
@@ -75,15 +74,14 @@ jobs:
         run: |
           echo "Submitting to Bing..."
           SUCCESS_FILE="bing_success.txt"
-          # Randomly select up to 10 URLs for this run
-          URL_LIST=$(shuf -n 10 ${{ steps.prepare_urls.outputs.url_file }})
+          URL_LIST=$(shuf -n 10 ${{ steps.prepare_urls.outputs.url_file }}) # 每天最多10条
           
           for url in $URL_LIST; do
             RESPONSE=$(curl -s -X POST -H "Content-Type: application/json; charset=utf-8" \
               --data "{\"siteUrl\":\"https://www.futuremedia.work\",\"url\":\"$url\"}" \
               "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrl?apikey=${{ env.BING_API_KEY }}")
             echo "Bing API Response for $url: $RESPONSE"
-            # Only if the response contains "d":null and NOT "ErrorCode", it's a success
+            # 只有当返回包含 "d":null 且不包含 "ErrorCode" 时，才算成功
             if echo "$RESPONSE" | grep -q '"d":null' && ! echo "$RESPONSE" | grep -q '"ErrorCode"'; then
               echo "$url" >> $SUCCESS_FILE
             fi
@@ -107,17 +105,16 @@ jobs:
         run: |
           echo "Submitting to Google..."
           SUCCESS_FILE="google_success.txt"
-          # Randomly select up to 100 URLs for this run
           URL_LIST=$(shuf -n 100 ${{ steps.prepare_urls.outputs.url_file }})
           
           ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account="$GCP_SA_EMAIL" --scopes="https://www.googleapis.com/auth/indexing")
 
           for url in $URL_LIST; do
             RESPONSE=$(curl -s -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
-              --data "{\"url\":\"$url\",\"type\":\"\":\"URL_UPDATED\"}" \
+              --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
               "https://indexing.googleapis.com/v3/urlNotifications:publish")
             echo "Google API Response for $url: $RESPONSE"
-            # Only if the response does NOT contain an "error" field, it's a success
+            # 只有当返回不包含 "error" 字段时，才算成功
             if ! echo "$RESPONSE" | grep -q '"error"'; then
               echo "$url" >> $SUCCESS_FILE
             fi
