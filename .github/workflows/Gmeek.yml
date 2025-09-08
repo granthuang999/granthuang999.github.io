@@ -185,7 +185,7 @@ jobs:
           
           # 最终修复：使用 --impersonate-service-account 强制为指定账号生成带权限的令牌
           echo "Generating access token by impersonating service account: $GCP_SA_EMAIL"
-          ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account="$GCP_SA_EMAIL")
+          ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account="$GCP_SA_EMAIL" --scopes="https://www.googleapis.com/auth/indexing")
 
           for url in $URL_LIST; do
             curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
