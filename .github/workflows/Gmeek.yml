@@ -163,6 +163,7 @@ jobs:
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
           # 关键修复 #1：将 'scopes' 改为正确的 'access_token_scopes'
+          token_format: access_token
           access_token_scopes: https://www.googleapis.com/auth/indexing
 
       - name: Submit URLs to Google
