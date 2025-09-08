@@ -7,24 +7,27 @@ on:
 
 jobs:
   build:
-    name: Build Site
+    name: Build and Deploy
     runs-on: ubuntu-latest
     if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
+    # 关键修复 #1：为整个任务添加写权限
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ... [你所有的构建步骤保持不变，从 Get config.json 到 Index site with Pagefind] ...
       - name: Get config.json
         run: sudo apt-get install -y jq
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.8
-
       - name: Clone Gmeek Theme
         run: git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
-
       - name: Install dependencies
         run: |
           pip install --upgrade pip
@@ -38,22 +41,30 @@ jobs:
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
           if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
+          # 关键修复 #2：确保backup目录不会被意外覆盖
+          # 我们先将已存在的backup内容复制到临时目录
+          if [ -d "${{ github.workspace }}/backup" ]; then
+            mkdir -p /tmp/backup_safe
+            cp -a ${{ github.workspace }}/backup/. /tmp/backup_safe/
+          fi
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
+          # 将保存的内容复制回来，这样submitted_urls.txt就不会丢失
+          if [ -d "/tmp/backup_safe" ]; then
+            cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
+          fi
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
-
+          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Index site with Pagefind
         run: |
           npm config set registry https://registry.npmmirror.com/
           npx -y pagefind --site docs
       
-      - name: Commit build files
-        if: github.repository == 'granthuang999/granthuang999.github.io'
+      - name: Commit and Push build files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -65,25 +76,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'docs/'
-
-  deploy:
-    name: Deploy Site
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Download artifact for deployment
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages # Artifact name is 'github-pages' by default
 
       - name: Deploy to GitHub Pages
         id: deployment
