@@ -154,6 +154,7 @@ jobs:
           echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
 
       - name: Authenticate to Google Cloud
+        # 关键修正 #1: 为这一步添加一个ID
         id: auth_google
         if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
         env:
@@ -165,14 +166,9 @@ jobs:
 
       - name: Submit URLs to Google
         id: submit_google
+        # 关键修正 #2: 确保只在认证成功后运行
         if: steps.auth_google.conclusion == 'success'
-        env:
-          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
         run: |
-          # --- START: New Debugging Block 1 ---
-          echo ">>> RUNNING WORKFLOW VERSION: 2025-09-08-FINAL-DEBUG <<<"
-          # --- END: New Debugging Block 1 ---
-
           URLS_TO_SUBMIT_FILE="google_urls.txt"
           HOME_URL="https://www.futuremedia.work/"
           echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
@@ -184,14 +180,8 @@ jobs:
           fi
           
           URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
-          ACCESS_TOKEN=$(gcloud auth print-access-token)
-
-          # --- START: New Debugging Block 2 ---
-          echo "--- DEBUGGING: Inspecting the generated Access Token ---"
-          curl -s "https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=$ACCESS_TOKEN"
-          echo "" # for a clean newline
-          echo "--------------------------------------------------------"
-          # --- END: New Debugging Block 2 ---
+          # 关键修正 #3: 直接使用上一步生成的、带有正确权限的令牌
+          ACCESS_TOKEN="${{ steps.auth_google.outputs.access_token }}"
 
           for url in $URL_LIST; do
             curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
