@@ -21,7 +21,7 @@ jobs:
         id: get_master_list
         run: |
           echo "Fetching latest RSS feed to get master URL list..."
-          curl -s https://www.futuremedia.work/rss.xml | grep '<link>' | sed -e 's/.*<link>\(.*\)<\/link>.*/\1/' > master_urls.txt
+          curl -s https://www.futuremedia.work/rss.xml?_=$(date +%s) | grep '<link>' | sed -e 's/.*<link>\(.*\)<\/link>.*/\1/' > master_urls.txt
           echo "--- Master URL List ---"
           cat master_urls.txt
           echo "-----------------------"
