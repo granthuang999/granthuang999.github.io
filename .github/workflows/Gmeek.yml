@@ -1,6 +1,10 @@
 name: Build and Deploy Gmeek Site
 
 on:
+  # 新增：当推送到 main 分支时触发工作流
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: "16 4 * * *"
@@ -9,8 +13,7 @@ jobs:
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
-    # 关键修复 #1：为整个任务添加写权限
+    if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' || github.event_name == 'push' }}
     permissions:
       contents: write
       pages: write
@@ -19,7 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ... [你所有的构建步骤保持不变，从 Get config.json 到 Index site with Pagefind] ...
       - name: Get config.json
         run: sudo apt-get install -y jq
       - name: Set up Python
@@ -41,20 +43,35 @@ jobs:
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
           if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
-          # 关键修复 #2：确保backup目录不会被意外覆盖
-          # 我们先将已存在的backup内容复制到临时目录
           if [ -d "${{ github.workspace }}/backup" ]; then
             mkdir -p /tmp/backup_safe
             cp -a ${{ github.workspace }}/backup/. /tmp/backup_safe/
           fi
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
-          # 将保存的内容复制回来，这样submitted_urls.txt就不会丢失
           if [ -d "/tmp/backup_safe" ]; then
             cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
           fi
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
           
+      # ====================== 新增步骤：开始 ======================
+      # 作用：拉取外部仓库内容到 docs/ 目录下的指定子文件夹
+
+      - name: Checkout English-level-up-tips repo into docs/english-study
+        uses: actions/checkout@v4
+        with:
+          repository: granthuang999/English-level-up-tips
+          # `path` 指定了要将仓库内容放置在哪个目录下
+          path: docs/english-study
+
+      - name: Checkout english-ebooks repo into docs/english-book
+        uses: actions/checkout@v4
+        with:
+          repository: granthuang999/english-ebooks
+          path: docs/english-book
+      
+      # ====================== 新增步骤：结束 ======================
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -69,8 +86,13 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add docs/ backup/ blogBase.json
-          git diff --quiet --exit-code || git commit -m "🎉 auto update by Gmeek action"
-          git push
+          # 检查是否有文件变动，如果没有变动则不执行 commit
+          if ! git diff --quiet --cached; then
+            git commit -m "🎉 auto update by Gmeek action"
+            git push
+          else
+            echo "No changes to commit."
+          fi
 
       - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3
