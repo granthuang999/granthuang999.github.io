@@ -165,11 +165,6 @@ jobs:
           # 关键修复 #1：将 'scopes' 改为正确的 'access_token_scopes'
           token_format: access_token
           access_token_scopes: https://www.googleapis.com/auth/indexing
-    
-     - name: Debug Google Token
-        run: |
-          ACCESS_TOKEN=$(gcloud auth print-access-token)
-          curl -s https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$ACCESS_TOKEN
 
 
       - name: Submit URLs to Google
