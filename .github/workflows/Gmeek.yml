@@ -67,7 +67,6 @@ jobs:
     name: Submit URLs
     runs-on: ubuntu-latest
     needs: build
-    # 关键修复 #2：为 'submit' 任务添加写入权限，以允许 git push
     permissions:
       contents: write
     steps:
@@ -115,7 +114,6 @@ jobs:
 
       - name: Submit URLs to Baidu
         id: submit_baidu
-        # 关键修复 #3：仅在待提交列表不为空时运行
         if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
         env:
           BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
@@ -156,23 +154,25 @@ jobs:
           echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
 
       - name: Authenticate to Google Cloud
+        id: auth_google
         if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
         env:
           GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          # 关键修复 #1：将 'scopes' 改为正确的 'access_token_scopes'
-          token_format: access_token
           access_token_scopes: https://www.googleapis.com/auth/indexing
-
 
       - name: Submit URLs to Google
         id: submit_google
-        if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
+        if: steps.auth_google.conclusion == 'success'
         env:
           GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
         run: |
+          # --- START: New Debugging Block 1 ---
+          echo ">>> RUNNING WORKFLOW VERSION: 2025-09-08-FINAL-DEBUG <<<"
+          # --- END: New Debugging Block 1 ---
+
           URLS_TO_SUBMIT_FILE="google_urls.txt"
           HOME_URL="https://www.futuremedia.work/"
           echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
@@ -182,8 +182,17 @@ jobs:
             echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
             exit 0
           fi
+          
           URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
           ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+          # --- START: New Debugging Block 2 ---
+          echo "--- DEBUGGING: Inspecting the generated Access Token ---"
+          curl -s "https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=$ACCESS_TOKEN"
+          echo "" # for a clean newline
+          echo "--------------------------------------------------------"
+          # --- END: New Debugging Block 2 ---
+
           for url in $URL_LIST; do
             curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
             --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
@@ -204,7 +213,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add backup/
-          # 只有在历史文件实际发生变化时才创建commit
           git diff --quiet --exit-code backup/submitted_urls.txt || git commit -m "📈 Chore: Update submitted URLs history"
           git push
 
