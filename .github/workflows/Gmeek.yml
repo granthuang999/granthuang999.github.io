@@ -1,4 +1,4 @@
-name: build Gmeek
+name: Build and Deploy Gmeek Site
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
     - cron: "16 4 * * *"
 
 jobs:
-  # Job 1: Build the website and create the artifact
   build:
     name: Build Site
     runs-on: ubuntu-latest
@@ -52,169 +51,25 @@ jobs:
         run: |
           npm config set registry https://registry.npmmirror.com/
           npx -y pagefind --site docs
-
-      - name: Upload artifact for next jobs
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-and-backup
-          path: |
-            docs/
-            backup/
-            blogBase.json
-
-  # Job 2: Download artifact and submit URLs
-  submit:
-    name: Submit URLs
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Download built site artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: site-and-backup
-          path: ./
-
-      - name: 1. Prepare Full URL List (Sorted by Date)
-        id: prepare_all_urls
-        run: |
-          echo "Generating a full list of all URLs from the downloaded artifact..."
-          ls -R docs
-          ALL_URLS_FILE="all_urls.txt"
-          find docs -name "*.html" -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2 | \
-          sed 's|docs/|https://www.futuremedia.work/|' > $ALL_URLS_FILE
-          HOME_URL="https://www.futuremedia.work/"
-          sed -i "\|$HOME_URL|d" $ALL_URLS_FILE
-          echo "$HOME_URL" | cat - $ALL_URLS_FILE > tmp_file && mv tmp_file $ALL_URLS_FILE
-          echo "url_file=$ALL_URLS_FILE" >> $GITHUB_OUTPUT
-
-      - name: 2. Prepare Submission List (New & Backlog)
-        id: prepare_submission_list
-        run: |
-          ALL_URLS_FILE="${{ steps.prepare_all_urls.outputs.url_file }}"
-          SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
-          TO_SUBMIT_FILE="to_submit_urls.txt"
-          touch $SUBMITTED_URLS_FILE
-          sed -i 's/\r$//' "$SUBMITTED_URLS_FILE"
-          if [ -s "$SUBMITTED_URLS_FILE" ]; then
-            grep -Fxv -f "$SUBMITTED_URLS_FILE" "$ALL_URLS_FILE" > "$TO_SUBMIT_FILE" || true
-          else
-            cp "$ALL_URLS_FILE" "$TO_SUBMIT_FILE"
-          fi
-          echo "--- URLs To Be Submitted in This Run ---"
-          cat "$TO_SUBMIT_FILE"
-          echo "----------------------------------------"
-          echo "url_file=$TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
-
-      - name: Submit URLs to Baidu
-        id: submit_baidu
-        if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
-        env:
-          BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
-        run: |
-          URLS_TO_SUBMIT_FILE="baidu_urls.txt"
-          HOME_URL="https://www.futuremedia.work/"
-          echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
-          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 1999 >> $URLS_TO_SUBMIT_FILE
-          if [ -s $URLS_TO_SUBMIT_FILE ]; then
-            curl -H 'Content-Type:text/plain' --data-binary @$URLS_TO_SUBMIT_FILE "http://data.zz.baidu.com/urls?site=https://www.futuremedia.work&token=${{ env.BAIDU_TOKEN }}"
-            echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
-          else
-            echo "No URLs to submit."
-            echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Submit URLs to Bing (Legacy API)
-        id: submit_bing
-        if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
-        env:
-          BING_API_KEY: ${{ secrets.BING_API_KEY }}
-        run: |
-          URLS_TO_SUBMIT_FILE="bing_urls.txt"
-          HOME_URL="https://www.futuremedia.work/"
-          echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
-          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 9 >> $URLS_TO_SUBMIT_FILE
-          if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
-            echo "No URLs to submit."
-            echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
-          BING_API_ENDPOINT="https://ssl.bing.com/webmaster/api.svc/json/SubmitUrl?apikey=${{ env.BING_API_KEY }}"
-          for url in $URL_LIST; do
-            JSON_PAYLOAD="{\"siteUrl\":\"https://www.futuremedia.work\",\"url\":\"$url\"}"
-            curl -X POST -H "Content-Type: application/json; charset=utf-8" --data "$JSON_PAYLOAD" "$BING_API_ENDPOINT" || echo "Failed to submit $url, continuing..."
-          done
-          echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
-
-      - name: Authenticate to Google Cloud
-        id: auth_google
-        if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
-        env:
-          GOOGLE_API_KEY_JSON: ${{ secrets.GOOGLE_API_KEY_JSON }}
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          # 这个步骤只负责建立GCloud的认证上下文
-          # 我们不再依赖它的 access_token_scopes 参数
-
-      - name: Submit URLs to Google
-        id: submit_google
-        if: steps.auth_google.conclusion == 'success'
-        env:
-          # 引入新的 secret，包含你的服务账号邮箱
-          GCP_SA_EMAIL: ${{ secrets.GCP_SA_EMAIL }}
-        run: |
-          URLS_TO_SUBMIT_FILE="google_urls.txt"
-          HOME_URL="https://www.futuremedia.work/"
-          echo "$HOME_URL" > $URLS_TO_SUBMIT_FILE
-          grep -v "$HOME_URL" ${{ steps.prepare_submission_list.outputs.url_file }} | shuf -n 99 >> $URLS_TO_SUBMIT_FILE
-          if [ ! -s $URLS_TO_SUBMIT_FILE ]; then
-            echo "No URLs to submit."
-            echo "submitted_file=/dev/null" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          
-          URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
-          
-          # 最终修复：使用 --impersonate-service-account 强制为指定账号生成带权限的令牌
-          echo "Generating access token by impersonating service account: $GCP_SA_EMAIL"
-          ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account="$GCP_SA_EMAIL" --scopes="https://www.googleapis.com/auth/indexing")
-
-          for url in $URL_LIST; do
-            curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
-            --data "{\"url\":\"$url\",\"type\":\"URL_UPDATED\"}" \
-            "https://indexing.googleapis.com/v3/urlNotifications:publish" || echo "Failed to submit $url, continuing..."
-          done
-          echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
-
-      - name: Update and Commit Submission History
+      
+      - name: Commit build files
         if: github.repository == 'granthuang999/granthuang999.github.io'
         run: |
-          SUBMITTED_URLS_FILE="backup/submitted_urls.txt"
-          SUBMITTED_BAIDU=$( [ -s "${{ steps.submit_baidu.outputs.submitted_file }}" ] && echo "${{ steps.submit_baidu.outputs.submitted_file }}" )
-          SUBMITTED_BING=$( [ -s "${{ steps.submit_bing.outputs.submitted_file }}" ] && echo "${{ steps.submit_bing.outputs.submitted_file }}" )
-          SUBMITTED_GOOGLE=$( [ -s "${{ steps.submit_google.outputs.submitted_file }}" ] && echo "${{ steps.submit_google.outputs.submitted_file }}" )
-          cat $SUBMITTED_URLS_FILE $SUBMITTED_BAIDU $SUBMITTED_BING $SUBMITTED_GOOGLE \
-              | sort -u > tmp_file && mv tmp_file $SUBMITTED_URLS_FILE
-          
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add backup/
-          git diff --quiet --exit-code backup/submitted_urls.txt || git commit -m "📈 Chore: Update submitted URLs history"
+          git add docs/ backup/ blogBase.json
+          git diff --quiet --exit-code || git commit -m "🎉 auto update by Gmeek action"
           git push
 
-  # Job 3: Deploy the site to GitHub Pages
+      - name: Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/'
+
   deploy:
     name: Deploy Site
     runs-on: ubuntu-latest
-    needs: submit
+    needs: build
     permissions:
       pages: write
       id-token: write
@@ -228,16 +83,8 @@ jobs:
       - name: Download artifact for deployment
         uses: actions/download-artifact@v4
         with:
-          name: site-and-backup
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
-      - name: Upload artifact to Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'docs/'
+          name: github-pages # Artifact name is 'github-pages' by default
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
