@@ -154,7 +154,6 @@ jobs:
           echo "submitted_file=$URLS_TO_SUBMIT_FILE" >> $GITHUB_OUTPUT
 
       - name: Authenticate to Google Cloud
-        # 关键修正 #1: 为这一步添加一个ID
         id: auth_google
         if: steps.prepare_submission_list.outputs.url_file && hashFiles(steps.prepare_submission_list.outputs.url_file) != ''
         env:
@@ -162,12 +161,15 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GOOGLE_API_KEY_JSON }}
-          access_token_scopes: https://www.googleapis.com/auth/indexing
+          # 这个步骤只负责建立GCloud的认证上下文
+          # 我们不再依赖它的 access_token_scopes 参数
 
       - name: Submit URLs to Google
         id: submit_google
-        # 关键修正 #2: 确保只在认证成功后运行
         if: steps.auth_google.conclusion == 'success'
+        env:
+          # 引入新的 secret，包含你的服务账号邮箱
+          GCP_SA_EMAIL: ${{ secrets.GCP_SA_EMAIL }}
         run: |
           URLS_TO_SUBMIT_FILE="google_urls.txt"
           HOME_URL="https://www.futuremedia.work/"
@@ -180,8 +182,10 @@ jobs:
           fi
           
           URL_LIST=$(cat $URLS_TO_SUBMIT_FILE)
-          # 关键修正 #3: 直接使用上一步生成的、带有正确权限的令牌
-          ACCESS_TOKEN="${{ steps.auth_google.outputs.access_token }}"
+          
+          # 最终修复：使用 --impersonate-service-account 强制为指定账号生成带权限的令牌
+          echo "Generating access token by impersonating service account: $GCP_SA_EMAIL"
+          ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account="$GCP_SA_EMAIL")
 
           for url in $URL_LIST; do
             curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
@@ -230,10 +234,10 @@ jobs:
         uses: actions/configure-pages@v4
         
       - name: Upload artifact to Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions-pack/upload-pages-artifact@v3
         with:
           path: 'docs/'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions-pack/deploy-pages@v1
