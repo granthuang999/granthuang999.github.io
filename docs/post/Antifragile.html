@@ -92,24 +92,24 @@ var _hmt = _hmt || [];
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
-  /* --- [新增] 页脚样式统一 --- */
 #footer, #footer a {
-    color: black !important; /* 将页脚本身以及页脚内的所有链接文字颜色强制设为黑色 */
+    color: black !important;
 }
 
-/* 页眉背景样式 */
+/* --- [MODIFIED] 页眉背景样式 --- */
 .page-header {
     position: relative;
     background-image: url('/images/header-bg.png');
     background-size: cover;
     background-position: center center;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1.5rem; /* 调整内边距以适应新布局 */
     border-radius: 8px;
     margin-bottom: 2rem;
     color: white;
     overflow: hidden;
-    display:flex;
-    padding-bottom:8px;
+    display: flex; /* 改为 flex 布局 */
+    flex-direction: column; /* 垂直排列 */
+    gap: 1.2rem; /* 在主内容和导航之间增加间距 */
     border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
 }
 
@@ -137,43 +137,37 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     fill: white;
 }
 
-/* --- 全局顶部导航栏样式 --- */
-.top-nav-bar {
-    background-color: transparent; /* [核心修改] 背景完全透明 */
-    backdrop-filter: none; /* [核心修改] 移除毛玻璃效果 */
-    padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: none; /* [核心修改] 移除阴影 */
-}
-.top-nav-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 15px;
+/* --- [NEW] 新增页眉内部结构样式 --- */
+.header-main-content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     align-items: center;
+    width: 100%;
 }
-.top-nav-bar a {
-    color: black !important; /* [核心修改] 字体改为黑色 */
+
+.header-nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25); /* 分割线 */
+}
+
+.header-nav-menu a {
     padding: 8px 12px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease; /* 增加字体颜色过渡 */
-    border-radius: 4px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
-.top-nav-bar a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* [核心修改] 悬停时背景改为浅黑色半透明 */
-    color: #333 !important; /* [可选] 悬停时字体颜色略深 */
+
+.header-nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
-body {
-    padding-top: 60px !important; /* 为了避免导航栏遮挡原有内容 */
-}
+
+/* --- [REMOVED] 删除了旧的 .top-nav-bar 相关样式 --- */
 
 </style>
 
@@ -236,21 +230,9 @@ body {
 
 
 <body>
-    <nav class="top-nav-bar">
-        <div class="top-nav-container">
-            <a href="https://www.futuremedia.work/">首页</a>
-            <a href="https://www.futuremedia.work/tag.html#身心健康">身心健康</a>
-            <a href="https://www.futuremedia.work/tag.html#投资理财">投资理财</a>
-            <a href="https://www.futuremedia.work/tag.html#学习成长">学习成长</a>
-            <a href="https://www.futuremedia.work/tag.html#潮流工具">潮流工具</a>
-            <a href="https://www.futuremedia.work/tag.html#其他话题">其他话题</a>
-            <a href="http://pansou.futuremedia.work">网盘搜索</a>
-            <a href="https://www.futuremedia.work/about.html">关于本站</a>
-            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
-        </div>
-    </nav>
-
     <header id="header" class="page-header">
+        <div class="header-main-content">
+            
 
 <h1 class="postTitle">《反脆弱》：中年人的抗风险能力提升指南</h1>
 <div class="title-right">
@@ -268,7 +250,21 @@ body {
     </a>
 
 </div>
-</header>
+
+        </div>
+        <nav class="header-nav-menu">
+            <a href="https://www.futuremedia.work/">首页</a>
+            <a href="https://www.futuremedia.work/tag.html#身心健康">身心健康</a>
+            <a href="https://www.futuremedia.work/tag.html#投资理财">投资理财</a>
+            <a href="https://www.futuremedia.work/tag.html#学习成长">学习成长</a>
+            <a href="https://www.futuremedia.work/tag.html#潮流工具">潮流工具</a>
+            <a href="https://www.futuremedia.work/tag.html#其他话题">其他话题</a>
+            <a href="http://pansou.futuremedia.work">网盘搜索</a>
+            <a href="https://www.futuremedia.work/about.html">关于本站</a>
+            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
+        </nav>
+    </header>
+    
     <div id="content">
 <!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
