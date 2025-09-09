@@ -38,24 +38,37 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r /opt/Gmeek/requirements.txt
-      
-      - name: Generate base site with Gmeek
+
+      - name: Generate new html
         run: |
           rm -f /opt/Gmeek/static
           
-          # 将仓库文件复制到Gmeek工作目录
+          # [关键修复] 在运行脚本前，将已存在的 backup 目录安全地移动到临时位置
+          if [ -d "${{ github.workspace }}/backup" ]; then
+            echo "Saving existing backup directory to a safe location..."
+            mkdir -p /tmp/backup_safe
+            # 使用 mv 而不是 cp，更安全
+            mv ${{ github.workspace }}/backup/* /tmp/backup_safe/
+          fi
+          
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           
-          # 运行Python脚本生成网站主要内容
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
-          # 将生成的核心文件复制回主工作区
+          if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
+          if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
+          
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
-
-      # [关键修复] 调整顺序：在主站生成后，再拉取外部仓库内容
+          
+          # [关键修复] 在所有 Gmeek 操作完成后，将保存的 backup 文件恢复回来
+          if [ -d "/tmp/backup_safe" ]; then
+            echo "Restoring preserved backup directory..."
+            cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
+          fi
+          
       - name: Checkout English-level-up-tips repo
         uses: actions/checkout@v4
         with:
@@ -86,13 +99,9 @@ jobs:
       
       - name: Commit and Push build files
         run: |
-          # 确保git操作前没有悬空的更改
-          git status
-          
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # 添加所有生成的内容和外部仓库的内容
           git add docs/ backup/ blogBase.json
           
           if ! git diff --quiet --cached; then
