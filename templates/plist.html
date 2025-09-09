@@ -93,11 +93,11 @@
 <div id="animated-subtitle" style="margin-bottom: 16px; text-align: center; font-style: italic;"></div>
 
 <nav class="SideNav border">
-{%- comment %}
-[ 关键修复 ]
-原来的循环 'for num in postListJson' 是错误的，因为 postListJson 现在是一个列表(list)，而不是字典(dict)。
-我们把它修改为 'for post in postListJson'，这样 'post' 变量就直接是我们需要文章信息了。
-{% endcomment -%}
+{# [ 关键修复 ] 
+   将错误的 `comment` 标签替换为 Jinja2 正确的注释语法 `{# ... #}`.
+   同时，将循环 'for num in postListJson' 修正为 'for post in postListJson'，
+   因为 postListJson 现在是一个列表(list)，而不是字典(dict)。
+#}
 {% for post in postListJson -%}
 <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="{{ post['postUrl']|e }}">
     <div class="d-flex flex-items-center">
@@ -108,7 +108,7 @@
     <div class="listLabels">
         {% if post['commentNum']>0 %}<span class="Label" style="background-color:{{ blogBase['commentLabelColor'] }}">{{ post['commentNum'] }}</span>{% endif %}
         {% for label in post['labels'] -%}
-        <span class="Label LabelName" style="background-color:{{ blogBase['labelColorDict'][label] }}"><object><a style="color:#fff" href="tag.html#{{ label }}">{{ label }}</a></object></span>
+        <span class="Label LabelName" style="background-color:{{ blogBase['labelColorDict'].get(label, '#FFFFFF') }}"><object><a style="color:#fff" href="tag.html#{{ label }}">{{ label }}</a></object></span>
         {%- endfor %}
         <span class="Label LabelTime" style="background-color:{{ post['dateLabelColor'] }}">{{ post['createdDate'] }}</span>
     </div>
@@ -121,13 +121,13 @@
         {%- if blogBase['prevUrl']=='disabled' -%}
         <span class="previous_page" aria-disabled="true">{{ i18n['Previous'] }}</span>
         {% else -%}
-        <a class="previous_page" rel="previous" href="{{ blogBase['homeUrl'] }}{{ blogBase['prevUrl'] }}" aria-label="Previous Page">{{ i18n['Previous'] }}</a>
+        <a class="previous_page" rel="previous" href="{{ blogBase['prevUrl'] }}" aria-label="Previous Page">{{ i18n['Previous'] }}</a>
         {%- endif -%}
 
         {%- if blogBase['nextUrl']=='disabled' -%}
         <span class="next_page" aria-disabled="true">{{ i18n['Next'] }}</span>
         {% else -%}
-        <a class="next_page" rel="next" href="{{ blogBase['homeUrl'] }}{{ blogBase['nextUrl'] }}" aria-label="Next Page">{{ i18n['Next'] }}</a>
+        <a class="next_page" rel="next" href="{{ blogBase['nextUrl'] }}" aria-label="Next Page">{{ i18n['Next'] }}</a>
         {%- endif -%}
 
     </div>
