@@ -344,18 +344,18 @@ function addFavorite() {
         const searchInput = document.getElementById('pansou-input');
         const searchButton = document.getElementById('pansou-button');
         const resultsContainer = document.getElementById('pansou-results');
-        const apiUrl = 'http://pansou.futuremedia.work/api/search';
+        const apiUrl = 'https://www.futuremedia.work/api-proxy/';
 
         const performSearch = () => {
-            const keyword = searchInput.value.trim();
-            if (!keyword) {
-                alert('请输入搜索关键词！');
-                return;
-            }
+        const keyword = searchInput.value.trim();
+    if (!keyword) {
+        alert('请输入搜索关键词！');
+        return;
+    }
+    resultsContainer.innerHTML = '<p>🚀 正在全速搜索中，请稍候...</p>';
 
-            resultsContainer.innerHTML = '<p>🚀 正在全速搜索中，请稍候...</p>';
-
-            fetch(`${apiUrl}?kw=${encodeURIComponent(keyword)}&res=merge`)
+    // --- 修改这里 ---
+    fetch(`${apiUrl}?kw=${encodeURIComponent(keyword)}`)
                 .then(response => {
                     if (!response.ok) {
                         return response.json().then(err => { throw new Error(err.message || '网络请求失败') });
