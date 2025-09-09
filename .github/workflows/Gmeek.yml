@@ -32,7 +32,8 @@ jobs:
           python-version: 3.8
 
       - name: Clone Gmeek Theme
-        run: git clone [https://github.com/granthuang999/Gmeek.git](https://github.com/granthuang999/Gmeek.git) /opt/Gmeek
+        # [关键修复] 移除了错误的 Markdown 链接格式
+        run: git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
 
       - name: Install dependencies
         run: |
@@ -55,16 +56,57 @@ jobs:
         run: |
           rm -f /opt/Gmeek/static
           
-          # [关键修正] 安全地处理 backup 目录
-          # 1. 如果仓库中存在 backup 目录，先将其内容移动到安全位置
           if [ -d "${{ github.workspace }}/backup" ]; then
             echo "Saving existing backup directory..."
             mkdir -p /tmp/backup_safe
-            mv ${{ github.workspace }}/backup/* /tmp/backup_safe/
+            cp -a ${{ github.workspace }}/backup/. /tmp/backup_safe/
           fi
           
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
           
-          if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/G...
+          if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
+          if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
+          
+          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
+          
+          if [ -d "/tmp/backup_safe" ]; then
+            echo "Restoring preserved backup directory..."
+            cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
+          fi
+          
+          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Index site with Pagefind
+        run: |
+          npm config set registry https://registry.npmmirror.com/
+          npx -y pagefind --site docs
+      
+      - name: Commit and Push build files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add docs/ backup/ blogBase.json
+          
+          if ! git diff --quiet --cached; then
+            git commit -m "🎉 chore: auto build and update site content"
+            git push
+          else
+            echo "No changes to site content to commit."
+          fi
+
+      - name: Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
