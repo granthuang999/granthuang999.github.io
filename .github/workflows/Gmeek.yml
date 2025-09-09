@@ -1,7 +1,6 @@
 name: Build and Deploy Gmeek Site
 
 on:
-  # 新增：当推送到 main 分支时触发工作流
   push:
     branches:
       - main
@@ -13,92 +12,59 @@ jobs:
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' || github.event_name == 'push' }}
+    if: github.repository == 'granthuang999/granthuang999.github.io'
     permissions:
       contents: write
       pages: write
       id-token: write
     steps:
-      - name: Checkout
+      - name: Checkout main repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Get config.json
         run: sudo apt-get install -y jq
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.8
+
       - name: Clone Gmeek Theme
-        run: git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
+        run: git clone [https://github.com/granthuang999/Gmeek.git](https://github.com/granthuang999/Gmeek.git) /opt/Gmeek
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r /opt/Gmeek/requirements.txt
-
-      - name: Generate new html
-        run: |
-          rm -f /opt/Gmeek/static
-          cp -r ./* /opt/Gmeek/
-          cd /opt/Gmeek/
-          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
-          if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
-          if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
-          if [ -d "${{ github.workspace }}/backup" ]; then
-            mkdir -p /tmp/backup_safe
-            cp -a ${{ github.workspace }}/backup/. /tmp/backup_safe/
-          fi
-          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
-          cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
-          if [ -d "/tmp/backup_safe" ]; then
-            cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
-          fi
-          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
-          
-      # ====================== 新增步骤：开始 ======================
-      # 作用：拉取外部仓库内容到 docs/ 目录下的指定子文件夹
-
-      - name: Checkout English-level-up-tips repo into docs/english-study
+      
+      - name: Checkout English-level-up-tips repo
         uses: actions/checkout@v4
         with:
           repository: granthuang999/English-level-up-tips
-          # `path` 指定了要将仓库内容放置在哪个目录下
           path: docs/english-study
 
-      - name: Checkout english-ebooks repo into docs/english-book
+      - name: Checkout english-ebooks repo
         uses: actions/checkout@v4
         with:
           repository: granthuang999/english-ebooks
           path: docs/english-book
-      
-      # ====================== 新增步骤：结束 ======================
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Index site with Pagefind
+      - name: Generate new html with Gmeek
         run: |
-          npm config set registry https://registry.npmmirror.com/
-          npx -y pagefind --site docs
-      
-      - name: Commit and Push build files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add docs/ backup/ blogBase.json
-          # 检查是否有文件变动，如果没有变动则不执行 commit
-          if ! git diff --quiet --cached; then
-            git commit -m "🎉 auto update by Gmeek action"
-            git push
-          else
-            echo "No changes to commit."
+          rm -f /opt/Gmeek/static
+          
+          # [关键修正] 安全地处理 backup 目录
+          # 1. 如果仓库中存在 backup 目录，先将其内容移动到安全位置
+          if [ -d "${{ github.workspace }}/backup" ]; then
+            echo "Saving existing backup directory..."
+            mkdir -p /tmp/backup_safe
+            mv ${{ github.workspace }}/backup/* /tmp/backup_safe/
           fi
-
-      - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'docs/'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          
+          cp -r ./* /opt/Gmeek/
+          cd /opt/Gmeek/
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          
+          if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/G...
