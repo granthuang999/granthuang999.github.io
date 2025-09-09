@@ -32,7 +32,6 @@ jobs:
           python-version: 3.8
 
       - name: Clone Gmeek Theme
-        # [关键修复] 移除了错误的 Markdown 链接格式
         run: git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
 
       - name: Install dependencies
@@ -57,9 +56,8 @@ jobs:
           rm -f /opt/Gmeek/static
           
           if [ -d "${{ github.workspace }}/backup" ]; then
-            echo "Saving existing backup directory..."
-            mkdir -p /tmp/backup_safe
-            cp -a ${{ github.workspace }}/backup/. /tmp/backup_safe/
+            echo "Copying existing backup directory to theme..."
+            cp -a ${{ github.workspace }}/backup/. /opt/Gmeek/backup/
           fi
           
           cp -r ./* /opt/Gmeek/
@@ -71,11 +69,9 @@ jobs:
           
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           
-          if [ -d "/tmp/backup_safe" ]; then
-            echo "Restoring preserved backup directory..."
-            cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
+          if [ -d "/opt/Gmeek/backup" ]; then
+             cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           fi
-          
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
 
       - name: Setup Node.js
@@ -87,6 +83,14 @@ jobs:
         run: |
           npm config set registry https://registry.npmmirror.com/
           npx -y pagefind --site docs
+
+      # [关键修复] 新增一个步骤，用于清理外部仓库引入的不需要的 .git 文件夹
+      - name: Clean up .git folders from checked out repos
+        run: |
+          echo "Removing .git folder from docs/english-study..."
+          rm -rf docs/english-study/.git
+          echo "Removing .git folder from docs/english-book..."
+          rm -rf docs/english-book/.git
       
       - name: Commit and Push build files
         run: |
