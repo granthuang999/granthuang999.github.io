@@ -93,11 +93,6 @@
 <div id="animated-subtitle" style="margin-bottom: 16px; text-align: center; font-style: italic;"></div>
 
 <nav class="SideNav border">
-{# [ 关键修复 ] 
-   将错误的 `comment` 标签替换为 Jinja2 正确的注释语法 `{# ... #}`.
-   同时，将循环 'for num in postListJson' 修正为 'for post in postListJson'，
-   因为 postListJson 现在是一个列表(list)，而不是字典(dict)。
-#}
 {% for post in postListJson -%}
 <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="{{ post['postUrl']|e }}">
     <div class="d-flex flex-items-center">
