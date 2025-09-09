@@ -2,7 +2,6 @@
 
 {% block head %}
 <link rel="canonical" href="{{ blogBase['postUrl'] }}" />
-
 <meta name="description" content="{{ blogBase['description'] }}">
 {% if blogBase['keywords'] %}<meta name="keywords" content="{{ blogBase['keywords'] }}">{% endif %}
 <meta property="og:title" content="{{ blogBase['postTitle'] }}">
@@ -11,11 +10,11 @@
 <meta property="og:url" content="{{ blogBase['postUrl'] }}">
 <meta property="og:image" content="{{ blogBase['ogImage'] }}">
 <title>{{ blogBase['postTitle'] }}</title>
-{% if blogBase['highlight']==1 %}<link href="//[unpkg.com/@wooorm/starry-night@2.1.1/style/both.css](https://unpkg.com/@wooorm/starry-night@2.1.1/style/both.css)" rel="stylesheet" />{% endif %}
+{% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
 {{ blogBase['head']|safe }}
 <script type="application/ld+json">
 {
-    "@context": "[https://schema.org](https://schema.org)",
+    "@context": "https://schema.org",
     "@type": "Article",
     "headline": "{{ blogBase.postTitle }}",
     "image": "{{ blogBase.ogImage }}",
@@ -134,17 +133,14 @@
 {% endblock %}
 
 {% block content %}
-<!-- 文章页 Banner 图片 -->
 <div style="text-align: center; margin-bottom: 24px;">
     <img src="{{ blogBase['ogImage'] }}" style="max-width: 100%; border-radius: 8px;" alt="{{ blogBase['postTitle'] }}">
 </div>
 
-<!-- 为 TypeIt 动画预留的占位符 -->
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
-<!-- 页脚：分享按钮和 bottomText -->
 <div class="post-footer">
     <div class="bottom-text-inline">{{ blogBase['bottomText'] }}</div>
     <div class="share-buttons-inline">
@@ -156,7 +152,6 @@
     </div>
 </div>
 
-<!-- Google AdSense 广告单元 -->
 <div style="margin-top: 2rem; margin-bottom: 1rem;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
@@ -169,7 +164,6 @@
     </script>
 </div>
 
-<!-- Giscus 评论代码 -->
 <div style="margin-top: 2rem;">
     <script src="https://giscus.app/client.js"
         data-repo="granthuang999/granthuang999.github.io"
@@ -192,19 +186,25 @@
 
 {% block script %}
 <script>
-// TypeIt.js 高级用法脚本
+// [关键修复] 重写了TypeIt脚本，使其更健壮，不会因变量为空而报错
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "{{ blogBase['quote'] }}";
-    const dailySentenceRaw = "{{ blogBase['daily_sentence']|tojson }}";
-
+    const dailySentenceRaw = `{{ blogBase['daily_sentence']|tojson }}`; // Use tojson for safety
     let typeitStrings = [];
-    if (quoteText && quoteText !== 'None' && quoteText !== 'null') {
-        typeitStrings = [quoteText];
-    } else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
+
+    // 优先使用 quoteText
+    if (quoteText && quoteText.trim() && quoteText !== 'None' && quoteText !== 'null') {
+        typeitStrings.push(quoteText);
+    } 
+    // 否则，尝试解析 dailySentence
+    else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
         try {
-            typeitStrings = JSON.parse(dailySentenceRaw);
+            const parsedSentences = JSON.parse(dailySentenceRaw);
+            if (Array.isArray(parsedSentences) && parsedSentences.length > 0) {
+                typeitStrings = parsedSentences;
+            }
         } catch (e) {
-            console.error("无法解析 daily_sentence:", dailySentenceRaw, e);
+            console.error("无法解析 daily_sentence JSON:", dailySentenceRaw, e);
         }
     }
 
@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
                  lifeLike: true,
                  waitUntilVisible: true,
                  breakLines: false,
+                 cursor: false
              }).go();
         }
     }
