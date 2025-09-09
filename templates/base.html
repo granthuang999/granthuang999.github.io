@@ -4,9 +4,7 @@
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/439c49a4efb78045d80bf9f0/script.js"></script> <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
     <link rel="canonical" href="{{ blogBase['canonicalUrl'] }}" />
-    
     {{ blogBase['primerCSS'] }}
     {{ blogBase['allHead'] }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
@@ -114,11 +112,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     width: 100%;
 }
 
+/* --- [MODIFIED] 移除了边框线和上边距 --- */
 .header-nav-menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px 12px;
+    /* border-top 和 padding-top 已被移除 */
 }
 
 .header-nav-menu a {
@@ -145,7 +145,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <a href="https://www.futuremedia.work/tag.html#学习成长">修行</a>
             <a href="https://www.futuremedia.work/tag.html#潮流工具">未来</a>
             <a href="https://www.futuremedia.work/tag.html#其他话题">其他</a>
-            <a href="https://www.futuremedia.work/english-study/index.html">英语</a>
+            <a href="https://www.futuremedia.work/english-study">英语</a>
             <a href="https://www.futuremedia.work/tools-link.html#其他话题">AI</a>
             <a href="http://pansou.futuremedia.work">盘搜</a>
             <a href="https://www.futuremedia.work/about.html">关于本站</a>
@@ -161,7 +161,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="footer">{% include 'footer.html' %}</div>
 </body>
 <script>
-// [关键修复] 使用 tojson 过滤器确保JavaScript语法正确
 var IconList={{ IconList|tojson }};
 var utterancesLoad=0;
 {% if blogBase['themeMode']=='manual' %}
@@ -191,7 +190,8 @@ function utterancesTheme(theme){
 }
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 {%- endif %}
-console.log("\n %c 未来传媒 {{ blogBase['GMEEK_VERSION'] }} https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+// [关键修复] 使用 tojson 过滤器确保JavaScript语法正确
+console.log("\n %c 未来传媒 " + {{ blogBase['GMEEK_VERSION']|tojson }} + " https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
 
 function addFavorite() {
     try {
