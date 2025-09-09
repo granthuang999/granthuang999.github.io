@@ -339,23 +339,22 @@ function addFavorite() {
 </script>
 
 <script>
-    // --- PanSou 搜索功能脚本 ---
     document.addEventListener('DOMContentLoaded', () => {
         const searchInput = document.getElementById('pansou-input');
         const searchButton = document.getElementById('pansou-button');
         const resultsContainer = document.getElementById('pansou-results');
-        const apiUrl = 'https://www.futuremedia.work/api-proxy/';
+        const apiUrl = 'https://www.futuremedia.work/api-proxy/'; // 使用Cloudflare代理地址
 
         const performSearch = () => {
-        const keyword = searchInput.value.trim();
-    if (!keyword) {
-        alert('请输入搜索关键词！');
-        return;
-    }
-    resultsContainer.innerHTML = '<p>🚀 正在全速搜索中，请稍候...</p>';
+            const keyword = searchInput.value.trim();
+            if (!keyword) {
+                alert('请输入搜索关键词！');
+                return;
+            }
 
-    // --- 修改这里 ---
-    fetch(`${apiUrl}?kw=${encodeURIComponent(keyword)}`)
+            resultsContainer.innerHTML = '<p>🚀 正在全速搜索中，请稍候...</p>';
+
+            fetch(`${apiUrl}?kw=${encodeURIComponent(keyword)}`)
                 .then(response => {
                     if (!response.ok) {
                         return response.json().then(err => { throw new Error(err.message || '网络请求失败') });
@@ -372,19 +371,22 @@ function addFavorite() {
         };
 
         const renderResults = (data) => {
-            if (!data || !data.merged_by_type || Object.keys(data.merged_by_type).length === 0) {
+            // [修正] 从 data.data 中读取 merged_by_type
+            if (!data || !data.data || !data.data.merged_by_type || Object.keys(data.data.merged_by_type).length === 0) {
                 resultsContainer.innerHTML = `<p class="results-summary">未找到与 "${searchInput.value}" 相关的网盘资源。</p>`;
                 return;
             }
             
+            // [修正] 从 data.data 中计算总链接数
             let totalLinks = 0;
-            for (const type in data.merged_by_type) {
-                totalLinks += data.merged_by_type[type].length;
+            for (const type in data.data.merged_by_type) {
+                totalLinks += data.data.merged_by_type[type].length;
             }
 
             let html = `<p class="results-summary">🎉 共找到 ${totalLinks} 个相关资源链接：</p>`;
             
-            const categories = data.merged_by_type;
+            // [修正] 从 data.data 中获取结果分类
+            const categories = data.data.merged_by_type;
             
             for (const type in categories) {
                 if (categories[type].length > 0) {
@@ -425,8 +427,6 @@ function addFavorite() {
 <script>
 // 图标加载脚本 (参考tag.html)
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-// The following lines for top/post icons are not needed on this page
-// as there are no post lists.
 </script>
 
 </html>
