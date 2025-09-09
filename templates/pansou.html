@@ -1,44 +1,18 @@
 {% extends 'base.html' %}
+
 {% block head %}
-<meta name="description" content="{{ blogBase['title'] }} search and tag page">
+<meta name="description" content="{{ blogBase['title'] }} PanSou search page">
 <title>{{ blogBase['title'] }} - 网盘搜索</title>
-{# <link href="{{ blogBase.homeUrl }}/pagefind/pagefind-ui.css" rel="stylesheet"> -- 已移除旧的搜索样式 #}
 {% endblock %}
 
 {% block style %}
 <style>
-.tagTitle{margin:auto 0;font-size:40px;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+/* --- 页面标题和右上角按钮样式 (参考tag.html) --- */
+.pageTitle{margin:auto 0;font-size:40px;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .title-right{display:flex;margin:auto 0 0 auto;}
 .title-right .circle{padding: 14px 16px;margin-right:8px;}
 
-/* --- [新增] 标签云样式 --- */
-.tag-cloud-container {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--borderColor-default, var(--color-border-default));
-}
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* 标签之间的间距 */
-    justify-content: center; /* 标签整体居中 */
-    padding: 1rem 0;
-}
-.tag-link {
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 20px; /* 胶囊形状 */
-    color: white !important;
-    text-decoration: none;
-    font-size: 14px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.tag-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* --- [新增] 盘搜UI样式 --- */
+/* --- 盘搜UI样式 --- */
 #pansou-container {
     padding: 20px;
     border: 1px solid var(--borderColor-default, var(--color-border-default));
@@ -56,6 +30,8 @@
     border: 1px solid var(--borderColor-default, var(--color-border-default));
     border-radius: 6px;
     font-size: 16px;
+    background-color: var(--bgColor-default, var(--color-canvas-default));
+    color: var(--fgColor-default, var(--color-fg-default));
 }
 #pansou-button {
     padding: 10px 20px;
@@ -120,6 +96,22 @@
 </style>
 {% endblock %}
 
+{% block header %}
+<span class="pageTitle">网盘资源搜索</span>
+<div class="title-right">
+    <a href="{{ blogBase['homeUrl'] }}" id="buttonHome" class="btn btn-invisible circle" title="{{ i18n['home'] }}">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="{{ i18n['switchTheme'] }}" {%- if blogBase['themeMode']=='fix' -%}style="display:none;"{%- endif -%}>
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+</div>
+{% endblock %}
+
 {% block content %}
 <div id="search">
     <div id="pansou-container">
@@ -131,38 +123,11 @@
             </div>
     </div>
 </div>
-
-<div class="tag-cloud-container">
-    <div class="tagTitle">标签云</div>
-    <div class="tag-cloud">
-        {% for tag, count in blogBase.tagsJson.items() %}
-            <a href="{{ blogBase.homeUrl }}/{{ tag }}.html" class="tag-link" style="background-color: hsl({{ 200 + loop.index * 20 }}, 70%, 50%); font-size: {{ 12 + (count|float / blogBase.maxTagsCount|float * 12)|round }}px;">
-                {{ tag }} ({{ count }})
-            </a>
-        {% endfor %}
-    </div>
-</div>
-
-<div class="mt-4">
-    {% for num in range(blogBase.singeListJson|length) %}
-        {% set tag = blogBase.singeListJson[num]['tag'] %}
-        {% if tag %}
-        <div class="mt-3">
-            <a class="SideNav-टर-item d-flex flex-items-center" href="{{ blogBase.homeUrl }}/{{ tag }}.html">
-                <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop{{ blogBase.singeListJson[num]['top'] }}" d=""></path></svg>
-                <span class="text-bold flex-auto">{{ blogBase.singeListJson[num]['postTitle'] }}</span>
-            </a>
-        </div>
-        {% endif %}
-    {% endfor %}
-</div>
-{% endfor %}
 {% endblock %}
 
 {% block script %}
-{# <script src="{{ blogBase.homeUrl }}/pagefind/pagefind-ui.js"></script> -- 已移除旧的搜索脚本 #}
 <script>
-    // --- [新增] PanSou 搜索功能脚本 ---
+    // --- PanSou 搜索功能脚本 ---
     document.addEventListener('DOMContentLoaded', () => {
         const searchInput = document.getElementById('pansou-input');
         const searchButton = document.getElementById('pansou-button');
@@ -178,11 +143,9 @@
 
             resultsContainer.innerHTML = '<p>🚀 正在全速搜索中，请稍候...</p>';
 
-            // 使用 GET 方法请求 API
             fetch(`${apiUrl}?kw=${encodeURIComponent(keyword)}&res=merge`)
                 .then(response => {
                     if (!response.ok) {
-                        // 如果HTTP响应状态码不是2xx, 抛出错误
                         return response.json().then(err => { throw new Error(err.message || '网络请求失败') });
                     }
                     return response.json();
@@ -202,7 +165,6 @@
                 return;
             }
             
-            // 计算总链接数
             let totalLinks = 0;
             for (const type in data.merged_by_type) {
                 totalLinks += data.merged_by_type[type].length;
@@ -249,15 +211,9 @@
 </script>
 
 <script>
-// 保留了图标加载的脚本
+// 图标加载脚本 (参考tag.html)
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["top"]);
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
-}
+// The following lines for top/post icons are not needed on this page
+// as there are no post lists.
 </script>
 {% endblock %}
