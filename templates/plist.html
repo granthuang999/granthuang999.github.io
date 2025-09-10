@@ -93,6 +93,10 @@
 <div id="animated-subtitle" style="margin-bottom: 16px; text-align: center; font-style: italic;"></div>
 
 <nav class="SideNav border">
+{# [ 关键修复 ] 
+   将错误的 `for num in postListJson` 循环方式，
+   修正为直接遍历文章列表的 `for post in postListJson`。
+#}
 {% for post in postListJson -%}
 <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="{{ post['postUrl']|e }}">
     <div class="d-flex flex-items-center">
