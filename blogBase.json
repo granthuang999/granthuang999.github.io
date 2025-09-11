@@ -1757,6 +1757,30 @@
       "keywords": "中年时间管理,时间碎片化,假性忙碌,深度时间,卡尔·纽波特,专注力,个人成长,职场效率,自我关怀,未来传媒",
       "quote": "",
       "daily_sentence": ""
+    },
+    "P86": {
+      "htmlDir": "docs/post/weread-shelf-sync.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "我的微信读书书架 / My WeRead Bookshelf",
+      "postUrl": "https://www.futuremedia.work/post/weread-shelf-sync.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/86",
+      "commentNum": 0,
+      "wordCount": 18282,
+      "createdAt": 1757560539,
+      "top": 1,
+      "description": "通过https://github.com/sailor0913/weread-to-notion得到启发把微信读书的状态同步到github issues，然后渲染生成本页面，因为原来的api已经修改了权限，导致现在无法获取读书划线和评论，只能获取书籍的基本信息和读书状态，也欢迎大家在本页面下留言讨论，谢谢",
+      "createdDate": "2025-09-11",
+      "isoDate": "2025-09-11T11:15:39+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "weread，微信读书，微信读书同步，个人书单，中年书单",
+      "quote": "",
+      "daily_sentence": ""
     }
   },
   "singeListJson": {

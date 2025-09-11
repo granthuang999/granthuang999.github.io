@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Thu, 11 Sep 2025 04:34:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Sep 2025 06:54:15 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -602,6 +602,13 @@
       <description>你是否在职场撞上看不见的墙，感觉单打独斗难以为继，本文提出了一个远超普通社交的个人董事会概念，旨在帮助中年人战略性地组建一个由精神导师，灵魂拷问者，超级连接器和未来之声组成的人生智囊团，通过高质量的互动，获取更高维度的视角和洞察，打破认知局限，实现职业与人生的再次突破</description>
       <guid isPermaLink="true">https://www.futuremedia.work/post/personal-board-directors.html</guid>
       <pubDate>Wed, 10 Sep 2025 04:15:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>我的微信读书书架 / My WeRead Bookshelf</title>
+      <link>https://www.futuremedia.work/post/weread-shelf-sync.html</link>
+      <description>通过https://github.com/sailor0913/weread-to-notion得到启发把微信读书的状态同步到github issues，然后渲染生成本页面，因为原来的api已经修改了权限，导致现在无法获取读书划线和评论，只能获取书籍的基本信息和读书状态，也欢迎大家在本页面下留言讨论，谢谢</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/weread-shelf-sync.html</guid>
+      <pubDate>Thu, 11 Sep 2025 03:15:39 +0000</pubDate>
     </item>
     <item>
       <title>40岁后，感觉活成了一个“工具人”？请重置你的人生资产配置</title>
