@@ -1,0 +1,121 @@
+name: Incremental Build (Issues & Related Pushes)
+
+on:
+  # 触发器1: 当 Issue 被创建或编辑时
+  issues:
+    types: [opened, edited]
+    
+  # 触发器2: 当有代码被 push 到 main 分支时
+  push:
+    branches: [main]
+
+jobs:
+  build-incremental:
+    name: Incremental Build and Deploy
+    runs-on: ubuntu-latest
+    if: github.repository == 'granthuang999/granthuang999.github.io'
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # [核心智能逻辑]
+      # 1. 如果是 issues 事件，直接用 event 中的 issue 编号
+      # 2. 如果是 push 事件，从 commit message 中提取 issue 编号
+      # 3. 如果两个都不是或提取不到，则 issue_number 为空
+      - name: Determine Issue Number
+        id: determine_issue
+        run: |
+          ISSUE_NUMBER=""
+          if [ "${{ github.event_name }}" == "issues" ]; then
+            ISSUE_NUMBER="${{ github.event.issue.number }}"
+            echo "Triggered by issue event. Building for #${ISSUE_NUMBER}"
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            commit_message="${{ github.event.head_commit.message }}"
+            echo "Triggered by push event. Commit message: $commit_message"
+            # 使用 grep 和 sed 提取 commit message 中的 #<数字>
+            issue_from_commit=$(echo "$commit_message" | grep -o '#[0-9]\+' | sed 's/#//')
+            if [ -n "$issue_from_commit" ]; then
+              ISSUE_NUMBER="$issue_from_commit"
+              echo "Found issue number in commit message. Building for #${ISSUE_NUMBER}"
+            else
+              echo "No issue number found in commit message. Skipping incremental build."
+            fi
+          fi
+          echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+
+      # [条件执行]
+      # 只有在成功确定了 issue_number 的情况下，才执行后续所有步骤
+      - name: Run Incremental Build Steps
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: echo "Starting incremental build for issue #${{ steps.determine_issue.outputs.issue_number }}..."
+
+      - name: Set up Python
+        if: steps.determine_issue.outputs.issue_number != ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Clone Gmeek Theme & Install dependencies
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
+          pip install --upgrade pip
+          pip install -r /opt/Gmeek/requirements.txt
+
+      - name: Generate HTML for single issue
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          cp -r ./* /opt/Gmeek/
+          cd /opt/Gmeek/
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
+          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
+          cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
+          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
+
+      - name: Checkout external repos
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          git clone https://github.com/granthuang999/English-level-up-tips.git ${{ github.workspace }}/docs/english-study
+          git clone https://github.com/granthuang999/english-ebooks.git ${{ github.workspace }}/docs/english-book
+          rm -rf ${{ github.workspace }}/docs/english-study/.git
+          rm -rf ${{ github.workspace }}/docs/english-book/.git
+
+      - name: Setup Node.js & Index with Pagefind
+        if: steps.determine_issue.outputs.issue_number != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: |
+          npm config set registry https://registry.npmmirror.com/
+          npx -y pagefind --site docs
+        if: steps.determine_issue.outputs.issue_number != ''
+
+      - name: Commit and Push build files
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/ backup/ blogBase.json
+          if ! git diff --quiet --cached; then
+            git commit -m "🚀 chore(incremental): auto build for issue #${{ steps.determine_issue.outputs.issue_number }}"
+            git push
+          else
+            echo "No changes to site content to commit."
+          fi
+
+      - name: Upload artifact for deployment
+        if: steps.determine_issue.outputs.issue_number != ''
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/'
+
+      - name: Deploy to GitHub Pages
+        if: steps.determine_issue.outputs.issue_number != ''
+        id: deployment
+        uses: actions/deploy-pages@v4
