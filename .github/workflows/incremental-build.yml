@@ -40,9 +40,8 @@ jobs:
           fi
           echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
 
-      - name: Run Incremental Build Steps
-        if: steps.determine_issue.outputs.issue_number != ''
-        run: echo "Starting incremental build for issue #${{ steps.determine_issue.outputs.issue_number }}..."
+      # [修正] 移除了之前导致错误的 'Run Incremental Build Steps' 步骤
+      # 后续步骤的 'if' 条件会确保只有在需要时才运行
 
       - name: Set up Python
         if: steps.determine_issue.outputs.issue_number != ''
@@ -60,13 +59,12 @@ jobs:
       - name: Generate HTML for single issue
         if: steps.determine_issue.outputs.issue_number != ''
         run: |
-          # [关键修复] 恢复了这一行，在复制前删除占位的 static 文件
           rm -f /opt/Gmeek/static
           
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
-          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
+          cp -a /opt/GGmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
 
