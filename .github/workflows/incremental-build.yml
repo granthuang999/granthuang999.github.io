@@ -40,9 +40,6 @@ jobs:
           fi
           echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
 
-      # [修正] 移除了之前导致错误的 'Run Incremental Build Steps' 步骤
-      # 后续步骤的 'if' 条件会确保只有在需要时才运行
-
       - name: Set up Python
         if: steps.determine_issue.outputs.issue_number != ''
         uses: actions/setup-python@v5
@@ -64,7 +61,9 @@ jobs:
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
-          cp -a /opt/GGmeek/docs/. ${{ github.workspace }}/docs/
+          
+          # [关键修正] 修正了 Gmeek 的拼写错误
+          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
 
