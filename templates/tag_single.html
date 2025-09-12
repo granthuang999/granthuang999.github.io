@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block head %}
+<meta name="description" content="关于“{{ current_tag_name }}”标签的文章列表">
+<title>{{ blogBase['title'] }} - 标签: {{ current_tag_name }}</title>
+{% endblock %}
+
+{% block style %}
+<style>
+.pageTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+.SideNav-icon{margin-right: 16px}
+.post-list-item {
+    border-bottom: 1px solid var(--borderColor-default, var(--color-border-default));
+}
+.post-list-item:last-child {
+    border-bottom: none;
+}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .pageTitle{font-size:24px;}
+}
+</style>
+{% endblock %}
+
+{% block header %}
+<h1 class="pageTitle">标签：{{ current_tag_name }}</h1>
+<div class="title-right">
+    <a href="{{ blogBase['homeUrl'] }}" id="buttonHome" class="btn btn-invisible circle" title="{{ i18n['home'] }}">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="{{ i18n['switchTheme'] }}" {%- if blogBase['themeMode']=='fix' -%}style="display:none;"{%- endif -%}>
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="Box">
+    {% for post in posts_for_tag %}
+    <div class="Box-row d-flex flex-items-center p-3 post-list-item">
+        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop{{ post['top'] }}" d=""></path></svg>
+        <a class="text-bold flex-auto" href="{{ post['postUrl'] }}">{{ post['postTitle'] }}</a>
+        <span class="color-fg-muted text-right" style="min-width: 80px;">{{ post['createdDate'] }}</span>
+    </div>
+    {% else %}
+    <div class="Box-row p-3">
+        该标签下暂无文章。
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+iconTOP=document.getElementsByClassName("svgTop1");
+iconPost=document.getElementsByClassName("svgTop0");
+for(var i=0;i<iconTOP.length;i++){
+    iconTOP[i].setAttribute("d",IconList["upload"]);
+    iconTOP[i].parentNode.style.color="red";
+}
+for(var i=0;i<iconPost.length;i++){
+    iconPost[i].setAttribute("d",IconList["post"]);
+}
+</script>
+{% endblock %}
