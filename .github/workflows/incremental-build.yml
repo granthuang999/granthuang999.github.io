@@ -10,7 +10,6 @@ jobs:
   build-incremental:
     name: Incremental Build and Deploy
     runs-on: ubuntu-latest
-    # [核心修改] 只有在 issues 事件，或者 push 事件的 commit message 包含 "#" 时才运行
     if: |
       github.repository == 'granthuang999/granthuang999.github.io' &&
       (github.event_name == 'issues' || (github.event_name == 'push' && contains(github.event.head_commit.message, '#')))
@@ -34,7 +33,6 @@ jobs:
             ISSUE_NUMBER="${{ github.event.issue.number }}"
             echo "Triggered by issue event. Building for #${ISSUE_NUMBER}"
           elif [ "${{ github.event_name }}" == "push" ]; then
-            # [修正] 使用更安全的方式处理 commit message
             echo "Triggered by push event. Commit message: $COMMIT_MSG"
             issue_from_commit=$(echo "$COMMIT_MSG" | grep -o '#[0-9]\+' | sed 's/#//')
             ISSUE_NUMBER="$issue_from_commit"
@@ -42,19 +40,29 @@ jobs:
           fi
           echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
 
+      - name: Run Incremental Build Steps
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: echo "Starting incremental build for issue #${{ steps.determine_issue.outputs.issue_number }}..."
+
       - name: Set up Python
+        if: steps.determine_issue.outputs.issue_number != ''
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
       - name: Clone Gmeek Theme & Install dependencies
+        if: steps.determine_issue.outputs.issue_number != ''
         run: |
           git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
           pip install --upgrade pip
           pip install -r /opt/Gmeek/requirements.txt
 
       - name: Generate HTML for single issue
+        if: steps.determine_issue.outputs.issue_number != ''
         run: |
+          # [关键修复] 恢复了这一行，在复制前删除占位的 static 文件
+          rm -f /opt/Gmeek/static
+          
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
@@ -63,6 +71,7 @@ jobs:
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
 
       - name: Checkout external repos
+        if: steps.determine_issue.outputs.issue_number != ''
         run: |
           git clone https://github.com/granthuang999/English-level-up-tips.git ${{ github.workspace }}/docs/english-study
           git clone https://github.com/granthuang999/english-ebooks.git ${{ github.workspace }}/docs/english-book
@@ -70,14 +79,17 @@ jobs:
           rm -rf ${{ github.workspace }}/docs/english-book/.git
 
       - name: Setup Node.js & Index with Pagefind
+        if: steps.determine_issue.outputs.issue_number != ''
         uses: actions/setup-node@v4
         with:
           node-version: '20'
       - run: |
           npm config set registry https://registry.npmmirror.com/
           npx -y pagefind --site docs
+        if: steps.determine_issue.outputs.issue_number != ''
 
       - name: Commit and Push build files
+        if: steps.determine_issue.outputs.issue_number != ''
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -90,10 +102,12 @@ jobs:
           fi
 
       - name: Upload artifact for deployment
+        if: steps.determine_issue.outputs.issue_number != ''
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'docs/'
 
       - name: Deploy to GitHub Pages
+        if: steps.determine_issue.outputs.issue_number != ''
         id: deployment
         uses: actions/deploy-pages@v4
