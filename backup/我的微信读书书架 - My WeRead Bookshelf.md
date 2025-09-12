@@ -53,4 +53,5 @@
 
 
 ---
-##{"slug": "weread-shelf-sync", "keywords": "weread，微信读书，微信读书同步，个人书单，中年书单", "description": "通过https://github.com/sailor0913/weread-to-notion得到启发把微信读书的状态同步到github issues，然后渲染生成本页面，因为原来的api已经修改了权限，导致现在无法获取读书划线和评论，只能获取书籍的基本信息和读书状态，也欢迎大家在本页面下留言讨论，谢谢"}
+*Last updated: 2025/9/12 09:47:49*
+
