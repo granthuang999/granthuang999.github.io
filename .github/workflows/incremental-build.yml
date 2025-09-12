@@ -62,18 +62,13 @@ jobs:
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
           
-          # [关键修正] 修正了 Gmeek 的拼写错误
           cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
 
-      - name: Checkout external repos
-        if: steps.determine_issue.outputs.issue_number != ''
-        run: |
-          git clone https://github.com/granthuang999/English-level-up-tips.git ${{ github.workspace }}/docs/english-study
-          git clone https://github.com/granthuang999/english-ebooks.git ${{ github.workspace }}/docs/english-book
-          rm -rf ${{ github.workspace }}/docs/english-study/.git
-          rm -rf ${{ github.workspace }}/docs/english-book/.git
+      # [已移除] - Checkout English-level-up-tips repo
+      # [已移除] - Checkout english-ebooks repo
+      # [已移除] - Clean up .git folders from external repos
 
       - name: Setup Node.js & Index with Pagefind
         if: steps.determine_issue.outputs.issue_number != ''
