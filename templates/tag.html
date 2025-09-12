@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block head %}
-<meta name="description" content="{{ blogBase['title'] }} search and tag page">
-<title>{{ blogBase['title'] }} - 标签与搜索</title>
-<link href="{{ blogBase.homeUrl }}/pagefind/pagefind-ui.css" rel="stylesheet">
+<meta name="description" content="{{ blogBase['title'] }} 所有文章标签">
+<title>{{ blogBase['title'] }} - 标签云</title>
 {% endblock %}
 
 {% block style %}
@@ -11,57 +10,29 @@
 .title-right{display:flex;margin:auto 0 0 auto;}
 .title-right .circle{padding: 14px 16px;margin-right:8px;}
 
-/* --- [新增] 标签云样式 --- */
 .tag-cloud-container {
-    margin-top: 2.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--borderColor-default, var(--color-border-default));
 }
 .tag-cloud {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* 标签之间的间距 */
-    justify-content: center; /* 标签整体居中 */
-    padding: 1rem 0;
+    gap: 12px;
+    justify-content: center;
+    padding: 2rem 0;
 }
 .tag-link {
     display: inline-block;
-    padding: 8px 16px;
-    border-radius: 20px; /* 胶囊形状 */
+    padding: 8px 18px;
+    border-radius: 20px;
     color: white !important;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .tag-link:hover {
-    transform: scale(1.05); /* 鼠标悬停时放大一点 */
-}
-/* --- 结束 --- */
-
-/* 为 Pagefind 搜索框和结果列表设置样式 */
-#search {
-    margin-top: 1rem;
-}
-.pagefind-ui__search-input {
-    height: 40px;
-    font-size: 16px;
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid var(--borderColor-default, var(--color-border-default));
-    border-radius: 6px;
-    background-color: var(--bgColor-default, var(--color-canvas-default));
-    color: var(--fgColor-default, var(--color-fg-default));
-}
-.pagefind-ui__result {
-    padding: 1rem;
-    border: 1px solid var(--borderColor-default, var(--color-border-default));
-    border-radius: 6px;
-    margin-top: 1rem;
-    background-color: var(--bgColor-default, var(--color-canvas-default));
-}
-.pagefind-ui__result-link {
-    color: var(--fgColor-accent, var(--color-accent-fg)) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 @media (max-width: 600px) {
@@ -72,7 +43,7 @@
 {% endblock %}
 
 {% block header %}
-<span class="tagTitle">标签与搜索</span>
+<span class="tagTitle">标签云</span>
 <div class="title-right">
     <a href="{{ blogBase['homeUrl'] }}" id="buttonHome" class="btn btn-invisible circle" title="{{ i18n['home'] }}">
         <svg class="octicon" width="16" height="16">
@@ -88,91 +59,20 @@
 {% endblock %}
 
 {% block content %}
-<div id="search"></div>
-
-{% set tags = {} %}
-{% for post in blogBase.postListJson.values() %}
-    {% for label in post.labels %}
-        {% if tags.update({label: (tags.get(label, 0) + 1)}) %}{% endif %}
-    {% endfor %}
-{% endfor %}
-{% for post in blogBase.singeListJson.values() %}
-    {% for label in post.labels %}
-        {% if label in blogBase.singlePage and tags.update({label: (tags.get(label, 0) + 1)}) %}{% endif %}
-    {% endfor %}
-{% endfor %}
-
 <div class="tag-cloud-container">
-    <h2 style="text-align:center;">或按标签浏览</h2>
     <div class="tag-cloud">
-        {% for tag, count in tags|dictsort %}
-            <a href="{{ blogBase.homeUrl }}/tag.html#{{ tag }}" class="tag-link" style="background-color:{{ blogBase.labelColorDict.get(tag, '#808080') }};">
-                {{ tag }} ({{ count }})
+        {% for tag, info in tag_info.items() %}
+            {# 从 Python 脚本中获取正确的独立页面URL #}
+            <a href="{{ info.url }}" class="tag-link" style="background-color:{{ blogBase.labelColorDict.get(tag, '#808080') }}; font-size: {{ 12 + (info.count|float / blogBase.maxTagsCount|float * 12)|round }}px;">
+                {{ tag }} ({{ info.count }})
             </a>
         {% endfor %}
     </div>
 </div>
-
-{% for tag, count in tags|dictsort %}
-<div class="Box" id="{{ tag }}">
-    <div class="Box-header d-flex flex-space-between">
-        <h3 class="Box-title">{{ tag }}</h3>
-    </div>
-    {% for num in blogBase.postListJson %}
-        {% if tag in blogBase.postListJson[num]['labels'] %}
-        <div class="Box-row d-flex">
-            <a class="d-flex flex-items-center" href="{{ blogBase.postListJson[num]['postUrl'] }}">
-                <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop{{ blogBase.postListJson[num]['top'] }}" d=""></path></svg>
-                <span class="text-bold flex-auto">{{ blogBase.postListJson[num]['postTitle'] }}</span>
-                <span class="color-fg-muted">{{ blogBase.postListJson[num]['createdDate'] }}</span>
-            </a>
-        </div>
-        {% endif %}
-    {% endfor %}
-    {% for num in blogBase.singeListJson %}
-        {% if tag in blogBase.singeListJson[num]['labels'] %}
-        <div class="Box-row d-flex">
-            <a class="d-flex flex-items-center" href="{{ blogBase.homeUrl }}/{{ tag }}.html">
-                <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop{{ blogBase.singeListJson[num]['top'] }}" d=""></path></svg>
-                <span class="text-bold flex-auto">{{ blogBase.singeListJson[num]['postTitle'] }}</span>
-            </a>
-        </div>
-        {% endif %}
-    {% endfor %}
-</div>
-{% endfor %}
 {% endblock %}
 
 {% block script %}
-<script src="{{ blogBase.homeUrl }}/pagefind/pagefind-ui.js"></script>
 <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ 
-            element: "#search",
-            showSubResults: true,
-            translations: {
-                placeholder: "搜索本站内容...",
-                search_label: "搜索",
-                clear_search_label: "清除",
-                load_more: "加载更多",
-                search_results: "{{count}} 个结果",
-                results_for: "\"{{query}}\" 的搜索结果",
-                no_results_found: "没有找到与 \"{{query}}\" 相关的内容"
-            }
-        });
-    });
-</script>
-<script>
-// 保留了图标加载的脚本
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["upload"]);
-    iconTOP[i].parentNode.style.color="red";
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
-}
 </script>
 {% endblock %}
