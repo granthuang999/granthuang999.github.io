@@ -1,4 +1,4 @@
-name: Build and Deploy Gmeek Site
+name: Build and Deploy Gmeek Site (Full Build)
 
 on:
   push:
@@ -12,7 +12,10 @@ jobs:
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    if: github.repository == 'granthuang999/granthuang999.github.io'
+    # [核心修改] 只有在 push 事件的 commit message 不包含 "#" 时，或在 schedule/workflow_dispatch 事件时才运行
+    if: |
+      github.repository == 'granthuang999/granthuang999.github.io' &&
+      (github.event_name != 'push' || !contains(github.event.head_commit.message, '#'))
     permissions:
       contents: write
       pages: write
@@ -29,7 +32,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: '3.9' # 使用 3.9 版本
 
       - name: Clone Gmeek Theme
         run: git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
@@ -39,22 +42,21 @@ jobs:
           pip install --upgrade pip
           pip install -r /opt/Gmeek/requirements.txt
 
-      - name: Generate new html
+      - name: Generate new html (Full Build)
         run: |
           rm -f /opt/Gmeek/static
           
-          # [关键修复] 在运行脚本前，将已存在的 backup 目录安全地移动到临时位置
           if [ -d "${{ github.workspace }}/backup" ]; then
             echo "Saving existing backup directory to a safe location..."
             mkdir -p /tmp/backup_safe
-            # 使用 mv 而不是 cp，更安全
             mv ${{ github.workspace }}/backup/* /tmp/backup_safe/
           fi
           
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           
-          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          # 运行完整构建
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
           
           if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
           if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
@@ -63,7 +65,6 @@ jobs:
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
           
-          # [关键修复] 在所有 Gmeek 操作完成后，将保存的 backup 文件恢复回来
           if [ -d "/tmp/backup_safe" ]; then
             echo "Restoring preserved backup directory..."
             cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
@@ -105,7 +106,7 @@ jobs:
           git add docs/ backup/ blogBase.json
           
           if ! git diff --quiet --cached; then
-            git commit -m "🎉 chore: auto build and update site content"
+            git commit -m "🎉 chore(full): auto build and update site content"
             git push
           else
             echo "No changes to site content to commit."
