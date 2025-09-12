@@ -10,7 +10,9 @@ jobs:
   build-incremental:
     name: Incremental Build and Deploy
     runs-on: ubuntu-latest
+    # [关键新增] 增加对 github.actor 的判断，如果是机器人自己触发的 push，则不运行
     if: |
+      github.actor != 'github-actions[bot]' &&
       github.repository == 'granthuang999/granthuang999.github.io' &&
       (github.event_name == 'issues' || (github.event_name == 'push' && contains(github.event.head_commit.message, '#')))
     permissions:
@@ -18,6 +20,7 @@ jobs:
       pages: write
       id-token: write
     steps:
+      # ... 后续所有 steps 保持不变 ...
       - name: Checkout main repository
         uses: actions/checkout@v4
         with:
@@ -66,9 +69,26 @@ jobs:
           cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
           cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
 
-      # [已移除] - Checkout English-level-up-tips repo
-      # [已移除] - Checkout english-ebooks repo
-      # [已移除] - Clean up .git folders from external repos
+      - name: Sync Static Assets for Incremental Build
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          echo "Syncing static assets..."
+          if [ -d "${{ github.workspace }}/static" ]; then
+            # 确保目标目录存在
+            mkdir -p ${{ github.workspace }}/docs/static
+            cp -r ${{ github.workspace }}/static/* ${{ github.workspace }}/docs/static/
+            echo "Static assets synced successfully."
+          else
+            echo "No static directory found in the content repo."
+          fi
+
+      - name: Checkout external repos
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          git clone https://github.com/granthuang999/English-level-up-tips.git ${{ github.workspace }}/docs/english-study
+          git clone https://github.com/granthuang999/english-ebooks.git ${{ github.workspace }}/docs/english-book
+          rm -rf ${{ github.workspace }}/docs/english-study/.git
+          rm -rf ${{ github.workspace }}/docs/english-book/.git
 
       - name: Setup Node.js & Index with Pagefind
         if: steps.determine_issue.outputs.issue_number != ''
