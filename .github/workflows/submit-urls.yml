@@ -3,7 +3,7 @@ name: Submit URLs to Search Engines
 on:
   workflow_dispatch:
    schedule:
-    - cron: "0 18 * * *"
+    - cron: "0 5 * * *"
 
 jobs:
   submit:
