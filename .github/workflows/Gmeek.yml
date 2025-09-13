@@ -5,8 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-  schedule:
-    - cron: "16 4 * * *"
+  #schedule:
+   #- cron: "16 4 * * *"
 
 jobs:
   build:
@@ -40,7 +40,6 @@ jobs:
         run: |
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
           
-      # [一致性加固] 明确启用 lfs
       - name: Checkout English-level-up-tips repo
         uses: actions/checkout@v4
         with:
@@ -48,7 +47,6 @@ jobs:
           path: docs/english-study
           lfs: true
 
-      # [一致性加固] 明确启用 lfs
       - name: Checkout english-ebooks repo
         uses: actions/checkout@v4
         with:
@@ -56,6 +54,7 @@ jobs:
           path: docs/english-book
           lfs: true
       
+      # [关键步骤] 确保在 commit 前删除嵌套的 .git 文件夹
       - name: Clean up .git folders from external repos
         run: |
           echo "Removing .git folder from checked out sub-repositories..."
@@ -76,9 +75,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
           git add docs/ backup/ blogBase.json
-          
           if ! git diff --quiet --cached; then
             git commit -m "🎉 chore(full): auto build and update site content"
             git push
