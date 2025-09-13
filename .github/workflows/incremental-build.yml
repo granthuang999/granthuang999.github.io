@@ -57,6 +57,31 @@ jobs:
         if: steps.determine_issue.outputs.issue_number != ''
         run: |
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
+      
+      # [一致性加固] 明确启用 lfs，与完整构建保持一致
+      - name: Checkout English-level-up-tips repo
+        if: steps.determine_issue.outputs.issue_number != ''
+        uses: actions/checkout@v4
+        with:
+          repository: granthuang999/English-level-up-tips
+          path: docs/english-study
+          lfs: true
+
+      # [一致性加固] 明确启用 lfs，与完整构建保持一致
+      - name: Checkout english-ebooks repo
+        if: steps.determine_issue.outputs.issue_number != ''
+        uses: actions/checkout@v4
+        with:
+          repository: granthuang999/english-ebooks
+          path: docs/english-book
+          lfs: true
+      
+      - name: Clean up .git folders from external repos
+        if: steps.determine_issue.outputs.issue_number != ''
+        run: |
+          echo "Removing .git folder from checked out sub-repositories..."
+          rm -rf docs/english-study/.git
+          rm -rf docs/english-book/.git
 
       - name: Setup Node.js & Index with Pagefind
         if: steps.determine_issue.outputs.issue_number != ''
