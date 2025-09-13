@@ -61,7 +61,7 @@ class GMEEK:
         self.defaultConfig()
 
     def syncStaticAssets(self):
-    print("====== syncing static assets ======")
+        print("====== syncing static assets ======")
     # 把 static 目录下的内容直接复制到 docs 根目录
         if os.path.exists(self.static_dir):
         for item in os.listdir(self.static_dir):
