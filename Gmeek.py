@@ -61,11 +61,17 @@ class GMEEK:
         self.defaultConfig()
 
     def syncStaticAssets(self):
-        print("====== syncing static assets ======")
-        # 复制 static 文件夹
-        if os.path.exists(self.static_dir):
-            shutil.copytree(self.static_dir, os.path.join(self.root_dir, self.static_dir), dirs_exist_ok=True)
-            print(f"Copied '{self.static_dir}' directory to '{self.root_dir}'")
+    print("====== syncing static assets ======")
+    # 把 static 目录下的内容直接复制到 docs 根目录
+    if os.path.exists(self.static_dir):
+        for item in os.listdir(self.static_dir):
+            src = os.path.join(self.static_dir, item)
+            dst = os.path.join(self.root_dir, item)
+            if os.path.isdir(src):
+                shutil.copytree(src, dst, dirs_exist_ok=True)
+            else:
+                shutil.copy2(src, dst)
+        print(f"Copied contents of '{self.static_dir}' to '{self.root_dir}'")
         
         # 检查并复制根目录下的 images 文件夹
         image_dir = 'images'
