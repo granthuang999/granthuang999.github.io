@@ -12,7 +12,6 @@ jobs:
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    # [关键新增] 增加对 github.actor 的判断
     if: |
       github.actor != 'github-actions[bot]' &&
       github.repository == 'granthuang999/granthuang999.github.io' &&
@@ -22,54 +21,24 @@ jobs:
       pages: write
       id-token: write
     steps:
-      # ... 后续所有 steps 保持不变 ...
       - name: Checkout main repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Get config.json
-        run: sudo apt-get install -y jq
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
-      - name: Clone Gmeek Theme
-        run: git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
-
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r /opt/Gmeek/requirements.txt
+          pip install -r requirements.txt
 
       - name: Generate new html (Full Build)
         run: |
-          rm -f /opt/Gmeek/static
-          
-          if [ -d "${{ github.workspace }}/backup" ]; then
-            echo "Saving existing backup directory to a safe location..."
-            mkdir -p /tmp/backup_safe
-            mv ${{ github.workspace }}/backup/* /tmp/backup_safe/
-          fi
-          
-          cp -r ./* /opt/Gmeek/
-          cd /opt/Gmeek/
-          
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
-          
-          if [ -f "/opt/Gmeek/ads.txt" ]; then cp /opt/Gmeek/ads.txt /opt/Gmeek/docs/ads.txt; fi
-          if [ -f "/opt/Gmeek/robots.txt" ]; then cp /opt/Gmeek/robots.txt /opt/Gmeek/docs/robots.txt; fi
-          
-          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
-          cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
-          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
-          
-          if [ -d "/tmp/backup_safe" ]; then
-            echo "Restoring preserved backup directory..."
-            cp -a /tmp/backup_safe/. ${{ github.workspace }}/backup/
-          fi
           
       - name: Checkout English-level-up-tips repo
         uses: actions/checkout@v4
