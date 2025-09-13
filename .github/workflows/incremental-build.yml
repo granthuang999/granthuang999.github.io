@@ -32,12 +32,9 @@ jobs:
           ISSUE_NUMBER=""
           if [ "${{ github.event_name }}" == "issues" ]; then
             ISSUE_NUMBER="${{ github.event.issue.number }}"
-            echo "Triggered by issue event. Building for #${ISSUE_NUMBER}"
           elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "Triggered by push event. Commit message: $COMMIT_MSG"
             issue_from_commit=$(echo "$COMMIT_MSG" | grep -o '#[0-9]\+' | sed 's/#//')
             ISSUE_NUMBER="$issue_from_commit"
-            echo "Found issue number in commit message. Building for #${ISSUE_NUMBER}"
           fi
           echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
 
@@ -58,7 +55,6 @@ jobs:
         run: |
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
       
-      # [一致性加固] 明确启用 lfs，与完整构建保持一致
       - name: Checkout English-level-up-tips repo
         if: steps.determine_issue.outputs.issue_number != ''
         uses: actions/checkout@v4
@@ -67,7 +63,6 @@ jobs:
           path: docs/english-study
           lfs: true
 
-      # [一致性加固] 明确启用 lfs，与完整构建保持一致
       - name: Checkout english-ebooks repo
         if: steps.determine_issue.outputs.issue_number != ''
         uses: actions/checkout@v4
@@ -76,6 +71,7 @@ jobs:
           path: docs/english-book
           lfs: true
       
+      # [关键步骤] 确保在 commit 前删除嵌套的 .git 文件夹
       - name: Clean up .git folders from external repos
         if: steps.determine_issue.outputs.issue_number != ''
         run: |
