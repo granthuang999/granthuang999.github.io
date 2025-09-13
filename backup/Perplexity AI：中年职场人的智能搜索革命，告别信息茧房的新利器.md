@@ -113,4 +113,3 @@ Market research, competitive analysis, policy interpretation, technical investig
 
 - 中文：Perplexity AI、智能搜索、实时信息、引用来源、对话式搜索、信息验证
 - English: Perplexity AI, intelligent search, real-time information, source citations, conversational search, information verification
-##{"slug": "Perplexity-AI", "timestamp": 1756073700, "quote": "与传统搜索引擎不同，Perplexity不仅提供链接列表，而是直接给出结构化的答案摘要。这种方式特别适合忙碌的中年专业人士，因为他们往往时间有限，需要快速获取可信的信息。", "ogImage": "https://www.futuremedia.work/images/20250825.png", "keywords": "智能搜索,实时信息,引用来源,对话式搜索,信息验证,Perplexity AI,intelligent search,real-time information,source citations,conversational search,information verification", "description": "Perplexity AI是一款提供实时引用答案的对话式搜索引擎，它直接生成结构化摘要而非链接列表，特别适合需要快速获取可信信息的中年管理者，其强大的多模态搜索支持文档上传分析，并通过特定专注模式提升结果精准度，对专业人士而言，其核心价值在于引用透明度和信息可验证性，而深度研究功能更能自动化生成分析报告，是进行市场调研和竞争分析的高效工具。"}

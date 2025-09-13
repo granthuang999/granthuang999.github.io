@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Sat, 13 Sep 2025 07:40:51 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Sep 2025 07:44:38 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -717,22 +717,20 @@
       <pubDate>Fri, 12 Sep 2025 04:15:01 +0000</pubDate>
     </item>
     <item>
+      <title>未来传媒每日资讯</title>
+      <link>https://www.futuremedia.work/post/future-media-daily-news-20250913.html</link>
+      <description>2025年9月13日未来传媒每日资讯，包含国际国内要闻、AI与科技前沿、全球金融市场动态以及实用开源工具介绍。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/future-media-daily-news-20250913.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Fri, 12 Sep 2025 17:05:46 +0000</pubDate>
+    </item>
+    <item>
       <title>中庸正在杀死你的财富：中年投资者必须学会的杠铃策略</title>
       <link>https://www.futuremedia.work/post/barbell-strategy-investing.html</link>
       <description>你是否在投资中陷入既要安全又想高回报的困局，最终选择了平庸，本文深度拆解了思想家塔勒布的杠铃策略，指导中年投资者摒弃中庸，构建一个将90%资产投向极端安全，10%资产投向极端高风险的两极化投资组合，从而锁定最大损失，去捕捉非对称的超额回报，最终在不确定的世界中立于不败之地</description>
       <guid isPermaLink="true">https://www.futuremedia.work/post/barbell-strategy-investing.html</guid>
       <enclosure url="https://www.futuremedia.work/images/1757736901.png" length="0" type="image/png"/>
       <pubDate>Sat, 13 Sep 2025 04:15:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>未来传媒每日资讯</title>
-      <link>https://www.futuremedia.work/post/wei-lai-chuan-mei-mei-ri-zi-xun.html</link>
-      <description>### **国际国内要闻**
-
-* **以色列与巴勒斯坦局势持续紧张**：哈马斯在卡塔尔的基地发生爆炸，以色列声称对该组织的领导层发动了空袭。</description>
-      <guid isPermaLink="true">https://www.futuremedia.work/post/wei-lai-chuan-mei-mei-ri-zi-xun.html</guid>
-      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
-      <pubDate>Sat, 13 Sep 2025 07:31:35 +0000</pubDate>
     </item>
   </channel>
 </rss>

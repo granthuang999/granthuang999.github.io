@@ -207,4 +207,3 @@ If you have any questions about these Terms of Service, please contact us:
 **邮箱 / Email**: [[futuremedia2090@gmail.com](mailto:futuremedia2090@gmail.com)](mailto:futuremedia2090@gmail.com)
 
 **网站 / Website**: [https://futuremedia.work/](https://futuremedia.work/)
-##{"ogImage": "https://www.futuremedia.work/images/Terms-of-Service.png", "keywords": "服务条款, Terms of Service, 用户协议, 知识产权, Intellectual Property, 内容使用规则, 禁止行为, 免责声明, 责任限制, 争议解决", "description": "未来传媒的服务条款规定了用户需年满18周岁并对账户信息真实性负责，网站所有原创内容受知识产权保护，未经授权不得用于商业目的，但允许个人学习和非商业性分享，用户在评论区发布内容需遵守法律并禁止传播病毒或进行网络攻击等行为，同时网站内容不构成任何专业建议且不对服务中断或第三方行为导致的损失承担责任。"}

@@ -112,4 +112,3 @@ REITs ETFs can be purchased through securities accounts starting with just a few
 - 中文：REITs、房地产投资信托、股息收益、资产配置、被动收入、通胀对冲
 - English: REITs, real estate investment trusts, dividend yield, asset allocation, passive income, inflation hedge
 
-##{"slug": "REITs-Investment", "timestamp": 1755836100, "ogImage": "https://www.futuremedia.work/images/20250822.png", "keywords": "REITs, 房地产投资信托基金, 股息收益率, dividend yield, 资产配置, 投资组合, portfolio, 现金流, 中年理财, 利率敏感", "description": "房地产投资信托基金REITs作为一种类似共同基金的投资工具，通过间接拥有多元化的创收型房地产组合，为中年投资者提供了获取稳定现金流的新选择，其法律要求将绝大部分应税收入以股息形式分配，从而带来3-6%的较高股息收益率，投资策略上建议将REITs作为投资组合的5-15%，并采用核心加卫星的配置方法，同时需注意利率变化、流动性和税务等风险。"}

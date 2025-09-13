@@ -85,4 +85,3 @@ FAQ
 
 - Framer AI，零代码，响应式网站，SEO，组件库，结构化数据
 - Framer AI, no-code, responsive site, SEO, component library, structured data
-##{"slug": "Framer-AI", "timestamp": 1754885700, "ogImage": "https://www.futuremedia.work/images/20250811.png", "keywords": "Framer AI, AI网站生成器, 无需编码, no coding, 落地页, SEO, 中年用户, 生产力工具, 所见即所得, 网站建设", "description": "Framer AI作为一款云端网站生成器，为需要快速启动项目的中年用户提供了革命性的解决方案，它通过大语言模型仅需一句提示便可在30秒内生成包含配色、字体和多端自适应布局的网站草稿，其拖拽式和所见即所得的编辑界面，彻底消除了编码的技术门槛，让中年专业人士可以轻松创建行业落地页、课程页等，将更多精力聚焦于品牌和内容本身而非技术细节。"}

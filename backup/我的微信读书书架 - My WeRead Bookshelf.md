@@ -1,5 +1,8 @@
+
 | 封面 | 书名 | 作者 | 分类 | 阅读状态 |
 |:---:|:---|:---|:---|:---:|
+| <a href="https://weread.qq.com/web/reader/912324" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/324/912324/t6_912324.jpg" alt="鼠疫" width="60" /></a> | [《鼠疫》](https://weread.qq.com/web/reader/912324) | [法]加缪 | 文学-外国文学 | 📖 在读 |
+| <a href="https://weread.qq.com/web/reader/22261199" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/16/YueWen_22261199/t6_YueWen_22261199.jpg" alt="剑来" width="60" /></a> | [《剑来》](https://weread.qq.com/web/reader/22261199) | 烽火戏诸侯 | 男生小说-东方玄幻 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300151958" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/76/cpplatform_nkcjju6fvrdgeurscrqqr5/t6_cpplatform_nkcjju6fvrdgeurscrqqr51752030599.jpg" alt="王阳明心学入门三步走（全三册）" width="60" /></a> | [《王阳明心学入门三步走（全三册）》](https://weread.qq.com/web/reader/3300151958) | 度阴山 | 哲学宗教-东方哲学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300018688" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/88/3300018688/t6_3300018688.jpg" alt="生命之书：365天的静心冥想" width="60" /></a> | [《生命之书：365天的静心冥想》](https://weread.qq.com/web/reader/3300018688) | 克里希那穆提 | 哲学宗教-哲学读物 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300130728" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/56/cpplatform_qr9yc47a9z72czql6mjmly/t6_cpplatform_qr9yc47a9z72czql6mjmly1736753141.jpg" alt="时间的香气：驻留的艺术（韩炳哲作品系列）" width="60" /></a> | [《时间的香气：驻留的艺术（韩炳哲作品系列）》](https://weread.qq.com/web/reader/3300130728) | [德]韩炳哲 | 哲学宗教-西方哲学 | 📖 在读 |
@@ -13,7 +16,6 @@
 | <a href="https://weread.qq.com/web/reader/33628204" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/86/YueWen_33628204/t6_YueWen_33628204.jpg" alt="认知觉醒：开启自我改变的原动力" width="60" /></a> | [《认知觉醒：开启自我改变的原动力》](https://weread.qq.com/web/reader/33628204) | 周岭 | 心理-认知与行为 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/40437004" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/4/40437004/t6_40437004.jpg" alt="在你们离开以前（一本治愈两代人的生命自度书）" width="60" /></a> | [《在你们离开以前（一本治愈两代人的生命自度书）》](https://weread.qq.com/web/reader/40437004) | 毕啸南 | 个人成长-励志成长 | ✅ 已读 |
 | <a href="https://weread.qq.com/web/reader/25615385" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/385/25615385/t6_25615385.jpg" alt="被讨厌的勇气：“自我启发之父”阿德勒的哲学课" width="60" /></a> | [《被讨厌的勇气：“自我启发之父”阿德勒的哲学课》](https://weread.qq.com/web/reader/25615385) | 岸见一郎 古贺史健 | 心理-积极心理学 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/22261199" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/16/YueWen_22261199/t6_YueWen_22261199.jpg" alt="剑来" width="60" /></a> | [《剑来》](https://weread.qq.com/web/reader/22261199) | 烽火戏诸侯 | 男生小说-东方玄幻 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/27689995" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/7/YueWen_27689995/t6_YueWen_27689995.jpg" alt="查拉图斯特拉如是说（果麦经典）" width="60" /></a> | [《查拉图斯特拉如是说（果麦经典）》](https://weread.qq.com/web/reader/27689995) | 尼采 | 哲学宗教-西方哲学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300056286" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/41/cpplatform_bsyjaueyc23xruw4c3xwyz/t6_cpplatform_bsyjaueyc23xruw4c3xwyz1681960078.jpg" alt="西方哲学史" width="60" /></a> | [《西方哲学史》](https://weread.qq.com/web/reader/3300056286) | 勃特兰·罗素 | 哲学宗教-西方哲学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/758886" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/886/758886/t6_758886.jpg" alt="论自由（译林人文精选）" width="60" /></a> | [《论自由（译林人文精选）》](https://weread.qq.com/web/reader/758886) | 密尔 | 哲学宗教-西方哲学 | 📖 在读 |
@@ -49,9 +51,9 @@
 | <a href="https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_0K8EVcEUq5Jn6aF6YT_parsecover" alt="1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)" width="60" /></a> | [《1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)》](https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz) | 路伊吉·皮兰德娄(Luigi Pirandello) | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_1l65kq5lCGag6ja6kr8is0wM_parsecover" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）》](https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_Fkw5la5lCGag6ja6krEsxClv" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_Fkw5la5lCGag6ja6krEsxClv_parsecover" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（下）（郑振铎、冰心等译，漓江出版社1997）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（下）（郑振铎、冰心等译，漓江出版社1997）》](https://weread.qq.com/web/reader/CB_Fkw5la5lCGag6ja6krEsxClv) | 未知作者 | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_93J5vF5tcGag6ja6kr5yn3Aj" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_93J5vF5tcGag6ja6kr5yn3Aj_parsecover" alt="获诺贝尔文学奖作家丛书 1926 [意大利]格拉齐亚·黛莱达-邪恶之路（黄文捷译，替本，上海译文出版社2008）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1926 [意大利]格拉齐亚·黛莱达-邪恶之路（黄文捷译，替本，上海译文出版社2008）》](https://weread.qq.com/web/reader/CB_93J5vF5tcGag6ja6kr5yn3Aj) | 未知作者 | 无 | 📖 在读 |
 
 
 ---
-*Last updated: 2025/9/12 09:47:49*
+*Last updated: 2025/9/13 09:43:12*
+
 

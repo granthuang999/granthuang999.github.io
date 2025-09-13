@@ -40,4 +40,3 @@ Still in early testing phase, may introduce paid models in the future. Accuracy 
 6. Upload your research materials (supports multiple formats)
 7. Wait for AI analysis and insight generation
 8. Use Audio Overview feature to create podcast-style summaries
-##{"slug": "NotebookLM-Google", "timestamp": 1752502500, "quote": "NotebookLM支持多种格式文档上传，包括PDF文件、网站链接、YouTube视频和音频文件。最独特的功能是音频概览，能将您的资料转换成引人入胜的深度对话，类似播客形式。", "ogImage": "https://www.futuremedia.work/images/20250714.png", "keywords": "NotebookLM, Google AI, 个性化研究, AI工具, 音频概览, 多模态理解, Gemini, 免费, 学习工具, 知识获取", "description": "谷歌在2024年推出的NotebookLM是一款免费的创新AI工具，专为个性化研究和学习设计，它支持多格式文档上传如PDF、网站链接和音视频文件，最独特的功能是能将资料转换为播客形式的音频概览，帮助用户建立主题间联系并发现隐藏洞察，目前完全免费且无使用限制，尤其适合中年学习者通过听觉方式高效获取知识，但仍处于测试阶段且依赖网络连接。"}

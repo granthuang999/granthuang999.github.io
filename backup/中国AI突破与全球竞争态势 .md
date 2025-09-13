@@ -177,4 +177,3 @@ The 2025 AI development landscape provides unprecedented opportunities and chall
 **关键词 / Keywords:**
 
 AI发展趋势, 中美AI竞争, DeepSeek突破, 中年人投资策略, AI职业规划, 人工智能投资机会, 科技股投资, AI technology trends, China-US AI competition, middle-aged investment strategy
-##{"slug": "china-ai-status", "timestamp": 1753280100, "quote": "2025年AI领域呈现中美竞争新格局，中国AI企业如DeepSeek等实现关键突破，改变全球AI发展趋势。了解这些变化能帮助中年人把握技术投资机会和职业发展方向。", "ogImage": "https://www.futuremedia.work/images/20250723.png", "keywords": "中国AI, DeepSeek, 史普尼克时刻, Sputnik moment, 具身智能, AI智能体, AI Agents, 投资组合, 职业发展, 地缘政治", "description": "2025年中国AI企业如DeepSeek的崛起正重塑全球科技格局，智源研究院预测了具身智能和AI智能体等趋势，而美国则通过放松管制和出口管制等政策调整应对挑战，这导致科技巨头表现分化并为关注投资理财和职业发展的中年人带来了新的投资组合调整方向与技能升级路径，同时也需关注地缘政治风险下的战略竞争。"}

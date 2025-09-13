@@ -153,4 +153,3 @@ Fireflies.ai支持与Asana、Trello、Monday.com等主流项目管理工具集�
 **关键词 / Keywords:**
 
 Fireflies.ai, 中年人AI工具, 智能会议助理, 会议记录自动化, AI转录工具, 工作效率提升, 中年管理者工具, meeting assistant, AI transcription, middle-aged productivity
-##{"slug": "Fireflies-ai-Smart-Meeting-Assistant", "timestamp": 1753366500, "quote": "Fireflies Ai通过自动录音、转录和AI摘要功能，让中年管理者在3分钟内掌握1小时会议要点，减少80%会后整理时间，显著提升工作效率和决策质量。", "ogImage": "https://www.futuremedia.work/images/202507242.png", "keywords": "Fireflies.ai, AI会议助理, 智能转录, 自动化, 无缝集成, seamless integration, 多语言能力, 可执行洞察, actionable insights, 生产力", "description": "Fireflies.ai是一款专业的AI会议助理，通过无缝集成Zoom和Teams等平台实现会议自动录制与智能转录，为面临大量会议的中年管理者解决了繁琐的记录整理痛点，其核心功能如超过60种语言的精准转录、AskFred对话式搜索和CRM系统集成，能自动生成结构化摘要与可执行洞察，极大地节省了时间成本并提升了决策效率，让用户能从重复性工作中解放出来专注于更有价值的战略思考。"}

@@ -86,4 +86,3 @@ Rebalance quarterly on ≥5% drift; taper high-yield with age, raise ladder in r
 
 - 中债券基金，期限阶梯，TIPS，固定收益，通胀对冲，再投资风险
 - bond funds, maturity ladder, TIPS, fixed income, inflation hedge, reinvestment risk
-##{"slug": "Laddered-Bond-Funds-plus-TIPS", "timestamp": 1755231300, "ogImage": "https://www.futuremedia.work/images/20250815.png", "keywords": "债券基金, 期限阶梯, TIPS, 通胀保值债券, 投资组合, 现金流, 再平衡, 风险管理, 资产配置, 中年理财", "description": "债券基金作为一种低费用、高流动性的投资工具，其期限阶梯策略通过分散1-10年期债券到期日来降低再投资风险并锁定滚动现金流，中年投资者可将核心资产配置于阶梯式国债基金，辅以高收益债和通胀保值债券TIPS以实现真实收益与通胀补偿，同时通过季度再平衡和随年龄调整高收益债占比来优化风险控制，以获得稳定的税前月度现金流。"}
