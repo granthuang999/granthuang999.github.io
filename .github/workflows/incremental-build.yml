@@ -47,39 +47,16 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Clone Gmeek Theme & Install dependencies
+      - name: Install dependencies
         if: steps.determine_issue.outputs.issue_number != ''
         run: |
-          git clone https://github.com/granthuang999/Gmeek.git /opt/Gmeek
           pip install --upgrade pip
-          pip install -r /opt/Gmeek/requirements.txt
+          pip install -r requirements.txt
 
       - name: Generate HTML for single issue
         if: steps.determine_issue.outputs.issue_number != ''
         run: |
-          rm -f /opt/Gmeek/static
-          
-          cp -r ./* /opt/Gmeek/
-          cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
-          
-          cp -a /opt/Gmeek/docs/. ${{ github.workspace }}/docs/
-          cp -a /opt/Gmeek/backup/. ${{ github.workspace }}/backup/
-          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}/
-
-      - name: Sync Static Assets for Incremental Build
-        if: steps.determine_issue.outputs.issue_number != ''
-        run: |
-          echo "Syncing static assets..."
-          if [ -d "${{ github.workspace }}/static" ]; then
-            mkdir -p ${{ github.workspace }}/docs/static
-            cp -r ${{ github.workspace }}/static/* ${{ github.workspace }}/docs/static/
-            echo "Static assets synced successfully."
-          else
-            echo "No static directory found in the content repo."
-          fi
-
-      # [已按您的要求移除] - Checkout external repos and clean up steps
 
       - name: Setup Node.js & Index with Pagefind
         if: steps.determine_issue.outputs.issue_number != ''
