@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Sat, 13 Sep 2025 22:52:06 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Sep 2025 23:04:35 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -731,6 +731,20 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/barbell-strategy-investing.html</guid>
       <enclosure url="https://www.futuremedia.work/images/1757736901.png" length="0" type="image/png"/>
       <pubDate>Sat, 13 Sep 2025 04:15:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>测试1</title>
+      <link>https://www.futuremedia.work/post/ce-shi-1.html</link>
+      <description>&lt;iframe 
+  src='https://www.embed-douyin.com/embed?url=https://v.douyin.com/iRLehL8P/' 
+  width='560' 
+  height='315' 
+  frameborder='0' 
+  allowfullscreen&gt;
+&lt;/iframe&gt;。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/ce-shi-1.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Sat, 13 Sep 2025 22:39:50 +0000</pubDate>
     </item>
   </channel>
 </rss>

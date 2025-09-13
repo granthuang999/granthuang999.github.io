@@ -1925,6 +1925,30 @@
       "keywords": "国际新闻,AI,科技,金融,开源工具,未来传媒,每日资讯",
       "quote": "",
       "daily_sentence": ""
+    },
+    "P93": {
+      "htmlDir": "docs/post/ce-shi-1.html",
+      "labels": [
+        "其他话题"
+      ],
+      "postTitle": "测试1",
+      "postUrl": "https://www.futuremedia.work/post/ce-shi-1.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/93",
+      "commentNum": 0,
+      "wordCount": 166,
+      "createdAt": 1757803190,
+      "top": 0,
+      "description": "<iframe \n  src='https://www.embed-douyin.com/embed?url=https://v.douyin.com/iRLehL8P/' \n  width='560' \n  height='315' \n  frameborder='0' \n  allowfullscreen>\n</iframe>。",
+      "createdDate": "2025-09-14",
+      "isoDate": "2025-09-14T06:39:50+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "",
+      "quote": "",
+      "daily_sentence": ""
     }
   },
   "singeListJson": {
