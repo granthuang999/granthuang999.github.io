@@ -125,14 +125,31 @@ class GMEEK:
         return user.get_repo(repo)
 
     def markdown2html(self, mdstr):
+        html_replacements = {}
+        def Gmeek_html_tag_filter(match):
+            nonlocal html_replacements
+            text = match.group(1)
+            placeholder = f""
+            html_replacements[placeholder] = text
+            return f"`{placeholder}`"
+        mdstr = re.sub(r'`Gmeek-html(.*?)`', Gmeek_html_tag_filter, mdstr, flags=re.DOTALL)
+
         payload = {"text": mdstr, "mode": "gfm"}
         headers = {"Authorization": f"token {self.options.github_token}"}
         try:
             response = requests.post("https://api.github.com/markdown", json=payload, headers=headers)
             response.raise_for_status()
-            return response.text
+            html_content = response.text
         except requests.RequestException as e:
             raise Exception(f"markdown2html error: {e}")
+
+        for placeholder, original_html in html_replacements.items():
+            p_wrapped_placeholder = f"<p>{placeholder}</p>"
+            if p_wrapped_placeholder in html_content:
+                html_content = html_content.replace(p_wrapped_placeholder, original_html)
+            else:
+                html_content = html_content.replace(placeholder, original_html)
+        return html_content
 
     def renderHtml(self,template_name, context, html_dir):
         templates_path = os.path.join(self.script_dir, 'templates')
