@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Sun, 14 Sep 2025 03:55:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Sep 2025 04:01:01 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -735,6 +735,14 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/ce-shi-1.html</guid>
       <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
       <pubDate>Sat, 13 Sep 2025 22:39:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>未来传媒每日资讯2025-09-14</title>
+      <link>https://www.futuremedia.work/post/daily-news-20250914.html</link>
+      <description>2025年9月14日未来传媒每日资讯，包含国际国内热点、AI领域前沿应用、全球金融动态、热门网络平台趋势以及实用开源工具介绍。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/daily-news-20250914.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Sun, 14 Sep 2025 03:51:29 +0000</pubDate>
     </item>
   </channel>
 </rss>
