@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P95": {
+      "htmlDir": "docs/post/xian-dai-zi-you-zhu-yi-ru-he-cong-zhui-qiu-zi-you-zou-xiang-bei-li-zi-you.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "现代自由主义如何从追求自由走向背离自由",
+      "postUrl": "https://www.futuremedia.work/post/xian-dai-zi-you-zhu-yi-ru-he-cong-zhui-qiu-zi-you-zou-xiang-bei-li-zi-you.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/95",
+      "commentNum": 0,
+      "wordCount": 1740,
+      "createdAt": 1757847430,
+      "top": 0,
+      "description": "`Gmeek-html<div style='position: relative; padding-bottom: 177.20%; height: 0; overflow: hidden; max-width: 325px; margin: auto;'><iframe src='https://iframe.ly/api/iframe?url=https%3A%2F%2Fv.douyin.com%2FL-TLOIsJf_E%2F&key=5123cf6159b3a42793dbc0' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' allowfullscreen></iframe></div>`\n\n这是一则深度解析西方现代自由主义演变及“背叛自由”内在逻辑的知识类视频，核心围绕 “现代自由主义如何从追求自由走向背离自由” 展开，以下是关键信息梳理：\n\n一、概念厘清：三种自由主义的核心差异\n\n视频先明确三类自由主义的边界，为后续分析锚定基础：\n\n\t•\t古典自由主义（洛克、斯密为代表）：\n主张消极自由，尊重“神圣秩序”（如上帝/自然法）。",
+      "createdDate": "2025-09-14",
+      "isoDate": "2025-09-14T18:57:10+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P94": {
       "htmlDir": "docs/post/daily-news-20250914.html",
       "labels": [
