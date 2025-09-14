@@ -417,6 +417,9 @@ class GMEEK:
 
     def runAll(self):
         print("====== start create static html ======")
+        # [关键修正] 运行前清空旧的文章列表数据
+        self.blogBase["postListJson"] = {}
+        self.blogBase["singeListJson"] = {}
         self.cleanFile()
         self.syncStaticAssets()
 
@@ -448,7 +451,9 @@ class GMEEK:
     
     def runOne(self, number_str):
         print(f"====== start create static html for issue {number_str} ======")
-        
+        # [关键修正] 运行前清空旧的文章列表数据
+        self.blogBase["postListJson"] = {}
+        self.blogBase["singeListJson"] = {}
         # [关键修改] runOne 也需要同步静态文件，以发布新图片
         self.syncStaticAssets()
         
