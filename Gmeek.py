@@ -362,7 +362,20 @@ class GMEEK:
                 elif image_url.lower().endswith('.gif'):
                     mime_type = 'image/gif'
                 item.enclosure(url=image_url, length='0', type=mime_type)
-        
+
+        # [新增] 手动将“英语学习指南”页面添加到 RSS Feed
+        print("====== adding manual page to RSS feed ======")
+        english_item = feed.add_item()
+        english_item.guid('https://www.futuremedia.work/english-study/index.html', permalink=True)
+        english_item.title('英语学习指南-未来传媒')
+        english_item.description('英语学习指南，专注中年人英语学习，雅思，托福，英语口语，英文写作，英语考试，英语自学，留学，移民英语的学习')
+        english_item.link(href='https://www.futuremedia.work/english-study/index.html')
+        english_item.pubDate(datetime.datetime.now(datetime.timezone.utc))
+        english_item.enclosure(
+            url='https://www.futuremedia.work/images/big.png', 
+            length='0', 
+            type='image/png'
+        )
         feed.rss_file(os.path.join(self.root_dir, 'rss.xml'), pretty=True)
 
     def createTagCloudPage(self):
