@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P98": {
+      "htmlDir": "docs/post/midlife-intellectual-immunity-strategy.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "当自由沦为枷锁：中年人，用“思想免疫策略”穿越多元迷雾",
+      "postUrl": "https://www.futuremedia.work/post/midlife-intellectual-immunity-strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/98",
+      "commentNum": 0,
+      "wordCount": 2346,
+      "createdAt": 1757938200,
+      "top": 0,
+      "description": "中年人是否在多元社会中感到思想被绑架、表达受限？本文深度剖析伪自由主义下的思想专制困境，引入高效的思想免疫策略，指导你如何通过重拾妥协勇气、捍卫理性辩论、重塑自由边界三步，构建批判性思考防御系统，实现思想真正独立，重获对自由精神的掌控感，穿越多元迷雾。",
+      "createdDate": "2025-09-15",
+      "isoDate": "2025-09-15T20:10:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1757938200.png",
+      "keywords": "思想专制,伪自由主义,多元旗帜,思想免疫策略,理性辩论,批判性思维,中年困惑,独立思考,人文精神,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P97": {
       "htmlDir": "docs/post/midlife-cognitive-barbell-strategy.html",
       "labels": [
