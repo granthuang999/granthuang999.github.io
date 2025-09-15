@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Mon, 15 Sep 2025 01:13:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Sep 2025 01:21:19 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -760,6 +760,14 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/xian-dai-zi-you-zhu-yi-ru-he-cong-zhui-qiu-zi-you-zou-xiang-bei-li-zi-you.html</guid>
       <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
       <pubDate>Sun, 14 Sep 2025 10:57:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>未来传媒每日资讯2025-09-15</title>
+      <link>https://www.futuremedia.work/post/future-media-daily-news-20250915.html</link>
+      <description>2025年9月15日未来传媒每日资讯，内容涵盖国际国内热点、AI应用落地、全球市场动态及实用开源翻译工具介绍。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/future-media-daily-news-20250915.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Mon, 15 Sep 2025 00:49:11 +0000</pubDate>
     </item>
   </channel>
 </rss>
