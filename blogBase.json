@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P99": {
+      "htmlDir": "docs/post/midlife-emotional-resonance-compass.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "读懂韩江《素食者》：中年人，用“情感共鸣罗盘”穿越孤独与困境",
+      "postUrl": "https://www.futuremedia.work/post/midlife-emotional-resonance-compass.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/99",
+      "commentNum": 0,
+      "wordCount": 2409,
+      "createdAt": 1758024600,
+      "top": 0,
+      "description": "中年人是否在亲密关系中感到情感麻木、联结断裂？本文以韩江《素食者》为引，深度剖析现代情感困境，引入高效的情感共鸣罗盘策略，指导你如何通过探索多重视角、重建深度对话、找回生命本真三步，构建有效情感联结系统，实现关系中的深度理解与自我觉醒，重获对情感的掌控感，穿越孤独与困境。",
+      "createdDate": "2025-09-16",
+      "isoDate": "2025-09-16T20:10:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1758024600.png",
+      "keywords": "情感麻木,关系断裂,韩江素食者,情感共鸣罗盘,深度对话,视角转换,生命本真,中年情感,人际关系,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P98": {
       "htmlDir": "docs/post/midlife-intellectual-immunity-strategy.html",
       "labels": [
