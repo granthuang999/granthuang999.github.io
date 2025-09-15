@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+
 {% block head %}
-<meta name="description" content="{{ blogBase['title'] }} 所有文章标签">
-<title>{{ blogBase['title'] }} - 标签云-未来传媒-关注中年人</title>
+<meta name="description" content="{{ blogBase['title'] }} 所有文章标签与搜索">
+<title>{{ blogBase['title'] }} - 标签与搜索-未来传媒-专注中年人</title>
+<link href="{{ blogBase.homeUrl }}/pagefind/pagefind-ui.css" rel="stylesheet">
 {% endblock %}
 
 {% block style %}
@@ -10,8 +12,14 @@
 .title-right{display:flex;margin:auto 0 0 auto;}
 .title-right .circle{padding: 14px 16px;margin-right:8px;}
 
+/* [恢复] 为 Pagefind 搜索框设置样式 */
+#search {
+    margin-bottom: 2.5rem;
+}
+
 .tag-cloud-container {
     padding-top: 1.5rem;
+    border-top: 1px solid var(--borderColor-default, var(--color-border-default));
 }
 .tag-cloud {
     display: flex;
@@ -43,7 +51,7 @@
 {% endblock %}
 
 {% block header %}
-<span class="tagTitle">标签云-未来传媒-关注中年人</span>
+<span class="tagTitle">标签与搜索-未来传媒-专注中年人</span>
 <div class="title-right">
     <a href="{{ blogBase['homeUrl'] }}" id="buttonHome" class="btn btn-invisible circle" title="{{ i18n['home'] }}">
         <svg class="octicon" width="16" height="16">
@@ -59,10 +67,12 @@
 {% endblock %}
 
 {% block content %}
+<div id="search"></div>
+
 <div class="tag-cloud-container">
+    <h2 style="text-align:center;">按标签浏览</h2>
     <div class="tag-cloud">
         {% for tag, info in tag_info.items() %}
-            {# 从 Python 脚本中获取正确的独立页面URL #}
             <a href="{{ info.url }}" class="tag-link" style="background-color:{{ blogBase.labelColorDict.get(tag, '#808080') }}; font-size: {{ 12 + (info.count|float / blogBase.maxTagsCount|float * 12)|round }}px;">
                 {{ tag }} ({{ info.count }})
             </a>
@@ -72,6 +82,25 @@
 {% endblock %}
 
 {% block script %}
+<script src="{{ blogBase.homeUrl }}/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ 
+            element: "#search",
+            showSubResults: true,
+            translations: {
+                placeholder: "搜索本站所有内容...",
+                search_label: "搜索",
+                clear_search_label: "清除",
+                load_more: "加载更多",
+                search_results: "{{count}} 个结果",
+                results_for: "\"{{query}}\" 的搜索结果",
+                no_results_found: "没有找到与 \"{{query}}\" 相关的内容"
+            }
+        });
+    });
+</script>
+
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 </script>
