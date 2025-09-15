@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P96": {
+      "htmlDir": "docs/post/future-media-daily-news-20250915.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-09-15",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-news-20250915.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/96",
+      "commentNum": 0,
+      "wordCount": 1606,
+      "createdAt": 1758000000,
+      "top": 0,
+      "description": "2025年9月15日未来传媒每日资讯，内容涵盖国际国内热点、AI应用落地、全球市场动态及实用开源翻译工具介绍。",
+      "createdDate": "2025-09-16",
+      "isoDate": "2025-09-16T13:20:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "国际新闻,AI,科技,金融,开源工具,未来传媒,每日资讯",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P95": {
       "htmlDir": "docs/post/xian-dai-zi-you-zhu-yi-ru-he-cong-zhui-qiu-zi-you-zou-xiang-bei-li-zi-you.html",
       "labels": [
@@ -2130,8 +2154,10 @@
     "terms-of-service": "#aaaaaa",
     "tools-link": "#b4c98d",
     "其他话题": "#46f3c5",
+    "哲学文学": "#a96cef",
     "学习成长": "#aa5e1c",
     "投资理财": "#bd1f49",
+    "每日资讯": "#ec9031",
     "潮流工具": "#7a216a",
     "身心健康": "#f6591b"
   }
