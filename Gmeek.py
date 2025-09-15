@@ -370,7 +370,7 @@ class GMEEK:
         english_item.title('英语学习指南-未来传媒')
         english_item.description('英语学习指南，专注中年人英语学习，雅思，托福，英语口语，英文写作，英语考试，英语自学，留学，移民英语的学习')
         english_item.link(href='https://www.futuremedia.work/english-study/index.html')
-        english_item.pubDate(datetime.datetime.now(datetime.timezone.utc))
+        english_item.pubDate(datetime.datetime.fromisoformat('2025-09-10T01:05:46+00:00'))
         english_item.enclosure(
             url='https://www.futuremedia.work/images/big.png', 
             length='0', 
