@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Mon, 22 Sep 2025 07:41:48 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Sep 2025 07:49:44 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -474,7 +474,7 @@
 &lt;div&gt;
 &lt;h3 class='font-semibold text-slate-600 dark:text-slate-400 mb-2'&gt;新闻/阅读&lt;/h3&gt;
 &lt;div class='flex flex-wrap gap-2'&gt;
-&lt;a href='[可疑链接已删除]' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Reuters&lt;/a&gt;
+
 &lt;a href='https://techcrunch.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;TechCrunch&lt;/a&gt;
 &lt;a href='https://feedly.com' target='_blank' class='link-item bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-sm font-medium py-1 px-3 rounded-full'&gt;Feedly&lt;/a&gt;
 &lt;/div&gt;
