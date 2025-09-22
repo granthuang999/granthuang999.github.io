@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="canonical" href="{{ blogBase['postUrl'] }}" />
 <meta name="description" content="{{ blogBase['description'] }}">
 {% if blogBase['keywords'] %}<meta name="keywords" content="{{ blogBase['keywords'] }}">{% endif %}
 <meta property="og:title" content="{{ blogBase['postTitle'] }}">
