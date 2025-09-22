@@ -1,5 +1,3 @@
-# **服务条款 / Terms of Service**
-
 ## **服务条款 / Terms of Service**
 
 **生效日期：2025年8月8日 / Effective Date: August 8, 2025**
