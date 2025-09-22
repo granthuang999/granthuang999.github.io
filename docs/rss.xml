@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Mon, 22 Sep 2025 06:50:39 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Sep 2025 06:52:39 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -429,9 +429,7 @@
       <link>https://www.futuremedia.work/link.html</link>
       <description>&lt;div class='nav-page-container' style='font-family: 'Inter', sans-serif;'&gt;
 &lt;div class='max-w-7xl mx-auto'&gt;
-&lt;header class='flex justify-between items-center mb-8'&gt;
-&lt;h1 class='text-3xl font-bold text-slate-900 dark:text-white'&gt;个人导航&lt;/h1&gt;
-&lt;/header&gt;
+
 &lt;main id='link-grid' class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'&gt;
 &lt;div class='category-card bg-white dark:bg-slate-800 rounded-lg shadow-md p-6'&gt;
 &lt;h2 class='font-bold text-xl mb-4 text-slate-900 dark:text-white'&gt;核心类别：日常高频&lt;/h2&gt;
