@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P103": {
+      "htmlDir": "docs/post/midlife-wealth-hub-strategy.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "别再“碎片化”理财了！中年人，用“财富中枢策略”掌控你的全部资产！",
+      "postUrl": "https://www.futuremedia.work/post/midlife-wealth-hub-strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/103",
+      "commentNum": 0,
+      "wordCount": 2540,
+      "createdAt": 1758773400,
+      "top": 0,
+      "description": "中年人是否因为多张银行卡、多个投资账户导致资产分散、管理混乱？本文深度剖析中年人资产分散困境，引入高效的财富中枢策略概念，指导你如何通过搭建财富数据仪表盘、设定财富分配漏斗、激活财富风险预警三步，构建一套清晰、高效、抗风险的财富管理系统，实现对财富的真正全局掌控，成为内心从容的“财富架构师”。",
+      "createdDate": "2025-09-25",
+      "isoDate": "2025-09-25T12:10:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1758773400.png",
+      "keywords": "投资理财,财富管理,资产配置,家庭理财,财务规划,财富中枢策略,风险管理,中年投资,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P102": {
       "htmlDir": "docs/post/midlife-emotional-unloading-technique.html",
       "labels": [
