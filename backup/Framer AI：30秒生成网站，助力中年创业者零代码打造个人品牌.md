@@ -1,5 +1,3 @@
-![](https://img.youtube.com/vi/LLPFQicKDPA/maxresdefault.jpg)
-
 Framer AI是什么
 
 Framer AI是一款云端网站生成器，只需输入一句提示，即可在约30秒产出首页草稿，支持多端自适应与一键发布。
