@@ -1,7 +1,7 @@
 ## 🤖 大语言模型
 <div align="center">
 
-![llm.jpg](./assets/jpg/llm.jpg)
+
 
 </div>
 
@@ -69,7 +69,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="center">
 
-![tts.jpg](./assets/jpg/tts.jpg)
+
 
 </div>
 
@@ -263,7 +263,7 @@ https://web.lmarena.ai/leaderboard
 ## 💻 代码
 <div align="center">
 
-![code.jpg](./assets/jpg/code.jpg)
+
 
 </div>
 
@@ -367,7 +367,7 @@ https://web.lmarena.ai/leaderboard
 ## 🎨 设计工具
 <div align="center">
 
-![design.jpg](./assets/jpg/design.jpg)
+
 
 </div>
 
@@ -442,7 +442,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="center">
 
-![productivity.jpg](./assets/jpg/productivity.jpg)
+
 
 </div>
 
@@ -576,7 +576,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="center">
 
-![website.jpg](./assets/jpg/website.jpg)
+
 
 </div>
 
