@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P102": {
+      "htmlDir": "docs/post/midlife-emotional-unloading-technique.html",
+      "labels": [
+        "身心健康"
+      ],
+      "postTitle": "别再让情绪“内耗”你了！中年人，用“情绪卸载术”找回内心平静",
+      "postUrl": "https://www.futuremedia.work/post/midlife-emotional-unloading-technique.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/102",
+      "commentNum": 0,
+      "wordCount": 2366,
+      "createdAt": 1758687000,
+      "top": 0,
+      "description": "中年人是否在信息爆炸、生活重压下感到情绪疲惫、能量耗尽？本文深度剖析中年人情绪疲惫困境，引入高效的情绪卸载术概念，指导你如何通过情绪扫描、情绪宣泄、情绪重塑三步，构建一套高效的情绪管理系统，实现情绪的真正掌控，找回内心的平静与活力。",
+      "createdDate": "2025-09-24",
+      "isoDate": "2025-09-24T12:10:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1758687000.png",
+      "keywords": "情绪管理,内在消耗,情绪疲惫,情绪卸载术,心理健康,自我疗愈,情绪排毒,专注中年人,未来传媒,内心平静",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P101": {
       "htmlDir": "docs/post/midlife-decision-sandbox-strategy.html",
       "labels": [
