@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P105": {
+      "htmlDir": "docs/post/human-centric-resilience-environmentalism.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "别再被“环保焦虑”绑架了！中年人，用“人本韧性环保观”重塑你的绿色未来",
+      "postUrl": "https://www.futuremedia.work/post/human-centric-resilience-environmentalism.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/105",
+      "commentNum": 0,
+      "wordCount": 3004,
+      "createdAt": 1758946200,
+      "top": 0,
+      "description": "中年人是否被环保焦虑和发展罪恶感困扰？本文深度剖析中年人环保认知困境，引入高效的人本韧性环保观概念，从西蒙与艾利希的十年赌局切入，论证人类创造力才是终极资源，指导你如何摆脱非黑即白的环保思维，以人本、积极的视角推动人类繁荣与环境共赢，成为内心从容的人本环保智者。",
+      "createdDate": "2025-09-27",
+      "isoDate": "2025-09-27T12:10:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1758946200.png",
+      "keywords": "环保认知,环保焦虑,人本环保观,西蒙艾利希赌局,终极资源,人类创造力,技术进步,可持续发展,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P104": {
       "htmlDir": "docs/post/midlife-growth-compound-engine.html",
       "labels": [
