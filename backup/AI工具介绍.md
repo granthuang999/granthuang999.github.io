@@ -59,7 +59,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -254,7 +254,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -358,7 +358,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -431,7 +431,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -565,7 +565,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -625,7 +625,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -643,7 +643,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
@@ -672,7 +672,7 @@ https://web.lmarena.ai/leaderboard
 
 <div align="right">
 
-[![][back-to-top]](#readme-top)
+[![back-to-top]][back-to-top]](#readme-top)
 
 </div>
 
