@@ -44,10 +44,11 @@
 {% block header %}
 <div class="title-left">
     <img src="{{ blogBase['avatarUrl'] }}" class="avatar circle" id="avatarImg" alt="avatar">
+    {# [关键修正] 将<a>标签替换为<h1>标签，以符合SEO规范 #}
     {%- if blogBase['displayTitle']=='Meekdai' -%}
-    <a class="blogTitle" href="https://meekdai.com"><span style="font-size:0;">M</span>eekdai</a>
+    <h1 class="blogTitle" style="font-size: inherit; font-weight: bold; margin: 0; display: inline;"><a href="https://meekdai.com" style="color: inherit; text-decoration: none;"><span style="font-size:0;">M</span>eekdai</a></h1>
     {% else -%}
-    <a class="blogTitle">{{ blogBase['displayTitle'] }}</a>
+    <h1 class="blogTitle" style="font-size: inherit; font-weight: bold; margin: 0; display: inline;"><a href="{{ blogBase['homeUrl'] }}" style="color: inherit; text-decoration: none;">{{ blogBase['displayTitle'] }}</a></h1>
     {%- endif -%}
 </div>
 <div class="title-right">
