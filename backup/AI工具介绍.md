@@ -635,8 +635,6 @@ https://web.lmarena.ai/leaderboard
 
 <div align="center">
 
-![learning.jpg](./assets/jpg/learning.jpg)
-
 </div>
 
 
