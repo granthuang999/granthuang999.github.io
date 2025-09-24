@@ -8,12 +8,11 @@
 
 {% block style %}
 <style>
-/* [关键修改] 从 .tagTitle 中删除了 font-size:40px; */
+/* [样式已清理] 从 .tagTitle 中删除了 font-size:40px; */
 .tagTitle{margin:auto 0;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .title-right{display:flex;margin:auto 0 0 auto;}
 .title-right .circle{padding: 14px 16px;margin-right:8px;}
 
-/* [恢复] 为 Pagefind 搜索框设置样式 */
 #search {
     margin-bottom: 2.5rem;
 }
@@ -89,7 +88,9 @@
         new PagefindUI({ 
             element: "#search",
             showSubResults: true,
-            translations: {
+            // [关键修复] 在 translations 对象外层添加 {% raw %} 和 {% endraw %}
+            // 这样 Jinja2 就不会把 {{count}} 和 {{query}} 当作变量处理
+            translations: {% raw %}{
                 placeholder: "搜索本站所有内容...",
                 search_label: "搜索",
                 clear_search_label: "清除",
@@ -97,7 +98,7 @@
                 search_results: "{{count}} 个结果",
                 results_for: "\"{{query}}\" 的搜索结果",
                 no_results_found: "没有找到与 \"{{query}}\" 相关的内容"
-            }
+            }{% endraw %}
         });
     });
 </script>
