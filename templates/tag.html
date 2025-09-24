@@ -88,8 +88,7 @@
         new PagefindUI({ 
             element: "#search",
             showSubResults: true,
-            // [关键修复] 在 translations 对象外层添加 {% raw %} 和 {% endraw %}
-            // 这样 Jinja2 就不会把 {{count}} 和 {{query}} 当作变量处理
+            // [关键修复] 添加 {% raw %} 和 {% endraw %} 来避免模板渲染错误
             translations: {% raw %}{
                 placeholder: "搜索本站所有内容...",
                 search_label: "搜索",
