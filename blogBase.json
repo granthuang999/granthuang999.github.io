@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P108": {
+      "htmlDir": "docs/post/future-media-daily-news-2025-09-24.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-09-24",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-news-2025-09-24.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/108",
+      "commentNum": 0,
+      "wordCount": 1892,
+      "createdAt": 1758675950,
+      "top": 0,
+      "description": "2025年9月24日未来传媒每日资讯，内容涵盖联合国大会、欧洲罢工潮、AI新模型、全球市场最新数据及JavaScript新工具Bun介绍。",
+      "createdDate": "2025-09-24",
+      "isoDate": "2025-09-24T09:05:50+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "联合国大会,欧洲罢工,AI,Stable Diffusion,金融市场,比特币,原油,开源工具,Bun,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P107": {
       "htmlDir": "docs/post/future-media-daily-news-20250923.html",
       "labels": [
