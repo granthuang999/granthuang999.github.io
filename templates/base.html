@@ -112,13 +112,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     width: 100%;
 }
 
-/* [CSS修正] 为标题提供一个安全的默认样式 */
 .header-main-content h1 {
     min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* 设置一个正常的初始最大字号，脚本会基于此进行调整 */
     font-size: 40px; 
 }
 
@@ -161,4 +159,116 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <a href="https://www.futuremedia.work/zhe-xue-wen-xue.html">思哲</a>
             <a href="https://www.futuremedia.work/english-study/index.html">英语</a>
             <a href="https://www.futuremedia.work/tools-link.html">AI</a>
-            <a href="https
+            <a href="https://www.futuremedia.work/pansou.html">盘搜</a>
+            <a href="https://www.futuremedia.work/about.html">关于本站</a>
+            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
+        </nav>
+
+        <div class="header-main-content">
+            {% block header %}{% endblock %}
+        </div>
+    </header>
+    
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">{% include 'footer.html' %}</div>
+</body>
+<script>
+var IconList={{ IconList|tojson }};
+var utterancesLoad=0;
+{% if blogBase['themeMode']=='manual' %}
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+{%- endif %}
+console.log("\n %c 未来传媒 " + {{ blogBase['GMEEK_VERSION']|tojson }} + " https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+
+function addFavorite() {
+    try {
+        window.external.addFavorite(window.location.href, document.title);
+    } catch (e) {
+        try {
+            window.sidebar.addPanel(document.title, window.location.href, "");
+        } catch (e) {
+            alert("抱歉，您的浏览器不支持自动收藏功能。\n请使用 Ctrl+D (Windows) 或 Command+D (Mac) 来手动收藏。");
+        }
+    }
+}
+</script>
+{% block script %}{% endblock %}
+
+<script>
+window.addEventListener('load', function() {
+    function fitHeading() {
+        const h1Element = document.querySelector('.header-main-content h1');
+        if (!h1Element) return;
+
+        const avatar = document.querySelector('img.avatar');
+        if (avatar) {
+            const homeTitle = h1Element.querySelector('a') || h1Element;
+            if (homeTitle) {
+                homeTitle.style.fontSize = '40px';
+            }
+            return;
+        }
+
+        const textElement = h1Element.querySelector('a') || h1Element;
+        const parentContainer = h1Element.closest('.header-main-content');
+        
+        // [关键修正] 提前进行严格的安全检查，防止任何一个元素不存在时脚本报错
+        if (!parentContainer || !textElement) return;
+        const rightButtons = parentContainer.querySelector('.title-right');
+        if (!rightButtons) return;
+
+        // 在确保所有元素都存在后，再进行计算
+        const availableWidth = parentContainer.clientWidth - rightButtons.clientWidth - 20;
+        const maxFontSize = 40;
+        const minFontSize = 12;
+
+        let currentFontSize = maxFontSize;
+        textElement.style.fontSize = currentFontSize + 'px';
+
+        // 添加一个安全检查，防止无限循环
+        let attempts = 0;
+        while (textElement.scrollWidth > availableWidth && currentFontSize > minFontSize && attempts < 100) {
+            currentFontSize--;
+            textElement.style.fontSize = currentFontSize + 'px';
+            attempts++;
+        }
+    }
+
+    function debounce(func, delay) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), delay);
+        };
+    }
+    
+    fitHeading();
+    window.addEventListener('resize', debounce(fitHeading, 100));
+});
+</script>
+
+</html>
