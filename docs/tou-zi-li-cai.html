@@ -112,21 +112,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     container-type: inline-size;
 }
 
-/* [修正] 为页眉标题设置动态字号 */
+/* [最终修正] 为页眉标题设置动态字号 */
 .header-main-content h1 {
-    /* [关键] 允许 flex item 收缩，以便容器查询能够检测到宽度变化 */
     min-width: 0;
-    
-    /* [关键] 使用 !important 强制覆盖其他页面的固定字号样式 */
-    font-size: clamp(1.5rem, 8cqi, 2.5rem) !important;
+    /* [关键变更] 使用 min() 替代 clamp()，移除了最小字号限制，允许标题无限缩小以适应空间 */
+    font-size: min(2.5rem, 8cqi) !important;
     white-space: nowrap;
-
-    /* [新增] 在极端情况下，如果文本还是太长，则优雅地截断并显示省略号 */
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* [新增] 确保 h1 内部的链接也能继承动态字号 */
+/* 确保 h1 内部的链接也能继承动态字号 */
 .header-main-content h1 a {
     font-size: inherit !important;
     color: inherit !important;
