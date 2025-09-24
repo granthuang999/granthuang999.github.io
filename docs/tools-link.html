@@ -199,13 +199,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     width: 100%;
 }
 
-/* [CSS修正] 为标题提供一个安全的默认样式 */
 .header-main-content h1 {
     min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* 设置一个正常的初始最大字号，脚本会基于此进行调整 */
     font-size: 40px; 
 }
 
@@ -306,4 +304,1535 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <a href="https://www.futuremedia.work/zhe-xue-wen-xue.html">思哲</a>
             <a href="https://www.futuremedia.work/english-study/index.html">英语</a>
             <a href="https://www.futuremedia.work/tools-link.html">AI</a>
-            <a href="https
+            <a href="https://www.futuremedia.work/pansou.html">盘搜</a>
+            <a href="https://www.futuremedia.work/about.html">关于本站</a>
+            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
+        </nav>
+
+        <div class="header-main-content">
+            
+
+<h1 class="postTitle">AI工具介绍</h1>
+<div class="title-right">
+    <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+
+        </div>
+    </header>
+    
+    <div id="content">
+<div style="text-align: center; margin-bottom: 24px;">
+    <img src="https://www.futuremedia.work/images/big.png" style="max-width: 100%; border-radius: 8px;" alt="AI工具介绍">
+</div>
+
+<div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
+
+<div class="markdown-body" id="postBody"><h2>🤖 大语言模型</h2>
+<div align="center">
+</div>
+<h3>🏆 本站推荐 TOP3</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>模型</th>
+<th>特点</th>
+<th>排名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.anthropic.com/" rel="nofollow">Claude 3.7 Sonnet (Anthropic)</a></td>
+<td>多功能通用、知识更新快</td>
+<td>WebDev Arena 🥇 #1</td>
+</tr>
+<tr>
+<td><a href="https://deepmind.google/technologies/gemini/" rel="nofollow">Gemini-2.5-Pro (Google)</a></td>
+<td>逻辑推理强、支持多模态</td>
+<td>WebDev Arena 🥈 #2</td>
+</tr>
+<tr>
+<td><a href="https://github.com/deepseek-ai/">DeepSeek-V3 (DeepSeek)</a></td>
+<td>开发能力优秀、代码质量高</td>
+<td>WebDev Arena 🏅 #4</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<details>
+<summary><b>查看详细内容</b></summary>
+<p>在日常使用中，我会经常切换不同的大语言模型来获取更全面的答案。目前我主要使用 Claude 3.7 Sonnet 和 Gemini 2.5 Pro，这两个模型在各方面都表现出色。当遇到需要进一步验证的问题时，我也会使用 DeepSeek 和 Grok 来交叉对比，以获得更准确的答案。</p>
+<h4>📊 WebDev Arena 实时排行</h4>
+<p><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">https://web.lmarena.ai/leaderboard</a></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>模型</th>
+<th>Chatbot Arena 排名</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.anthropic.com/" rel="nofollow">Claude 3.7 Sonnet (Anthropic)</a></td>
+<td>🥇 #1</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://deepmind.google/technologies/gemini/" rel="nofollow">Gemini-2.5-Pro-Exp-03-25 (Google)</a></td>
+<td>🥈 #2</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://www.anthropic.com/index/claude-3-5-sonnet" rel="nofollow">Claude 3.5 Sonnet (Anthropic)</a></td>
+<td>🥉 #3</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/deepseek-ai/">DeepSeek-V3-0324 (DeepSeek)</a></td>
+<td>🏅 #4</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://x.ai" rel="nofollow">early-grok-3 (xAI)</a></td>
+<td>🏅 #6</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://openai.com/chatgpt" rel="nofollow">GPT-4o-2024-11-20 (OpenAI)</a></td>
+<td>🏅 #20</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://alama.ai" rel="nofollow">Alama (评测平台)</a></td>
+<td>✅ 模型对比聚合平台</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<h4>📊 Chatbot Arena 实时排行</h4>
+<p><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">https://web.lmarena.ai/leaderboard</a></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>模型</th>
+<th>Chatbot Arena 排名 (UB)</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://deepmind.google/technologies/gemini/" rel="nofollow">Gemini-2.5-Pro-Exp-03-25 (Google)</a></td>
+<td>🥇 #1</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://openai.com/chatgpt" rel="nofollow">ChatGPT-4o-latest (OpenAI)</a></td>
+<td>🥈 #2</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://x.ai" rel="nofollow">Grok-3-Preview-02-24 (xAI)</a></td>
+<td>🥈 #2</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://openai.com/" rel="nofollow">GPT-4.5-Preview (OpenAI)</a></td>
+<td>🥈 #2</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://deepmind.google/technologies/gemini/" rel="nofollow">Gemini-2.0-Flash-Thinking-Exp-01-21 (Google)</a></td>
+<td>🏅 #5</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://deepmind.google/technologies/gemini/" rel="nofollow">Gemini-2.0-Pro-Exp-02-05 (Google)</a></td>
+<td>🏅 #5</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/deepseek-ai/">DeepSeek-V3-0324 (DeepSeek)</a></td>
+<td>🏅 #5</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/deepseek-ai/">DeepSeek-R1 (DeepSeek)</a></td>
+<td>🏅 #7</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://deepmind.google/technologies/gemini/" rel="nofollow">Gemini-2.0-Flash-001 (Google)</a></td>
+<td>🏅 #8</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://openai.com/" rel="nofollow">o1-2024-12-17 (OpenAI?)</a></td>
+<td>🏅 #8</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/google/gemma-3-27b-it" rel="nofollow">Gemma-3-27B-it (Google)</a></td>
+<td>🏅 #10</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/Qwen/Qwen2.5-72B-Chat" rel="nofollow">Qwen2.5-Max (Alibaba)</a></td>
+<td>🏅 #11</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://openai.com/" rel="nofollow">o1-preview (OpenAI?)</a></td>
+<td>🏅 #11</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+<tr>
+<td><a href="https://www.anthropic.com/" rel="nofollow">Claude 3.7 Sonnet (Anthropic)</a></td>
+<td>🏅 #22</td>
+<td><a href="https://web.lmarena.ai/leaderboard" rel="nofollow">LMArena</a></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</details>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>🎙️ TTS</h2>
+<div align="center">
+</div>
+<h3>🏆 店长推荐 TOP3</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>服务</th>
+<th>特点</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://azure.microsoft.com/en-us/products/cognitive-services/text-to-speech/" rel="nofollow">Microsoft Azure TTS</a></td>
+<td>多语言支持、情感语调强大、流式播放</td>
+<td>免费 5M 字符/月（前 12 个月）</td>
+</tr>
+<tr>
+<td><a href="https://www.xfyun.cn/services/online_tts" rel="nofollow">iFlytek 科大讯飞</a></td>
+<td>中文语音第一、多场景支持、音色丰富</td>
+<td>¥0.2/千字符</td>
+</tr>
+<tr>
+<td><a href="https://elevenlabs.io/" rel="nofollow">ElevenLabs</a></td>
+<td>角色感强、音质好、支持情绪变化</td>
+<td>$11/百万字符起</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<details>
+<summary><b>查看详细内容</b></summary>
+<h3>🏢 商业 TTS 服务（英文 + 多语言）</h3>
+<h4>1. <a href="https://azure.microsoft.com/en-us/products/cognitive-services/text-to-speech/" rel="nofollow">Microsoft Azure TTS</a></h4>
+<ul>
+<li>多语言语音合成服务</li>
+<li>支持 SSML 控制、情绪语调、流式播放</li>
+<li>免费 5M 字符/月（前 12 个月）</li>
+</ul>
+<h4>2. <a href="https://cloud.google.com/text-to-speech" rel="nofollow">Google Cloud TTS</a></h4>
+<ul>
+<li>WaveNet / Neural2 语音技术</li>
+<li>支持中文普通话和台语，多种声音选择</li>
+<li>免费 4M 字符/月（前 12 个月）</li>
+</ul>
+<h4>3. <a href="https://aws.amazon.com/polly/" rel="nofollow">Amazon Polly</a></h4>
+<ul>
+<li>可部署在 AWS 各产品中</li>
+<li>支持多语言、Speech Marks（断句）</li>
+<li>免费 5M 字符/月（前 12 个月）</li>
+</ul>
+<h4>4. <a href="https://www.ibm.com/cloud/watson-text-to-speech" rel="nofollow">IBM Watson TTS</a></h4>
+<ul>
+<li>支持多语种语音合成</li>
+<li>提供企业级服务</li>
+</ul>
+<h4>5. <a href="https://elevenlabs.io/" rel="nofollow">ElevenLabs</a></h4>
+<ul>
+<li>支持情绪变化与角色风格</li>
+<li>提供英文和中文语音合成</li>
+<li>支持语音克隆和流式播放 API</li>
+</ul>
+<h4>6. <a href="https://play.ht/" rel="nofollow">PlayHT</a></h4>
+<ul>
+<li>Web 端流式 TTS 服务</li>
+<li>提供免费使用额度</li>
+</ul>
+<h4>7. <a href="https://platform.openai.com/docs/guides/text-to-speech" rel="nofollow">OpenAI TTS</a></h4>
+<ul>
+<li>支持 Whisper 语音识别对接</li>
+<li>中文支持待完善</li>
+</ul>
+<h4>8. <a href="https://deepgram.com/product/text-to-speech" rel="nofollow">Deepgram</a></h4>
+<ul>
+<li>实时流式语音合成</li>
+<li>支持多语言和声音风格</li>
+<li>提供试用额度</li>
+</ul>
+<h4>9. <a href="https://neuphonic.ai" rel="nofollow">Neuphonic</a></h4>
+<ul>
+<li>多语言语音合成服务</li>
+<li>提供 API 和 SDK</li>
+<li>有免费试用</li>
+</ul>
+<h4>10. <a href="https://murf.ai/" rel="nofollow">Murf AI</a></h4>
+<ul>
+<li>配音和画外音制作工具</li>
+<li>支持 120+ 种声音和 20+ 种语言</li>
+<li>提供试用版本</li>
+</ul>
+<h4>11. <a href="https://www.resemble.ai/" rel="nofollow">Resemble AI</a></h4>
+<ul>
+<li>语音克隆技术</li>
+<li>实时语音合成</li>
+<li>企业级 API 服务</li>
+</ul>
+<br>
+<h3>🇨🇳 中文 TTS 服务</h3>
+<h4>1. <a href="https://www.xfyun.cn/services/online_tts" rel="nofollow">iFlytek 科大讯飞</a></h4>
+<ul>
+<li>中文语音合成服务</li>
+<li>支持流式合成、自定义音色、音色克隆</li>
+<li>应用于教育、客服、阅读等场景</li>
+</ul>
+<h4>2. <a href="https://ai.baidu.com/tech/speech/tts" rel="nofollow">Baidu TTS</a></h4>
+<ul>
+<li>提供离线 SDK 与云服务</li>
+<li>面向企业级语音交互应用</li>
+</ul>
+<h4>3. <a href="https://blog.fal.ai/minimax-text-to-speech-models-now-available-on-fal/" rel="nofollow">MiniMax TTS</a></h4>
+<ul>
+<li>实时语音合成服务</li>
+<li>支持多语言音色</li>
+<li>适用于 AI Agent 场景</li>
+</ul>
+<h4>4. ByteDance（字节跳动）SeedTTS / MegaTTS3</h4>
+<ul>
+<li>内部语音合成技术</li>
+<li>支持语音克隆和情绪表达</li>
+<li>用于公司产品（抖音、剪映）</li>
+</ul>
+<h4>5. <a href="https://cartesia.ai/product/text-to-speech-tts" rel="nofollow">Cartesia Sonic TTS</a></h4>
+<ul>
+<li>低延迟语音合成</li>
+<li>支持音色克隆</li>
+<li>适用于医疗、客服等领域</li>
+</ul>
+<h4>6. <a href="https://github.com/fishaudio/fish-speech">Fish Speech</a></h4>
+<ul>
+<li>开源语音合成系统</li>
+<li>支持多语言和音色克隆</li>
+<li>提供流式推理</li>
+</ul>
+<h4>7. <a href="https://github.com/FunAudioLLM/CosyVoice">CosyVoice (阿里巴巴)</a></h4>
+<ul>
+<li>开源多语言语音合成系统</li>
+<li>支持情感语调和多语种</li>
+<li>轻量化部署方案</li>
+</ul>
+<h4>8. <a href="https://www.volcengine.com/product/speech-tech" rel="nofollow">火山引擎 TTS</a></h4>
+<ul>
+<li>中英文双语支持</li>
+<li>提供流式合成和离线 SDK</li>
+<li>企业级服务</li>
+</ul>
+<br>
+<h3>🔓 开源/自部署 TTS 方案</h3>
+<h4>1. <a href="https://github.com/fishaudio/fish-speech">Fish Speech</a></h4>
+<ul>
+<li>支持 8 种语言</li>
+<li>提供音色克隆功能</li>
+<li>支持流式播放部署</li>
+</ul>
+<h4>2. <a href="https://github.com/FunAudioLLM/CosyVoice">CosyVoice (阿里)</a></h4>
+<ul>
+<li>多语言支持</li>
+<li>提供流式推理</li>
+<li>轻量化部署方案</li>
+</ul>
+<h4>3. <a href="https://github.com/coqui-ai/TTS">Coqui TTS</a></h4>
+<ul>
+<li>支持中文模型配置</li>
+<li>可进行模型训练和微调</li>
+<li>开源社区维护</li>
+</ul>
+<h4>4. <a href="https://github.com/MycroftAI/mimic1">Mimic (Mycroft AI)</a></h4>
+<ul>
+<li>轻量级语音合成系统</li>
+<li>适用于嵌入式设备</li>
+</ul>
+<h4>5. <a href="https://github.com/suno-ai/bark">Bark (by Suno)</a></h4>
+<ul>
+<li>支持多模态输出</li>
+<li>非流式生成模式</li>
+</ul>
+<h4>6. <a href="https://github.com/neonbjb/tortoise-tts">Tortoise TTS</a></h4>
+<ul>
+<li>高质量语音合成</li>
+<li>非实时生成模式</li>
+</ul>
+<h4>7. <a href="https://github.com/jaywalnut310/vits">VITS</a></h4>
+<ul>
+<li>端到端语音合成</li>
+<li>支持多语言训练</li>
+<li>社区持续改进</li>
+</ul>
+<h4>8. VoiceCanvas</h4>
+<ul>
+<li>支持 50+ 种语言和方言的文本转语音，提供多种男声和女声选择</li>
+<li>个性化声音克隆：仅需 10 秒音频样本即可创建专属 AI 声音，支持跨语言使用</li>
+<li>高级功能：语速调节、音频可视化、逐字朗读模式、一键下载音频文件</li>
+<li>灵活的订阅计划：免费试用、按月/按年订阅、按量付费选项</li>
+<li>支持自部署，代码 100% 开源，适合开发者和内容创作者使用</li>
+</ul>
+<br>
+<h3>📊 功能对比表（中英文 TTS）</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>名称</th>
+<th>中文</th>
+<th>英文</th>
+<th>流式</th>
+<th>克隆</th>
+<th>开源</th>
+<th>特点</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure TTS</td>
+<td>✅✅✅</td>
+<td>✅✅✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>商业标准，情感支持强</td>
+<td>$4/百万字符</td>
+</tr>
+<tr>
+<td>Google TTS</td>
+<td>✅✅</td>
+<td>✅✅✅</td>
+<td><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji></td>
+<td>❌</td>
+<td>❌</td>
+<td>稳定好用</td>
+<td>$4/百万字符</td>
+</tr>
+<tr>
+<td>iFlytek</td>
+<td>✅✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>中文第一</td>
+<td>¥0.2/千字符</td>
+</tr>
+<tr>
+<td>MiniMax</td>
+<td>✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>适合 Agent</td>
+<td>¥0.3/千字符</td>
+</tr>
+<tr>
+<td>Baidu TTS</td>
+<td>✅✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>企业级可落地</td>
+<td>¥0.2/千字符</td>
+</tr>
+<tr>
+<td>ByteDance TTS</td>
+<td>✅✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅✅</td>
+<td>❌</td>
+<td>中文高保真 + 情绪</td>
+<td>内部使用</td>
+</tr>
+<tr>
+<td>Cartesia Sonic</td>
+<td>✅✅✅</td>
+<td>✅</td>
+<td>✅✅</td>
+<td>✅✅</td>
+<td>❌</td>
+<td>高速、准确、可控</td>
+<td>企业定制</td>
+</tr>
+<tr>
+<td>ElevenLabs</td>
+<td><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji></td>
+<td>✅✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>角色感强，音质好</td>
+<td>$11/百万字符起</td>
+</tr>
+<tr>
+<td>Murf AI</td>
+<td>❌</td>
+<td>✅✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>专业配音级</td>
+<td>$13/月起</td>
+</tr>
+<tr>
+<td>Resemble AI</td>
+<td><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji></td>
+<td>✅✅</td>
+<td>✅</td>
+<td>✅✅</td>
+<td>❌</td>
+<td>克隆技术领先</td>
+<td>企业定制</td>
+</tr>
+<tr>
+<td>火山引擎 TTS</td>
+<td>✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>企业级服务</td>
+<td>¥0.3/千字符</td>
+</tr>
+<tr>
+<td>Fish Speech</td>
+<td>✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>快速开源部署</td>
+<td>波动</td>
+</tr>
+<tr>
+<td>CosyVoice</td>
+<td>✅✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>多语 + 轻量</td>
+<td>波动</td>
+</tr>
+<tr>
+<td>Coqui TTS</td>
+<td>✅（需配置）</td>
+<td>✅</td>
+<td><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji></td>
+<td>✅</td>
+<td>✅</td>
+<td>可训练，社区活跃</td>
+<td>波动</td>
+</tr>
+<tr>
+<td>Bark</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>情绪丰富，生成慢</td>
+<td>波动</td>
+</tr>
+<tr>
+<td>Tortoise TTS</td>
+<td>✅</td>
+<td>✅✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>高质量非实时输出</td>
+<td>波动</td>
+</tr>
+<tr>
+<td>VITS</td>
+<td>✅</td>
+<td>✅</td>
+<td><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji></td>
+<td>✅</td>
+<td>✅</td>
+<td>端到端训练</td>
+<td>波动</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</details>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>💻 代码</h2>
+<div align="center">
+</div>
+<h3>🏆 店长推荐 TOP3</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cursor.com" rel="nofollow">Cursor</a></td>
+<td>AI 辅助开发、代码补全、上下文理解强</td>
+<td>基础功能免费</td>
+</tr>
+<tr>
+<td><a href="http://Deepwiki.com" rel="nofollow">Deepwiki.com</a></td>
+<td>自动生成代码文档、理解项目结构、支持私有仓库</td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://tempo.new" rel="nofollow">Tempo</a></td>
+<td>快速构建全栈项目、支持后端+前端+Auth+支付</td>
+<td>免费</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<details>
+<summary><b>查看详细内容</b></summary>
+<ul>
+<li>
+<p><strong>IDE</strong></p>
+<ul>
+<li><a href="http://TRAE.ai" rel="nofollow">TRAE</a></li>
+<li><a href="http://Cursor.com" rel="nofollow">Cursor</a>
+<ul>
+<li>AI 辅助开发</li>
+<li>3.7 免费用 + 免费</li>
+</ul>
+</li>
+<li><a href="https://code.visualstudio.com" rel="nofollow">VS Code</a>
+<ul>
+<li>开源免费</li>
+<li>插件丰富</li>
+</ul>
+</li>
+<li><a href="https://www.windsurfapp.com" rel="nofollow">Windsurf</a>
+<ul>
+<li>轻量级开发工具</li>
+<li>完全免费</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>命令行终端</strong></p>
+<ul>
+<li><a href="http://warp.dev" rel="nofollow">Warp</a>
+<ul>
+<li>AI 增强终端</li>
+<li>提供免费额度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>代码理解与文档</h3>
+<ul>
+<li>
+<p><a href="http://Deepwiki.com" rel="nofollow">Deepwiki.com</a></p>
+<ul>
+<li>📝 自动为你的代码生成技术文档、函数说明、API 注释</li>
+<li>🧠 支持自然语言提问，理解代码上下文含义</li>
+<li>🧩 可生成"项目百科"，结构清晰、层级分明</li>
+<li>🕵️ 适合快速上手新项目、提升文档覆盖率</li>
+<li>🔒 支持私有仓库，数据安全</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/antarixxx/gitsummarize">gitsummarize</a></p>
+<ul>
+<li>📄 架构级概览</li>
+<li>📁 目录 &amp; 文件总结</li>
+<li>🧠 用自然语言解释代码目的、流程与结构</li>
+<li>🔗 提取业务逻辑与规则</li>
+<li>📊 自动绘制架构图与流程图</li>
+</ul>
+</li>
+<li>
+<p><a href="https://gitdiagram.com" rel="nofollow">gitdiagram.com</a></p>
+<ul>
+<li>🧠 支持大型代码仓库的全局理解</li>
+<li>🏗️ 可视化展示文件结构、模块依赖、函数关系</li>
+<li>🔍 点击任意节点即可查看源码详情</li>
+<li>🤝 支持团队共享与嵌入文档</li>
+<li>🚀 极简输入 GitHub 链接即可开始分析</li>
+</ul>
+</li>
+</ul>
+<h3>全栈开发与快速构建</h3>
+<ul>
+<li><a href="https://tempo.new" rel="nofollow">Tempo</a>
+<ul>
+<li>后端 + 前端 + Auth + 支付</li>
+</ul>
+</li>
+<li><a href="https://chef.convex.dev" rel="nofollow">Chef</a>
+<ul>
+<li>后端 + 前端 + Auth</li>
+</ul>
+</li>
+<li><a href="https://apps.apple.com/us/app/vibecode/id6742912146" rel="nofollow">Vibe Code App</a>
+<ul>
+<li>App</li>
+</ul>
+</li>
+<li><a href="https://v0.dev" rel="nofollow">v0</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://bolt.new" rel="nofollow">Bolt</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://lovable.dev" rel="nofollow">Lovable</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://firebase.google.com" rel="nofollow">Firebase Studio</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://devin.ai" rel="nofollow">Devin</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://heybossai.com" rel="nofollow">HeyBoss</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://replit.com" rel="nofollow">Replit</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://same.dev" rel="nofollow">Same</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://a0.dev" rel="nofollow">a0</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://vibecoder.gg" rel="nofollow">Vibe Coder</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://shipany.ai" rel="nofollow">ShipAny</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://copyweb.ai" rel="nofollow">CopyWeb</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://seede.ai" rel="nofollow">Seede</a>
+<ul>
+<li>前端/Apps/Games</li>
+</ul>
+</li>
+<li><a href="https://magicpatterns.com" rel="nofollow">Magic Patterns</a>
+<ul>
+<li>AI 原型设计平台，用于产品团队快速构建原型、获取用户反馈并进行数据驱动决策。</li>
+</ul>
+</li>
+</ul>
+</details>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>🎨 设计工具</h2>
+<div align="center">
+</div>
+<h3>🏆 店长推荐 TOP3</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.recraft.ai" rel="nofollow">Recraft.ai</a></td>
+<td>全能设计神器、支持Logo、图片、MockUp、Banner、提供模板和风格定制</td>
+<td>每天免费 100 次生成额度</td>
+</tr>
+<tr>
+<td><a href="https://www.canva.com" rel="nofollow">Canva</a></td>
+<td>海量模板一键修改、支持文档/白板/社媒/视频等多种格式</td>
+<td>绑卡免费 30 天</td>
+</tr>
+<tr>
+<td><a href="https://finisher.co/lab/header/" rel="nofollow">Finisher</a></td>
+<td>AI 生成沉浸式网页头图、多种风格模板、一键适配</td>
+<td>免费</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<details>
+<summary><b>查看详细内容</b></summary>
+<h3>全能设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://recraft.ai" rel="nofollow">Recraft.ai</a></td>
+<td>🔥🔥🔥 强烈推荐<br>支持 Logo、图片、MockUp、Banner<br>提供模板和风格定制</td>
+<td>每天免费 100 次生成额度</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>运营设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://Canva.com" rel="nofollow">Canva</a></td>
+<td>支持文档、白板、社媒、视频等<br>海量模板一键修改</td>
+<td>绑卡免费 30 天</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>网站设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://Relume.io" rel="nofollow">Relume</a></td>
+<td>一句话生成完整网站<br>与 Figma 无缝集成</td>
+<td>绑卡免费 30 天</td>
+</tr>
+<tr>
+<td><a href="https://finisher.co/lab/header/" rel="nofollow">Finisher</a></td>
+<td>AI 生成沉浸式网页头图<br>多种风格模板可选<br>自动适配文案、CTA、背景图<br>即用即改，适合开发者、设计师、创作者</td>
+<td>免费</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3D 设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://blender.org" rel="nofollow">Blender</a></td>
+<td>支持 AI 控制<br>[MCP 控制器][blender-mcp-link]</td>
+<td>完全开源免费</td>
+</tr>
+<tr>
+<td><a href="http://spline.design" rel="nofollow">Spline</a></td>
+<td>社区免费模板<br>支持网页端设计<br>快速上手</td>
+<td>免费使用</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>动态设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://jitter.video" rel="nofollow">Jitter</a></td>
+<td>专注 Hero 动画<br>简单易用</td>
+<td>免费版够用</td>
+</tr>
+<tr>
+<td><a href="http://hailuoai.com/video" rel="nofollow">HailuoAI</a></td>
+<td>支持多种动态效果<br>适合社媒内容</td>
+<td>免费版够用</td>
+</tr>
+<tr>
+<td><a href="http://klingai.com" rel="nofollow">KlingAI</a></td>
+<td>AI 驱动转换<br>社媒优化</td>
+<td>免费版够用</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>工作流设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://overflow.io" rel="nofollow">Overflow</a></td>
+<td>界面美观<br>支持交互展示</td>
+<td>免费下载使用</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>Logo 设计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>定价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.fiverr.com/categories/graphics-design/creative-logo-design" rel="nofollow">Fiverr</a></td>
+<td>专业设计平台</td>
+<td>付费服务</td>
+</tr>
+<tr>
+<td><a href="http://design.com/ai-logo-generator" rel="nofollow">Design.com</a></td>
+<td>AI 生成</td>
+<td>免费试用</td>
+</tr>
+<tr>
+<td><a href="http://ailogogenerator.net" rel="nofollow">AILogoGenerator</a></td>
+<td>简单快速</td>
+<td>完全免费</td>
+</tr>
+<tr>
+<td><a href="http://logomakr.com" rel="nofollow">LogoMakr</a></td>
+<td>自定义强</td>
+<td>免费使用</td>
+</tr>
+<tr>
+<td><a href="http://logopony.com" rel="nofollow">LogoPony</a></td>
+<td>风格多样</td>
+<td>免费试用</td>
+</tr>
+<tr>
+<td><a href="http://looka.com" rel="nofollow">Looka</a></td>
+<td>品牌套件</td>
+<td>免费试用</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</details>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>⚙️ 生产力工具</h2>
+<div align="center">
+</div>
+<h3>🏆 店长推荐 TOP3</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.raycast.com" rel="nofollow">Raycast</a></td>
+<td>高效启动器、工作流自动化、丰富插件</td>
+<td>基础功能免费</td>
+</tr>
+<tr>
+<td><a href="https://pixpin.cn" rel="nofollow">PixPin</a></td>
+<td>全能截图工具、OCR识别、录屏功能</td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://karabiner-elements.pqrs.org" rel="nofollow">Karabiner</a></td>
+<td>键盘自定义神器、改键完全控制</td>
+<td>开源免费</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<details>
+<summary><b>查看详细内容</b></summary>
+<h3>系统增强</h3>
+<ul>
+<li>
+<p><a href="http://raycast.com" rel="nofollow">Raycast</a></p>
+<ul>
+<li>🔥🔥🔥 强烈推荐</li>
+<li>快速启动器</li>
+<li>工作流自动化</li>
+<li>基础功能免费</li>
+</ul>
+</li>
+<li>
+<p><a href="http://karabiner-elements.pqrs.org" rel="nofollow">Karabiner</a></p>
+<ul>
+<li>🔥🔥🔥 强烈推荐</li>
+<li>键盘自定义</li>
+<li>功能强大</li>
+<li>开源免费</li>
+</ul>
+</li>
+<li>
+<p><a href="http://rectangleapp.com" rel="nofollow">Rectangle</a></p>
+<ul>
+<li>窗口管理工具</li>
+<li>快捷键操作</li>
+<li>完全免费</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/jordanbaird/Ice">Ice</a></p>
+<ul>
+<li>工具栏增强</li>
+<li>轻量高效</li>
+<li>开源免费</li>
+</ul>
+</li>
+</ul>
+<h3>媒体工具</h3>
+<ul>
+<li>
+<p><a href="https://pixpin.cn" rel="nofollow">PixPin</a></p>
+<ul>
+<li>🔥🔥🔥 强烈推荐</li>
+<li>全能截图工具</li>
+<li>支持 GIF 录制</li>
+<li>OCR 文字识别</li>
+<li>丰富标注功能</li>
+</ul>
+</li>
+<li>
+<p><a href="http://software.charliemonroe.net/downie" rel="nofollow">Downie</a></p>
+<ul>
+<li>🔥 推荐</li>
+<li>视频下载工具</li>
+<li>支持多平台</li>
+<li>提供试用</li>
+<li>视频下载工具</li>
+<li>支持多平台</li>
+<li>提供试用</li>
+</ul>
+</li>
+<li>
+<p><a href="https://motionshot.app" rel="nofollow">MotionShot</a></p>
+<ul>
+<li>专业演示录制</li>
+<li>交互式标注</li>
+<li>$7/月或$140 终身</li>
+</ul>
+</li>
+<li>
+<p><a href="https://cap.so" rel="nofollow">Cap</a></p>
+<ul>
+<li>开源 Loom 替代品</li>
+<li>屏幕录制与分享</li>
+<li><a href="https://github.com/CapSoftware/Cap">GitHub</a></li>
+</ul>
+</li>
+<li>
+<p><a href="http://getkap.co" rel="nofollow">Kap</a></p>
+<ul>
+<li>GIF 录制工具</li>
+<li>简单易用</li>
+<li>开源免费</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/keycastr/keycastr">KeyCastr</a></p>
+<ul>
+<li>按键显示工具</li>
+<li>录制演示必备</li>
+<li>开源免费</li>
+</ul>
+</li>
+<li>
+<p><a href="http://obsproject.com" rel="nofollow">OBS</a></p>
+<ul>
+<li>专业录屏软件</li>
+<li>直播推流</li>
+<li>开源免费</li>
+</ul>
+</li>
+<li>
+<p><a href="http://iina.io" rel="nofollow">IINA</a></p>
+<ul>
+<li>现代视频播放器</li>
+<li>界面美观</li>
+<li>开源免费</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/th-ch/youtube-music">Youtube Music 桌面端</a></p>
+<ul>
+<li>支持背景播放（王炸功能）</li>
+<li>内置 ad blocker 所以没广告</li>
+<li>内置下载器，支持离线下载</li>
+<li>跨平台，支持插件系统，很多插件</li>
+<li>免费</li>
+</ul>
+</li>
+</ul>
+<h3>日常效率</h3>
+<ul>
+<li>
+<p><a href="http://tapbots.com/pastebot" rel="nofollow">Pastebot</a></p>
+<ul>
+<li>剪贴板管理</li>
+<li>历史记录</li>
+<li>$13 终身授权</li>
+</ul>
+</li>
+<li>
+<p><a href="http://cleanshot.com" rel="nofollow">CleanShot</a></p>
+<ul>
+<li>专业截图工具</li>
+<li>录屏功能</li>
+<li>$29 终身授权</li>
+</ul>
+</li>
+<li>
+<p><a href="http://setapp.com" rel="nofollow">Setapp</a></p>
+<ul>
+<li>应用订阅合集</li>
+<li>优质应用精选</li>
+<li>$10/月订阅</li>
+</ul>
+</li>
+<li>
+<p><a href="https://toolfolio.io" rel="nofollow">Toolfolio</a></p>
+<ul>
+<li>精选工具集合：平台精心挑选并分类整理了各类高质量工具，方便用户快速找到所需资源。</li>
+<li>多平台资源支持：提供适用于 Figma、Framer、Webflow 等平台的 UI 组件、模板和插件，助力设计与开发工作流。</li>
+<li>AI 与自动化工具：涵盖视频生成、写作辅助、语音识别等 AI 工具，提升内容创作效率。</li>
+<li>定期更新与推荐：平台持续更新工具库，并通过博客和新闻通讯分享最新的工具和资源。</li>
+<li>免费</li>
+</ul>
+</li>
+</ul>
+</details>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>网站系列 - 一键生成网站</h2>
+<div align="center">
+</div>
+<h3>🏆 店长推荐 TOP3</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>工具</th>
+<th>特点</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://v0.dev" rel="nofollow">v0.dev</a></td>
+<td>最快无水印、即时预览</td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://lovable.dev" rel="nofollow">Lovable</a></td>
+<td>设计最好看、易于定制</td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://bolt.new" rel="nofollow">bolt.new</a></td>
+<td>用户体验好、交互流畅</td>
+<td>免费</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<br>
+<details>
+<summary><b>查看详细内容</b></summary>
+<ul>
+<li>
+<p><a href="http://v0.dev" rel="nofollow">v0.dev</a></p>
+<ul>
+<li>耗时：2分钟</li>
+<li>特点：最快无水印</li>
+<li>价格：免费</li>
+<li>演示：<a href="http://v0-saa-s-landing-page-zucn5j.vercel.app" rel="nofollow">查看</a></li>
+</ul>
+</li>
+<li>
+<p><a href="http://lovable.dev" rel="nofollow">lovable</a></p>
+<ul>
+<li>耗时：3分钟</li>
+<li>特点：最好看</li>
+<li>价格：免费</li>
+<li>演示：<a href="http://fab-landing-magic.lovable.app" rel="nofollow">查看</a></li>
+</ul>
+</li>
+<li>
+<p><a href="http://bolt.new" rel="nofollow">bolt.new</a></p>
+<ul>
+<li>耗时：3分钟</li>
+<li>特点：体验好</li>
+<li>价格：免费</li>
+<li>演示：<a href="http://frabjous-liger-0a7f6a.netlify.app" rel="nofollow">查看</a></li>
+</ul>
+</li>
+<li>
+<p><a href="http://heyboss.xyz" rel="nofollow">heyboss</a></p>
+<ul>
+<li>耗时：12分钟</li>
+<li>特点：送$10</li>
+<li>价格：免费</li>
+<li>演示：<a href="http://4debce98.heyboss.tech/f28ae845" rel="nofollow">查看</a></li>
+</ul>
+</li>
+<li>
+<p><a href="http://replit.com" rel="nofollow">replit</a></p>
+<ul>
+<li>耗时：4分钟</li>
+<li>特点：$25/月额度</li>
+<li>价格：需绑卡</li>
+<li>演示：-</li>
+</ul>
+</li>
+</ul>
+</details>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>📚 学习系列</h2>
+<div align="center">
+</div>
+<br>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+<br>
+<h2>恶搞系列</h2>
+<div align="center">
+</div>
+<p>NaaS - No as a Service</p>
+<ul>
+<li>亮点
+<ul>
+<li>🧱 它不提供服务</li>
+<li>🛑 它不解决问题</li>
+<li>🚫 它什么也不做</li>
+</ul>
+</li>
+<li>然而，它非常认真地构建了一个完整的 CI/CD 流水线，只为上线一个……啥也不干的服务，天才恶搞！👀</li>
+<li>Github 1: <a href="https://github.com/hotheadhacker/no-as-a-service">hotheadhacker/no-as-a-service</a></li>
+<li>Github 2: <a href="https://github.com/gotev/no-as-a-service">gotev/no-as-a-service</a></li>
+<li>价格：免费</li>
+</ul>
+<br>
+<div align="right">
+<p><a href="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" rel="nofollow"><img src="https://camo.githubusercontent.com/3b0724fd7f2930cebfa134bfc45bd58ebc90f5dfbf2dfeb2b4cf8916ac6f9add/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4261636b5f746f5f746f702d677261793f7374796c653d666c61742d737175617265" alt="back-to-top" data-canonical-src="https://img.shields.io/badge/-Back_to_top-gray?style=flat-square" style="max-width: 100%;"></a>](#readme-top)</p>
+</div>
+
+
+
+
+</div>
+
+<div class="post-footer">
+    <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+    </div>
+</div>
+
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
+<a href="https://www.futuremedia.work/about.html">关于本站</a> |
+<a href="https://www.futuremedia.work/terms-of-service.html">服务条款</a> |  
+<a href="https://www.futuremedia.work/privacy-policy.html">隐私政策</a> |
+<a href="https://www.futuremedia.work/disclaimer.html">免责声明</a> 
+</div>
+<div id="footer2">
+    <span id="runday"></span><span>本站由<a href="mailto:futuremedia2090@gmail.com" target="_blank">疯子</a>维护</span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("6/4/2025"!=""){
+    var startSite=new Date("6/4/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={"sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c 未来传媒 " + "last" + " https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+
+function addFavorite() {
+    try {
+        window.external.addFavorite(window.location.href, document.title);
+    } catch (e) {
+        try {
+            window.sidebar.addPanel(document.title, window.location.href, "");
+        } catch (e) {
+            alert("抱歉，您的浏览器不支持自动收藏功能。\n请使用 Ctrl+D (Windows) 或 Command+D (Mac) 来手动收藏。");
+        }
+    }
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteText = "";
+    const dailySentenceRaw = `""`; 
+    let typeitStrings = [];
+
+    if (quoteText && quoteText.trim() && quoteText !== 'None' && quoteText !== 'null') {
+        typeitStrings.push(quoteText);
+    } 
+    else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
+        try {
+            const parsedSentences = JSON.parse(dailySentenceRaw);
+            if (Array.isArray(parsedSentences) && parsedSentences.length > 0) {
+                typeitStrings = parsedSentences;
+            }
+        } catch (e) {
+            console.error("无法解析 daily_sentence JSON:", dailySentenceRaw, e);
+        }
+    }
+
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true,
+                 waitUntilVisible: true,
+                 breakLines: false,
+                 cursor: false
+             }).go();
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+</script>
+
+<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
+
+
+
+<script>
+window.addEventListener('load', function() {
+    function fitHeading() {
+        const h1Element = document.querySelector('.header-main-content h1');
+        if (!h1Element) return;
+
+        const avatar = document.querySelector('img.avatar');
+        if (avatar) {
+            const homeTitle = h1Element.querySelector('a') || h1Element;
+            if (homeTitle) {
+                homeTitle.style.fontSize = '40px';
+            }
+            return;
+        }
+
+        const textElement = h1Element.querySelector('a') || h1Element;
+        const parentContainer = h1Element.closest('.header-main-content');
+        
+        // [关键修正] 提前进行严格的安全检查，防止任何一个元素不存在时脚本报错
+        if (!parentContainer || !textElement) return;
+        const rightButtons = parentContainer.querySelector('.title-right');
+        if (!rightButtons) return;
+
+        // 在确保所有元素都存在后，再进行计算
+        const availableWidth = parentContainer.clientWidth - rightButtons.clientWidth - 20;
+        const maxFontSize = 40;
+        const minFontSize = 12;
+
+        let currentFontSize = maxFontSize;
+        textElement.style.fontSize = currentFontSize + 'px';
+
+        // 添加一个安全检查，防止无限循环
+        let attempts = 0;
+        while (textElement.scrollWidth > availableWidth && currentFontSize > minFontSize && attempts < 100) {
+            currentFontSize--;
+            textElement.style.fontSize = currentFontSize + 'px';
+            attempts++;
+        }
+    }
+
+    function debounce(func, delay) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), delay);
+        };
+    }
+    
+    fitHeading();
+    window.addEventListener('resize', debounce(fitHeading, 100));
+});
+</script>
+
+</html>
