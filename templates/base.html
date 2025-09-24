@@ -1,63 +1,3 @@
-<!DOCTYPE html>
-<html data-color-mode="light" data-dark-theme="{{ blogBase['nightTheme'] }}" data-light-theme="{{ blogBase['dayTheme'] }}" lang={% if blogBase['i18n']=='CN' %}"zh-CN"{% elif blogBase['i18n']=='RU' %}"ru"{% else -%}"en"{%- endif -%}>
-<head>
-  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/439c49a4efb78045d80bf9f0/script.js"></script> <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="{{ blogBase['canonicalUrl'] }}" />
-    {{ blogBase['primerCSS'] }}
-    {{ blogBase['allHead'] }}
-    <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
-    {%- if blogBase['themeMode']=='manual' -%}
-    <script>
-        let theme = localStorage.getItem("meek_theme") || "light";
-        document.documentElement.setAttribute("data-color-mode", theme);
-    </script>
-    {%- endif -%}
-    {% block head %}{% endblock %}
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FDL6BTW5FM');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "sh44c07wsg");
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "{{ blogBase.title }}",
-    "url": "{{ blogBase.homeUrl }}",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "{{ blogBase.homeUrl }}/tag.html?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-    }
-}
-</script>
-</head>
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
@@ -113,10 +53,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     container-type: inline-size;
 }
 
-/* [最终修正] 为页眉标题设置动态字号 */
+/* 核心动态字号规则 */
 .header-main-content h1 {
     min-width: 0;
-    /* [关键变更] 使用 min() 替代 clamp()，移除了最小字号限制，允许标题无限缩小以适应空间 */
     font-size: min(2.5rem, 8cqi) !important;
     white-space: nowrap;
     overflow: hidden;
@@ -150,76 +89,3 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     background-color: rgba(255, 255, 255, 0.15);
 }
 </style>
-{% block style %}{% endblock %}
-
-<body>
-    <header id="header" class="page-header">
-        <nav class="header-nav-menu">
-            <a href="https://www.futuremedia.work/">首页</a>
-            <a href="https://www.futuremedia.work/shen-xin-jian-kang.html">健康</a>
-            <a href="https://www.futuremedia.work/tou-zi-li-cai.html">赚钱</a>
-            <a href="https://www.futuremedia.work/xue-xi-cheng-chang.html">学习</a>
-            <a href="https://www.futuremedia.work/chao-liu-gong-ju.html">未来</a>
-            <a href="https://www.futuremedia.work/zhe-xue-wen-xue.html">思哲</a>
-            <a href="https://www.futuremedia.work/english-study/index.html">英语</a>
-            <a href="https://www.futuremedia.work/tools-link.html">AI</a>
-            <a href="https://www.futuremedia.work/pansou.html">盘搜</a>
-            <a href="https://www.futuremedia.work/about.html">关于本站</a>
-            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
-        </nav>
-
-        <div class="header-main-content">
-            {% block header %}{% endblock %}
-        </div>
-    </header>
-    
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">{% include 'footer.html' %}</div>
-</body>
-<script>
-var IconList={{ IconList|tojson }};
-var utterancesLoad=0;
-{% if blogBase['themeMode']=='manual' %}
-let themeSettings={
-    "dark": ["dark","moon","#00f0ff","dark-blue"],
-    "light": ["light","sun","#ff5000","github-light"],
-    "auto": ["auto","sync","","preferred-color-scheme"]
-};
-function changeTheme(mode, icon, color, utheme){
-    document.documentElement.setAttribute("data-color-mode",mode);
-    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
-    document.getElementById("themeSwitch").parentNode.style.color=color;
-    if(utterancesLoad==1){utterancesTheme(utheme);}
-}
-function modeSwitch(){
-    let currentMode=document.documentElement.getAttribute('data-color-mode');
-    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
-    localStorage.setItem("meek_theme", newMode);
-    if(themeSettings[newMode]){
-        changeTheme(...themeSettings[newMode]);
-    }
-}
-function utterancesTheme(theme){
-    const message={type:'set-theme',theme: theme};
-    const iframe=document.getElementsByClassName('utterances-frame')[0];
-    iframe.contentWindow.postMessage(message,'https://utteranc.es');
-}
-if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
-{%- endif %}
-// [关键修复] 使用 tojson 过滤器确保JavaScript语法正确
-console.log("\n %c 未来传媒 " + {{ blogBase['GMEEK_VERSION']|tojson }} + " https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
-
-function addFavorite() {
-    try {
-        window.external.addFavorite(window.location.href, document.title);
-    } catch (e) {
-        try {
-            window.sidebar.addPanel(document.title, window.location.href, "");
-        } catch (e) {
-            alert("抱歉，您的浏览器不支持自动收藏功能。\n请使用 Ctrl+D (Windows) 或 Command+D (Mac) 来手动收藏。");
-        }
-    }
-}
-</script>
-{% block script %}{% endblock %}
-</html>
