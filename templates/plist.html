@@ -13,7 +13,7 @@
 <style>
 .avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;}
 .avatar:hover{transform: scale(1.15) rotate(360deg);}
-/* [关键修改] 从 .title-left a 中删除了 font-size:40px; */
+/* [样式已清理] 从 .title-left a 中删除了 font-size:40px; */
 .title-left a{color:inherit;text-decoration:none;vertical-align: bottom;font-weight: bold;font-family:Monaco;margin-left:8px;}
 .title-right{display:flex; margin-left:auto; align-items:center;}
 .title-right button{margin-right:8px;padding:16px;}
@@ -28,7 +28,7 @@
 .listLabels object{max-height:16px;max-width:24px;}
 
 #animated-subtitle {
-    min-height: 24px; /* 您可以根据字体大小调整 */
+    min-height: 24px;
 }
 
 @media (max-width: 600px) {
@@ -45,7 +45,6 @@
 {% block header %}
 <div class="title-left">
     <img src="{{ blogBase['avatarUrl'] }}" class="avatar circle" id="avatarImg" alt="avatar">
-    {# [关键修正] 将<a>标签替换为<h1>标签，以符合SEO规范 #}
     {%- if blogBase['displayTitle']=='Meekdai' -%}
     <h1 class="blogTitle" style="font-size: inherit; font-weight: bold; margin: 0; display: inline;"><a href="https://meekdai.com" style="color: inherit; text-decoration: none;"><span style="font-size:0;">M</span>eekdai</a></h1>
     {% else -%}
@@ -92,10 +91,7 @@
 <div id="animated-subtitle" style="margin-bottom: 16px; text-align: center; font-style: italic;"></div>
 
 <nav class="SideNav border">
-{# [ 关键修复 ] 
-   将错误的 `for num in postListJson` 循环方式，
-   修正为直接遍历文章列表的 `for post in postListJson`。
-#}
+{# [关键修复] 修正了遍历文章列表的循环方式 #}
 {% for post in postListJson -%}
 <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="{{ post['postUrl']|e }}">
     <div class="d-flex flex-items-center">
@@ -106,66 +102,3 @@
     <div class="listLabels">
         {% if post['commentNum']>0 %}<span class="Label" style="background-color:{{ blogBase['commentLabelColor'] }}">{{ post['commentNum'] }}</span>{% endif %}
         {% for label in post['labels'] -%}
-        <span class="Label LabelName" style="background-color:{{ blogBase['labelColorDict'].get(label, '#FFFFFF') }}"><object><a style="color:#fff" href="tag.html#{{ label }}">{{ label }}</a></object></span>
-        {%- endfor %}
-        <span class="Label LabelTime" style="background-color:{{ post['dateLabelColor'] }}">{{ post['createdDate'] }}</span>
-    </div>
-</a>
-{%- endfor %}
-</nav>
-{%- if blogBase['prevUrl']!='disabled' or blogBase['nextUrl']!='disabled' -%}
-<nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination">
-        {%- if blogBase['prevUrl']=='disabled' -%}
-        <span class="previous_page" aria-disabled="true">{{ i18n['Previous'] }}</span>
-        {% else -%}
-        <a class="previous_page" rel="previous" href="{{ blogBase['prevUrl'] }}" aria-label="Previous Page">{{ i18n['Previous'] }}</a>
-        {%- endif -%}
-
-        {%- if blogBase['nextUrl']=='disabled' -%}
-        <span class="next_page" aria-disabled="true">{{ i18n['Next'] }}</span>
-        {% else -%}
-        <a class="next_page" rel="next" href="{{ blogBase['nextUrl'] }}" aria-label="Next Page">{{ i18n['Next'] }}</a>
-        {%- endif -%}
-
-    </div>
-</nav>
-{%- endif %}
-{% endblock %}
-
-{% block script %}
-<script>
-// TypeIt.js 初始化脚本
-document.addEventListener('DOMContentLoaded', function () {
-  new TypeIt('#animated-subtitle', {
-    strings: ["{{ blogBase['subTitle'] }}"],
-    speed: 75,
-    waitUntilVisible: true,
-    cursor: false
-  }).go();
-});
-
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["upload"]);
-    iconTOP[i].parentNode.style.color="red";
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
-}
-
-{% for key, value in blogBase['exlink'].items() %}
-document.getElementById("{{ key }}").setAttribute("d",value=IconList["{{ key }}"]);
-{%- endfor %}
-
-{% for num in blogBase['singeListJson'] -%}
-{% if blogBase['singeListJson'][num]['labels'][0] in blogBase['singlePage'] %}
-document.getElementById("{{ blogBase['singeListJson'][num]['postTitle'] }}").setAttribute("d",value=IconList["{{ blogBase['singeListJson'][num]['labels'][0] }}"]);
-{% endif -%}
-{%- endfor %}
-</script>
-{{ blogBase['indexScript'] }}
-{% endblock %}
