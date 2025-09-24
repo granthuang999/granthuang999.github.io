@@ -140,20 +140,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    /* [新增] 标题缩放需要此行 */
     container-type: inline-size;
 }
 
-/* [最终修正] 为页眉标题设置动态字号 */
+/* [新增] 标题动态缩放核心代码 */
 .header-main-content h1 {
     min-width: 0;
-    /* [关键变更] 使用 min() 替代 clamp()，移除了最小字号限制，允许标题无限缩小以适应空间 */
     font-size: min(2.5rem, 8cqi) !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* 确保 h1 内部的链接也能继承动态字号 */
+/* [新增] 确保 h1 内的链接也能继承动态字号 */
 .header-main-content h1 a {
     font-size: inherit !important;
     color: inherit !important;
@@ -460,7 +460,6 @@ function utterancesTheme(theme){
     iframe.contentWindow.postMessage(message,'https://utteranc.es');
 }
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
-// [关键修复] 使用 tojson 过滤器确保JavaScript语法正确
 console.log("\n %c 未来传媒 " + "last" + " https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
 
 function addFavorite() {
