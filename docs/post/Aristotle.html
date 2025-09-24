@@ -182,7 +182,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </style>
 
 <style>
-.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+/* [唯一改动] 删除了 font-size 属性 */
+.postTitle{margin: auto 0;font-weight:bold;}
 .title-right{display:flex;margin:auto 0 0 auto;}
 .title-right .circle{padding: 14px 16px;margin-right:8px;}
 #postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
@@ -190,7 +191,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .g-emoji{font-size:24px;}
 @media (max-width: 600px) {
     body {padding: 8px;}
-    .postTitle{font-size:24px;}
+    /* [唯一改动] 删除了 .postTitle 的 font-size 属性 */
     .post-footer { flex-direction: column; align-items: flex-start; }
 }
 .copy-feedback {
@@ -560,17 +561,14 @@ function addFavorite() {
 </script>
 
 <script>
-// [关键修复] 重写了TypeIt脚本，使其更健壮，不会因变量为空而报错
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "亚里士多德的实践智慧理论为中年人提供了应对职业瓶颈、人际关系和人生意义困惑的哲学工具，通过中庸之道和德性伦理学帮助中年人在复杂现实中做出明智决策。";
-    const dailySentenceRaw = `""`; // Use tojson for safety
+    const dailySentenceRaw = `""`; 
     let typeitStrings = [];
 
-    // 优先使用 quoteText
     if (quoteText && quoteText.trim() && quoteText !== 'None' && quoteText !== 'null') {
         typeitStrings.push(quoteText);
     } 
-    // 否则，尝试解析 dailySentence
     else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
         try {
             const parsedSentences = JSON.parse(dailySentenceRaw);
@@ -597,7 +595,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 分享功能的 JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const postUrl = window.location.href;
     const postTitle = document.title;
