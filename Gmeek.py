@@ -430,20 +430,41 @@ class GMEEK:
                 reverse=True
             )
             
-            filename = f"{p.get_pinyin(tag)}.html"
-            
-            render_dict = self.blogBase.copy()
-            render_dict["canonicalUrl"] = f"{self.blogBase['homeUrl']}/{filename}"
-            
-            context = {
-                'blogBase': render_dict,
-                'i18n': self.i18n,
-                'IconList': IconBase,
-                'current_tag_name': tag,
-                'posts_for_tag': posts_for_this_tag
-            }
-            self.renderHtml('tag_single.html', context, f"{self.root_dir}{filename}")
-            print(f"Created single tag page: {filename}")
+            post_count = len(posts_for_this_tag)
+            page_size = self.blogBase["onePageListNum"]
+            num_pages = (post_count + page_size - 1) // page_size or 1
+            tag_pinyin = p.get_pinyin(tag)
+
+            for page_num in range(num_pages):
+                start_index = page_num * page_size
+                end_index = start_index + page_size
+                paginated_posts = posts_for_this_tag[start_index:end_index]
+
+                render_dict = self.blogBase.copy()
+                render_dict["current_tag_name"] = tag
+                
+                if page_num == 0:
+                    filename = f"{tag_pinyin}.html"
+                    render_dict["canonicalUrl"] = f"{self.blogBase['homeUrl']}/{filename}"
+                    render_dict["prevUrl"] = "disabled"
+                else:
+                    filename = f"{tag_pinyin}-page{page_num + 1}.html"
+                    render_dict["canonicalUrl"] = f"{self.blogBase['homeUrl']}/{filename}"
+                    render_dict["prevUrl"] = f"/{tag_pinyin}.html" if page_num == 1 else f"/{tag_pinyin}-page{page_num}.html"
+
+                render_dict["nextUrl"] = f"/{tag_pinyin}-page{page_num + 2}.html" if end_index < post_count else "disabled"
+
+                context = {
+                    'blogBase': render_dict,
+                    'i18n': self.i18n,
+                    'IconList': IconBase,
+                    'current_tag_name': tag,
+                    'posts_for_tag': paginated_posts
+                }
+                
+                html_path = os.path.join(self.root_dir, filename)
+                self.renderHtml('tag_single.html', context, html_path)
+                print(f"Created single tag page: {html_path}")
 
     def runAll(self):
         print("====== start create static html ======")
