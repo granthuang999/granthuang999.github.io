@@ -53,6 +53,25 @@
     </div>
     {% endfor %}
 </div>
+
+{%- if blogBase['prevUrl']!='disabled' or blogBase['nextUrl']!='disabled' -%}
+<nav class="paginate-container" aria-label="Pagination">
+    <div class="pagination">
+        {%- if blogBase['prevUrl']=='disabled' -%}
+        <span class="previous_page" aria-disabled="true">{{ i18n['Previous'] }}</span>
+        {% else -%}
+        <a class="previous_page" rel="previous" href="{{ blogBase['prevUrl'] }}" aria-label="Previous Page">{{ i18n['Previous'] }}</a>
+        {%- endif -%}
+
+        {%- if blogBase['nextUrl']=='disabled' -%}
+        <span class="next_page" aria-disabled="true">{{ i18n['Next'] }}</span>
+        {% else -%}
+        <a class="next_page" rel="next" href="{{ blogBase['nextUrl'] }}" aria-label="Next Page">{{ i18n['Next'] }}</a>
+        {%- endif -%}
+
+    </div>
+</nav>
+{%- endif %}
 {% endblock %}
 
 {% block script %}
