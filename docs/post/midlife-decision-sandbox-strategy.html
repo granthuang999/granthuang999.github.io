@@ -142,19 +142,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     width: 100%;
 }
 
-/* [清理] 移除了之前无效的CSS缩放代码，现在由JS处理 */
 .header-main-content h1 {
     min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* 初始最大字号，脚本会从此开始缩小 */
     font-size: 40px; 
 }
 
 .header-main-content h1 a {
     color: inherit !important;
-    font-size: inherit !important; /* 确保a标签继承h1的字号 */
+    font-size: inherit !important;
 }
 
 
@@ -515,22 +513,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const h1Element = document.querySelector('.header-main-content h1');
         if (!h1Element) return;
 
-        // 目标元素可能是h1自身，也可能是它内部的a标签
+        // [关键修正] 通过检查是否存在头像，来判断是否为首页
+        // 如果是首页，则不执行任何缩放操作
+        const avatar = document.querySelector('img.avatar');
+        if (avatar) {
+            const homeTitle = h1Element.querySelector('a') || h1Element;
+            // 确保首页标题是正常大小
+            homeTitle.style.fontSize = '40px';
+            return; 
+        }
+
+        // --- 以下是针对非首页（如文章页）的缩放逻辑 ---
+
         const textElement = h1Element.querySelector('a') || h1Element;
         const container = h1Element.parentElement;
         
-        // 确保容器和文本元素可见且存在
         if (!container || !textElement) return;
 
-        const maxFontSize = 40; // 最大字号 (px)
-        const minFontSize = 12; // 最小字号 (px)
+        const maxFontSize = 40;
+        const minFontSize = 12;
 
-        // 重置为最大字号开始计算
         textElement.style.fontSize = maxFontSize + 'px';
         let currentFontSize = maxFontSize;
 
-        // 当文本宽度超出容器宽度时，逐步减小字号
-        // 添加一个安全检查，防止无限循环
         let attempts = 0;
         while (textElement.scrollWidth > container.clientWidth && currentFontSize > minFontSize && attempts < 100) {
             currentFontSize--;
@@ -539,7 +544,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 防抖函数，防止窗口大小调整时函数被过于频繁地调用
     function debounce(func, delay) {
         let timeout;
         return function(...args) {
@@ -547,12 +551,8 @@ document.addEventListener('DOMContentLoaded', function() {
             timeout = setTimeout(() => func.apply(this, args), delay);
         };
     }
-
-    // 页面加载时立即执行一次
-    // 使用一个小的延迟，以确保所有内容（尤其是字体）都已渲染
+    
     setTimeout(fitHeading, 100);
-
-    // 当窗口大小改变时，通过防抖函数再次执行
     window.addEventListener('resize', debounce(fitHeading, 100));
 });
 </script>
