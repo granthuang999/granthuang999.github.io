@@ -1,3 +1,93 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
+<head>
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/439c49a4efb78045d80bf9f0/script.js"></script> <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://www.futuremedia.work/post/weread-shelf-sync.html" />
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://www.futuremedia.work/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="/images/bb.png"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="通过https://github.com/sailor0913/weread-to-notion得到启发把微信读书的状态同步到github issues，然后渲染生成本页面，因为原来的api已经修改了权限，导致现在无法获取读书划线和评论，只能获取书籍的基本信息和读书状态，也欢迎大家在本页面下留言讨论，谢谢">
+<meta name="keywords" content="weread，微信读书，微信读书同步，个人书单，中年书单">
+<meta property="og:title" content="我的微信读书书架 / My WeRead Bookshelf">
+<meta property="og:description" content="通过https://github.com/sailor0913/weread-to-notion得到启发把微信读书的状态同步到github issues，然后渲染生成本页面，因为原来的api已经修改了权限，导致现在无法获取读书划线和评论，只能获取书籍的基本信息和读书状态，也欢迎大家在本页面下留言讨论，谢谢">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.futuremedia.work/post/weread-shelf-sync.html">
+<meta property="og:image" content="https://www.futuremedia.work/images/big.png">
+<title>我的微信读书书架 / My WeRead Bookshelf</title>
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "我的微信读书书架 / My WeRead Bookshelf",
+    "image": "https://www.futuremedia.work/images/big.png",
+    "datePublished": "2025-09-11T11:15:39+08:00",
+    "author": {
+        "@type": "Person",
+        "name": "未来传媒"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "未来传媒",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/bb.png"
+        }
+
+    },
+    "description": "通过https://github.com/sailor0913/weread-to-notion得到启发把微信读书的状态同步到github issues，然后渲染生成本页面，因为原来的api已经修改了权限，导致现在无法获取读书划线和评论，只能获取书籍的基本信息和读书状态，也欢迎大家在本页面下留言讨论，谢谢"
+}
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?451d8fc877b33408800a89a6e8ddc313";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDL6BTW5FM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FDL6BTW5FM');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sh44c07wsg");
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409938612356670" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "未来传媒",
+    "url": "https://www.futuremedia.work",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.futuremedia.work/tag.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+</head>
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #footer {margin-top:64px; text-align: center;font-size: small;}
@@ -53,9 +143,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     container-type: inline-size;
 }
 
-/* 核心动态字号规则 */
+/* [最终修正] 为页眉标题设置动态字号 */
 .header-main-content h1 {
     min-width: 0;
+    /* [关键变更] 使用 min() 替代 clamp()，移除了最小字号限制，允许标题无限缩小以适应空间 */
     font-size: min(2.5rem, 8cqi) !important;
     white-space: nowrap;
     overflow: hidden;
@@ -89,3 +180,650 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     background-color: rgba(255, 255, 255, 0.15);
 }
 </style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+    .post-footer { flex-direction: column; align-items: flex-start; }
+}
+
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--borderColor-default, var(--color-border-default));
+}
+.share-buttons-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.share-button {
+    display: inline-block;
+    padding: 4px 12px; 
+    border-radius: 6px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 12px; 
+    transition: opacity 0.3s;
+    border: none;
+}
+.share-button:hover {
+    opacity: 0.85;
+}
+.bottom-text-inline {
+    font-size: small;
+    white-space: nowrap; 
+}
+.share-button.x { background-color: #1DA1F2; }
+.share-button.facebook { background-color: #1877F2; }
+.share-button.linkedin { background-color: #0A66C2; }
+.share-button.weibo { background-color: #e6162d; }
+.share-button.telegram { background-color: #26A5E4; }
+</style>
+<style>
+
+</style>
+
+
+
+<body>
+    <header id="header" class="page-header">
+        <nav class="header-nav-menu">
+            <a href="https://www.futuremedia.work/">首页</a>
+            <a href="https://www.futuremedia.work/shen-xin-jian-kang.html">健康</a>
+            <a href="https://www.futuremedia.work/tou-zi-li-cai.html">赚钱</a>
+            <a href="https://www.futuremedia.work/xue-xi-cheng-chang.html">学习</a>
+            <a href="https://www.futuremedia.work/chao-liu-gong-ju.html">未来</a>
+            <a href="https://www.futuremedia.work/zhe-xue-wen-xue.html">思哲</a>
+            <a href="https://www.futuremedia.work/english-study/index.html">英语</a>
+            <a href="https://www.futuremedia.work/tools-link.html">AI</a>
+            <a href="https://www.futuremedia.work/pansou.html">盘搜</a>
+            <a href="https://www.futuremedia.work/about.html">关于本站</a>
+            <a href="javascript:void(0);" onclick="addFavorite();" title="将本站加入收藏夹">收藏本站</a>
+        </nav>
+
+        <div class="header-main-content">
+            
+
+<h1 class="postTitle">我的微信读书书架 / My WeRead Bookshelf</h1>
+<div class="title-right">
+    <a href="https://www.futuremedia.work" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+
+        </div>
+    </header>
+    
+    <div id="content">
+<div style="text-align: center; margin-bottom: 24px;">
+    <img src="https://www.futuremedia.work/images/big.png" style="max-width: 100%; border-radius: 8px;" alt="我的微信读书书架 / My WeRead Bookshelf">
+</div>
+
+<div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
+
+<div class="markdown-body" id="postBody"><markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">封面</th>
+<th align="left">书名</th>
+<th align="left">作者</th>
+<th align="left">分类</th>
+<th align="center">阅读状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/912324" rel="nofollow"><img src="https://camo.githubusercontent.com/45e7f9b8b08cfe12b01f5a737864743be265111dea19cc3c90093e7f34f1dc32/68747470733a2f2f776671717265616465722d313235323331373832322e696d6167652e6d7971636c6f75642e636f6d2f636f7665722f3332342f3931323332342f74365f3931323332342e6a7067" alt="鼠疫" width="60" data-canonical-src="https://wfqqreader-1252317822.image.myqcloud.com/cover/324/912324/t6_912324.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/912324" rel="nofollow">《鼠疫》</a></td>
+<td align="left">[法]加缪</td>
+<td align="left">文学-外国文学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/22261199" rel="nofollow"><img src="https://camo.githubusercontent.com/8b3bf9a2ab1c239f6d10741c08626ef33e3db28d30c4c6fb1d9c323e138489b7/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f31362f59756557656e5f32323236313139392f74365f59756557656e5f32323236313139392e6a7067" alt="剑来" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/16/YueWen_22261199/t6_YueWen_22261199.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/22261199" rel="nofollow">《剑来》</a></td>
+<td align="left">烽火戏诸侯</td>
+<td align="left">男生小说-东方玄幻</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300151958" rel="nofollow"><img src="https://camo.githubusercontent.com/94ea89fc480d9b92361c3930335d840b2249396e9e4d78179f887a1eeed840d8/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f37362f6370706c6174666f726d5f6e6b636a6a75366676726467657572736372717172352f74365f6370706c6174666f726d5f6e6b636a6a7536667672646765757273637271717235313735323033303539392e6a7067" alt="王阳明心学入门三步走（全三册）" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/76/cpplatform_nkcjju6fvrdgeurscrqqr5/t6_cpplatform_nkcjju6fvrdgeurscrqqr51752030599.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300151958" rel="nofollow">《王阳明心学入门三步走（全三册）》</a></td>
+<td align="left">度阴山</td>
+<td align="left">哲学宗教-东方哲学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300018688" rel="nofollow"><img src="https://camo.githubusercontent.com/be03bb41050ef7e40de3bd03d9f8d8f33342b4c4ceeb2fc0ac8dba16eb38d49f/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f38382f333330303031383638382f74365f333330303031383638382e6a7067" alt="生命之书：365天的静心冥想" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/88/3300018688/t6_3300018688.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300018688" rel="nofollow">《生命之书：365天的静心冥想》</a></td>
+<td align="left">克里希那穆提</td>
+<td align="left">哲学宗教-哲学读物</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300130728" rel="nofollow"><img src="https://camo.githubusercontent.com/b92a1a8be8bc060864c7750a2921bb47f2607cca82b6ed7a0009e6751e9b849a/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f35362f6370706c6174666f726d5f7172397963343761397a3732637a716c366d6a6d6c792f74365f6370706c6174666f726d5f7172397963343761397a3732637a716c366d6a6d6c79313733363735333134312e6a7067" alt="时间的香气：驻留的艺术（韩炳哲作品系列）" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/56/cpplatform_qr9yc47a9z72czql6mjmly/t6_cpplatform_qr9yc47a9z72czql6mjmly1736753141.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300130728" rel="nofollow">《时间的香气：驻留的艺术（韩炳哲作品系列）》</a></td>
+<td align="left">[德]韩炳哲</td>
+<td align="left">哲学宗教-西方哲学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300054813" rel="nofollow"><img src="https://camo.githubusercontent.com/889f7ed03e47a2a01091da67b38199cd88aa016e70bdcec3a9820f8dcc4c11bd/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f39362f6370706c6174666f726d5f35796d71696362786162687474396a38766b627377722f74365f6370706c6174666f726d5f35796d71696362786162687474396a38766b62737772313638313130373430322e6a7067" alt="社会心理学（第11版）" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/96/cpplatform_5ymqicbxabhtt9j8vkbswr/t6_cpplatform_5ymqicbxabhtt9j8vkbswr1681107402.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300054813" rel="nofollow">《社会心理学（第11版）》</a></td>
+<td align="left">[美]戴维·迈尔斯</td>
+<td align="left">心理-社会心理学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/25916080" rel="nofollow"><img src="https://camo.githubusercontent.com/8e7eae04cdb247591ce9c99f77ca1f774e6c4eeb2a9b97271afd94d77df85017/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f38352f59756557656e5f32353931363038302f74365f59756557656e5f32353931363038302e6a7067" alt="带团队一定要会心理学：99%的管理失败源于不懂员工心理" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/85/YueWen_25916080/t6_YueWen_25916080.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/25916080" rel="nofollow">《带团队一定要会心理学：99%的管理失败源于不懂员工心理》</a></td>
+<td align="left">周剑熙</td>
+<td align="left">经济理财-管理</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300094047" rel="nofollow"><img src="https://camo.githubusercontent.com/4875c0d23f405f3f1a0ca2b8459b33b11a8554eb22cc34f868017b5ee5cdebc1/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f31382f6370706c6174666f726d5f756a3477697970677a666675733164726d786d7671322f74365f6370706c6174666f726d5f756a3477697970677a666675733164726d786d767132313731323437323432382e6a7067" alt="反内耗心理学" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/18/cpplatform_uj4wiypgzffus1drmxmvq2/t6_cpplatform_uj4wiypgzffus1drmxmvq21712472428.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300094047" rel="nofollow">《反内耗心理学》</a></td>
+<td align="left">马浩天</td>
+<td align="left">心理-积极心理学</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300070874" rel="nofollow"><img src="https://camo.githubusercontent.com/3ce9d721748abe73c13a90af271ab37a98495bc6d209ec605215ea81f7fbda79/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f32372f6370706c6174666f726d5f7873616a706a6d373534656a6a7464767567687777762f74365f6370706c6174666f726d5f7873616a706a6d373534656a6a746476756768777776313639343430323437302e6a7067" alt="宝贵的人生建议" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/27/cpplatform_xsajpjm754ejjtdvughwwv/t6_cpplatform_xsajpjm754ejjtdvughwwv1694402470.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300070874" rel="nofollow">《宝贵的人生建议》</a></td>
+<td align="left">[美]凯文·凯利</td>
+<td align="left">个人成长-励志成长</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/24282914" rel="nofollow"><img src="https://camo.githubusercontent.com/9fab05db9fae92c3bfecba5454b005e2a6b10713c1f964d7bdff295051b917a9/68747470733a2f2f776671717265616465722d313235323331373832322e696d6167652e6d7971636c6f75642e636f6d2f636f7665722f3931342f32343238323931342f74365f32343238323931342e6a7067" alt="活在此时此刻" width="60" data-canonical-src="https://wfqqreader-1252317822.image.myqcloud.com/cover/914/24282914/t6_24282914.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/24282914" rel="nofollow">《活在此时此刻》</a></td>
+<td align="left">一行禅师</td>
+<td align="left">文学-散文杂著</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/814146" rel="nofollow"><img src="https://camo.githubusercontent.com/be01444a828ea8fd4111cb06e0e094e1512783d9d4a9aea457915ba8d6adba98/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f31362f79756577656e5f3831343134362f74365f79756577656e5f383134313436313638393332383431372e6a7067" alt="一个叫欧维的男人决定去死（同名电影原著）" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/16/yuewen_814146/t6_yuewen_8141461689328417.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/814146" rel="nofollow">《一个叫欧维的男人决定去死（同名电影原著）》</a></td>
+<td align="left">弗雷德里克·巴克曼</td>
+<td align="left">精品小说-影视原著</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300103253" rel="nofollow"><img src="https://camo.githubusercontent.com/b631067248d76efad528fb1eb73ef22d44656cd8ce7f1aca92539010108ca897/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f392f6370706c6174666f726d5f666e736d78686e3979713379726275747563747a6e7a2f74365f6370706c6174666f726d5f666e736d78686e3979713379726275747563747a6e7a313731393338363032302e6a7067" alt="中年之路（套装共2册）" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/9/cpplatform_fnsmxhn9yq3yrbutuctznz/t6_cpplatform_fnsmxhn9yq3yrbutuctznz1719386020.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300103253" rel="nofollow">《中年之路（套装共2册）》</a></td>
+<td align="left">[美]詹姆斯·霍利斯</td>
+<td align="left">心理-心理学应用</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/33628204" rel="nofollow"><img src="https://camo.githubusercontent.com/e462516d46c37d279fb6959c4fdb59892afa8a70b625ccb4688b506ba2620080/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f38362f59756557656e5f33333632383230342f74365f59756557656e5f33333632383230342e6a7067" alt="认知觉醒：开启自我改变的原动力" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/86/YueWen_33628204/t6_YueWen_33628204.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/33628204" rel="nofollow">《认知觉醒：开启自我改变的原动力》</a></td>
+<td align="left">周岭</td>
+<td align="left">心理-认知与行为</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/40437004" rel="nofollow"><img src="https://camo.githubusercontent.com/a4ae16b48b27e66f198685f358a698c76db9de97c204a8d213529bb38ff8ee17/68747470733a2f2f776671717265616465722d313235323331373832322e696d6167652e6d7971636c6f75642e636f6d2f636f7665722f342f34303433373030342f74365f34303433373030342e6a7067" alt="在你们离开以前（一本治愈两代人的生命自度书）" width="60" data-canonical-src="https://wfqqreader-1252317822.image.myqcloud.com/cover/4/40437004/t6_40437004.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/40437004" rel="nofollow">《在你们离开以前（一本治愈两代人的生命自度书）》</a></td>
+<td align="left">毕啸南</td>
+<td align="left">个人成长-励志成长</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/25615385" rel="nofollow"><img src="https://camo.githubusercontent.com/3fab9268d055ac2d8d477ad043ce2c466d0c2b7973a387d0e9b17242f8b78037/68747470733a2f2f776671717265616465722d313235323331373832322e696d6167652e6d7971636c6f75642e636f6d2f636f7665722f3338352f32353631353338352f74365f32353631353338352e6a7067" alt="被讨厌的勇气：“自我启发之父”阿德勒的哲学课" width="60" data-canonical-src="https://wfqqreader-1252317822.image.myqcloud.com/cover/385/25615385/t6_25615385.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/25615385" rel="nofollow">《被讨厌的勇气：“自我启发之父”阿德勒的哲学课》</a></td>
+<td align="left">岸见一郎 古贺史健</td>
+<td align="left">心理-积极心理学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/27689995" rel="nofollow"><img src="https://camo.githubusercontent.com/bad2c6211a73c7fe8c8e2cbde852fa62832742dbb6d82d9367835eb84ebfc421/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f372f59756557656e5f32373638393939352f74365f59756557656e5f32373638393939352e6a7067" alt="查拉图斯特拉如是说（果麦经典）" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/7/YueWen_27689995/t6_YueWen_27689995.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/27689995" rel="nofollow">《查拉图斯特拉如是说（果麦经典）》</a></td>
+<td align="left">尼采</td>
+<td align="left">哲学宗教-西方哲学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/3300056286" rel="nofollow"><img src="https://camo.githubusercontent.com/27c4f34d58592e033201ca0fccf8c066713cada9954f82e1c7e2ae0491521e4e/68747470733a2f2f63646e2e7765726561642e71712e636f6d2f7765726561642f636f7665722f34312f6370706c6174666f726d5f6273796a61756579633233787275773463337877797a2f74365f6370706c6174666f726d5f6273796a61756579633233787275773463337877797a313638313936303037382e6a7067" alt="西方哲学史" width="60" data-canonical-src="https://cdn.weread.qq.com/weread/cover/41/cpplatform_bsyjaueyc23xruw4c3xwyz/t6_cpplatform_bsyjaueyc23xruw4c3xwyz1681960078.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/3300056286" rel="nofollow">《西方哲学史》</a></td>
+<td align="left">勃特兰·罗素</td>
+<td align="left">哲学宗教-西方哲学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/758886" rel="nofollow"><img src="https://camo.githubusercontent.com/f2277327fd9747fc32c4975add3e6c18d022046de8c8263975fac18d11f2d6b4/68747470733a2f2f776671717265616465722d313235323331373832322e696d6167652e6d7971636c6f75642e636f6d2f636f7665722f3838362f3735383838362f74365f3735383838362e6a7067" alt="论自由（译林人文精选）" width="60" data-canonical-src="https://wfqqreader-1252317822.image.myqcloud.com/cover/886/758886/t6_758886.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/758886" rel="nofollow">《论自由（译林人文精选）》</a></td>
+<td align="left">密尔</td>
+<td align="left">哲学宗教-西方哲学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/30784523" rel="nofollow"><img src="https://camo.githubusercontent.com/5904e548ee23e8c9d960101722ce1e474f0edc6313c24c5c957f724edab8442b/68747470733a2f2f776671717265616465722d313235323331373832322e696d6167652e6d7971636c6f75642e636f6d2f636f7665722f3532332f33303738343532332f74365f33303738343532332e6a7067" alt="On Liberty（《论自由》）" width="60" data-canonical-src="https://wfqqreader-1252317822.image.myqcloud.com/cover/523/30784523/t6_30784523.jpg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/30784523" rel="nofollow">《On Liberty（《论自由》）》</a></td>
+<td align="left">约翰·斯图亚特·密尔</td>
+<td align="left">哲学宗教-西方哲学</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_1l60lA0n1DzF6nJ6p0Bcd8sl" rel="nofollow"><img src="https://camo.githubusercontent.com/bbd661dbed603fb9bfceeb939f85a680bebe344894e337a98c309fd814063450/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f35315a444452444663446153366e49366f6f316b6842694c5f7061727365636f766572" alt="巨流河_齐邦媛_台湾版本" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_51ZDDRDFcDaS6nI6oo1khBiL_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_1l60lA0n1DzF6nJ6p0Bcd8sl" rel="nofollow">《巨流河_齐邦媛_台湾版本》</a></td>
+<td align="left">齐邦媛</td>
+<td align="left">无</td>
+<td align="center">✅ 已读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_2Hk69E6A4DzF6nJ6p04Yu0dT" rel="nofollow"><img src="https://camo.githubusercontent.com/86132d027de31bb74a3555b82bf9f77e228f1323842669417cc8640e14ea437d/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f34724541375141347541717336697336676d414a453353585f7061727365636f766572" alt="一九八四" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_4rEA7QA4uAqs6is6gmAJE3SX_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_2Hk69E6A4DzF6nJ6p04Yu0dT" rel="nofollow">《一九八四》</a></td>
+<td align="left">乔治·奥威尔</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_703FKBFKU0if6qX6p0AW8BDN" rel="nofollow"><img src="https://camo.githubusercontent.com/6f7cd8538ba105d129b0db66713760aaf270e338b7aaba0655ff5c4e720eed25/68747470733a2f2f7765726561642d313235383437363234332e66696c652e6d7971636c6f75642e636f6d2f6170702f6173736574732f626f6f6b636f7665722f626f6f6b5f636f7665725f64656661756c745f696d706f727465645f30362e706e67" alt="How to Say It®" width="60" data-canonical-src="https://weread-1258476243.file.myqcloud.com/app/assets/bookcover/book_cover_default_imported_06.png" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_703FKBFKU0if6qX6p0AW8BDN" rel="nofollow">《How to Say It®》</a></td>
+<td align="left">Rosalie Maggio</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_7ziFJuFKU0if6qX6p0GfA451" rel="nofollow"><img src="https://camo.githubusercontent.com/97ca054f57fc31287f341aaa74acc0849fa49ca9b30d753437f2bc26c966bc16/68747470733a2f2f7765726561642d313235383437363234332e66696c652e6d7971636c6f75642e636f6d2f6170702f6173736574732f626f6f6b636f7665722f626f6f6b5f636f7665725f64656661756c745f696d706f727465645f30342e706e67" alt="How to Say It® At Work" width="60" data-canonical-src="https://weread-1258476243.file.myqcloud.com/app/assets/bookcover/book_cover_default_imported_04.png" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_7ziFJuFKU0if6qX6p0GfA451" rel="nofollow">《How to Say It® At Work》</a></td>
+<td align="left">Jack Griffin</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_60KAjUAkfBYE6p46p0DxX9tB" rel="nofollow"><img src="https://camo.githubusercontent.com/1187c9757dbcda3bd5cd93ab1ed571baf59099211346b453019016c568955774/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f36304b416a55416b664259453670343670304478583974425f7061727365636f766572" alt="我的二本学生（献给二本院校新生的入学指南；对二本学生成长和困惑的体认；15年一线教学经验的分享；近百名学生的现身说法） (黄灯) " width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_60KAjUAkfBYE6p46p0DxX9tB_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_60KAjUAkfBYE6p46p0DxX9tB" rel="nofollow">《我的二本学生（献给二本院校新生的入学指南；对二本学生成长和困惑的体认；15年一线教学经验的分享；近百名学生的现身说法） (黄灯) 》</a></td>
+<td align="left">黄灯</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_AeH7uz7tqDv86nK6p0GvAGzc" rel="nofollow"><img src="https://camo.githubusercontent.com/1c1ec3421cfb31d68590fb7e0897ca393fdf7eb2336504774dfbc0f7b96d017d/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f32435034664234666e30764d366d69366c334237703578645f7061727365636f766572" alt="百年孤独(马尔克斯指定译本,无增删)" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_2CP4fB4fn0vM6mi6l3B7p5xd_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_AeH7uz7tqDv86nK6p0GvAGzc" rel="nofollow">《百年孤独(马尔克斯指定译本,无增删)》</a></td>
+<td align="left">ePUBw.COM</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_35MDTUDSYDr16nL6p0BvA9I9" rel="nofollow"><img src="https://camo.githubusercontent.com/6f7cd8538ba105d129b0db66713760aaf270e338b7aaba0655ff5c4e720eed25/68747470733a2f2f7765726561642d313235383437363234332e66696c652e6d7971636c6f75642e636f6d2f6170702f6173736574732f626f6f6b636f7665722f626f6f6b5f636f7665725f64656661756c745f696d706f727465645f30362e706e67" alt="亚当·德永 Adam Tokunaga56002" width="60" data-canonical-src="https://weread-1258476243.file.myqcloud.com/app/assets/bookcover/book_cover_default_imported_06.png" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_35MDTUDSYDr16nL6p0BvA9I9" rel="nofollow">《亚当·德永 Adam Tokunaga56002》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_8aU7vC7tqDv86nK6p05nX1EY" rel="nofollow"><img src="https://camo.githubusercontent.com/ad152a1fe235c433cfea041839f6e8fbe854b26a0353009a2e22215702ecb4e1/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f476867394e55394e78454e73366e413670363645553775305f7061727365636f766572" alt="黄金时代" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_Ghg9NU9NxENs6nA6p66EU7u0_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_8aU7vC7tqDv86nK6p05nX1EY" rel="nofollow">《黄金时代》</a></td>
+<td align="left">王小波</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_1pFAU1ATREqq6nE6p0Fl09rH" rel="nofollow"><img src="https://camo.githubusercontent.com/05e36a821e0c9478a858b3d3f3bb1985429260cf564ad2e7704349d1ee69250c/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f383955396753396774476947366975366770376867353574365f7061727365636f766572" alt="跨越不可能 -- 科特勒 -- 2021 -- 中信出版集团 -- 9787521735970 -- decc2fa7beda98f797a76afa9c1b4419 -- Anna’s Archive" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_89U9gS9gtGiG6iu6gp7hg55t6_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_1pFAU1ATREqq6nE6p0Fl09rH" rel="nofollow">《跨越不可能 -- 科特勒 -- 2021 -- 中信出版集团 -- 9787521735970 -- decc2fa7beda98f797a76afa9c1b4419 -- Anna’s Archive》</a></td>
+<td align="left">[美]史蒂芬·科特勒</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_9uk1is1iXGWZ6jb6krDQbAxB" rel="nofollow"><img src="https://camo.githubusercontent.com/d353cf96bfc71105a0d35328103b8282fa350122cde375d6e60d1e980fa97c37/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f39756b31697331695847575a366a62366b724451624178425f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1917 [丹麦]亨利克·彭托皮丹-幸运儿彼尔（上下）（周永铭、甄建国译，替本史慎微、余生译本，上海译文出版社1991）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_9uk1is1iXGWZ6jb6krDQbAxB_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_9uk1is1iXGWZ6jb6krDQbAxB" rel="nofollow">《获诺贝尔文学奖作家丛书 1917 [丹麦]亨利克·彭托皮丹-幸运儿彼尔（上下）（周永铭、甄建国译，替本史慎微、余生译本，上海译文出版社1991）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_2Py5kQ5lCGag6ja6kr5Ss3D8" rel="nofollow"><img src="https://camo.githubusercontent.com/4aa134ce91c30d259fac4cbcc04b29130f1ce544a1962bede012df74c526e82e/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f325079356b51356c43476167366a61366b723553733344385f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1912 [德]盖哈特·霍普特曼-群鼠（陈恕林、章国锋、胡其鼎译，漓江出版社1997）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_2Py5kQ5lCGag6ja6kr5Ss3D8_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_2Py5kQ5lCGag6ja6kr5Ss3D8" rel="nofollow">《获诺贝尔文学奖作家丛书 1912 [德]盖哈特·霍普特曼-群鼠（陈恕林、章国锋、胡其鼎译，漓江出版社1997）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_9qf1K91JfGWZ6jb6kr1CYFAy" rel="nofollow"><img src="https://camo.githubusercontent.com/59293f6a9512442904cac621f786a55f4c8c8b55f3c3df45effc4f19aeff4be9/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f33707534365134353239456e36687436676435326c47446e5f7061727365636f766572" alt="诺贝尔文学奖大师代表作品(套装共20册)(内含石黑一雄系列套装：《远山淡影》《被掩埋的巨人》等) (Fountain·泉系列)" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_3pu46Q4529En6ht6gd52lGDn_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_9qf1K91JfGWZ6jb6kr1CYFAy" rel="nofollow">《诺贝尔文学奖大师代表作品(套装共20册)(内含石黑一雄系列套装：《远山淡影》《被掩埋的巨人》等) (Fountain·泉系列)》</a></td>
+<td align="left">Digital Lab</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_35M5oe5pLGag6ja6kr7oQ2kM" rel="nofollow"><img src="https://camo.githubusercontent.com/cd6fdd6fe785fe9cc3a5c0081b93a86fdd36f2fe9dce8e0c1d0110703fc2ae5a/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f33354d356f6535704c476167366a61366b72376f51326b4d5f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1919 [瑞士]卡尔·施皮特勒-奥林匹斯的春天（上下）（施岷译，漓江出版社1996）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_35M5oe5pLGag6ja6kr7oQ2kM_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_35M5oe5pLGag6ja6kr7oQ2kM" rel="nofollow">《获诺贝尔文学奖作家丛书 1919 [瑞士]卡尔·施皮特勒-奥林匹斯的春天（上下）（施岷译，漓江出版社1996）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_Aa85zE5xlGag6ja6kr9PJE1l" rel="nofollow"><img src="https://camo.githubusercontent.com/35a1272a88796ea66ee5147a5011613f94ee4d2c627a892278bc26b6f77e6d9b/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f416138357a4535786c476167366a61366b7239504a45316c5f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1932 [英]约翰·高尔斯华绥-有产者（全三部）（周煦良译，替本网格本《福尔赛世家》，上海译文出版社1978）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_Aa85zE5xlGag6ja6kr9PJE1l_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_Aa85zE5xlGag6ja6kr9PJE1l" rel="nofollow">《获诺贝尔文学奖作家丛书 1932 [英]约翰·高尔斯华绥-有产者（全三部）（周煦良译，替本网格本《福尔赛世家》，上海译文出版社1978）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_8aU67i663Gag6ja6kr5762wc" rel="nofollow"><img src="https://camo.githubusercontent.com/6b04e4fee311c5eda93e00b43779a87edd34f5fb40cd7a4eb41a24a299d147d8/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f386155363769363633476167366a61366b723537363277635f7061727365636f766572" alt="1933 伊凡·亚历克塞维奇·蒲宁 俄国  米佳的爱情(戴骢等译，安徽文艺版)" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_8aU67i663Gag6ja6kr5762wc_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_8aU67i663Gag6ja6kr5762wc" rel="nofollow">《1933 伊凡·亚历克塞维奇·蒲宁 俄国  米佳的爱情(戴骢等译，安徽文艺版)》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_87w6KS6MVGag6ja6krEnR3KZ" rel="nofollow"><img src="https://camo.githubusercontent.com/f43d1d1273143361d5fc7add1194fb5a3e78e509e2638eb21530f4f14952627b/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f383777364b53364d56476167366a61366b72456e52334b5a5f7061727365636f766572" alt="SSReader Print." width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_87w6KS6MVGag6ja6krEnR3KZ_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_87w6KS6MVGag6ja6krEnR3KZ" rel="nofollow">《SSReader Print.》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_8ii6K46IMGag6ja6kr5lk2PV" rel="nofollow"><img src="https://camo.githubusercontent.com/13830af4a852da376d37f92f313fa95688266e01d91dbc15d47cf2672a62071d/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f386969364b3436494d476167366a61366b72356c6b3250565f7061727365636f766572" alt="1931 [瑞典]卡尔费尔德 荒原和爱情 漓江出版社" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_8ii6K46IMGag6ja6kr5lk2PV_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_8ii6K46IMGag6ja6kr5lk2PV" rel="nofollow">《1931 [瑞典]卡尔费尔德 荒原和爱情 漓江出版社》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_6St6X16ZaGag6ja6kr0td8kH" rel="nofollow"><img src="https://camo.githubusercontent.com/b4c4cfb0df9e9f1ad166b67d09534995d478da55f35ecb5014cd78bc1d6b7218/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f365374365831365a61476167366a61366b72307464386b485f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1945 [智利]加夫列拉·米斯特拉尔-柔情（赵振江等译，漓江出版社1986，文字版）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_6St6X16ZaGag6ja6kr0td8kH_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_6St6X16ZaGag6ja6kr0td8kH" rel="nofollow">《获诺贝尔文学奖作家丛书 1945 [智利]加夫列拉·米斯特拉尔-柔情（赵振江等译，漓江出版社1986，文字版）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_9SF63f61uGag6ja6krDEKGH0" rel="nofollow"><img src="https://camo.githubusercontent.com/53230877e0d186466ec07eacfa9a6b2d082ce943bb3ab9d214de1e28653e42b8/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f395346363366363175476167366a61366b7244454b4748305f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1932 [英]约翰·高尔斯华绥-有产者（周煦良译，替本网格本《福尔赛世家》第一部《有产业的人》，上海译文出版社1978）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_9SF63f61uGag6ja6krDEKGH0_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_9SF63f61uGag6ja6krDEKGH0" rel="nofollow">《获诺贝尔文学奖作家丛书 1932 [英]约翰·高尔斯华绥-有产者（周煦良译，替本网格本《福尔赛世家》第一部《有产业的人》，上海译文出版社1978）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_7n95vX5xlGag6ja6kr7nd2Ot" rel="nofollow"><img src="https://camo.githubusercontent.com/cf47d325455a866f9746a563b885f54a955a50a1bba58684da16cb29f48828e3/68747470733a2f2f7765726561642d657075622d313235383437363234332e66696c652e6d7971636c6f75642e636f6d2f757365725f75706c6f61645f626f6f6b5f636f7665722f7064662f64662f33622f64663362373739353161353764386531383365316463356630613536323432382f64663362373739353161353764386531383365316463356630613536323432382e6a706567" alt="1928 [挪威]西格丽德·温塞特-《克丽丝丁》三部曲：新娘·主人·十字架（朱碧恒译，漓江出版社1990，1247页后译文版补齐，缺118、173、264、821、1030）" width="60" data-canonical-src="https://weread-epub-1258476243.file.myqcloud.com/user_upload_book_cover/pdf/df/3b/df3b77951a57d8e183e1dc5f0a562428/df3b77951a57d8e183e1dc5f0a562428.jpeg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_7n95vX5xlGag6ja6kr7nd2Ot" rel="nofollow">《1928 [挪威]西格丽德·温塞特-《克丽丝丁》三部曲：新娘·主人·十字架（朱碧恒译，漓江出版社1990，1247页后译文版补齐，缺118、173、264、821、1030）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_68Y64Q663Gag6ja6krEPk2wP" rel="nofollow"><img src="https://camo.githubusercontent.com/4f42dfe3525dc8e35586a3a90d3ab20d42e98be51d78a34d80bdb34e41d46ab3/68747470733a2f2f7765726561642d657075622d313235383437363234332e66696c652e6d7971636c6f75642e636f6d2f757365725f75706c6f61645f626f6f6b5f636f7665722f7064662f61392f32652f61393265653436643964643762616331373065373735643163373436396463322f61393265653436643964643762616331373065373735643163373436396463322e6a706567" alt="1936 [美]尤金·奥尼尔-天边外（荒芜、汪义群等译，漓江出版社1985）" width="60" data-canonical-src="https://weread-epub-1258476243.file.myqcloud.com/user_upload_book_cover/pdf/a9/2e/a92ee46d9dd7bac170e775d1c7469dc2/a92ee46d9dd7bac170e775d1c7469dc2.jpeg" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_68Y64Q663Gag6ja6krEPk2wP" rel="nofollow">《1936 [美]尤金·奥尼尔-天边外（荒芜、汪义群等译，漓江出版社1985）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_4wW6H66IMGag6ja6krDBJ9l2" rel="nofollow"><img src="https://camo.githubusercontent.com/6ab4cb19042487b9e894ba6fe69ad5be200fa6af811bdbe8f728f725d9218945/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f324d31316b72316b7037723836656f36634e4541343546475f7061727365636f766572" alt="1946 [德]赫尔曼·海塞-荒原狼（上）（李世隆等译，漓江出版社2001）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_2M11kr1kp7r86eo6cNEA45FG_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_4wW6H66IMGag6ja6krDBJ9l2" rel="nofollow">《1946 [德]赫尔曼·海塞-荒原狼（上）（李世隆等译，漓江出版社2001）》</a></td>
+<td align="left">ePUBw.COM 【德】赫尔曼·黑塞</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_9qf67R663Gag6ja6krCkJDHS" rel="nofollow"><img src="https://camo.githubusercontent.com/391874abe587f10b0cb8fe218db3bfdbbdcdd2ffaf8e9777c79c75d107fb93d5/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f37706945683045657733564a36644e36634e5f7061727365636f766572" alt="1929 保尔·托马斯·曼 德国  魔山(钱鸿嘉译，上海译文版)" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_7piEh0Eew3VJ6dN6cN_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_9qf67R663Gag6ja6krCkJDHS" rel="nofollow">《1929 保尔·托马斯·曼 德国  魔山(钱鸿嘉译，上海译文版)》</a></td>
+<td align="left">托马斯·曼 (Thomas Mann)</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_Eh85yE5xlGag6ja6krDstGP9" rel="nofollow"><img src="https://camo.githubusercontent.com/4270da356d8c35401e7f740b823bbbcccd8582577142488e56fda19a2089f37a/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f45683835794535786c476167366a61366b724473744750395f7061727365636f766572" alt="巴比特" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_Eh85yE5xlGag6ja6krDstGP9_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_Eh85yE5xlGag6ja6krDstGP9" rel="nofollow">《巴比特》</a></td>
+<td align="left">（美）刘易斯著 潘庆舲 姚祖培译</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_64T64T663Gag6ja6kr8HxF7D" rel="nofollow"><img src="https://camo.githubusercontent.com/7ffc2576385c30f0e8cd1249732fdef8d9192ba7d7fe71cc5e8b007b72e007a9/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f363454363454363633476167366a61366b723848784637445f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1937 [法]罗杰·马丁·杜·加尔-蒂博一家（第二册）（郑克鲁译，漓江出版社1986）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_64T64T663Gag6ja6kr8HxF7D_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_64T64T663Gag6ja6kr8HxF7D" rel="nofollow">《获诺贝尔文学奖作家丛书 1937 [法]罗杰·马丁·杜·加尔-蒂博一家（第二册）（郑克鲁译，漓江出版社1986）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_7j06KI6MVGag6ja6kr11Q9aV" rel="nofollow"><img src="https://camo.githubusercontent.com/fed55ea78d37c7a25a0abb98fce8af08e2049d6241f6788888b5273decf98248/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f304b38455663455571354a6e3661463659545f7061727365636f766572" alt="1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_0K8EVcEUq5Jn6aF6YT_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_7j06KI6MVGag6ja6kr11Q9aV" rel="nofollow">《1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)》</a></td>
+<td align="left">路伊吉·皮兰德娄(Luigi Pirandello)</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_83r5rb5tcGag6ja6krDHy1kA" rel="nofollow"><img src="https://camo.githubusercontent.com/3603940d4807ace2ffc4928b7a7b89ed67346a3ef1847cfb834b79b4c52a110f/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f383372357262357463476167366a61366b72444879316b415f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1923 [爱尔兰]威廉·勃特勒·叶芝-丽达与天鹅（裘小龙译，漓江出版社1992）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_83r5rb5tcGag6ja6krDHy1kA_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_83r5rb5tcGag6ja6krDHy1kA" rel="nofollow">《获诺贝尔文学奖作家丛书 1923 [爱尔兰]威廉·勃特勒·叶芝-丽达与天鹅（裘小龙译，漓江出版社1992）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_EpM5pw5pLGag6ja6kr1zWEjQ" rel="nofollow"><img src="https://camo.githubusercontent.com/c3e388bbc9589ac329eff83baefc655b18ca77bad4b562d7803389f811b9f679/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f45704d35707735704c476167366a61366b72317a57456a515f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1922 [西班牙]哈辛特·贝纳文特·伊·马丁内斯-不吉利的姑娘（陈凯先、屠孟超译，漓江出版社1991）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_EpM5pw5pLGag6ja6kr1zWEjQ_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_EpM5pw5pLGag6ja6kr1zWEjQ" rel="nofollow">《获诺贝尔文学奖作家丛书 1922 [西班牙]哈辛特·贝纳文特·伊·马丁内斯-不吉利的姑娘（陈凯先、屠孟超译，漓江出版社1991）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz" rel="nofollow"><img src="https://camo.githubusercontent.com/fed55ea78d37c7a25a0abb98fce8af08e2049d6241f6788888b5273decf98248/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f304b38455663455571354a6e3661463659545f7061727365636f766572" alt="1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_0K8EVcEUq5Jn6aF6YT_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz" rel="nofollow">《1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)》</a></td>
+<td align="left">路伊吉·皮兰德娄(Luigi Pirandello)</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM" rel="nofollow"><img src="https://camo.githubusercontent.com/15de72f3a872c3ca83e93aa3e99b4c40155c8194f3473b1adc79248840529bf9/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f316c36356b71356c43476167366a61366b7238697330774d5f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_1l65kq5lCGag6ja6kr8is0wM_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM" rel="nofollow">《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+<tr>
+<td align="center"><a href="https://weread.qq.com/web/reader/CB_Fkw5la5lCGag6ja6krEsxClv" rel="nofollow"><img src="https://camo.githubusercontent.com/366a34a8de8314e04e281e9516200fe302a8f57941c8a3b70b91f0edd9f841d8/68747470733a2f2f7265732e7765726561642e71712e636f6d2f7772657075622f43425f466b77356c61356c43476167366a61366b72457378436c765f7061727365636f766572" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（下）（郑振铎、冰心等译，漓江出版社1997）" width="60" data-canonical-src="https://res.weread.qq.com/wrepub/CB_Fkw5la5lCGag6ja6krEsxClv_parsecover" style="max-width: 100%;"></a></td>
+<td align="left"><a href="https://weread.qq.com/web/reader/CB_Fkw5la5lCGag6ja6krEsxClv" rel="nofollow">《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（下）（郑振铎、冰心等译，漓江出版社1997）》</a></td>
+<td align="left">未知作者</td>
+<td align="left">无</td>
+<td align="center">📖 在读</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<p><em>Last updated: 2025/9/17 09:49:04</em></p></div>
+
+<div class="post-footer">
+    <div class="bottom-text-inline">❤️ 文章皆为原创，转载文章请注明出处！❤️</div>
+    <div class="share-buttons-inline">
+        <a id="share-x" class="share-button x" href="#" target="_blank" title="分享到 X">X</a>
+        <a id="share-facebook" class="share-button facebook" href="#" target="_blank" title="分享到 Facebook">Facebook</a>
+        <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+        <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
+        <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+    </div>
+</div>
+
+<div style="margin-top: 2rem; margin-bottom: 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-3409938612356670"
+         data-ad-slot="9927006571"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div style="margin-top: 2rem;">
+    <script src="https://giscus.app/client.js"
+        data-repo="granthuang999/granthuang999.github.io"
+        data-repo-id="R_kgDOPhhmjA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPhhmjM4CuggD"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright all reserved © <span id="copyrightYear"></span>-future <a href="https://www.futuremedia.work">未来传媒</a><br>
+<a href="https://www.futuremedia.work/about.html">关于本站</a> |
+<a href="https://www.futuremedia.work/terms-of-service.html">服务条款</a> |  
+<a href="https://www.futuremedia.work/privacy-policy.html">隐私政策</a> |
+<a href="https://www.futuremedia.work/disclaimer.html">免责声明</a> 
+</div>
+<div id="footer2">
+    <span id="runday"></span><span>本站由<a href="mailto:futuremedia2090@gmail.com" target="_blank">疯子</a>维护</span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("6/4/2025"!=""){
+    var startSite=new Date("6/4/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={"sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+// [关键修复] 使用 tojson 过滤器确保JavaScript语法正确
+console.log("\n %c 未来传媒 " + "last" + " https://www.futuremedia.work \n","padding:5px 0;background:#02d81d;color:#fff");
+
+function addFavorite() {
+    try {
+        window.external.addFavorite(window.location.href, document.title);
+    } catch (e) {
+        try {
+            window.sidebar.addPanel(document.title, window.location.href, "");
+        } catch (e) {
+            alert("抱歉，您的浏览器不支持自动收藏功能。\n请使用 Ctrl+D (Windows) 或 Command+D (Mac) 来手动收藏。");
+        }
+    }
+}
+</script>
+
+<script>
+// [关键修复] 重写了TypeIt脚本，使其更健壮，不会因变量为空而报错
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteText = "";
+    const dailySentenceRaw = `""`; // Use tojson for safety
+    let typeitStrings = [];
+
+    // 优先使用 quoteText
+    if (quoteText && quoteText.trim() && quoteText !== 'None' && quoteText !== 'null') {
+        typeitStrings.push(quoteText);
+    } 
+    // 否则，尝试解析 dailySentence
+    else if (dailySentenceRaw && dailySentenceRaw !== 'null') {
+        try {
+            const parsedSentences = JSON.parse(dailySentenceRaw);
+            if (Array.isArray(parsedSentences) && parsedSentences.length > 0) {
+                typeitStrings = parsedSentences;
+            }
+        } catch (e) {
+            console.error("无法解析 daily_sentence JSON:", dailySentenceRaw, e);
+        }
+    }
+
+    if (typeitStrings.length > 0 && typeitStrings[0]) {
+        const container = document.getElementById('typeit-animation-container');
+        if(container) {
+             new TypeIt(container, {
+                 strings: typeitStrings,
+                 speed: 75,
+                 lifeLike: true,
+                 waitUntilVisible: true,
+                 breakLines: false,
+                 cursor: false
+             }).go();
+        }
+    }
+});
+
+// 分享功能的 JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+    const encodedUrl = encodeURIComponent(postUrl);
+    const encodedTitle = encodeURIComponent(postTitle);
+    const shareX = document.getElementById('share-x');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareWeibo = document.getElementById('share-weibo');
+    const shareTelegram = document.getElementById('share-telegram');
+    if (shareX) { shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; }
+    if (shareFacebook) { shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; }
+    if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source=https://www.futuremedia.work`; }
+    if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic=https://www.futuremedia.work/images/big.png`; }
+    if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+</script>
+
+<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>
+
+
+</html>
