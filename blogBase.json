@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P110": {
+      "htmlDir": "docs/post/midlife-future-dweller-mindset.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "不用“经验”给人生设限，用“未来生活者”心法拥抱变化",
+      "postUrl": "https://www.futuremedia.work/post/midlife-future-dweller-mindset.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/110",
+      "commentNum": 0,
+      "wordCount": 2003,
+      "createdAt": 1759119005,
+      "top": 0,
+      "description": "人到中年是否在快速变化的时代感到脱节和过时？本文深度剖析中年人的成长焦虑困境，引入主动的未来生活者心法，指导你如何通过归零心态、反向链接和微剂量实验三步，打破经验枷锁，重塑成长系统，将被动适应转变为主动探索，成为拥抱变化的未来生活探索家。",
+      "createdDate": "2025-09-29",
+      "isoDate": "2025-09-29T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759119005.png",
+      "keywords": "时代脱节感,成长焦虑,经验主义,未来生活者,归零心态,反向学习,微剂量实验,持续成长,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P109": {
       "htmlDir": "docs/post/future-media-daily-20250925.html",
       "labels": [
