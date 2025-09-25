@@ -55,18 +55,18 @@
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
     "P109": {
-      "htmlDir": "docs/post/wei-lai-chuan-mei-mei-ri-zi-xun-2025-09-25.html",
+      "htmlDir": "docs/post/future-media-daily-20250925.html",
       "labels": [
         "每日资讯"
       ],
       "postTitle": "未来传媒每日资讯2025-09-25",
-      "postUrl": "https://www.futuremedia.work/post/wei-lai-chuan-mei-mei-ri-zi-xun-2025-09-25.html",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-20250925.html",
       "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/109",
       "commentNum": 0,
-      "wordCount": 2025,
+      "wordCount": 1802,
       "createdAt": 1758759243,
       "top": 0,
-      "description": "### 国际国内热点\n\n本周，国际局势和国内新闻都呈现出多点开花的态势。",
+      "description": "2025年9月25日《未来传媒每日资讯》，深入解读国际国内最新热点、AI前沿技术具身智能与多模态模型、全球金融市场动态以及实用开源工具，助您把握时代脉搏。",
       "createdDate": "2025-09-25",
       "isoDate": "2025-09-25T08:14:03+08:00",
       "dateLabelColor": "#0969da",
@@ -74,7 +74,7 @@
       "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
       "head": "",
       "ogImage": "https://www.futuremedia.work/images/big.png",
-      "keywords": "",
+      "keywords": "未来传媒, 每日资讯, 人工智能, 具身智能, 金融市场, 国际热点, 开源工具, JetBrains Academy, 特朗普, 巴勒斯坦",
       "quote": "",
       "daily_sentence": ""
     },
