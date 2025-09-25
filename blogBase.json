@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P111": {
+      "htmlDir": "docs/post/cognitive-reframe-compass.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "打破无形枷锁：中年人，用“认知重构罗盘”重启人生无限可能",
+      "postUrl": "https://www.futuremedia.work/post/cognitive-reframe-compass.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/111",
+      "commentNum": 0,
+      "wordCount": 2170,
+      "createdAt": 1759205405,
+      "top": 0,
+      "description": "人到中年是否被过去的经历和外界评价束缚认为自己已经太迟无法改变，本文深度剖析中年人自我设限困境，引入积极的认知重构罗盘心法，指导你通过信念溯源，未来我画像，微习惯迭代三步，打破无形枷锁，重塑自我认知成为无限可能践行者。",
+      "createdDate": "2025-09-30",
+      "isoDate": "2025-09-30T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759205405.png",
+      "keywords": "自我设限,认知重构,人生突破,中年成长,心智练习,无限可能,信念溯源,微习惯,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P110": {
       "htmlDir": "docs/post/midlife-future-dweller-mindset.html",
       "labels": [
