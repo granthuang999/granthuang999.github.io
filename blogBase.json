@@ -54,6 +54,31 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P112": {
+      "htmlDir": "docs/post/future--media-daily-20250926.html",
+      "labels": [
+        "Publish",
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯-2025-09-26",
+      "postUrl": "https://www.futuremedia.work/post/future--media-daily-20250926.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/112",
+      "commentNum": 0,
+      "wordCount": 1643,
+      "createdAt": 1758846768,
+      "top": 0,
+      "description": "2025年9月26日未来传媒每日资讯：聚焦全球AI监管新动态、中美互联网巨头财报展望、OpenAI最新模型发布以及实用的开源项目管理工具推荐。",
+      "createdDate": "2025-09-26",
+      "isoDate": "2025-09-26T08:32:48+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "未来传媒,每日资讯,AI监管,科技巨头,金融市场,开源工具",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P111": {
       "htmlDir": "docs/post/cognitive-reframe-compass.html",
       "labels": [
