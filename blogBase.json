@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P119": {
+      "htmlDir": "docs/post/taming-power-formation-british-parliament.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "驯服权力：英国议会制度的形成与启示",
+      "postUrl": "https://www.futuremedia.work/post/taming-power-formation-british-parliament.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/119",
+      "commentNum": 0,
+      "wordCount": 3102,
+      "createdAt": 1759551005,
+      "top": 0,
+      "description": "本文深度剖析英国议会制度的形成脉络，从日耳曼传统到大宪章，再到光荣革命，探讨了私产保护，契约精神，宗教退潮等多重因素如何共同驯服王权，并与东方道义制约模式对比，揭示了制度化权力约束的深刻启示。",
+      "createdDate": "2025-10-04",
+      "isoDate": "2025-10-04T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759551005.png",
+      "keywords": "英国议会,大宪章,权利法案,权力制衡,政治文明,私有财产,契约精神,道义制约,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P118": {
       "htmlDir": "docs/post/human_hubris_cognitive_bias_self_transcendence.html",
       "labels": [
