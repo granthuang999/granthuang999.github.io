@@ -78,6 +78,30 @@
       "quote": "",
       "daily_sentence": ""
     },
+    "P117": {
+      "htmlDir": "docs/post/huang-dan-de-qi-yuan-、-xian-shi-yu-li-xiang-de-zhang-li-，-yi-ji-xin-yang-zai-huang-dan-zhong-de-jiao-se.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "荒诞的起源、现实与理想的张力，以及信仰在荒诞中的角色",
+      "postUrl": "https://www.futuremedia.work/post/huang-dan-de-qi-yuan-%E3%80%81-xian-shi-yu-li-xiang-de-zhang-li-%EF%BC%8C-yi-ji-xin-yang-zai-huang-dan-zhong-de-jiao-se.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/117",
+      "commentNum": 0,
+      "wordCount": 1827,
+      "createdAt": 1759110485,
+      "top": 0,
+      "description": "**核心结论：**  \n荒诞并非单纯的无意义，而是**生命对价值期待与世界无回应之间的根本冲突**。",
+      "createdDate": "2025-09-29",
+      "isoDate": "2025-09-29T09:48:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P116": {
       "htmlDir": "docs/post/future-media-daily-news-20250929.html",
       "labels": [
@@ -2480,31 +2504,6 @@
     }
   },
   "singeListJson": {
-    "P117": {
-      "htmlDir": "docs/privacy-policy.html",
-      "labels": [
-        "privacy-policy",
-        "哲学文学"
-      ],
-      "postTitle": "荒诞的起源、现实与理想的张力，以及信仰在荒诞中的角色",
-      "postUrl": "https://www.futuremedia.work/privacy-policy.html",
-      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/117",
-      "commentNum": 0,
-      "wordCount": 1827,
-      "createdAt": 1759110485,
-      "top": 0,
-      "description": "**核心结论：**  \n荒诞并非单纯的无意义，而是**生命对价值期待与世界无回应之间的根本冲突**。",
-      "createdDate": "2025-09-29",
-      "isoDate": "2025-09-29T09:48:05+08:00",
-      "dateLabelColor": "#0969da",
-      "style": "",
-      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
-      "head": "",
-      "ogImage": "https://www.futuremedia.work/images/big.png",
-      "keywords": "",
-      "quote": "",
-      "daily_sentence": ""
-    },
     "P81": {
       "htmlDir": "docs/tools-link.html",
       "labels": [
