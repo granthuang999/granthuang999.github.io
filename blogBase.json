@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P116": {
+      "htmlDir": "docs/post/future-media-daily-news-20250929.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-09-29",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-news-20250929.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/116",
+      "commentNum": 0,
+      "wordCount": 2561,
+      "createdAt": 1759109067,
+      "top": 0,
+      "description": "未来传媒每日资讯：聚焦最新国际国内爆炸性要闻、AI具身智能进展、全球金融市场简报，并介绍高实用性开源工具Rye。",
+      "createdDate": "2025-09-29",
+      "isoDate": "2025-09-29T09:24:27+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "未来传媒, 每日资讯, AI, 金融, 国际新闻, 开源工具, 具身智能, Rye",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P115": {
       "htmlDir": "docs/post/future-media-daily-20250928.html",
       "labels": [
