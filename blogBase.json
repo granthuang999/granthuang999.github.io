@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P118": {
+      "htmlDir": "docs/post/human_hubris_cognitive_bias_self_transcendence.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "人都是自以为是的：全面剖析认知偏差与自我超越",
+      "postUrl": "https://www.futuremedia.work/post/human_hubris_cognitive_bias_self_transcendence.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/118",
+      "commentNum": 0,
+      "wordCount": 2250,
+      "createdAt": 1759464605,
+      "top": 0,
+      "description": "本文全面剖析自以为是心理根源，包括认知惰性，自尊维护，邓宁克鲁格效应，提出元认知批判性思维，谦逊实践等策略帮助读者突破认知盲区，实现自我超越，成为积极反思的终身学习者。",
+      "createdDate": "2025-10-03",
+      "isoDate": "2025-10-03T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759464605.png",
+      "keywords": "自以为是,认知偏差,自我超越,元认知,批判性思维,谦逊实践,邓宁克鲁格效应,思维惰性,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P116": {
       "htmlDir": "docs/post/future-media-daily-news-20250929.html",
       "labels": [
