@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P120": {
+      "htmlDir": "docs/post/western_civilization_crisis_bounded_pluralism.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "穿越价值迷雾：西方文明的危机与“有边界的多元论",
+      "postUrl": "https://www.futuremedia.work/post/western_civilization_crisis_bounded_pluralism.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/120",
+      "commentNum": 0,
+      "wordCount": 6255,
+      "createdAt": 1759637405,
+      "top": 0,
+      "description": "本文深入探讨西方文明危机根源，以以赛亚伯林价值多元论为核心，分析其思想起源批判与修正，重点解析约翰格雷对多元论的诊断，并引出乔治克劳德有边界的多元论六大原则，最终探讨西方文明价值观撕裂道德崩溃等困境及未来突破路径。",
+      "createdDate": "2025-10-05",
+      "isoDate": "2025-10-05T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759637405.png",
+      "keywords": "价值多元论,西方文明危机,以赛亚伯林,约翰格雷,乔治克劳德,普世价值,文化冲突,价值观撕裂,自由主义,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P119": {
       "htmlDir": "docs/post/taming-power-formation-british-parliament.html",
       "labels": [
