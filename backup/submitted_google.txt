@@ -1,4 +1,5 @@
 https://www.futuremedia.work/about.html
+https://www.futuremedia.work/disclaimer.html
 https://www.futuremedia.work/english-study/index.html
 https://www.futuremedia.work/link.html
 https://www.futuremedia.work/post/3enemies-for-investment.html
@@ -11,6 +12,7 @@ https://www.futuremedia.work/post/Byung-Chul-Han.html
 https://www.futuremedia.work/post/Chrysalis-Wisdom.html
 https://www.futuremedia.work/post/Claude-AI-The-Intelligent-Conversational-Partner.html
 https://www.futuremedia.work/post/Cryotherapy-Metabolic.html
+https://www.futuremedia.work/post/Cursor-AI-Revitalizes.html
 https://www.futuremedia.work/post/Deep-Thinking.html
 https://www.futuremedia.work/post/Digital-Socializing.html
 https://www.futuremedia.work/post/Epicurus.html
@@ -47,6 +49,8 @@ https://www.futuremedia.work/post/Zhuangzi-Philosophy.html
 https://www.futuremedia.work/post/absurd-lucid-living-principle.html
 https://www.futuremedia.work/post/absurd_self_harmony_guide.html
 https://www.futuremedia.work/post/barbell-strategy-investing.html
+https://www.futuremedia.work/post/better-sleeping.html
+https://www.futuremedia.work/post/chatgpt-tasks-smart-assistant.html
 https://www.futuremedia.work/post/china-ai-status.html
 https://www.futuremedia.work/post/cupping-therapy.html
 https://www.futuremedia.work/post/daily-news-20250914.html
@@ -97,4 +101,5 @@ https://www.futuremedia.work/post/trust-products-and-growth-investing.html
 https://www.futuremedia.work/post/use-cluade-ai.html
 https://www.futuremedia.work/post/weread-shelf-sync.html
 https://www.futuremedia.work/privacy-policy.html
+https://www.futuremedia.work/terms-of-service.html
 https://www.futuremedia.work/tools-link.html
