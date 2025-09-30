@@ -1,6 +1,7 @@
 
 | 封面 | 书名 | 作者 | 分类 | 阅读状态 |
 |:---:|:---|:---|:---|:---:|
+| <a href="https://weread.qq.com/web/reader/35239384" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/85/YueWen_35239384/t6_YueWen_35239384.jpg" alt="西西弗神话" width="60" /></a> | [《西西弗神话》](https://weread.qq.com/web/reader/35239384) | [法]阿尔贝·加缪 | 哲学宗教-西方哲学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/912324" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/324/912324/t6_912324.jpg" alt="鼠疫" width="60" /></a> | [《鼠疫》](https://weread.qq.com/web/reader/912324) | [法]加缪 | 文学-外国文学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/22261199" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/16/YueWen_22261199/t6_YueWen_22261199.jpg" alt="剑来" width="60" /></a> | [《剑来》](https://weread.qq.com/web/reader/22261199) | 烽火戏诸侯 | 男生小说-东方玄幻 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300151958" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/76/cpplatform_nkcjju6fvrdgeurscrqqr5/t6_cpplatform_nkcjju6fvrdgeurscrqqr51752030599.jpg" alt="王阳明心学入门三步走（全三册）" width="60" /></a> | [《王阳明心学入门三步走（全三册）》](https://weread.qq.com/web/reader/3300151958) | 度阴山 | 哲学宗教-东方哲学 | 📖 在读 |
@@ -50,9 +51,9 @@
 | <a href="https://weread.qq.com/web/reader/CB_EpM5pw5pLGag6ja6kr1zWEjQ" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_EpM5pw5pLGag6ja6kr1zWEjQ_parsecover" alt="获诺贝尔文学奖作家丛书 1922 [西班牙]哈辛特·贝纳文特·伊·马丁内斯-不吉利的姑娘（陈凯先、屠孟超译，漓江出版社1991）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1922 [西班牙]哈辛特·贝纳文特·伊·马丁内斯-不吉利的姑娘（陈凯先、屠孟超译，漓江出版社1991）》](https://weread.qq.com/web/reader/CB_EpM5pw5pLGag6ja6kr1zWEjQ) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_0K8EVcEUq5Jn6aF6YT_parsecover" alt="1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)" width="60" /></a> | [《1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)》](https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz) | 路伊吉·皮兰德娄(Luigi Pirandello) | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_1l65kq5lCGag6ja6kr8is0wM_parsecover" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）》](https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM) | 未知作者 | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_Fkw5la5lCGag6ja6krEsxClv" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_Fkw5la5lCGag6ja6krEsxClv_parsecover" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（下）（郑振铎、冰心等译，漓江出版社1997）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（下）（郑振铎、冰心等译，漓江出版社1997）》](https://weread.qq.com/web/reader/CB_Fkw5la5lCGag6ja6krEsxClv) | 未知作者 | 无 | 📖 在读 |
 
 
 ---
+*Last updated: 2025/9/30 12:43:40*
 
 
