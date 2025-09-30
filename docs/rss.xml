@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Mon, 29 Sep 2025 06:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Sep 2025 00:35:03 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -943,6 +943,14 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/midlife-future-dweller-mindset.html</guid>
       <enclosure url="https://www.futuremedia.work/images/1759119005.png" length="0" type="image/png"/>
       <pubDate>Mon, 29 Sep 2025 04:10:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>未来传媒每日资讯2025-09-30</title>
+      <link>https://www.futuremedia.work/post/future-media-daily-news-20250930.html</link>
+      <description>2025年9月30日未来传媒每日资讯，涵盖国际国内时事热点、AI领域最新进展、全球金融市场简报及实用开源工具介绍。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/future-media-daily-news-20250930.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Tue, 30 Sep 2025 00:33:49 +0000</pubDate>
     </item>
   </channel>
 </rss>
