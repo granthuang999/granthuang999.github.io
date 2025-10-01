@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P122": {
+      "htmlDir": "docs/post/futurmedia-daily-news-20251001.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-01",
+      "postUrl": "https://www.futuremedia.work/post/futurmedia-daily-news-20251001.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/122",
+      "commentNum": 0,
+      "wordCount": 2244,
+      "createdAt": 1759278655,
+      "top": 0,
+      "description": "2025年10月1日未来传媒每日资讯：聚焦美国政府关门危机、AI领域的机器人和可穿戴设备等杀手级应用前景，以及值得关注的开源设计工具Penpot。",
+      "createdDate": "2025-10-01",
+      "isoDate": "2025-10-01T08:30:55+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "美国政府关门,AI杀手级应用,机器人,医疗AI,Penpot,开源工具",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P121": {
       "htmlDir": "docs/post/future-media-daily-news-20250930.html",
       "labels": [

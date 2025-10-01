@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Tue, 30 Sep 2025 06:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 00:32:03 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -959,6 +959,14 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/cognitive-reframe-compass.html</guid>
       <enclosure url="https://www.futuremedia.work/images/1759205405.png" length="0" type="image/png"/>
       <pubDate>Tue, 30 Sep 2025 04:10:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>未来传媒每日资讯2025-10-01</title>
+      <link>https://www.futuremedia.work/post/futurmedia-daily-news-20251001.html</link>
+      <description>2025年10月1日未来传媒每日资讯：聚焦美国政府关门危机、AI领域的机器人和可穿戴设备等杀手级应用前景，以及值得关注的开源设计工具Penpot。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/futurmedia-daily-news-20251001.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Wed, 01 Oct 2025 00:30:55 +0000</pubDate>
     </item>
   </channel>
 </rss>
