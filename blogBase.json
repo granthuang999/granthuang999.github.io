@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P123": {
+      "htmlDir": "docs/post/wei-lai-chuan-mei-mei-ri-zi-xun-2025-10-02.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-02",
+      "postUrl": "https://www.futuremedia.work/post/wei-lai-chuan-mei-mei-ri-zi-xun-2025-10-02.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/123",
+      "commentNum": 0,
+      "wordCount": 1964,
+      "createdAt": 1759369741,
+      "top": 0,
+      "description": "### 国际国内要闻纵览：焦点事件与行业新动态\n\n**全球政治经济局势新动向**\n最近，国际社会继续关注**主要经济体的通胀与货币政策**，特别是美联储等央行关于未来利率走向的表态。",
+      "createdDate": "2025-10-02",
+      "isoDate": "2025-10-02T09:49:01+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P122": {
       "htmlDir": "docs/post/futurmedia-daily-news-20251001.html",
       "labels": [
