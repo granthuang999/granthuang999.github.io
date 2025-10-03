@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Thu, 02 Oct 2025 04:33:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Oct 2025 00:02:45 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
@@ -991,6 +991,14 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/heart-nourished_elder_care_blueprint.html</guid>
       <enclosure url="https://www.futuremedia.work/images/1759378205.png" length="0" type="image/png"/>
       <pubDate>Thu, 02 Oct 2025 04:10:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>未来传媒每日资讯2025-10-03</title>
+      <link>https://www.futuremedia.work/post/future-media-daily-news-20251003.html</link>
+      <description>2025年10月3日未来传媒每日资讯：聚焦AI代理与多模态模型前沿，国际国内热点与全球金融市场简报，并推荐实用开源工具。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/future-media-daily-news-20251003.html</guid>
+      <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
+      <pubDate>Fri, 03 Oct 2025 00:01:32 +0000</pubDate>
     </item>
   </channel>
 </rss>

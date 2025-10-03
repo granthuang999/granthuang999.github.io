@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P124": {
+      "htmlDir": "docs/post/future-media-daily-news-20251003.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-03",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-news-20251003.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/124",
+      "commentNum": 0,
+      "wordCount": 3045,
+      "createdAt": 1759449692,
+      "top": 0,
+      "description": "2025年10月3日未来传媒每日资讯：聚焦AI代理与多模态模型前沿，国际国内热点与全球金融市场简报，并推荐实用开源工具。",
+      "createdDate": "2025-10-03",
+      "isoDate": "2025-10-03T08:01:32+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "未来传媒, 每日资讯, AI Agent, 多模态AI, 金融市场, 开源工具, 国际热点",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P123": {
       "htmlDir": "docs/post/future-media-daily-news-20251002.html",
       "labels": [
