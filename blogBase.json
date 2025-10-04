@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P125": {
+      "htmlDir": "docs/post/future-media-daily-news-20251004.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-04",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-news-20251004.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/125",
+      "commentNum": 0,
+      "wordCount": 1541,
+      "createdAt": 1759537707,
+      "top": 0,
+      "description": "2025年10月4日未来传媒每日资讯：聚焦AI驱动的个性化教育应用、台风麦德姆影响以及知识管理工具Obsidian的介绍。",
+      "createdDate": "2025-10-04",
+      "isoDate": "2025-10-04T08:28:27+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "未来传媒,AI教育,Obsidian,麦德姆,全球治理,每日资讯",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P124": {
       "htmlDir": "docs/post/future-media-daily-news-20251003.html",
       "labels": [
