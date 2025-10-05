@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P127": {
+      "htmlDir": "docs/post/stupidity_hidden_enemy_of_good_bonhoeffer_moral_crisis_humanistic_salvation.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "朋霍费尔的警世之言：愚蠢，善的隐匿之敌——当代道德困境与人文救赎*",
+      "postUrl": "https://www.futuremedia.work/post/stupidity_hidden_enemy_of_good_bonhoeffer_moral_crisis_humanistic_salvation.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/127",
+      "commentNum": 0,
+      "wordCount": 5812,
+      "createdAt": 1759810205,
+      "top": 0,
+      "description": "本文以朋霍费尔愚蠢是比恶意更危险的敌人为核心，深度剖析当代社会愚蠢形态如冷漠化价值观扭曲责任逃避，探讨其社会学根源，并提出通过唤醒良知与人文守护对抗愚蠢的路径，呼吁以善为尺，守护文明微光。",
+      "createdDate": "2025-10-07",
+      "isoDate": "2025-10-07T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759810205.png",
+      "keywords": "朋霍费尔,愚蠢,善的隐匿之敌,道德困境,人文救赎,良知,社会麻木,消费主义,虚无主义,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P126": {
       "htmlDir": "docs/post/midlife-body-partner-mindset.html",
       "labels": [
