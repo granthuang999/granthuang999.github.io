@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P128": {
+      "htmlDir": "docs/post/northern_county_power_survival_ambition_decline.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "权力性生存的桎梏：北方县城进取心消亡的深层解剖",
+      "postUrl": "https://www.futuremedia.work/post/northern_county_power_survival_ambition_decline.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/128",
+      "commentNum": 0,
+      "wordCount": 5819,
+      "createdAt": 1759896605,
+      "top": 0,
+      "description": "本文深度剖析北方县城权力性生存模式下进取心消亡的深层机理，从历史惯性价值异化二元鸿沟精神沉沦多维度揭示其困境，呼吁打破权力垄断重构价值体系畅通流动渠道，以激活县域社会活力。",
+      "createdDate": "2025-10-08",
+      "isoDate": "2025-10-08T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759896605.png",
+      "keywords": "北方县城,权力性生存,编制崇拜,进取心消亡,阶层固化,体制内外,职业选择,青年活力,转型困境,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P127": {
       "htmlDir": "docs/post/stupidity_hidden_enemy_of_good_bonhoeffer_moral_crisis_humanistic_salvation.html",
       "labels": [
