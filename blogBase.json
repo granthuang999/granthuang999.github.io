@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P129": {
+      "htmlDir": "docs/post/wei-lai-chuan-mei-mei-ri-zi-xun-2025-10-05.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-05",
+      "postUrl": "https://www.futuremedia.work/post/wei-lai-chuan-mei-mei-ri-zi-xun-2025-10-05.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/129",
+      "commentNum": 0,
+      "wordCount": 2914,
+      "createdAt": 1759628679,
+      "top": 0,
+      "description": "**本期概览：**  \n今日聚焦国际国内最热爆炸性新闻，AI领域最新动态与前沿应用，全球金融与主要投资市场简报，互联网平台热门资讯，以及实用开源或免费工具推荐。",
+      "createdDate": "2025-10-05",
+      "isoDate": "2025-10-05T09:44:39+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P128": {
       "htmlDir": "docs/post/northern_county_power_survival_ambition_decline.html",
       "labels": [
