@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P130": {
+      "htmlDir": "docs/post/future-media-daily-20251006.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025年10月6日",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-20251006.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/130",
+      "commentNum": 0,
+      "wordCount": 2494,
+      "createdAt": 1759726785,
+      "top": 0,
+      "description": "涵盖国际国内热点、AI最新动态与应用、全球金融简报、互联网热门资讯及实用开源工具推荐。",
+      "createdDate": "2025-10-06",
+      "isoDate": "2025-10-06T12:59:45+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "国际新闻,国内新闻,AI,金融市场,互联网热点,开源工具",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P129": {
       "htmlDir": "docs/post/future-media-daily-20251005.html",
       "labels": [
