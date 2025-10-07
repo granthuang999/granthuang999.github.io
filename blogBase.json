@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P132": {
+      "htmlDir": "docs/post/future-media-daily-20251007.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-07",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-20251007.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/132",
+      "commentNum": 0,
+      "wordCount": 2696,
+      "createdAt": 1759801304,
+      "top": 0,
+      "description": "深度解读全球及中国最新热点，中东和谈进展、AI前沿突破、金融市场动态及互联网实用工具推荐。",
+      "createdDate": "2025-10-07",
+      "isoDate": "2025-10-07T09:41:44+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "国际新闻,国内新闻,AI创新,金融市场,互联网热点,开源工具",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P131": {
       "htmlDir": "docs/post/why-europe-birthed-scientific-revolution-first-principle-thinking.html",
       "labels": [
