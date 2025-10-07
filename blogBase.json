@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P131": {
+      "htmlDir": "docs/post/why-europe-birthed-scientific-revolution-first-principle-thinking.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "跨越现象的深渊：欧洲“探究本源”的思维如何点燃科学革命",
+      "postUrl": "https://www.futuremedia.work/post/why-europe-birthed-scientific-revolution-first-principle-thinking.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/131",
+      "commentNum": 0,
+      "wordCount": 2312,
+      "createdAt": 1759983005,
+      "top": 0,
+      "description": "深入剖析欧洲文明为何能突破经验知识的桎梏，通过其独特的探究本源思维范式——植根于形而上学、精准概念与逻辑工具，最终孕育出科学革命，将人类认知推向全新高度。",
+      "createdDate": "2025-10-09",
+      "isoDate": "2025-10-09T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1759983005.png",
+      "keywords": "科学革命,本源思维,形而上学,欧洲文明,认知差异,逻辑,概念",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P130": {
       "htmlDir": "docs/post/future-media-daily-20251006.html",
       "labels": [
