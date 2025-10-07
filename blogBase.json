@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P133": {
+      "htmlDir": "docs/post/transcending_problems_rather_than_solving_them.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "升维而非求解：越过问题，才是中年人的破局之道",
+      "postUrl": "https://www.futuremedia.work/post/transcending_problems_rather_than_solving_them.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/133",
+      "commentNum": 0,
+      "wordCount": 1763,
+      "createdAt": 1760069405,
+      "top": 0,
+      "description": "本文探讨升维而非求解的破局之道，指出问题并非待解谜题，而是特定维度产物，通过电影《寄生虫》与宏观社会发展为例，阐释当资源维度提升，许多困扰将自行消解，强调经济下行期升维更显珍贵，呼吁中年人不择手段地前进，聚焦长期成长，看清问题优先级，用更高的维度俯视并超越困境。",
+      "createdDate": "2025-10-10",
+      "isoDate": "2025-10-10T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1760069405.png",
+      "keywords": "升维思维,破局之道,解决问题,个人成长,职场困境,资源稀缺,经济下行,思维模式,中年危机,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P132": {
       "htmlDir": "docs/post/future-media-daily-20251007.html",
       "labels": [
