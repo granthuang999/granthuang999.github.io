@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P138": {
+      "htmlDir": "docs/post/li-shi-de-duan-lie-dai-zheng-zai-chen-mo-zhong-pao-xiao-——-dang-zhi-xu-zai-wu-sheng-zhong-gai-xie.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "历史的断裂带正在沉默中咆哮——当秩序在无声中改写",
+      "postUrl": "https://www.futuremedia.work/post/li-shi-de-duan-lie-dai-zheng-zai-chen-mo-zhong-pao-xiao-%E2%80%94%E2%80%94-dang-zhi-xu-zai-wu-sheng-zhong-gai-xie.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/138",
+      "commentNum": 0,
+      "wordCount": 1889,
+      "createdAt": 1760053926,
+      "top": 0,
+      "description": "黄金价格在短短两年内翻了一倍，这一惊人的信号在财经版面短暂停留后，很快被AI革命、地缘冲突、气候危机等更为显眼的新闻淹没。",
+      "createdDate": "2025-10-10",
+      "isoDate": "2025-10-10T07:52:06+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P137": {
       "htmlDir": "docs/post/original_sin_constitutionalism_power_checks_faith_foundation.html",
       "labels": [
