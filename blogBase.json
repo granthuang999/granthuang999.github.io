@@ -55,18 +55,18 @@
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
     "P138": {
-      "htmlDir": "docs/post/li-shi-de-duan-lie-dai-zheng-zai-chen-mo-zhong-pao-xiao-——-dang-zhi-xu-zai-wu-sheng-zhong-gai-xie.html",
+      "htmlDir": "docs/post/historical-faultline-silent-roar.html",
       "labels": [
         "投资理财"
       ],
       "postTitle": "历史的断裂带正在沉默中咆哮——当秩序在无声中改写",
-      "postUrl": "https://www.futuremedia.work/post/li-shi-de-duan-lie-dai-zheng-zai-chen-mo-zhong-pao-xiao-%E2%80%94%E2%80%94-dang-zhi-xu-zai-wu-sheng-zhong-gai-xie.html",
+      "postUrl": "https://www.futuremedia.work/post/historical-faultline-silent-roar.html",
       "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/138",
       "commentNum": 0,
-      "wordCount": 1879,
+      "wordCount": 1702,
       "createdAt": 1760053926,
       "top": 0,
-      "description": "黄金价格在短短两年内翻了一倍，这一惊人的信号在财经版面短暂停留后，很快被AI革命、地缘冲突、气候危机等更为显眼的新闻淹没。",
+      "description": "本文分析当代全球体系的潜在断裂，从黄金价格、AI投资、能源结构和军费增加等数据中揭示秩序重组的迹象，指出历史的剧变正以无声的方式进行。",
       "createdDate": "2025-10-10",
       "isoDate": "2025-10-10T07:52:06+08:00",
       "dateLabelColor": "#0969da",
@@ -74,7 +74,7 @@
       "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
       "head": "",
       "ogImage": "https://www.futuremedia.work/images/big.png",
-      "keywords": "",
+      "keywords": "历史断裂带,全球秩序,AI革命,金价,地缘政治,能源结构,经济变革",
       "quote": "",
       "daily_sentence": ""
     },
