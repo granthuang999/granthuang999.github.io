@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P139": {
+      "htmlDir": "docs/post/future-media-daily-20251011.html",
+      "labels": [
+        "每日资讯"
+      ],
+      "postTitle": "未来传媒每日资讯2025-10-11",
+      "postUrl": "https://www.futuremedia.work/post/future-media-daily-20251011.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/139",
+      "commentNum": 0,
+      "wordCount": 1610,
+      "createdAt": 1760151779,
+      "top": 0,
+      "description": "涵盖国际与中美贸易最新博弈、中国政策动态、AI前沿突破、全球市场简报及互联网工具推荐。",
+      "createdDate": "2025-10-11",
+      "isoDate": "2025-10-11T11:02:59+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/big.png",
+      "keywords": "国际新闻,中美贸易,AI创新,金融市场,互联网热点,开源工具",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P138": {
       "htmlDir": "docs/post/historical-faultline-silent-roar.html",
       "labels": [
