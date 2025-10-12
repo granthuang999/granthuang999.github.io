@@ -229,6 +229,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
+.share-button.wechat { background-color: #07C160; }
 </style>
 <style>
 
@@ -400,6 +401,7 @@ eBay将ChatGPT for Business嵌入卖家后台，通过自然语言指令完成�
         <a id="share-linkedin" class="share-button linkedin" href="#" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
         <a id="share-weibo" class="share-button weibo" href="#" target="_blank" title="分享到微博">微博</a>
         <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
+        <a id="share-wechat" class="share-button wechat" href="#" onclick="shareToWechat(); return false;" title="分享到微信朋友圈">微信</a>
     </div>
 </div>
 
@@ -408,8 +410,8 @@ eBay将ChatGPT for Business嵌入卖家后台，通过自然语言指令完成�
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
          data-ad-format="fluid"
-         data-ad-client="ca-pub-3409938612356670"
-         data-ad-slot="9927006571"></ins>
+         data-ad-client="ca-pub-3.40993861235667e+15"
+         data-ad-slot="9.927006571e+09"></ins>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
@@ -501,6 +503,169 @@ function addFavorite() {
 </script>
 
 <script>
+// 微信分享功能
+function shareToWechat() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+
+    // 检测是否在微信浏览器中
+    function isWechat() {
+        const ua = navigator.userAgent.toLowerCase();
+        return ua.indexOf('micromessenger') !== -1;
+    }
+
+    // 检测是否在移动设备上
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    if (isWechat()) {
+        // 在微信浏览器中，显示分享提示
+        showWechatShareTip();
+    } else if (isMobile()) {
+        // 移动设备上，尝试调用微信分享或显示引导
+        if (navigator.share) {
+            // 使用 Web Share API
+            navigator.share({
+                title: postTitle,
+                url: postUrl
+            }).catch(console.error);
+        } else {
+            showWechatShareTip();
+        }
+    } else {
+        // 桌面设备，显示二维码或复制链接
+        showWechatShareModal();
+    }
+}
+
+function showWechatShareTip() {
+    // 创建分享提示弹窗
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+
+    const content = document.createElement('div');
+    content.style.cssText = `
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 300px;
+        color: #333;
+    `;
+
+    content.innerHTML = `
+        <h3 style="margin: 0 0 20px 0; color: #07C160;">微信分享</h3>
+        <p style="margin: 0 0 20px 0; line-height: 1.5;">
+            点击右上角的"..."按钮<br>
+            选择"分享到朋友圈"
+        </p>
+        <button onclick="this.closest('div[style*=\"position: fixed\"]').remove()" 
+                style="background: #07C160; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+            知道了
+        </button>
+    `;
+
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+
+    // 点击背景关闭弹窗
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+function showWechatShareModal() {
+    const postUrl = window.location.href;
+    const postTitle = document.title;
+
+    // 创建二维码分享弹窗
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+
+    const content = document.createElement('div');
+    content.style.cssText = `
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        color: #333;
+    `;
+
+    // 生成二维码URL（使用免费的二维码生成服务）
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(postUrl)}`;
+
+    content.innerHTML = `
+        <h3 style="margin: 0 0 20px 0; color: #07C160;">分享到微信朋友圈</h3>
+        <div style="margin: 20px 0;">
+            <img src="${qrUrl}" alt="二维码" style="width: 200px; height: 200px; border: 1px solid #eee;">
+        </div>
+        <p style="margin: 10px 0; font-size: 14px; color: #666;">
+            用微信扫描二维码分享
+        </p>
+        <div style="margin: 20px 0; padding: 10px; background: #f5f5f5; border-radius: 5px; word-break: break-all; font-size: 12px;">
+            ${postUrl}
+        </div>
+        <button onclick="copyToClipboard('${postUrl.replace(/'/g, "\'")}'); this.innerText='已复制!'; setTimeout(() => this.innerText='复制链接', 2000);" 
+                style="background: #07C160; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-right: 10px;">
+            复制链接
+        </button>
+        <button onclick="this.closest('div[style*=\"position: fixed\"]').remove()" 
+                style="background: #ccc; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer;">
+            关闭
+        </button>
+    `;
+
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+
+    // 点击背景关闭弹窗
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+function copyToClipboard(text) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+    } else {
+        // 兼容老版本浏览器
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = text;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const quoteText = "";
     const dailySentenceRaw = `""`; 
