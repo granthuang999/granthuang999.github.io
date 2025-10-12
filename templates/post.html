@@ -95,11 +95,169 @@
     font-size: small;
     white-space: nowrap; 
 }
+.share-button.wechat { background-color: #07C160; }
 .share-button.x { background-color: #1DA1F2; }
 .share-button.facebook { background-color: #1877F2; }
 .share-button.linkedin { background-color: #0A66C2; }
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
+/* [新增] 微信分享二维码弹窗样式 */
+#wechat-share-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+{% extends 'base.html' %}
+
+{% block head %}
+<meta name="description" content="{{ blogBase['description'] }}">
+{% if blogBase['keywords'] %}<meta name="keywords" content="{{ blogBase['keywords'] }}">{% endif %}
+<meta property="og:title" content="{{ blogBase['postTitle'] }}">
+<meta property="og:description" content="{{ blogBase['description'] }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ blogBase['postUrl'] }}">
+<meta property="og:image" content="{{ blogBase['ogImage'] }}">
+<title>{{ blogBase['postTitle'] }}</title>
+{% if blogBase['highlight']==1 %}<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />{% endif %}
+{{ blogBase['head']|safe }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ blogBase.postTitle }}",
+    "image": "{{ blogBase.ogImage }}",
+    "datePublished": "{{ blogBase.isoDate }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ blogBase.title }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ blogBase.title }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ blogBase.faviconUrl }}"
+        }
+
+    },
+    "description": "{{ blogBase.description }}"
+}
+</script>
+{% endblock %}
+
+{% block style %}
+<style>
+.postTitle{font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+    .post-footer { flex-direction: column; align-items: flex-start; }
+}
+{% if blogBase['highlight']!=0 -%}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}{% endif %}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--borderColor-default, var(--color-border-default));
+}
+.share-buttons-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.share-button {
+    display: inline-block;
+    padding: 4px 12px; 
+    border-radius: 6px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 12px; 
+    transition: opacity 0.3s;
+    border: none;
+}
+.share-button:hover {
+    opacity: 0.85;
+}
+.bottom-text-inline {
+    font-size: small;
+    white-space: nowrap; 
+}
+/* [新增] 微信分享按钮样式 */
+.share-button.wechat { background-color: #07C160; }
+.share-button.x { background-color: #1DA1F2; }
+.share-button.facebook { background-color: #1877F2; }
+.share-button.linkedin { background-color: #0A66C2; }
+.share-button.weibo { background-color: #e6162d; }
+.share-button.telegram { background-color: #26A5E4; }
+
+/* [新增] 微信分享二维码弹窗样式 */
+#wechat-share-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 280px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+#wechat-modal-close {
+    color: #aaa;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#wechat-modal-close:hover,
+#wechat-modal-close:focus {
+    color: black;
+    text-decoration: none;
+}
+#wechat-qrcode {
+    width: 200px;
+    height: 200px;
+    margin: 15px auto 0;
+}
 </style>
 <style>
 {{ blogBase['style']|safe }}
@@ -151,7 +309,13 @@
         <a id="share-telegram" class="share-button telegram" href="#" target="_blank" title="分享到 Telegram">Telegram</a>
     </div>
 </div>
-
+<div id="wechat-share-modal">
+    <div class="modal-content">
+        <span id="wechat-modal-close">&times;</span>
+        <p>打开微信“扫一扫”<br>点击右上角分享到朋友圈</p>
+        <div id="wechat-qrcode"></div>
+    </div>
+</div>
 <div style="margin-top: 2rem; margin-bottom: 1rem;">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
@@ -235,6 +399,41 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shareLinkedin) { shareLinkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedTitle}&source={{ blogBase['homeUrl'] }}`; }
     if (shareWeibo) { shareWeibo.href = `http://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}&pic={{ blogBase['ogImage'] }}`; }
     if (shareTelegram) { shareTelegram.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`; }
+});
+
+// [新增] 微信分享弹窗的完整逻辑
+document.addEventListener('DOMContentLoaded', function() {
+    const wechatButton = document.getElementById('share-wechat');
+    const modal = document.getElementById('wechat-share-modal');
+    const closeBtn = document.getElementById('wechat-modal-close');
+    const qrcodeContainer = document.getElementById('wechat-qrcode');
+
+    if (wechatButton && modal && closeBtn && qrcodeContainer) {
+        wechatButton.addEventListener('click', function() {
+            // 清除旧的二维码
+            qrcodeContainer.innerHTML = '';
+            // 生成新的二维码
+            new QRCode(qrcodeContainer, {
+                text: window.location.href,
+                width: 200,
+                height: 200,
+            });
+            // 显示弹窗
+            modal.style.display = 'block';
+        });
+
+        // 点击关闭按钮
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // 点击弹窗外部区域
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    }
 });
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
