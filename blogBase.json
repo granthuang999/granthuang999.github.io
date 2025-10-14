@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P141": {
+      "htmlDir": "docs/post/innovation_creative_destruction_economic_growth_nobel_2025.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "创新、创造性破坏与经济增长：2025年诺贝尔经济学奖的深远启示",
+      "postUrl": "https://www.futuremedia.work/post/innovation_creative_destruction_economic_growth_nobel_2025.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/141",
+      "commentNum": 0,
+      "wordCount": 2493,
+      "createdAt": 1760501405,
+      "top": 0,
+      "description": "2025年诺贝尔经济学奖授予莫基尔、阿洪和霍伊特，表彰其在创新和创造性破坏驱动经济增长方面的贡献，本文深入解析内生增长理论，实证证据，政策启示与挑战，强调教育，移民和制度在塑造未来繁荣中的关键作用，为全球经济转型提供了重要指引。",
+      "createdDate": "2025-10-15",
+      "isoDate": "2025-10-15T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1760501405.png",
+      "keywords": "2025诺贝尔经济学奖,约尔莫基尔,菲利普阿洪,彼得霍伊特,创新,创造性破坏,经济增长,内生增长模型,研发,生产力,熊彼特,工业革命,技术突破,实证证据,移民创新,政策启示,人工智能,绿色技术,研发投入,教育,开放移民,制度框架,有限政府,不平等,再培训,包容性增长,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P140": {
       "htmlDir": "docs/post/desperate_old_horse_breakthrough_in_repetition.html",
       "labels": [
