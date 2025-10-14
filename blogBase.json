@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P140": {
+      "htmlDir": "docs/post/desperate_old_horse_breakthrough_in_repetition.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "走出“绝望”：中年人，如何在重复的世界中重获生命的力量？",
+      "postUrl": "https://www.futuremedia.work/post/desperate_old_horse_breakthrough_in_repetition.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/140",
+      "commentNum": 0,
+      "wordCount": 1718,
+      "createdAt": 1760404221,
+      "top": 0,
+      "description": "本文以绝望的老马为核心意象，深度剖析现代人在重复日常中陷入的价值虚无困境，结合尼采的强力意志与拉斯洛的绝望突围，书写探讨如何在重复中通过自我立法和微小反抗重获生命力量，为中青年人提供了重构意义、实现精神突围的哲学路径。",
+      "createdDate": "2025-10-14",
+      "isoDate": "2025-10-14T09:10:21+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1760415005.png",
+      "keywords": "绝望的老马,价值虚无,尼采,强力意志,拉斯洛,绝望突围,重复困境,中年危机,自我赋权,精神重建,专注中年人,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P139": {
       "htmlDir": "docs/post/future-media-daily-20251011.html",
       "labels": [
