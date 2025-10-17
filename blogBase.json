@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P144": {
+      "htmlDir": "docs/post/random_walk_idiot_uncertainty_response_strategy.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "拥抱不确定性：塔勒布《随机漫步的傻瓜》的生存智慧",
+      "postUrl": "https://www.futuremedia.work/post/random_walk_idiot_uncertainty_response_strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/144",
+      "commentNum": 0,
+      "wordCount": 3439,
+      "createdAt": 1760760605,
+      "top": 0,
+      "description": "本文深度解析塔勒布《随机漫步的傻瓜》核心思想，从认知世界随机性，应对随机性的正确心态，到实践路径三维度，拆解如何在不确定性中提升决策质量与生存韧性，指导个体在复杂环境中找到可控的自己，实现价值与成长。",
+      "createdDate": "2025-10-18",
+      "isoDate": "2025-10-18T12:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1760760605.png",
+      "keywords": "随机漫步的傻瓜,塔勒布,不确定性,随机性,生存智慧,认知偏差,幸存者偏差,因果关系,经验绑架,短期失败焦虑,恐惧内耗,能力圈,运气圈,无敌心态,价值变现,个人成长,决策,风险管理,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P143": {
       "htmlDir": "docs/post/economic_downturn_inner_loop_employment_investment_strategy.html",
       "labels": [
