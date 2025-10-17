@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P143": {
+      "htmlDir": "docs/post/economic_downturn_inner_loop_employment_investment_strategy.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "经济下行与内循环：重塑你的就业、投资与生存策略",
+      "postUrl": "https://www.futuremedia.work/post/economic_downturn_inner_loop_employment_investment_strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/143",
+      "commentNum": 0,
+      "wordCount": 4043,
+      "createdAt": 1760665946,
+      "top": 0,
+      "description": "本文深入分析经济下行与内循环背景下，消费形态的演变如何重塑就业与投资格局，结合鲍曼理论探讨应对新穷人焦虑的策略，并为个体提供了从政策引导，社会文化，到个人觉醒的全面生存与发展建议，旨在帮助读者在复杂环境中把握机遇，实现韧性增长。",
+      "createdDate": "2025-10-17",
+      "isoDate": "2025-10-17T09:52:26+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "[https://www.futuremedia.work/images/1760674205.png",
+      "keywords": "经济下行,内循环,就业机会,投资策略,个人发展,消费悖论,理性悦己,消费分级,新穷人,鲍曼理论,供应链优化,精奢消费,精神消费,终身学习,可持续发展,个人品牌,技能提升,财富管理,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P142": {
       "htmlDir": "docs/post/consumption_paradox_inner_loop_value_reconstruction.html",
       "labels": [
