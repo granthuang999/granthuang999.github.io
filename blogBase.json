@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P145": {
+      "htmlDir": "docs/post/inner_world_projection_outer_world_self_mastery.html",
+      "labels": [
+        "身心健康"
+      ],
+      "postTitle": "心外无物：你的内在，即是世界万象的投影*",
+      "postUrl": "https://www.futuremedia.work/post/inner_world_projection_outer_world_self_mastery.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/145",
+      "commentNum": 0,
+      "wordCount": 3075,
+      "createdAt": 1760839805,
+      "top": 0,
+      "description": "本文深度融合僧人咖啡寓言与世界是内心投影的核心观点，解析个体内在信念，情绪如何塑造外部现实，并提供清空负面与填充积极的个人修炼艺术，旨在指导读者重塑内在投影源，在不确定性中，成为自己世界的创造者，实现自我掌控与积极成长。",
+      "createdDate": "2025-10-19",
+      "isoDate": "2025-10-19T10:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1760839805.png",
+      "keywords": "心外无物,内心投影,世界观,自我修炼,咖啡寓言,情绪管理,信念系统,价值观,认知重构,正念,个人成长,心理韧性,创造性应对,内在世界,外在现实,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P144": {
       "htmlDir": "docs/post/random_walk_idiot_uncertainty_response_strategy.html",
       "labels": [
