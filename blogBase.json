@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P147": {
+      "htmlDir": "docs/post/yang-zhenning-natural-deism-and-man-god-relations.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "“造物主”的隐退：杨振宁、自然神论与现代人“意义危机”",
+      "postUrl": "https://www.futuremedia.work/post/yang-zhenning-natural-deism-and-man-god-relations.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/147",
+      "commentNum": 0,
+      "wordCount": 1284,
+      "createdAt": 1761012605,
+      "top": 0,
+      "description": "深度剖析杨振宁关于造物主的自然神论观点，比较三种人-神关系，泛神论、自然神论、启示神，探讨理性兴起后现代人的意义危机，为中年读者提供科学与哲思交错下的自我重建之路。",
+      "createdDate": "2025-10-21",
+      "isoDate": "2025-10-21T10:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1761012605.png",
+      "keywords": "杨振宁,造物主,自然神论,泛神论,启示神,人神关系,斯宾诺莎,爱因斯坦,意义危机,物理定律,现代信仰,怀特海,帕斯卡尔,中年哲思,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P146": {
       "htmlDir": "docs/post/philosophy_armor_soft_landing_hard_world.html",
       "labels": [
