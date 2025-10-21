@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P149": {
+      "htmlDir": "docs/post/midlife-deep-recovery-system-beyond-sleep.html",
+      "labels": [
+        "身心健康"
+      ],
+      "postTitle": "为什么你越睡越累？中年人的\"深度恢复术\"：比睡觉更管用的三层能量修复法",
+      "postUrl": "https://www.futuremedia.work/post/midlife-deep-recovery-system-beyond-sleep.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/149",
+      "commentNum": 0,
+      "wordCount": 3689,
+      "createdAt": 1761275406,
+      "top": 0,
+      "description": "深度剖析中年人越睡越累的三重能量赤字身体疲劳、心理耗竭、意义缺失，提供超越睡眠的深度恢复术，三层能量修复法主动休息、主动清空、主动创造，帮助中年人重建生命的节奏感，实现真正的能量恢复。",
+      "createdDate": "2025-10-24",
+      "isoDate": "2025-10-24T11:10:06+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/deep-recovery-system.png",
+      "keywords": "中年疲惫,睡眠质量,能量管理,深度恢复,心理耗竭,意义缺失,主动休息,情绪管理,创造性恢复,第三空间,工作生活平衡,中年危机,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P148": {
       "htmlDir": "docs/post/midlife-inner-peace-fortress-in-chaotic-world.html",
       "labels": [
