@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P148": {
+      "htmlDir": "docs/post/midlife-inner-peace-fortress-in-chaotic-world.html",
+      "labels": [
+        "身心健康"
+      ],
+      "postTitle": "当世界燃烧时,我们如何不被焦虑吞噬？中年人的\"内心和平堡垒\"构建法",
+      "postUrl": "https://www.futuremedia.work/post/midlife-inner-peace-fortress-in-chaotic-world.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/148",
+      "commentNum": 0,
+      "wordCount": 2853,
+      "createdAt": 1761102606,
+      "top": 0,
+      "description": "在Gaza冲突等世界动荡背景下,深度剖析中年人的双重焦虑源,提供构建内心和平堡垒的三层防御体系，信息边界、可控圈聚焦、意义锚点,帮助中年人在外部失控时重建内在秩序,实现智慧生存。",
+      "createdDate": "2025-10-22",
+      "isoDate": "2025-10-22T11:10:06+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/inner-peace-fortress.png",
+      "keywords": "中年焦虑,地缘政治,Gaza冲突,不确定性,内心和平,斯多葛主义,控制二分法,意义疗法,弗兰克尔,信息过载,可控圈,焦虑管理,心理韧性,中年危机,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P147": {
       "htmlDir": "docs/post/yang-zhenning-natural-deism-and-man-god-relations.html",
       "labels": [
