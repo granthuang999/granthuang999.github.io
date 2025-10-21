@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P146": {
+      "htmlDir": "docs/post/philosophy_armor_soft_landing_hard_world.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "哲思的铠甲：在世界的坚硬里，柔软着陆",
+      "postUrl": "https://www.futuremedia.work/post/philosophy_armor_soft_landing_hard_world.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/146",
+      "commentNum": 0,
+      "wordCount": 2515,
+      "createdAt": 1760926205,
+      "top": 0,
+      "description": "本文深度探讨斯多葛哲学在现代生活中的实践意义，融合心外无物，内心投影的观点，从塞内加的生平与控制二分法，预演不幸，等核心思想出发，阐述哲思如何成为个体应对不确定性与焦虑的内在铠甲，帮助我们在世界的坚硬里，实现柔软着陆，重塑内在秩序与外部感知。",
+      "createdDate": "2025-10-20",
+      "isoDate": "2025-10-20T10:10:05+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/1760926205.png",
+      "keywords": "哲思,斯多葛派,塞内加,不确定性,焦虑,控制二分法,预演不幸,哲学智慧,内心投影,阿兰德波顿,自我掌控,情绪管理,人生困境,心理韧性,成长,生存策略,心外无物,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P145": {
       "htmlDir": "docs/post/inner_world_projection_outer_world_self_mastery.html",
       "labels": [
