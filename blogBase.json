@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P150": {
+      "htmlDir": "docs/post/fiscal-logic-of-central-empires-wealth-protection.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "两千年王朝兴亡的真相：不是权谋，是财政",
+      "postUrl": "https://www.futuremedia.work/post/fiscal-logic-of-central-empires-wealth-protection.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/150",
+      "commentNum": 0,
+      "wordCount": 3179,
+      "createdAt": 1761361806,
+      "top": 0,
+      "description": "深度解读郭建龙《中央帝国的财政密码》，剖析交子崩盘、告缗令、王莽改制等历史案例，揭示两千年王朝兴亡背后的财政逻辑，为中年人提供识别财政风险、保护家庭财富的历史智慧与实用启示。",
+      "createdDate": "2025-10-25",
+      "isoDate": "2025-10-25T11:10:06+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/fiscal-logic-empires.png",
+      "keywords": "财政逻辑,中央帝国,交子崩盘,告缗令,王莽改制,王朝兴亡,财富保护,货币贬值,中年理财,历史启示,财政危机,郭建龙,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P149": {
       "htmlDir": "docs/post/midlife-deep-recovery-system-beyond-sleep.html",
       "labels": [
