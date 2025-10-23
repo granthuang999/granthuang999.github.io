@@ -1,6 +1,10 @@
 
 | 封面 | 书名 | 作者 | 分类 | 阅读状态 |
 |:---:|:---|:---|:---|:---:|
+| <a href="https://weread.qq.com/web/reader/3300111563" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/50/cpplatform_fk1hly7rtuxs1fq1neox6p/t6_cpplatform_fk1hly7rtuxs1fq1neox6p1723793817.jpg" alt="他影响了中国：陈云" width="60" /></a> | [《他影响了中国：陈云》](https://weread.qq.com/web/reader/3300111563) | 叶永烈 | 人物传记-军政领袖 | 📖 在读 |
+| <a href="https://weread.qq.com/web/reader/33362049" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/49/33362049/t6_33362049.jpg" alt="结构性改革" width="60" /></a> | [《结构性改革》](https://weread.qq.com/web/reader/33362049) | 黄奇帆 | 经济理财-财经 | 📖 在读 |
+| <a href="https://weread.qq.com/web/reader/3300019741" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/89/cpPlatform_nVqL1T1SuysradaMks3Dbi/t6_cpPlatform_nVqL1T1SuysradaMks3Dbi.jpg" alt="小镇喧嚣：一个乡镇政治运作的演绎与阐释" width="60" /></a> | [《小镇喧嚣：一个乡镇政治运作的演绎与阐释》](https://weread.qq.com/web/reader/3300019741) | 吴毅 | 社会文化-社科 | 📖 在读 |
+| <a href="https://weread.qq.com/web/reader/39581806" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/806/39581806/t6_39581806.jpg" alt="小镇金融学" width="60" /></a> | [《小镇金融学》](https://weread.qq.com/web/reader/39581806) | 伍聪 | 经济理财-财经 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/35239384" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/85/YueWen_35239384/t6_YueWen_35239384.jpg" alt="西西弗神话" width="60" /></a> | [《西西弗神话》](https://weread.qq.com/web/reader/35239384) | [法]阿尔贝·加缪 | 哲学宗教-西方哲学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/912324" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/324/912324/t6_912324.jpg" alt="鼠疫" width="60" /></a> | [《鼠疫》](https://weread.qq.com/web/reader/912324) | [法]加缪 | 文学-外国文学 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/22261199" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/16/YueWen_22261199/t6_YueWen_22261199.jpg" alt="剑来" width="60" /></a> | [《剑来》](https://weread.qq.com/web/reader/22261199) | 烽火戏诸侯 | 男生小说-东方玄幻 | 📖 在读 |
@@ -47,13 +51,9 @@
 | <a href="https://weread.qq.com/web/reader/CB_Eh85yE5xlGag6ja6krDstGP9" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_Eh85yE5xlGag6ja6krDstGP9_parsecover" alt="巴比特" width="60" /></a> | [《巴比特》](https://weread.qq.com/web/reader/CB_Eh85yE5xlGag6ja6krDstGP9) | （美）刘易斯著 潘庆舲 姚祖培译 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_64T64T663Gag6ja6kr8HxF7D" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_64T64T663Gag6ja6kr8HxF7D_parsecover" alt="获诺贝尔文学奖作家丛书 1937 [法]罗杰·马丁·杜·加尔-蒂博一家（第二册）（郑克鲁译，漓江出版社1986）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1937 [法]罗杰·马丁·杜·加尔-蒂博一家（第二册）（郑克鲁译，漓江出版社1986）》](https://weread.qq.com/web/reader/CB_64T64T663Gag6ja6kr8HxF7D) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_7j06KI6MVGag6ja6kr11Q9aV" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_0K8EVcEUq5Jn6aF6YT_parsecover" alt="1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)" width="60" /></a> | [《1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)》](https://weread.qq.com/web/reader/CB_7j06KI6MVGag6ja6kr11Q9aV) | 路伊吉·皮兰德娄(Luigi Pirandello) | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_83r5rb5tcGag6ja6krDHy1kA" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_83r5rb5tcGag6ja6krDHy1kA_parsecover" alt="获诺贝尔文学奖作家丛书 1923 [爱尔兰]威廉·勃特勒·叶芝-丽达与天鹅（裘小龙译，漓江出版社1992）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1923 [爱尔兰]威廉·勃特勒·叶芝-丽达与天鹅（裘小龙译，漓江出版社1992）》](https://weread.qq.com/web/reader/CB_83r5rb5tcGag6ja6krDHy1kA) | 未知作者 | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_EpM5pw5pLGag6ja6kr1zWEjQ" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_EpM5pw5pLGag6ja6kr1zWEjQ_parsecover" alt="获诺贝尔文学奖作家丛书 1922 [西班牙]哈辛特·贝纳文特·伊·马丁内斯-不吉利的姑娘（陈凯先、屠孟超译，漓江出版社1991）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1922 [西班牙]哈辛特·贝纳文特·伊·马丁内斯-不吉利的姑娘（陈凯先、屠孟超译，漓江出版社1991）》](https://weread.qq.com/web/reader/CB_EpM5pw5pLGag6ja6kr1zWEjQ) | 未知作者 | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_0K8EVcEUq5Jn6aF6YT_parsecover" alt="1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)" width="60" /></a> | [《1934 路伊吉·皮兰德娄 意大利  戏剧二种(吴正仪译，人民文学版)》](https://weread.qq.com/web/reader/CB_6b7645663Gag6ja6kr0OoDYz) | 路伊吉·皮兰德娄(Luigi Pirandello) | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_1l65kq5lCGag6ja6kr8is0wM_parsecover" alt="获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）" width="60" /></a> | [《获诺贝尔文学奖作家丛书 1913 [印度]罗宾德拉纳特·泰戈尔-吉檀迦利 饥饿石头（上）（郑振铎、冰心等译，漓江出版社1997）》](https://weread.qq.com/web/reader/CB_1l65kq5lCGag6ja6kr8is0wM) | 未知作者 | 无 | 📖 在读 |
 
 
 ---
-*Last updated: 2025/10/22 09:59:21*
+*Last updated: 2025/10/23 09:54:54*
 
 
