@@ -1,6 +1,7 @@
 
 | 封面 | 书名 | 作者 | 分类 | 阅读状态 |
 |:---:|:---|:---|:---|:---:|
+| <a href="https://weread.qq.com/web/reader/CB_G182EQ2GD2Ws6zW6xQ9qM5oI" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_CdS1Vu1TcBVi6iQ6gX0Ea3je_parsecover" alt="牛鬼蛇神录" width="60" /></a> | [《牛鬼蛇神录》](https://weread.qq.com/web/reader/CB_G182EQ2GD2Ws6zW6xQ9qM5oI) | Frank Lee | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_7Oj8X0AoGBU78O96x7Gyc71f" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_6WxFJzFJw8iF6a76YF_parsecover" alt="大河移民上访的故事" width="60" /></a> | [《大河移民上访的故事》](https://weread.qq.com/web/reader/CB_7Oj8X0AoGBU78O96x7Gyc71f) | 应星 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_2t39w9Anx9o88SH6x8BkP7Rj" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_B7SG30G2FC3U6Wm6YZ_parsecover" alt="叫魂：1768年中国妖术大恐慌" width="60" /></a> | [《叫魂：1768年中国妖术大恐慌》](https://weread.qq.com/web/reader/CB_2t39w9Anx9o88SH6x8BkP7Rj) | 孔飞力 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300111563" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/50/cpplatform_fk1hly7rtuxs1fq1neox6p/t6_cpplatform_fk1hly7rtuxs1fq1neox6p1723793817.jpg" alt="他影响了中国：陈云" width="60" /></a> | [《他影响了中国：陈云》](https://weread.qq.com/web/reader/3300111563) | 叶永烈 | 人物传记-军政领袖 | 📖 在读 |
@@ -50,10 +51,9 @@
 | <a href="https://weread.qq.com/web/reader/CB_68Y64Q663Gag6ja6krEPk2wP" target="_blank"><img src="https://weread-epub-1258476243.file.myqcloud.com/user_upload_book_cover/pdf/a9/2e/a92ee46d9dd7bac170e775d1c7469dc2/a92ee46d9dd7bac170e775d1c7469dc2.jpeg" alt="1936 [美]尤金·奥尼尔-天边外（荒芜、汪义群等译，漓江出版社1985）" width="60" /></a> | [《1936 [美]尤金·奥尼尔-天边外（荒芜、汪义群等译，漓江出版社1985）》](https://weread.qq.com/web/reader/CB_68Y64Q663Gag6ja6krEPk2wP) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_4wW6H66IMGag6ja6krDBJ9l2" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_2M11kr1kp7r86eo6cNEA45FG_parsecover" alt="1946 [德]赫尔曼·海塞-荒原狼（上）（李世隆等译，漓江出版社2001）" width="60" /></a> | [《1946 [德]赫尔曼·海塞-荒原狼（上）（李世隆等译，漓江出版社2001）》](https://weread.qq.com/web/reader/CB_4wW6H66IMGag6ja6krDBJ9l2) | ePUBw.COM 【德】赫尔曼·黑塞 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_9qf67R663Gag6ja6krCkJDHS" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_7piEh0Eew3VJ6dN6cN_parsecover" alt="1929 保尔·托马斯·曼 德国  魔山(钱鸿嘉译，上海译文版)" width="60" /></a> | [《1929 保尔·托马斯·曼 德国  魔山(钱鸿嘉译，上海译文版)》](https://weread.qq.com/web/reader/CB_9qf67R663Gag6ja6krCkJDHS) | 托马斯·曼 (Thomas Mann) | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_Eh85yE5xlGag6ja6krDstGP9" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_Eh85yE5xlGag6ja6krDstGP9_parsecover" alt="巴比特" width="60" /></a> | [《巴比特》](https://weread.qq.com/web/reader/CB_Eh85yE5xlGag6ja6krDstGP9) | （美）刘易斯著 潘庆舲 姚祖培译 | 无 | 📖 在读 |
 
 
 ---
-*Last updated: 2025/10/26 10:01:25*
+*Last updated: 2025/10/27 10:05:47*
 
 
