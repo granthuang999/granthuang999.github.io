@@ -1,8 +1,8 @@
 
 | 封面 | 书名 | 作者 | 分类 | 阅读状态 |
 |:---:|:---|:---|:---|:---:|
-| <a href="https://weread.qq.com/web/reader/CB_G182EQ2GD2Ws6zW6xQ9qM5oI" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_CdS1Vu1TcBVi6iQ6gX0Ea3je_parsecover" alt="牛鬼蛇神录" width="60" /></a> | [《牛鬼蛇神录》](https://weread.qq.com/web/reader/CB_G182EQ2GD2Ws6zW6xQ9qM5oI) | Frank Lee | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_7Oj8X0AoGBU78O96x7Gyc71f" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_6WxFJzFJw8iF6a76YF_parsecover" alt="大河移民上访的故事" width="60" /></a> | [《大河移民上访的故事》](https://weread.qq.com/web/reader/CB_7Oj8X0AoGBU78O96x7Gyc71f) | 应星 | 无 | 📖 在读 |
+| <a href="https://weread.qq.com/web/reader/CB_G182EQ2GD2Ws6zW6xQ9qM5oI" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_CdS1Vu1TcBVi6iQ6gX0Ea3je_parsecover" alt="牛鬼蛇神录" width="60" /></a> | [《牛鬼蛇神录》](https://weread.qq.com/web/reader/CB_G182EQ2GD2Ws6zW6xQ9qM5oI) | Frank Lee | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_2t39w9Anx9o88SH6x8BkP7Rj" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_B7SG30G2FC3U6Wm6YZ_parsecover" alt="叫魂：1768年中国妖术大恐慌" width="60" /></a> | [《叫魂：1768年中国妖术大恐慌》](https://weread.qq.com/web/reader/CB_2t39w9Anx9o88SH6x8BkP7Rj) | 孔飞力 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300111563" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/50/cpplatform_fk1hly7rtuxs1fq1neox6p/t6_cpplatform_fk1hly7rtuxs1fq1neox6p1723793817.jpg" alt="他影响了中国：陈云" width="60" /></a> | [《他影响了中国：陈云》](https://weread.qq.com/web/reader/3300111563) | 叶永烈 | 人物传记-军政领袖 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/33362049" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/49/33362049/t6_33362049.jpg" alt="结构性改革" width="60" /></a> | [《结构性改革》](https://weread.qq.com/web/reader/33362049) | 黄奇帆 | 经济理财-财经 | 📖 在读 |
@@ -54,6 +54,6 @@
 
 
 ---
-*Last updated: 2025/10/27 10:05:47*
+*Last updated: 2025/10/28 09:55:25*
 
 
