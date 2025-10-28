@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P153": {
+      "htmlDir": "docs/post/chinese-kao-culture-survival-philosophy.html",
+      "labels": [
+        "哲学文学"
+      ],
+      "postTitle": "\"靠\"：三千年中国人的生存哲学与阶层密码",
+      "postUrl": "https://www.futuremedia.work/post/chinese-kao-culture-survival-philosophy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/153",
+      "commentNum": 0,
+      "wordCount": 6322,
+      "createdAt": 1761638750,
+      "top": 0,
+      "description": "深度剖析中国人靠文化的三千年智慧：底层的集体取暖、中层的关系博弈、上层的权力平衡，揭示不同阶层在生存困境中的选择逻辑，探讨现代社会中'靠'文化的转型与升华，为中年人提供理解社会运作的深刻洞察。",
+      "createdDate": "2025-10-28",
+      "isoDate": "2025-10-28T16:05:50+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/kao-culture-philosophy.png",
+      "keywords": "靠文化,生存哲学,阶层分析,底层生存,中层博弈,上层平衡,宗族互助,关系网络,权力制衡,现代转型,中国文化,社会智慧,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P152": {
       "htmlDir": "docs/post/long-arc-petition-five-findings.html",
       "labels": [
