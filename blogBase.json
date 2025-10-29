@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P154": {
+      "htmlDir": "docs/post/chongyang-parent-child-relationship-rethinking.html",
+      "labels": [
+        "身心健康"
+      ],
+      "postTitle": "重阳节思考：父母与子女，最好的关系是什么？",
+      "postUrl": "https://www.futuremedia.work/post/chongyang-parent-child-relationship-rethinking.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/154",
+      "commentNum": 0,
+      "wordCount": 6269,
+      "createdAt": 1761723685,
+      "top": 0,
+      "description": "重阳节深度思考，超越养儿防老的传统观念,探讨父母与子女之间最理想的关系——建立在平等、理解、尊重、自由基础上的双向奔赴，为夹在两代人之间的中年人提供平衡智慧与实践建议。",
+      "createdDate": "2025-10-29",
+      "isoDate": "2025-10-29T15:41:25+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/chongyang-relationship.png",
+      "keywords": "重阳节,亲子关系,养儿防老,父母子女,平等尊重,代际关系,中年困境,赡养义务,情感独立,家庭关系,孝道,现代孝顺,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P153": {
       "htmlDir": "docs/post/chinese-kao-culture-survival-philosophy.html",
       "labels": [
