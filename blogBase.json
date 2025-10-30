@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P155": {
+      "htmlDir": "docs/post/parenting-yujuzhu-versus-diandizhu.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "父母的两难：托举还是兜底？中年人对养育观的重新思考",
+      "postUrl": "https://www.futuremedia.work/post/parenting-yujuzhu-versus-diandizhu.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/155",
+      "commentNum": 0,
+      "wordCount": 6378,
+      "createdAt": 1761812228,
+      "top": 0,
+      "description": "深度剖析父母养育的两大模式——托举(投入最大化)与兜底(尊重自由)的本质差异,揭示各自的陷阱与优势，提出托举+兜底的平衡模式,为中年父母提供科学的养育反思与实践建议。",
+      "createdDate": "2025-10-30",
+      "isoDate": "2025-10-30T16:17:08+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/parenting-choice.png",
+      "keywords": "养育观念,托举,兜底,教育焦虑,中年父母,亲子关系,期望管理,心理健康,个性化成长,自由与责任,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P154": {
       "htmlDir": "docs/post/chongyang-parent-child-relationship-rethinking.html",
       "labels": [
