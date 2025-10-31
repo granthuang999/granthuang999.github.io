@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P156": {
+      "htmlDir": "docs/post/gold-vs-astock-true-judgment.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "黄金还是A股？我的真实答案会让你失望",
+      "postUrl": "https://www.futuremedia.work/post/gold-vs-astock-true-judgment.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/156",
+      "commentNum": 0,
+      "wordCount": 5300,
+      "createdAt": 1761897008,
+      "top": 0,
+      "description": "打破怎么说都对的套路，基于数据和逻辑给出独立判断，黄金已是被情绪推高的资产，A股才是真正的增长机遇，为普通中产投资者提供清晰的配置建议和执行方法。",
+      "createdDate": "2025-10-31",
+      "isoDate": "2025-10-31T15:50:08+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/investment-choice.png",
+      "keywords": "黄金,A股,资产配置,独立判断,投资逻辑,中产理财,储蓄转移,科技替代,风险管理,定投策略,未来传媒",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P155": {
       "htmlDir": "docs/post/parenting-yujuzhu-versus-diandizhu.html",
       "labels": [
