@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P157": {
+      "htmlDir": "docs/post/mature-parents-letting-go-child-independence.html",
+      "labels": [
+        "身心健康"
+      ],
+      "postTitle": "越是成熟的父母，越懂得\"放手\"：养育的终极目标是帮助孩子脱离我们",
+      "postUrl": "https://www.futuremedia.work/post/mature-parents-letting-go-child-independence.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/157",
+      "commentNum": 0,
+      "wordCount": 6450,
+      "createdAt": 1761979402,
+      "top": 0,
+      "description": "深入探讨成熟父母的本质使命：帮助孩子完成心理分离，实现真正的独立。阐述不同成长阶段的放手策略，揭示基于尊重而非依赖的亲子关系的深层价值。",
+      "createdDate": "2025-11-01",
+      "isoDate": "2025-11-01T14:43:22+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/parenting-letting-go.png",
+      "keywords": "父母与子女,养育,放手,独立,心理分离,成长,亲子关系,教育智慧,生活哲学,中年父母,家庭关系",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P156": {
       "htmlDir": "docs/post/gold-vs-astock-true-judgment.html",
       "labels": [
