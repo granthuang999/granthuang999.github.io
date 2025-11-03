@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P158": {
+      "htmlDir": "docs/post/ai-college-major-career-impact.html",
+      "labels": [
+        "学习成长"
+      ],
+      "postTitle": "你孩子的大学专业、择业路径正在被重新定义",
+      "postUrl": "https://www.futuremedia.work/post/ai-college-major-career-impact.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/158",
+      "commentNum": 0,
+      "wordCount": 4571,
+      "createdAt": 1762148338,
+      "top": 0,
+      "description": "深度分析AI对考大学、选专业和未来择业的深远影响：揭示高端工作反而最容易被AI替代的悖论，提出与AI协作而非竞争的新选择哲学，为中年父母和年轻学生提供切实可行的建议。",
+      "createdDate": "2025-11-03",
+      "isoDate": "2025-11-03T13:38:58+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "[https://www.futuremedia.work/images/ai-career-choice.png",
+      "keywords": "AI,职业规划,教育,专业选择,未来,中年父母,大学,择业,人工智能,职业转型,教育改革,学习能力,技能培养",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P157": {
       "htmlDir": "docs/post/mature-parents-letting-go-child-independence.html",
       "labels": [
