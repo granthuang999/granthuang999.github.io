@@ -19,7 +19,7 @@
 | <a href="https://weread.qq.com/web/reader/3300094047" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/18/cpplatform_uj4wiypgzffus1drmxmvq2/t6_cpplatform_uj4wiypgzffus1drmxmvq21712472428.jpg" alt="反内耗心理学" width="60" /></a> | [《反内耗心理学》](https://weread.qq.com/web/reader/3300094047) | 马浩天 | 心理-积极心理学 | ✅ 已读 |
 | <a href="https://weread.qq.com/web/reader/3300070874" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/27/cpplatform_xsajpjm754ejjtdvughwwv/t6_cpplatform_xsajpjm754ejjtdvughwwv1694402470.jpg" alt="宝贵的人生建议" width="60" /></a> | [《宝贵的人生建议》](https://weread.qq.com/web/reader/3300070874) | [美]凯文·凯利 | 个人成长-励志成长 | ✅ 已读 |
 | <a href="https://weread.qq.com/web/reader/24282914" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/914/24282914/t6_24282914.jpg" alt="活在此时此刻" width="60" /></a> | [《活在此时此刻》](https://weread.qq.com/web/reader/24282914) | 一行禅师 | 文学-散文杂著 | ✅ 已读 |
-| <a href="https://weread.qq.com/web/reader/814146" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/16/yuewen_814146/t6_yuewen_8141461689328417.jpg" alt="一个叫欧维的男人决定去死（同名电影原著）" width="60" /></a> | [《一个叫欧维的男人决定去死（同名电影原著）》](https://weread.qq.com/web/reader/814146) | 弗雷德里克·巴克曼 | 精品小说-影视原著 | 📖 在读 |
+| <a href="https://weread.qq.com/web/reader/814146" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/16/yuewen_814146/t6_yuewen_8141461689328417.jpg" alt="一个叫欧维的男人决定去死（同名电影原著）" width="60" /></a> | [《一个叫欧维的男人决定去死（同名电影原著）》](https://weread.qq.com/web/reader/814146) | 弗雷德里克·巴克曼 | 精品小说-治愈小说 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300103253" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/9/cpplatform_fnsmxhn9yq3yrbutuctznz/t6_cpplatform_fnsmxhn9yq3yrbutuctznz1719386020.jpg" alt="中年之路（套装共2册）" width="60" /></a> | [《中年之路（套装共2册）》](https://weread.qq.com/web/reader/3300103253) | [美]詹姆斯·霍利斯 | 心理-心理学应用 | ✅ 已读 |
 | <a href="https://weread.qq.com/web/reader/33628204" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/86/YueWen_33628204/t6_YueWen_33628204.jpg" alt="认知觉醒：开启自我改变的原动力" width="60" /></a> | [《认知觉醒：开启自我改变的原动力》](https://weread.qq.com/web/reader/33628204) | 周岭 | 心理-认知与行为 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/40437004" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/4/40437004/t6_40437004.jpg" alt="在你们离开以前（一本治愈两代人的生命自度书）" width="60" /></a> | [《在你们离开以前（一本治愈两代人的生命自度书）》](https://weread.qq.com/web/reader/40437004) | 毕啸南 | 个人成长-励志成长 | ✅ 已读 |
@@ -54,6 +54,6 @@
 
 
 ---
-*Last updated: 2025/11/11 10:00:48*
+*Last updated: 2025/11/12 10:00:01*
 
 
