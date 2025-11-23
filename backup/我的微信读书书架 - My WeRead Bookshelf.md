@@ -1,6 +1,7 @@
 
 | 封面 | 书名 | 作者 | 分类 | 阅读状态 |
 |:---:|:---|:---|:---|:---:|
+| <a href="https://weread.qq.com/web/reader/CB_Gok6h86hkGen70571Z9qLBSs" target="_blank"><img src="https://weread-1258476243.file.myqcloud.com/app/assets/bookcover/book_cover_default_imported_03.png" alt="考试导游词" width="60" /></a> | [《考试导游词》](https://weread.qq.com/web/reader/CB_Gok6h86hkGen70571Z9qLBSs) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/3300019741" target="_blank"><img src="https://cdn.weread.qq.com/weread/cover/89/cpPlatform_nVqL1T1SuysradaMks3Dbi/t6_cpPlatform_nVqL1T1SuysradaMks3Dbi.jpg" alt="小镇喧嚣：一个乡镇政治运作的演绎与阐释" width="60" /></a> | [《小镇喧嚣：一个乡镇政治运作的演绎与阐释》](https://weread.qq.com/web/reader/3300019741) | 吴毅 | 社会文化-社科 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/33362049" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/49/33362049/t6_33362049.jpg" alt="结构性改革" width="60" /></a> | [《结构性改革》](https://weread.qq.com/web/reader/33362049) | 黄奇帆 | 经济理财-财经 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/39581806" target="_blank"><img src="https://wfqqreader-1252317822.image.myqcloud.com/cover/806/39581806/t6_39581806.jpg" alt="小镇金融学" width="60" /></a> | [《小镇金融学》](https://weread.qq.com/web/reader/39581806) | 伍聪 | 经济理财-财经 | ✅ 已读 |
@@ -50,10 +51,9 @@
 | <a href="https://weread.qq.com/web/reader/CB_7n95vX5xlGag6ja6kr7nd2Ot" target="_blank"><img src="https://weread-epub-1258476243.file.myqcloud.com/user_upload_book_cover/pdf/df/3b/df3b77951a57d8e183e1dc5f0a562428/df3b77951a57d8e183e1dc5f0a562428.jpeg" alt="1928 [挪威]西格丽德·温塞特-《克丽丝丁》三部曲：新娘·主人·十字架（朱碧恒译，漓江出版社1990，1247页后译文版补齐，缺118、173、264、821、1030）" width="60" /></a> | [《1928 [挪威]西格丽德·温塞特-《克丽丝丁》三部曲：新娘·主人·十字架（朱碧恒译，漓江出版社1990，1247页后译文版补齐，缺118、173、264、821、1030）》](https://weread.qq.com/web/reader/CB_7n95vX5xlGag6ja6kr7nd2Ot) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_68Y64Q663Gag6ja6krEPk2wP" target="_blank"><img src="https://weread-epub-1258476243.file.myqcloud.com/user_upload_book_cover/pdf/a9/2e/a92ee46d9dd7bac170e775d1c7469dc2/a92ee46d9dd7bac170e775d1c7469dc2.jpeg" alt="1936 [美]尤金·奥尼尔-天边外（荒芜、汪义群等译，漓江出版社1985）" width="60" /></a> | [《1936 [美]尤金·奥尼尔-天边外（荒芜、汪义群等译，漓江出版社1985）》](https://weread.qq.com/web/reader/CB_68Y64Q663Gag6ja6krEPk2wP) | 未知作者 | 无 | 📖 在读 |
 | <a href="https://weread.qq.com/web/reader/CB_4wW6H66IMGag6ja6krDBJ9l2" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_2M11kr1kp7r86eo6cNEA45FG_parsecover" alt="1946 [德]赫尔曼·海塞-荒原狼（上）（李世隆等译，漓江出版社2001）" width="60" /></a> | [《1946 [德]赫尔曼·海塞-荒原狼（上）（李世隆等译，漓江出版社2001）》](https://weread.qq.com/web/reader/CB_4wW6H66IMGag6ja6krDBJ9l2) | ePUBw.COM 【德】赫尔曼·黑塞 | 无 | 📖 在读 |
-| <a href="https://weread.qq.com/web/reader/CB_9qf67R663Gag6ja6krCkJDHS" target="_blank"><img src="https://res.weread.qq.com/wrepub/CB_7piEh0Eew3VJ6dN6cN_parsecover" alt="1929 保尔·托马斯·曼 德国  魔山(钱鸿嘉译，上海译文版)" width="60" /></a> | [《1929 保尔·托马斯·曼 德国  魔山(钱鸿嘉译，上海译文版)》](https://weread.qq.com/web/reader/CB_9qf67R663Gag6ja6krCkJDHS) | 托马斯·曼 (Thomas Mann) | 无 | 📖 在读 |
 
 
 ---
-*Last updated: 2025/11/22 09:55:06*
+*Last updated: 2025/11/23 10:19:50*
 
 
