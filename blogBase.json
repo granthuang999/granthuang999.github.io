@@ -54,6 +54,30 @@
   "email": "futuremedia2090@gmail.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P159": {
+      "htmlDir": "docs/post/great-divergence-blueprint-2026.html",
+      "labels": [
+        "投资理财"
+      ],
+      "postTitle": "2025-2026年全球宏观经济与金融市场深度研究报告：大分化时代的资本清算与重构",
+      "postUrl": "https://www.futuremedia.work/post/great-divergence-blueprint-2026.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/159",
+      "commentNum": 0,
+      "wordCount": 5493,
+      "createdAt": 1766029129,
+      "top": 0,
+      "description": "深度解析2025-2026全球宏观变局，从美股估值、AI折旧、消费信贷到日元套利，为中年投资者提供全方位的资产保全与增值蓝图",
+      "createdDate": "2025-12-18",
+      "isoDate": "2025-12-18T11:38:49+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/capital-reset-2026-p0.png",
+      "keywords": "未来传媒, 专注中年人, 席勒市盈率, AI泡沫, 资产配置, 黄金, 经济周期",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P158": {
       "htmlDir": "docs/post/ai-college-major-career-impact.html",
       "labels": [
