@@ -54,6 +54,30 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P160": {
+      "htmlDir": "docs/post/👋 -zhi-jing-ren-sheng-xia-ban-chang-：-cong-zhe-li-kai-shi.html",
+      "labels": [
+        "产品服务"
+      ],
+      "postTitle": "👋 致敬人生下半场：从这里开始",
+      "postUrl": "https://www.futuremedia.work/post/%F0%9F%91%8B%20-zhi-jing-ren-sheng-xia-ban-chang-%EF%BC%9A-cong-zhe-li-kai-shi.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/160",
+      "commentNum": 0,
+      "wordCount": 561,
+      "createdAt": 1766305267,
+      "top": 1,
+      "description": "未来传媒的产品与服务导航",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T16:21:07+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/about.png",
+      "keywords": "未来传媒, 中年人, 个人成长, 名著解析,红楼职场, 投资理财, 宏观经济分析,资产配置,懒人投资周报, 名著,财富人生,人生下半场, 探索笔记",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P159": {
       "htmlDir": "docs/post/great-divergence-blueprint-2026.html",
       "labels": [
@@ -3638,12 +3662,14 @@
     "disclaimer": "#aaaaaa",
     "link": "#2f3c4c",
     "privacy-policy": "#aaaaaa",
-    "Publish": "#8d4bc3",
     "terms-of-service": "#aaaaaa",
     "tools-link": "#b4c98d",
+    "产品服务": "#6d5b74",
     "名著智慧": "#a96cef",
     "学海无涯": "#aa5e1c",
     "宏观投资": "#bd1f49",
-    "日常随笔": "#f6591b"
+    "懒人投资": "#71c363",
+    "日常随笔": "#f6591b",
+    "红楼职场": "#ad4a9b"
   }
 }
