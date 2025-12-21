@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P171": {
+      "htmlDir": "docs/post/jia-school-bullying-class-struggle.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 009】贾府学堂大乱斗：名校光环下的肮脏生意与阶层霸凌",
+      "postUrl": "https://www.futuremedia.work/post/jia-school-bullying-class-struggle.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/171",
+      "commentNum": 0,
+      "wordCount": 1271,
+      "createdAt": 1766318511,
+      "top": 0,
+      "description": "深度解析贾府学堂背后的阶层霸凌与金钱交易 揭示贵族学校光环下的肮脏真相与伪人脉社交陷阱 为家长择校与职场站队提供现实参考",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T20:01:51+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/jia-school-bullying-class-struggle.png",
+      "keywords": "红楼梦,贾府学堂,校园霸凌,阶层固化,薛蟠,金荣,茗烟,圈子文化,择校,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P170": {
       "htmlDir": "docs/post/gold-jade-marriage-capital-conspiracy.html",
       "labels": [
@@ -235,7 +260,7 @@
         "名著智慧",
         "红楼"
       ],
-      "postTitle": "红楼重启 001】甄士隐的“中产返贫”启示录：一场大火如何烧掉你的财务安全感？",
+      "postTitle": "【红楼重启 001】甄士隐的中产返贫启示录：一场大火如何烧掉你的财务安全感？",
       "postUrl": "https://www.futuremedia.work/post/zhen-shiyin-middle-class-bankruptcy-lessons.html",
       "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/163",
       "commentNum": 0,
