@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P168": {
+      "htmlDir": "docs/post/liu-laolao-fundraising-strategy.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 006】刘姥姥一进荣国府：穷人如何体面地向富人搞钱？",
+      "postUrl": "https://www.futuremedia.work/post/liu-laolao-fundraising-strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/168",
+      "commentNum": 0,
+      "wordCount": 1393,
+      "createdAt": 1766318188,
+      "top": 0,
+      "description": "深度解析刘姥姥进大观园的顶级销售思维与高逆商生存术 揭示穷人如何通过向上社交体面地向富人获取资源的底层逻辑",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:56:28+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/liu-laolao-fundraising-strategy.png",
+      "keywords": "红楼梦,刘姥姥,王熙凤,搞钱,销售技巧,向上社交,逆商,三疯读书,阶层跨越",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P167": {
       "htmlDir": "docs/post/red-chamber-chapter-5-destiny-algorithm.html",
       "labels": [
