@@ -54,13 +54,38 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P163": {
+      "htmlDir": "docs/post/zhen-shiyin-middle-class-bankruptcy-lessons.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "红楼重启 001】甄士隐的“中产返贫”启示录：一场大火如何烧掉你的财务安全感？",
+      "postUrl": "https://www.futuremedia.work/post/zhen-shiyin-middle-class-bankruptcy-lessons.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/163",
+      "commentNum": 0,
+      "wordCount": 1626,
+      "createdAt": 1766317455,
+      "top": 0,
+      "description": "解析甄士隐从中产望族一夜返贫的深层逻辑 揭示单一资产配置与无效社交的致命风险 提供应对财务黑天鹅与人性至暗时刻的生存指南",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:44:15+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/zhen-shiyin-middle-class-bankruptcy-lessons.png",
+      "keywords": "红楼梦,甄士隐,中产返贫,资产配置,天使投资,财务自由,人性,封肃,焦虑,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P162": {
       "htmlDir": "docs/post/why-reread-red-chamber-middle-age-survival-guide.html",
       "labels": [
         "名著智慧",
         "红楼"
       ],
-      "postTitle": "【红楼重启 000】序言：别把《红楼梦》当小说，这是一部“乱世生存指南",
+      "postTitle": "【红楼重启 000】序言：别把《红楼梦》当小说，这是一部乱世生存指南",
       "postUrl": "https://www.futuremedia.work/post/why-reread-red-chamber-middle-age-survival-guide.html",
       "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/162",
       "commentNum": 0,
