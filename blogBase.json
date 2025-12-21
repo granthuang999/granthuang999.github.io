@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P162": {
+      "htmlDir": "docs/post/why-reread-red-chamber-middle-age-survival-guide.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 000】序言：别把《红楼梦》当小说，这是一部“乱世生存指南",
+      "postUrl": "https://www.futuremedia.work/post/why-reread-red-chamber-middle-age-survival-guide.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/162",
+      "commentNum": 0,
+      "wordCount": 1117,
+      "createdAt": 1766316294,
+      "top": 0,
+      "description": "深度阐述重读红楼梦的现实意义 将其重新定义为豪门破产实录与乱世生存指南 剖析贾府财务危机与人际博弈对当代中产阶级的启示 开启80回生存锦囊连载计划",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:24:54+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/why-reread-red-chamber-middle-age-survival-guide.png",
+      "keywords": "红楼梦,职场生存指南,中产返贫,豪门破产,王熙凤管理学,人情世故,向上管理,情绪内耗,乱世生存,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P161": {
       "htmlDir": "docs/post/lazy-macro-weekly-001-gold-rates-asset-allocation.html",
       "labels": [
