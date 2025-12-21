@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P166": {
+      "htmlDir": "docs/post/protection-list-power-corruption-chapter-4.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 004】葫芦僧乱判葫芦案：当法律遇到护官符，普通人的正义值多少钱？",
+      "postUrl": "https://www.futuremedia.work/post/protection-list-power-corruption-chapter-4.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/166",
+      "commentNum": 0,
+      "wordCount": 1559,
+      "createdAt": 1766317924,
+      "top": 0,
+      "description": "深度解析红楼梦第四回护官符背后的权力逻辑与阶层壁垒 揭示贾雨村如何纳投名状进入核心圈层以及普通人在关系社会中的生存法则",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:52:04+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/protection-list-power-corruption-chapter-4.png",
+      "keywords": "红楼梦,护官符,贾雨村,葫芦僧乱判葫芦案,职场潜规则,投名状,阶层固化,薛蟠,人性,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P165": {
       "htmlDir": "docs/post/daiyu-enters-jia-mansion-survival-guide.html",
       "labels": [
