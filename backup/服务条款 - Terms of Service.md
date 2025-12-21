@@ -202,6 +202,6 @@ We reserve the right to modify these Terms of Service at any time. Modified term
 
 If you have any questions about these Terms of Service, please contact us:
 
-**邮箱 / Email**: [[futuremedia2090@gmail.com](mailto:futuremedia2090@gmail.com)](mailto:futuremedia2090@gmail.com)
+**邮箱 / Email**: [grant.huang@outlook.com](mailto:grant.huang@outlook.com)
 
 **网站 / Website**: [https://futuremedia.work/](https://futuremedia.work/)
