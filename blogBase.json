@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P165": {
+      "htmlDir": "docs/post/daiyu-enters-jia-mansion-survival-guide.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 003】林黛玉进贾府：职场新人如何在全是人精的圈子里活下来？",
+      "postUrl": "https://www.futuremedia.work/post/daiyu-enters-jia-mansion-survival-guide.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/165",
+      "commentNum": 0,
+      "wordCount": 1743,
+      "createdAt": 1766317775,
+      "top": 0,
+      "description": "深度解析林黛玉进贾府的高情商生存术与王熙凤的向上管理学 揭示高敏感人群在职场中的心理代价与应对策略",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:49:35+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/daiyu-enters-jia-mansion-survival-guide.png",
+      "keywords": "红楼梦,林黛玉,王熙凤,职场新人,高敏感人群,向上管理,人情世故,三疯读书,HSP",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P164": {
       "htmlDir": "docs/post/jia-yucun-career-turnaround-strategy.html",
       "labels": [
