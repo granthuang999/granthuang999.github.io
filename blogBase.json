@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P167": {
+      "htmlDir": "docs/post/red-chamber-chapter-5-destiny-algorithm.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 005】命运的算法：为什么我们在毁灭前夜最狂欢？",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-5-destiny-algorithm.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/167",
+      "commentNum": 0,
+      "wordCount": 1391,
+      "createdAt": 1766318066,
+      "top": 0,
+      "description": "深度解读红楼梦第五回太虚幻境的隐喻 揭示欲望的多巴胺陷阱与命运大数据的风险预警 为现代人提供对抗宿命的反脆弱生存指南",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:54:26+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-5-destiny-algorithm.png",
+      "keywords": "红楼梦,贾宝玉,警幻仙姑,金陵十二钗,多巴胺陷阱,反脆弱,命运,太虚幻境,三疯读书,人生哲学",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P166": {
       "htmlDir": "docs/post/protection-list-power-corruption-chapter-4.html",
       "labels": [
