@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P164": {
+      "htmlDir": "docs/post/jia-yucun-career-turnaround-strategy.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 002】贾雨村的职场翻身仗：穷书生如何撬动顶级豪门？",
+      "postUrl": "https://www.futuremedia.work/post/jia-yucun-career-turnaround-strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/164",
+      "commentNum": 0,
+      "wordCount": 1783,
+      "createdAt": 1766317624,
+      "top": 0,
+      "description": "深度拆解贾雨村被罢官后的职场翻身策略 揭示利用空窗期进行资源置换与情报获取的生存智慧 为职场人提供向上社交的实操指南",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T19:47:04+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/jia-yucun-career-turnaround-strategy.png",
+      "keywords": "红楼梦,贾雨村,职场危机公关,资源置换,向上社交,冷子兴演说荣国府,弱关系,情报获取,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P163": {
       "htmlDir": "docs/post/zhen-shiyin-middle-class-bankruptcy-lessons.html",
       "labels": [
