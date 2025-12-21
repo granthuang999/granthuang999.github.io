@@ -3,7 +3,7 @@
   <channel>
     <title>未来传媒</title>
     <link>https://www.futuremedia.work</link>
-    <description>专注中年人的身心健康，学习成长，投资理财，与时俱进自由生活</description>
+    <description>用名著智慧洞察人性，用宏观视野规划财富。致敬我们的人生下半场。</description>
     <copyright>未来传媒</copyright>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Sun, 21 Dec 2025 04:51:12 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Dec 2025 05:34:21 +0000</lastBuildDate>
     <managingEditor>未来传媒</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒</webMaster>
