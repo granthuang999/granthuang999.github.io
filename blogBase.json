@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P161": {
+      "htmlDir": "docs/post/lazy-macro-weekly-001-gold-rates-asset-allocation.html",
+      "labels": [
+        "宏观投资",
+        "周报"
+      ],
+      "postTitle": "【懒人投资周报20251221】降息迷雾下的资产锚点：为什么我们依然超配黄金？",
+      "postUrl": "https://www.futuremedia.work/post/lazy-macro-weekly-001-gold-rates-asset-allocation.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/161",
+      "commentNum": 0,
+      "wordCount": 1730,
+      "createdAt": 1766312976,
+      "top": 0,
+      "description": "深度解析全球流动性拐点下的资产定价逻辑与黄金超配策略 揭示康波周期滞胀阶段的生存法则与懒人投资组合建议",
+      "createdDate": "2025-12-21",
+      "isoDate": "2025-12-21T18:29:36+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/lazy-macro-weekly-001-gold-rates-asset-allocation.png",
+      "keywords": "懒人投资周报,宏观经济,黄金投资,美债ETF,美联储降息,康波周期,资产配置,财富保值,三疯,Jason",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P160": {
       "htmlDir": "docs/post/👋 -zhi-jing-ren-sheng-xia-ban-chang-：-cong-zhe-li-kai-shi.html",
       "labels": [
@@ -3666,10 +3691,10 @@
     "tools-link": "#b4c98d",
     "产品服务": "#6d5b74",
     "名著智慧": "#a96cef",
+    "周报": "#71c363",
     "学海无涯": "#aa5e1c",
     "宏观投资": "#bd1f49",
-    "懒人投资": "#71c363",
     "日常随笔": "#f6591b",
-    "红楼职场": "#ad4a9b"
+    "红楼": "#ad4a9b"
   }
 }
