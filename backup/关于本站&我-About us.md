@@ -41,9 +41,20 @@
 电子邮箱: [grant.huang@outlook.com](mailto:grant.huang@outlook.com) 
 感谢您的到访，希望“未来传媒”能陪伴您，"用名著智慧洞察人性，用宏观视野规划财富", 一起更好地致敬人生下半场。
 
-- **推特X**: @3fenglife
-- **小红书**: T1068367913
-- **Wechat**: takenothingaway
+---
+### 🤝 关注我的社交媒体
+
+在这个动荡的周期里，防失联是第一要务。你可以在以下平台找到我：
+
+[![X (Twitter)](https://img.shields.io/badge/X-关注%20@3fenglife-black?style=for-the-badge&logo=x&logoColor=white)](https://x.com/3fenglife)
+
+[![小红书](https://img.shields.io/badge/小红书-ID:%20T1068367913-FF2442?style=for-the-badge&logo=xiaohongshu&logoColor=white)](https://www.xiaohongshu.com/user/profile/5faf15e00000000001003d6d)
+
+[![微信](https://img.shields.io/badge/微信-takenothingaway-07C160?style=for-the-badge&logo=wechat&logoColor=white)](#)
+
+[![Newsletter](https://img.shields.io/badge/Newsletter-订阅周报-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://3fenglife.substack.com/)
+
+> **防失联建议：** 社交媒体可能会因为各种原因被限流，**订阅 Newsletter** 是最安全的连接方式。
 
 ### **工作时间 (Working Hours)**
 
