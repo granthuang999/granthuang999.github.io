@@ -54,6 +54,30 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P172": {
+      "htmlDir": "docs/post/nasdaq-100-rebalance-broadcom-weight-cap-new-entries.html",
+      "labels": [
+        "宏观投资"
+      ],
+      "postTitle": "纳指年底大换血：博通被“强行减肥”，谁在趁机上位？",
+      "postUrl": "https://www.futuremedia.work/post/nasdaq-100-rebalance-broadcom-weight-cap-new-entries.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/172",
+      "commentNum": 0,
+      "wordCount": 1150,
+      "createdAt": 1766388151,
+      "top": 0,
+      "description": "深度解析纳指100年底调仓名单：博通因权重上限遭遇被动减持，存储双雄与生物制药板块强势入驻，基建巨头Ferrovial意外入选，Lululemon离场揭示市场风格从软消费向硬资产切换",
+      "createdDate": "2025-12-22",
+      "isoDate": "2025-12-22T15:22:31+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/nasdaq-rebalance-broadcom-weight-cap-new-entries.png",
+      "keywords": "纳指100,纳斯达克调仓,博通,西部数据,希捷,生物制药,美股ETF,懒人投资周报,权重调整,QQQ,半导体存储,Ferrovial",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P171": {
       "htmlDir": "docs/post/jia-school-bullying-class-struggle.html",
       "labels": [
