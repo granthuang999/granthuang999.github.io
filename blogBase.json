@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P175": {
+      "htmlDir": "docs/post/red-chamber-chapter-10-burnout-toxic-people.html",
+      "labels": [
+        "名著智慧",
+        "红楼"
+      ],
+      "postTitle": "【红楼重启 010】金寡妇受辱与秦可卿生病，为什么精英往往死于情绪内耗？",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-10-burnout-toxic-people.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/175",
+      "commentNum": 0,
+      "wordCount": 1504,
+      "createdAt": 1766451537,
+      "top": 0,
+      "description": "深度解析红楼梦第十回，从秦可卿的病看精英的心理内耗，从金寡妇的闹剧看底层互害的逻辑。揭示豪门衰落背后的管理失位与情绪代价。",
+      "createdDate": "2025-12-23",
+      "isoDate": "2025-12-23T08:58:57+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-10-burnout-toxic-people.png",
+      "keywords": "红楼梦,秦可卿,高功能焦虑,职场内耗,垃圾人定律,尤氏,管理学,养生,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P174": {
       "htmlDir": "docs/post/sp500-pe-ratio-valuation-warning-2025.html",
       "labels": [
