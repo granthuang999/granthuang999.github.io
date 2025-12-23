@@ -54,6 +54,30 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P174": {
+      "htmlDir": "docs/post/sp500-pe-ratio-valuation-warning-2025.html",
+      "labels": [
+        "宏观投资"
+      ],
+      "postTitle": "历史铁律警告：在22倍市盈率买入美股，未来十年回报归零？",
+      "postUrl": "https://www.futuremedia.work/post/sp500-pe-ratio-valuation-warning-2025.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/174",
+      "commentNum": 0,
+      "wordCount": 1614,
+      "createdAt": 1766449592,
+      "top": 0,
+      "description": "深度解析美股22倍前瞻市盈率下的历史铁律与风险，探讨为何高估值可能导致未来十年回报平庸，并为懒人投资者提供针对性的资产配置修正策略",
+      "createdDate": "2025-12-23",
+      "isoDate": "2025-12-23T08:26:32+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/sp500-valuation-warning-22x-pe.png",
+      "keywords": "标普500,美股估值,市盈率,席勒PE,长期回报率,资产配置,懒人投资周报,美债,均值回归,RSP",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P173": {
       "htmlDir": "docs/post/sp500-pe-ratio-valuation-warning-2025.html",
       "labels": [
