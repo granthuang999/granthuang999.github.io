@@ -42,7 +42,7 @@
   "needComment": 1,
   "allHead": "<script src='https://www.futuremedia.work/plugins/GmeekVercount.js'></script>",
   "title": "未来传媒",
-  "subTitle": "用名著智慧洞察人性，用宏观视野规划财富。致敬我们的人生下半场。",
+  "subTitle": "用读书开启智慧，用太极修炼职场，用懒人心态投资理财，用供应链思维成就人生。---致敬我们的下半场",
   "avatarUrl": "/images/bb.png",
   "GMEEK_VERSION": "last",
   "displayTitle": "未来传媒",
@@ -525,7 +525,7 @@
     "P155": {
       "htmlDir": "docs/post/parenting-yujuzhu-versus-diandizhu.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "父母的两难：托举还是兜底？中年人对养育观的重新思考",
       "postUrl": "https://www.futuremedia.work/post/parenting-yujuzhu-versus-diandizhu.html",
@@ -573,7 +573,7 @@
     "P153": {
       "htmlDir": "docs/post/chinese-kao-culture-survival-philosophy.html",
       "labels": [
-        "读书智慧"
+        "人生供应链"
       ],
       "postTitle": "\"靠\"：三千年中国人的生存哲学与阶层密码",
       "postUrl": "https://www.futuremedia.work/post/chinese-kao-culture-survival-philosophy.html",
@@ -789,7 +789,7 @@
     "P144": {
       "htmlDir": "docs/post/random_walk_idiot_uncertainty_response_strategy.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "拥抱不确定性：塔勒布《随机漫步的傻瓜》的生存智慧",
       "postUrl": "https://www.futuremedia.work/post/random_walk_idiot_uncertainty_response_strategy.html",
@@ -885,7 +885,7 @@
     "P140": {
       "htmlDir": "docs/post/desperate_old_horse_breakthrough_in_repetition.html",
       "labels": [
-        "读书智慧"
+        "人生供应链"
       ],
       "postTitle": "走出“绝望”：中年人，如何在重复的世界中重获生命的力量？",
       "postUrl": "https://www.futuremedia.work/post/desperate_old_horse_breakthrough_in_repetition.html",
@@ -1053,7 +1053,7 @@
     "P133": {
       "htmlDir": "docs/post/transcending_problems_rather_than_solving_them.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "升维而非求解：越过问题，才是中年人的破局之道",
       "postUrl": "https://www.futuremedia.work/post/transcending_problems_rather_than_solving_them.html",
@@ -1173,7 +1173,7 @@
     "P128": {
       "htmlDir": "docs/post/northern_county_power_survival_ambition_decline.html",
       "labels": [
-        "读书智慧"
+        "人生供应链"
       ],
       "postTitle": "权力性生存的桎梏：北方县城进取心消亡的深层解剖",
       "postUrl": "https://www.futuremedia.work/post/northern_county_power_survival_ambition_decline.html",
@@ -1413,7 +1413,7 @@
     "P118": {
       "htmlDir": "docs/post/human_hubris_cognitive_bias_self_transcendence.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "人都是自以为是的：全面剖析认知偏差与自我超越",
       "postUrl": "https://www.futuremedia.work/post/human_hubris_cognitive_bias_self_transcendence.html",
@@ -1437,7 +1437,7 @@
     "P117": {
       "htmlDir": "docs/post/absurd_self_harmony_guide.html",
       "labels": [
-        "读书智慧"
+        "人生供应链"
       ],
       "postTitle": "荒诞的起源、现实与理想的张力，以及信仰在荒诞中的角色",
       "postUrl": "https://www.futuremedia.work/post/absurd_self_harmony_guide.html",
@@ -1581,7 +1581,7 @@
     "P111": {
       "htmlDir": "docs/post/cognitive-reframe-compass.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "打破无形枷锁：中年人，用“认知重构罗盘”重启人生无限可能",
       "postUrl": "https://www.futuremedia.work/post/cognitive-reframe-compass.html",
@@ -1605,7 +1605,7 @@
     "P110": {
       "htmlDir": "docs/post/midlife-future-dweller-mindset.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "不用“经验”给人生设限，用“未来生活者”心法拥抱变化",
       "postUrl": "https://www.futuremedia.work/post/midlife-future-dweller-mindset.html",
@@ -1701,7 +1701,7 @@
     "P106": {
       "htmlDir": "docs/post/absurd-lucid-living-principle.html",
       "labels": [
-        "读书智慧"
+        "人生供应链"
       ],
       "postTitle": "别再“忙碌麻木”了！中年人，用“荒诞清醒生存法则”活出你的生命力量！",
       "postUrl": "https://www.futuremedia.work/post/absurd-lucid-living-principle.html",
@@ -1725,7 +1725,7 @@
     "P105": {
       "htmlDir": "docs/post/human-centric-resilience-environmentalism.html",
       "labels": [
-        "读书智慧"
+        "人生供应链"
       ],
       "postTitle": "别再被“环保焦虑”绑架了！中年人，用“人本韧性环保观”重塑你的绿色未来",
       "postUrl": "https://www.futuremedia.work/post/human-centric-resilience-environmentalism.html",
@@ -1749,7 +1749,7 @@
     "P104": {
       "htmlDir": "docs/post/midlife-growth-compound-engine.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "别再“原地踏步”了！中年人，用“成长复利引擎”驱动你的下半场！",
       "postUrl": "https://www.futuremedia.work/post/midlife-growth-compound-engine.html",
@@ -1821,7 +1821,7 @@
     "P101": {
       "htmlDir": "docs/post/midlife-decision-sandbox-strategy.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "别再“盲赌”了！中年人，用“决策沙盘策略”穿越不确定性迷雾",
       "postUrl": "https://www.futuremedia.work/post/midlife-decision-sandbox-strategy.html",
@@ -1917,7 +1917,7 @@
     "P97": {
       "htmlDir": "docs/post/midlife-cognitive-barbell-strategy.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "别再“瞎学”了！中年人，用“认知杠铃策略”穿越信息迷雾",
       "postUrl": "https://www.futuremedia.work/post/midlife-cognitive-barbell-strategy.html",
@@ -2133,7 +2133,7 @@
     "P85": {
       "htmlDir": "docs/post/midlife-second-order-learning.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "别再死记硬背了！中年人，用“二阶学习法”实现认知跃迁",
       "postUrl": "https://www.futuremedia.work/post/midlife-second-order-learning.html",
@@ -2229,7 +2229,7 @@
     "P80": {
       "htmlDir": "docs/post/parents-relationship-reconciliation.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "停止“还债式”尽孝：40岁后，处理与父母关系的最高智慧",
       "postUrl": "https://www.futuremedia.work/post/parents-relationship-reconciliation.html",
@@ -2325,7 +2325,7 @@
     "P76": {
       "htmlDir": "docs/post/personal-board-directors.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "停止无效社交！中年破局，从组建你人生的“个人董事会”开始",
       "postUrl": "https://www.futuremedia.work/post/personal-board-directors.html",
@@ -2469,7 +2469,7 @@
     "P70": {
       "htmlDir": "docs/post/use-cluade-ai.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "终结深度阅读焦虑：中年人如何用Claude AI的200K窗口，10分钟“吃透”一份200页的报告？",
       "postUrl": "https://www.futuremedia.work/post/use-cluade-ai.html",
@@ -2613,7 +2613,7 @@
     "P63": {
       "htmlDir": "docs/post/debugging-log.html",
       "labels": [
-        "职场太极"
+        "产品服务"
       ],
       "postTitle": "网站调试与功能增强日志",
       "postUrl": "https://www.futuremedia.work/post/debugging-log.html",
@@ -2685,7 +2685,7 @@
     "P60": {
       "htmlDir": "docs/post/Thinking-Fast-and-Slow.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "《思考，快与慢》：中年决策者的认知升级指南，摆脱思维陷阱的智慧之书",
       "postUrl": "https://www.futuremedia.work/post/Thinking-Fast-and-Slow.html",
@@ -3141,7 +3141,7 @@
     "P41": {
       "htmlDir": "docs/post/Deep-Thinking.html",
       "labels": [
-        "职场太极"
+        "人生供应链"
       ],
       "postTitle": "《深度思考》提升决策智慧 ",
       "postUrl": "https://www.futuremedia.work/post/Deep-Thinking.html",
