@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
-    <title>未来传媒</title>
+    <title>未来传媒-FutureMedia.Work</title>
     <link>https://www.futuremedia.work</link>
     <description>用读书开启智慧，用太极修炼职场，用懒人心态投资理财，用供应链思维成就人生。---致敬我们的下半场</description>
-    <copyright>未来传媒</copyright>
+    <copyright>未来传媒-FutureMedia.Work</copyright>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
@@ -12,10 +12,10 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Thu, 25 Dec 2025 09:16:55 +0000</lastBuildDate>
-    <managingEditor>未来传媒</managingEditor>
+    <lastBuildDate>Thu, 25 Dec 2025 09:20:54 +0000</lastBuildDate>
+    <managingEditor>未来传媒-FutureMedia.Work</managingEditor>
     <ttl>60</ttl>
-    <webMaster>未来传媒</webMaster>
+    <webMaster>未来传媒-FutureMedia.Work</webMaster>
     <item>
       <title>英语学习指南-未来传媒</title>
       <link>https://www.futuremedia.work/english-study/index.html</link>
