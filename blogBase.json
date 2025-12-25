@@ -54,13 +54,38 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P181": {
+      "htmlDir": "docs/post/rmb-outbound-first-mile-guide.html",
+      "labels": [
+        "懒人投资",
+        "产品服务"
+      ],
+      "postTitle": "【香港开户攻略】打通“第一公里”：50岁中产家庭如何合规、低风险地完成资金搬运？",
+      "postUrl": "https://www.futuremedia.work/post/rmb-outbound-first-mile-guide.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/181",
+      "commentNum": 0,
+      "wordCount": 2988,
+      "createdAt": 1766651140,
+      "top": 0,
+      "description": "解决资金出海第一公里难题，为50岁中产家庭定制的合规资金搬运策略。利用购汇额度、ATM取现及保险红利，低风险实现资产跨境。",
+      "createdDate": "2025-12-25",
+      "isoDate": "2025-12-25T16:25:40+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/rmb-outbound-strategy.png",
+      "keywords": "资金出海,5万美金购汇额度,香港银行开户,跨境汇款,保诚保险红利,外汇管制",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P180": {
       "htmlDir": "docs/post/virtual-bank-firewall-strategy.html",
       "labels": [
         "懒人投资",
         "产品服务"
       ],
-      "postTitle": "# 【香港开户攻略】给你的钱戴副“手套”：为什么你必须用虚拟银行做高频交易的防火墙？",
+      "postTitle": "【香港开户攻略】给你的钱戴副“手套”：为什么你必须用虚拟银行做高频交易的防火墙？",
       "postUrl": "https://www.futuremedia.work/post/virtual-bank-firewall-strategy.html",
       "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/180",
       "commentNum": 0,
