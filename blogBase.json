@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P178": {
+      "htmlDir": "docs/post/red-chamber-chapter-12-risk-and-cashflow.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 012】贾瑞之死与林如海病危：致命的“多巴胺陷阱”与家族现金牛的倒下",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-12-risk-and-cashflow.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/178",
+      "commentNum": 0,
+      "wordCount": 2212,
+      "createdAt": 1766636207,
+      "top": 0,
+      "description": "深度解析红楼梦第12回，贾瑞因贪恋风月宝鉴正面而亡，揭示人性的多巴胺陷阱，林如海病危预示贾府核心现金流断裂的危机。",
+      "createdDate": "2025-12-25",
+      "isoDate": "2025-12-25T12:16:47+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-12.png",
+      "keywords": "红楼梦,贾瑞,风月宝鉴,林如海,现金流,行为金融学,多巴胺陷阱,止损",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P177": {
       "htmlDir": "docs/post/cash-vs-debt-freedom.html",
       "labels": [
