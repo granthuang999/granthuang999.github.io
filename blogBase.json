@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P180": {
+      "htmlDir": "docs/post/virtual-bank-firewall-strategy.html",
+      "labels": [
+        "懒人投资",
+        "产品服务"
+      ],
+      "postTitle": "# 【香港开户攻略】给你的钱戴副“手套”：为什么你必须用虚拟银行做高频交易的防火墙？",
+      "postUrl": "https://www.futuremedia.work/post/virtual-bank-firewall-strategy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/180",
+      "commentNum": 0,
+      "wordCount": 3006,
+      "createdAt": 1766651000,
+      "top": 0,
+      "description": "为什么说实体卡是底子，虚拟卡是手套？深度解析如何利用众安银行ZA Bank搭建资金防火墙，隔离高频交易风险，保护核心大行账户安全。",
+      "createdDate": "2025-12-25",
+      "isoDate": "2025-12-25T16:23:20+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/virtual-bank-firewall.png",
+      "keywords": "众安银行,ZA Bank,虚拟银行,资金防火墙,香港开户攻略,转数快FPS,资产隔离",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P179": {
       "htmlDir": "docs/post/hk-bank-account-security-guide.html",
       "labels": [
