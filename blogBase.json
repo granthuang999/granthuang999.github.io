@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P179": {
+      "htmlDir": "docs/post/hk-bank-account-security-guide.html",
+      "labels": [
+        "懒人投资",
+        "产品服务"
+      ],
+      "postTitle": "【香港开户攻略】渣打银行真的不管控吗？一份价值百万的离岸账户防冻结指南",
+      "postUrl": "https://www.futuremedia.work/post/hk-bank-account-security-guide.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/179",
+      "commentNum": 0,
+      "wordCount": 2727,
+      "createdAt": 1766650795,
+      "top": 0,
+      "description": "渣打银行真的不管控吗？揭秘香港银行账户冻结的底层逻辑，提供一套包含养号策略与多银行账户矩阵的防冻结实操指南。",
+      "createdDate": "2025-12-25",
+      "isoDate": "2025-12-25T16:19:55+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/hk-banking-security.png",
+      "keywords": "香港银行开户,渣打银行风控,汇丰银行冻结,离岸账户维护,众安银行,反洗钱AML,资产配置",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P178": {
       "htmlDir": "docs/post/red-chamber-chapter-12-risk-and-cashflow.html",
       "labels": [
