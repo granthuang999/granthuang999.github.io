@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P182": {
+      "htmlDir": "docs/post/red-chamber-chapter-13-macro-vs-micro.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 013】宏观周期的逃顶预警与微观管理的战术勤奋",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-13-macro-vs-micro.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/182",
+      "commentNum": 0,
+      "wordCount": 2686,
+      "createdAt": 1766719432,
+      "top": 0,
+      "description": "深度解析红楼梦第13回，秦可卿的托梦是顶级的家族资产隔离策略，而王熙凤的铁腕管理虽然精彩，却为何救不了贾府？从宏观战略与微观管理的冲突，看豪门衰落的必然性。",
+      "createdDate": "2025-12-26",
+      "isoDate": "2025-12-26T11:23:52+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-13-macro-vs-micro.png",
+      "keywords": "红楼梦,秦可卿托梦,王熙凤,康波周期,家族信托,资产隔离,危机管理,MBA案例,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P181": {
       "htmlDir": "docs/post/rmb-outbound-first-mile-guide.html",
       "labels": [
