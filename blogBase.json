@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P183": {
+      "htmlDir": "docs/post/red-chamber-chapter-14-asset-swap-risk.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 014】林如海之死与北静王结交：一次高风险的资产置换",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-14-asset-swap-risk.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/183",
+      "commentNum": 0,
+      "wordCount": 1627,
+      "createdAt": 1766799220,
+      "top": 0,
+      "description": "深度解析红楼梦第14回，林如海之死意味着贾府失去了核心造血功能，而攀附北静王则是一次致命的政治押注，看贾府如何通过错误的资产置换，一步步走向深渊。",
+      "createdDate": "2025-12-27",
+      "isoDate": "2025-12-27T09:33:40+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-14-asset-swap-risk.png",
+      "keywords": "红楼梦,林如海,北静王,资产置换,政治风险,现金流管理,三疯读书,黑天鹅",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P182": {
       "htmlDir": "docs/post/red-chamber-chapter-13-macro-vs-micro.html",
       "labels": [
