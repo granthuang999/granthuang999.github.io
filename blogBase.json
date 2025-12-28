@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P184": {
+      "htmlDir": "docs/post/lazy-investor-weekly-002-2026-outlook.html",
+      "labels": [
+        "懒人投资",
+        "周报"
+      ],
+      "postTitle": "【懒人投资周报20251228】2026 年度展望：在K型分裂中寻找确定性",
+      "postUrl": "https://www.futuremedia.work/post/lazy-investor-weekly-002-2026-outlook.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/184",
+      "commentNum": 0,
+      "wordCount": 2913,
+      "createdAt": 1766904112,
+      "top": 0,
+      "description": "懒人投资周报20251228，2026年度深度展望。高盛预测黄金将破$5000？中国经济转向反内卷？美股进入类滞胀？给出一份详细的懒人资产再平衡策略。",
+      "createdDate": "2025-12-28",
+      "isoDate": "2025-12-28T14:41:52+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/lazy-investor-weekly-002.png",
+      "keywords": "2026宏观预测,资产配置,黄金目标价,美股策略,反内卷,懒人投资,Jason",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P183": {
       "htmlDir": "docs/post/red-chamber-chapter-14-asset-swap-risk.html",
       "labels": [
