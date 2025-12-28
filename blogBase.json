@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P185": {
+      "htmlDir": "docs/post/red-chamber-chapter-15-vanity-trap.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 015】王熙凤的死穴，也是我前半生最大的遗憾",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-15-vanity-trap.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/185",
+      "commentNum": 0,
+      "wordCount": 1183,
+      "createdAt": 1766906517,
+      "top": 0,
+      "description": "重读红楼梦第15回，王熙凤是如何被一句非你不可捧杀的？结合三疯20年高管经历，聊聊职场中那些糖衣炮弹。",
+      "createdDate": "2025-12-28",
+      "isoDate": "2025-12-28T15:21:57+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-15-real.png",
+      "keywords": "红楼梦,王熙凤,职场捧杀,中年感悟,拒绝内耗,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P184": {
       "htmlDir": "docs/post/lazy-investor-weekly-002-2026-outlook.html",
       "labels": [
