@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P186": {
+      "htmlDir": "docs/post/red-chamber-chapter-16-capex-trap.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 016】贾府的IPO与大观园魔咒：为什么盖新楼的企业死得快？",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-16-capex-trap.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/186",
+      "commentNum": 0,
+      "wordCount": 1101,
+      "createdAt": 1766981708,
+      "top": 0,
+      "description": "红楼梦第16回深度解析，贾府修建大观园，为何是家族衰落的开始？结合商业史上的大楼魔咒，聊聊面子工程的代价。",
+      "createdDate": "2025-12-29",
+      "isoDate": "2025-12-29T12:15:08+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-16-tower.png",
+      "keywords": "红楼梦,贾元春,大观园,IPO魔咒,现金流,消费升级,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P185": {
       "htmlDir": "docs/post/red-chamber-chapter-15-vanity-trap.html",
       "labels": [
