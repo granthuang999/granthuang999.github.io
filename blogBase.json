@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P188": {
+      "htmlDir": "docs/post/soul-archaeology-01-survivors-cost.html",
+      "labels": [
+        "读书智慧",
+        "随笔"
+      ],
+      "postTitle": "【灵魂考古 01】幸存者的代价：我们为什么变成了现在的样子？",
+      "postUrl": "https://www.futuremedia.work/post/soul-archaeology-01-survivors-cost.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/188",
+      "commentNum": 0,
+      "wordCount": 990,
+      "createdAt": 1767067526,
+      "top": 0,
+      "description": "灵魂考古系列开篇，为何现在的国民性充满了坏，这其实是一场长达两千年的制度筛选，幸存者的代价，就是我们进化出了适应极权环境的防御机制。",
+      "createdDate": "2025-12-30",
+      "isoDate": "2025-12-30T12:05:26+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/soul-archaeology-01-evolution.png",
+      "keywords": "国民性,制度进化论,幸存者偏差,历史观,三疯读书,逆向驯化",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P187": {
       "htmlDir": "docs/post/red-chamber-chapter-17-toxic-boss.html",
       "labels": [
