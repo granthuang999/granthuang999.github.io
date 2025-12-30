@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P189": {
+      "htmlDir": "docs/post/soul-archaeology-02-qing-dynasty-knees.html",
+      "labels": [
+        "读书智慧",
+        "随笔"
+      ],
+      "postTitle": "【灵魂考古 02】剥离清代：为什么我们的膝盖这么软？",
+      "postUrl": "https://www.futuremedia.work/post/soul-archaeology-02-qing-dynasty-knees.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/189",
+      "commentNum": 0,
+      "wordCount": 1209,
+      "createdAt": 1767146400,
+      "top": 0,
+      "description": "灵魂考古第二篇，剥离清代留下的奴性烙印，为何我们在权力面前习惯下跪，回溯留头不留发的残酷筛选，剪掉心中的辫子，找回站立的勇气。",
+      "createdDate": "2025-12-31",
+      "isoDate": "2025-12-31T10:00:00+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/soul-archaeology-02-broken-knees.png",
+      "keywords": "清朝,奴性,剃发令,主奴结构,心理创伤,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P188": {
       "htmlDir": "docs/post/soul-archaeology-01-survivors-cost.html",
       "labels": [
