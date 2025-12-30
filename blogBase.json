@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P187": {
+      "htmlDir": "docs/post/red-chamber-chapter-17-toxic-boss.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 017】贾政视察大观园：一场令人窒息的高管巡店现场",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-17-toxic-boss.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/187",
+      "commentNum": 0,
+      "wordCount": 1009,
+      "createdAt": 1767057955,
+      "top": 0,
+      "description": "红楼梦第17回深度解析：贾政视察大观园，像极了令人窒息的职场汇报现场，结合三疯20年高管经历，聊聊如何摆脱为了批评而批评的老板。",
+      "createdDate": "2025-12-30",
+      "isoDate": "2025-12-30T09:25:55+08:00",
+      "dateLabelColor": "#0969da",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-17-boss.png",
+      "keywords": "红楼梦,贾政,职场PUA,向上管理,项目验收,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P186": {
       "htmlDir": "docs/post/red-chamber-chapter-16-capex-trap.html",
       "labels": [
