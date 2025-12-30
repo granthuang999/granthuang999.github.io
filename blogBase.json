@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P191": {
+      "htmlDir": "docs/post/soul-archaeology-04-qin-han-atomization.html",
+      "labels": [
+        "读书智慧",
+        "随笔"
+      ],
+      "postTitle": "【灵魂考古 04】剥离秦汉：为什么我们活成了一盘冷漠的散沙？",
+      "postUrl": "https://www.futuremedia.work/post/soul-archaeology-04-qin-han-atomization.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/191",
+      "commentNum": 0,
+      "wordCount": 1122,
+      "createdAt": 1767319200,
+      "top": 0,
+      "description": "灵魂考古第四篇，剥离秦汉体制留下的冷漠，商鞅的连坐与汉武的独尊儒术，如何联手粉碎了民间的组织能力，让我们变成一盘互不信任的散沙。",
+      "createdDate": "2026-01-02",
+      "isoDate": "2026-01-02T10:00:00+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/soul-archaeology-04-sand-curse.png",
+      "keywords": "秦制,商鞅变法,连坐,原子化,儒表法里,冷漠,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P190": {
       "htmlDir": "docs/post/soul-archaeology-03-song-ming-masks.html",
       "labels": [
