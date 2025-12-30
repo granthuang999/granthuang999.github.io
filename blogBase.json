@@ -54,6 +54,56 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P193": {
+      "htmlDir": "docs/post/soul-archaeology-07-return-to-pre-qin.html",
+      "labels": [
+        "读书智慧",
+        "随笔"
+      ],
+      "postTitle": "【灵魂考古 终章】回望先秦：找回失落的贵族，重塑中国人的脊梁",
+      "postUrl": "https://www.futuremedia.work/post/soul-archaeology-07-return-to-pre-qin.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/193",
+      "commentNum": 0,
+      "wordCount": 1224,
+      "createdAt": 1767492000,
+      "top": 0,
+      "description": "灵魂考古大结局，剥去所有制度污垢，回到中国人的精神原乡，重温先秦士与侠的高贵，在现代社会重塑独立人格与脊梁。",
+      "createdDate": "2026-01-04",
+      "isoDate": "2026-01-04T10:00:00+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/soul-archaeology-07-noble-spirit.png",
+      "keywords": "先秦精神,贵族,独立人格,墨家,精神复兴,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
+    "P192": {
+      "htmlDir": "docs/post/soul-archaeology-05-trust-crisis.html",
+      "labels": [
+        "读书智慧",
+        "随笔"
+      ],
+      "postTitle": "【灵魂考古 05】剥离本朝：被粉碎的底线与互害的深渊",
+      "postUrl": "https://www.futuremedia.work/post/soul-archaeology-05-trust-crisis.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/192",
+      "commentNum": 0,
+      "wordCount": 1113,
+      "createdAt": 1767405600,
+      "top": 0,
+      "description": "灵魂考古第五篇，剥离近几十年运动留下的互害伤疤，当划清界限成为生存法则，家庭作为最后避难所被摧毁，我们该如何重建人伦底线。",
+      "createdDate": "2026-01-03",
+      "isoDate": "2026-01-03T10:00:00+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/soul-archaeology-05-trust-shattered.png",
+      "keywords": "历次运动,互害模式,投名状,信任危机,党文化,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P191": {
       "htmlDir": "docs/post/soul-archaeology-04-qin-han-atomization.html",
       "labels": [
