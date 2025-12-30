@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P190": {
+      "htmlDir": "docs/post/soul-archaeology-03-song-ming-masks.html",
+      "labels": [
+        "读书智慧",
+        "随笔"
+      ],
+      "postTitle": "【灵魂考古 03】剥离宋明：为什么我们不得不戴上虚伪的面具？",
+      "postUrl": "https://www.futuremedia.work/post/soul-archaeology-03-song-ming-masks.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/190",
+      "commentNum": 0,
+      "wordCount": 1095,
+      "createdAt": 1767232800,
+      "top": 0,
+      "description": "灵魂考古第三篇，剥离宋明理学留下的虚伪面具，当真诚成为致死因，中国人被迫进化出了人前君子，人后鬼的生存智慧，拒绝表演，回归真实。",
+      "createdDate": "2026-01-01",
+      "isoDate": "2026-01-01T10:00:00+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/soul-archaeology-03-hypocrisy-mask.png",
+      "keywords": "宋明理学,虚伪,特务政治,双重人格,高情商,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P189": {
       "htmlDir": "docs/post/soul-archaeology-02-qing-dynasty-knees.html",
       "labels": [
