@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P196": {
+      "htmlDir": "docs/post/red-chamber-chapter-19-specific-happiness.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 019】元妃省亲后的“贤者时间”：为什么宝玉要往丫鬟家跑？",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-19-specific-happiness.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/196",
+      "commentNum": 0,
+      "wordCount": 953,
+      "createdAt": 1767255424,
+      "top": 0,
+      "description": "红楼梦第19回深度解析，元妃省亲后的贤者时间，宝玉为何逃离豪宅去丫鬟家，聊聊具体的快乐如何治愈宏大的空虚。",
+      "createdDate": "2026-01-01",
+      "isoDate": "2026-01-01T16:17:04+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-19-xiren-home.png",
+      "keywords": "红楼梦,贾宝玉,袭人,具体的幸福,新年,拒绝宏大叙事,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P195": {
       "htmlDir": "docs/post/red-chamber-chapter-18-lonely-gala.html",
       "labels": [
