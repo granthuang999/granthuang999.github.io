@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P197": {
+      "htmlDir": "docs/post/red-chamber-chapter-20-petty-fights.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 020】一碗酥酪引发的血案：为什么越是底层，越喜欢互相为难？",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-20-petty-fights.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/197",
+      "commentNum": 0,
+      "wordCount": 889,
+      "createdAt": 1767319220,
+      "top": 0,
+      "description": "红楼梦第20回深度解析，一碗酥酪引发的争吵，揭示了存量博弈下的底层互害逻辑。",
+      "createdDate": "2026-01-02",
+      "isoDate": "2026-01-02T10:00:20+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-20-cheese.png",
+      "keywords": "红楼梦,李嬷嬷,存量博弈,内卷,底层互害,职场政治,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P196": {
       "htmlDir": "docs/post/red-chamber-chapter-19-specific-happiness.html",
       "labels": [
