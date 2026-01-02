@@ -54,6 +54,31 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P198": {
+      "htmlDir": "docs/post/red-chamber-chapter-21-gray-management.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 021】平儿的智慧：为什么“灰度”比“真相”更重要？",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-chapter-21-gray-management.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/198",
+      "commentNum": 0,
+      "wordCount": 1033,
+      "createdAt": 1767397873,
+      "top": 0,
+      "description": "红楼梦第21回深度解析，平儿私藏贾琏出轨证据，揭示了灰度比真相更重要的职场生存智慧。",
+      "createdDate": "2026-01-03",
+      "isoDate": "2026-01-03T07:51:13+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-21-hair.png",
+      "keywords": "红楼梦,平儿,王熙凤,灰度管理,职场情商,向上管理,三疯读书",
+      "quote": "",
+      "daily_sentence": ""
+    },
     "P197": {
       "htmlDir": "docs/post/red-chamber-chapter-20-petty-fights.html",
       "labels": [
