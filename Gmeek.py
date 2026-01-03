@@ -9,7 +9,7 @@ import urllib.parse
 import requests
 import argparse
 import html
-import markdown # 引入本地库
+import markdown
 from github import Github, Auth
 from xpinyin import Pinyin
 from feedgen.feed import FeedGenerator
@@ -17,7 +17,7 @@ from jinja2 import Environment, FileSystemLoader
 from transliterate import translit
 from collections import OrderedDict
 
-# --- Constants (保持不变) ---
+# --- Constants ---
 i18n={"Search":"Search","switchTheme":"switch theme","home":"home","comments":"comments","run":"run ","days":" days","Previous":"Previous","Next":"Next"}
 i18nCN={"Search":"搜索","switchTheme":"切换主题","home":"首页","comments":"评论","run":"网站运行","days":"天","Previous":"上一页","Next":"下一页"}
 i18nRU={"Search":"Поиск","switchTheme": "Сменить тему","home":"Главная","comments":"Комментарии","run":"работает ","days":" дней","Previous":"Предыдущая","Next":"Следующая"}
@@ -128,21 +128,18 @@ class GMEEK:
         def Gmeek_html_tag_filter(match):
             nonlocal html_replacements
             text = match.group(1)
-            placeholder = f"GMEEK-HTML-PLACEHOLDER-{len(html_replacements)}"
+            # 使用简单的占位符，避免markdown渲染问题
+            placeholder = f"GMEEKTAG{len(html_replacements)}"
             html_replacements[placeholder] = text
             return placeholder
         
         # 1. 预处理 Gmeek 特殊标签，保护视频、iframe 不被渲染坏
         mdstr = re.sub(r'`Gmeek-html(.*?)`', Gmeek_html_tag_filter, mdstr, flags=re.DOTALL)
         
-        # 2. 配置 Markdown 扩展，尽可能模仿 GitHub 的原生行为
-        # pymdownx.superfences: 支持嵌套代码块
-        # pymdownx.tasklist: 支持 [ ] 任务列表
-        # pymdownx.magiclink: 自动识别链接
-        # tables: 支持表格
+        # 2. 配置 Markdown 扩展
         extensions = [
             'markdown.extensions.extra',
-            'markdown.extensions.codehilite', # 代码高亮
+            'markdown.extensions.codehilite', 
             'markdown.extensions.tables',
             'markdown.extensions.toc',
             'markdown.extensions.nl2br',
@@ -152,14 +149,24 @@ class GMEEK:
             'pymdownx.magiclink'
         ]
         
+        # 显式配置 codehilite 扩展，强制使用 Pygments
+        extension_configs = {
+            'markdown.extensions.codehilite': {
+                'css_class': 'codehilite',
+                'use_pygments': True,
+                'guess_lang': False 
+            }
+        }
+        
         try:
             # 3. 本地渲染，无需联网
-            html_content = markdown.markdown(mdstr, extensions=extensions)
+            html_content = markdown.markdown(mdstr, extensions=extensions, extension_configs=extension_configs)
         except Exception as e:
             raise Exception(f"Local markdown rendering error: {e}")
 
         # 4. 还原特殊标签
         for placeholder, original_html in html_replacements.items():
+            # 尝试替换被 p 标签包裹的占位符
             p_wrapped_placeholder = f"<p>{placeholder}</p>"
             if p_wrapped_placeholder in html_content:
                 html_content = html_content.replace(p_wrapped_placeholder, original_html)
