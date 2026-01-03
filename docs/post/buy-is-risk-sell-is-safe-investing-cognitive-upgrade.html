@@ -232,68 +232,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.wechat { background-color: #07C160; }
 </style>
 <style>
-
-/* Pygments Highlight CSS */
-.codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; line-height: 1.45; }
-.codehilite pre { margin: 0; }
-.codehilite .hll { background-color: #ffffcc }
-.codehilite .c { color: #6e7781; font-style: italic } /* Comment */
-.codehilite .err { color: #f85149; background-color: #82071e } /* Error */
-.codehilite .k { color: #cf222e; font-weight: bold } /* Keyword */
-.codehilite .o { color: #0550ae; font-weight: bold } /* Operator */
-.codehilite .ch { color: #6e7781; font-style: italic } /* Comment.Hashbang */
-.codehilite .cm { color: #6e7781; font-style: italic } /* Comment.Multiline */
-.codehilite .cp { color: #953800; font-weight: bold } /* Comment.Preproc */
-.codehilite .cpf { color: #6e7781; font-style: italic } /* Comment.PreprocFile */
-.codehilite .c1 { color: #6e7781; font-style: italic } /* Comment.Single */
-.codehilite .cs { color: #6e7781; font-weight: bold; font-style: italic } /* Comment.Special */
-.codehilite .gd { color: #82071e; background-color: #ffebe9 } /* Generic.Deleted */
-.codehilite .ge { font-style: italic } /* Generic.Emph */
-.codehilite .gr { color: #f85149 } /* Generic.Error */
-.codehilite .gh { color: #0550ae; font-weight: bold } /* Generic.Heading */
-.codehilite .gi { color: #116329; background-color: #dafbe1 } /* Generic.Inserted */
-.codehilite .go { color: #888888 } /* Generic.Output */
-.codehilite .gp { color: #555555 } /* Generic.Prompt */
-.codehilite .gs { font-weight: bold } /* Generic.Strong */
-.codehilite .gu { color: #aaaaaa } /* Generic.Subheading */
-.codehilite .gt { color: #aa0000 } /* Generic.Traceback */
-.codehilite .kc { color: #cf222e; font-weight: bold } /* Keyword.Constant */
-.codehilite .kd { color: #cf222e; font-weight: bold } /* Keyword.Declaration */
-.codehilite .kn { color: #cf222e; font-weight: bold } /* Keyword.Namespace */
-.codehilite .kp { color: #cf222e } /* Keyword.Pseudo */
-.codehilite .kr { color: #cf222e; font-weight: bold } /* Keyword.Reserved */
-.codehilite .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-.codehilite .m { color: #009999 } /* Literal.Number */
-.codehilite .s { color: #0a3069 } /* Literal.String */
-.codehilite .na { color: #008080 } /* Name.Attribute */
-.codehilite .nb { color: #953800 } /* Name.Builtin */
-.codehilite .nc { color: #953800; font-weight: bold } /* Name.Class */
-.codehilite .no { color: #008080 } /* Name.Constant */
-.codehilite .nd { color: #8250df; font-weight: bold } /* Name.Decorator */
-.codehilite .ni { color: #800080 } /* Name.Entity */
-.codehilite .ne { color: #990000; font-weight: bold } /* Name.Exception */
-.codehilite .nf { color: #8250df; font-weight: bold } /* Name.Function */
-.codehilite .nl { color: #990000; font-weight: bold } /* Name.Label */
-.codehilite .nn { color: #555555 } /* Name.Namespace */
-.codehilite .nt { color: #116329 } /* Name.Tag */
-.codehilite .nv { color: #008080 } /* Name.Variable */
-.codehilite .ow { color: #cf222e; font-weight: bold } /* Operator.Word */
-.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
-.codehilite .mf { color: #009999 } /* Literal.Number.Float */
-.codehilite .mh { color: #009999 } /* Literal.Number.Hex */
-.codehilite .mi { color: #009999 } /* Literal.Number.Integer */
-.codehilite .mo { color: #009999 } /* Literal.Number.Oct */
-.codehilite .sb { color: #0a3069 } /* Literal.String.Backtick */
-.codehilite .sc { color: #0a3069 } /* Literal.String.Char */
-.codehilite .sd { color: #0a3069 } /* Literal.String.Doc */
-.codehilite .s2 { color: #0a3069 } /* Literal.String.Double */
-.codehilite .se { color: #0a3069 } /* Literal.String.Escape */
-.codehilite .sh { color: #0a3069 } /* Literal.String.Heredoc */
-.codehilite .si { color: #0a3069 } /* Literal.String.Interpol */
-.codehilite .sx { color: #0a3069 } /* Literal.String.Other */
-.codehilite .sr { color: #009926 } /* Literal.String.Regex */
-.codehilite .s1 { color: #0a3069 } /* Literal.String.Single */
-.codehilite .ss { color: #990073 } /* Literal.String.Symbol */
 /* 修复本地渲染高亮 */ .codehilite .hll { background-color: #ffffcc } .codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; } .codehilite .c { color: #6a737d; font-style: italic } .codehilite .k { color: #d73a49; font-weight: bold } .codehilite .o { color: #d73a49; font-weight: bold } .codehilite .cm { color: #6a737d; font-style: italic } .codehilite .cp { color: #005cc5; font-weight: bold } .codehilite .c1 { color: #6a737d; font-style: italic } .codehilite .cs { color: #6a737d; font-weight: bold; font-style: italic } .codehilite .gd { color: #b31d28; background-color: #ffeef0 } .codehilite .ge { font-style: italic } .codehilite .gr { color: #b31d28 } .codehilite .gh { color: #005cc5; font-weight: bold } .codehilite .gi { color: #22863a; background-color: #f0fff4 } .codehilite .go { color: #888888 } .codehilite .gp { color: #555555 } .codehilite .gs { font-weight: bold } .codehilite .gu { color: #aaaaaa } .codehilite .gt { color: #aa0000 } .codehilite .kc { color: #d73a49; font-weight: bold } .codehilite .kd { color: #d73a49; font-weight: bold } .codehilite .kn { color: #d73a49; font-weight: bold } .codehilite .kp { color: #d73a49 } .codehilite .kr { color: #d73a49; font-weight: bold } .codehilite .kt { color: #445588; font-weight: bold } .codehilite .m { color: #009999 } .codehilite .s { color: #032f62 } .codehilite .na { color: #008080 } .codehilite .nb { color: #005cc5 } .codehilite .nc { color: #6f42c1; font-weight: bold } .codehilite .no { color: #008080 } .codehilite .nd { color: #6f42c1; font-weight: bold } .codehilite .ni { color: #800080 } .codehilite .ne { color: #990000; font-weight: bold } .codehilite .nf { color: #6f42c1; font-weight: bold } .codehilite .nl { color: #990000; font-weight: bold } .codehilite .nn { color: #555555 } .codehilite .nt { color: #22863a } .codehilite .nv { color: #008080 } .codehilite .ow { color: #d73a49; font-weight: bold } .codehilite .w { color: #bbbbbb } .codehilite .mf { color: #009999 } .codehilite .mh { color: #009999 } .codehilite .mi { color: #009999 } .codehilite .mo { color: #009999 } .codehilite .sb { color: #032f62 } .codehilite .sc { color: #032f62 } .codehilite .sd { color: #032f62 } .codehilite .s2 { color: #032f62 } .codehilite .se { color: #032f62 } .codehilite .sh { color: #032f62 } .codehilite .si { color: #032f62 } .codehilite .sx { color: #032f62 } .codehilite .sr { color: #009926 } .codehilite .s1 { color: #032f62 } .codehilite .ss { color: #990073 } .codehilite .bp { color: #999999 } .codehilite .vc { color: #008080 } .codehilite .vg { color: #008080 } .codehilite .vi { color: #008080 } .codehilite .il { color: #009999 }
 </style>
 
@@ -389,18 +327,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>这种对立统一的关系构成了市场价格发现机制的基础。</p>
 <p><strong>市场的两种模式：</strong></p>
 <ol>
+<li><strong>Risk-on（风险偏好）模式</strong></li>
+<li>投资者信心高涨</li>
+<li>大量资金涌入股票、大宗商品、新兴市场货币</li>
 <li>
-<p><strong>Risk-on（风险偏好）模式</strong><br />
-   - 投资者信心高涨<br />
-   - 大量资金涌入股票、大宗商品、新兴市场货币<br />
-   - 市场整体呈现进攻态势</p>
+<p>市场整体呈现进攻态势</p>
 </li>
 <li>
-<p><strong>Risk-off（风险规避）模式</strong><br />
-   - 投资者恐慌情绪蔓延<br />
-   - 纷纷抛售风险资产，转而买入美元、美国国债、黄金<br />
-   - 市场整体呈现防守态势</p>
+<p><strong>Risk-off（风险规避）模式</strong></p>
 </li>
+<li>投资者恐慌情绪蔓延</li>
+<li>纷纷抛售风险资产，转而买入美元、美国国债、黄金</li>
+<li>市场整体呈现防守态势</li>
 </ol>
 <p><strong>案例：2022年俄乌冲突后的市场转换</strong></p>
 <p>2022年2月俄乌冲突爆发后，市场情绪迅速从"Risk-on"转向"Risk-off"：<br />
@@ -505,16 +443,16 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 - 风险资产的价格会下跌或停滞</p>
 <p><strong>然而，现金头寸同样面临风险：</strong></p>
 <ol>
+<li><strong>通货膨胀风险</strong></li>
+<li>在通胀时期，持有现金意味着购买力不断贬值</li>
 <li>
-<p><strong>通货膨胀风险</strong><br />
-   - 在通胀时期，持有现金意味着购买力不断贬值<br />
-   - 实际价值持续缩水</p>
+<p>实际价值持续缩水</p>
 </li>
 <li>
-<p><strong>机会成本风险</strong><br />
-   - 在资产价格持续上涨的牛市中，持有现金意味着错失收益机会<br />
-   - 承担了"机会成本"这一隐性风险</p>
+<p><strong>机会成本风险</strong></p>
 </li>
+<li>在资产价格持续上涨的牛市中，持有现金意味着错失收益机会</li>
+<li>承担了"机会成本"这一隐性风险</li>
 </ol>
 <p><strong>案例：2021年的现金持有者</strong></p>
 <p>2021年股市复苏期间，持有现金的投资者虽然规避了市场波动风险，但也完全错过了：<br />
@@ -573,18 +511,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>投资者应该建立动态资产配置机制，根据市场情绪、经济周期和风险评估，在风险资产与避险资产之间灵活调整比例。</p>
 <p><strong>动态配置策略：</strong></p>
 <ol>
+<li><strong>市场恐慌或刚刚走出恐慌时</strong></li>
+<li>适度提高权益仓位</li>
+<li>增加对风险资产的配置</li>
 <li>
-<p><strong>市场恐慌或刚刚走出恐慌时</strong><br />
-   - 适度提高权益仓位<br />
-   - 增加对风险资产的配置<br />
-   - 目标比例：60-70%风险资产 + 30-40%避险资产</p>
+<p>目标比例：60-70%风险资产 + 30-40%避险资产</p>
 </li>
 <li>
-<p><strong>市场情绪上涨到顶峰时</strong><br />
-   - 增配固收类资产<br />
-   - 适度降低权益资产的配置比例<br />
-   - 目标比例：30-40%风险资产 + 60-70%避险资产</p>
+<p><strong>市场情绪上涨到顶峰时</strong></p>
 </li>
+<li>增配固收类资产</li>
+<li>适度降低权益资产的配置比例</li>
+<li>目标比例：30-40%风险资产 + 60-70%避险资产</li>
 </ol>
 <p><strong>这种动态配置策略需要克服人性的弱点：</strong><br />
 - 在市场高点时因为安全感而倾向于买入更多风险资产<br />
@@ -601,46 +539,52 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><strong>这要求投资者在制定投资策略时，需要结合当前市场情况进行战术性调整，而不能简单地套用历史规律。</strong></p>
 <p><strong>不同类型的避险资产在不同风险场景下的表现：</strong></p>
 <ol>
+<li><strong>经济衰退风险（通缩场景）</strong></li>
+<li>债券表现最优</li>
 <li>
-<p><strong>经济衰退风险（通缩场景）</strong><br />
-   - 债券表现最优<br />
-   - 货币和黄金次之</p>
+<p>货币和黄金次之</p>
 </li>
 <li>
-<p><strong>政治秩序冲突（滞胀场景）</strong><br />
-   - 黄金可能表现更好</p>
+<p><strong>政治秩序冲突（滞胀场景）</strong></p>
 </li>
 <li>
-<p><strong>金融秩序重构（货币地位受到挑战）</strong><br />
-   - 传统避险货币的地位可能受到挑战</p>
+<p>黄金可能表现更好</p>
 </li>
+<li>
+<p><strong>金融秩序重构（货币地位受到挑战）</strong></p>
+</li>
+<li>传统避险货币的地位可能受到挑战</li>
 </ol>
 <p><strong>理解这些细微差别，有助于投资者在"卖出"风险资产后选择最合适的避险资产配置。</strong></p>
 <h3 id="_20">第四步：注重风险管理而非风险逃避</h3>
 <p>"买入就是风险资产，卖出就是避险资产"的核心启示是：<strong>任何投资行为都伴随着风险，关键在于识别、评估和管理这些风险，而非试图完全逃避风险</strong>。</p>
 <p><strong>全面的风险管理框架：</strong></p>
 <ol>
+<li><strong>设置止损止盈</strong></li>
+<li>买入时设定止损点（如跌破买入价10%止损）</li>
 <li>
-<p><strong>设置止损止盈</strong><br />
-   - 买入时设定止损点（如跌破买入价10%止损）<br />
-   - 设定止盈点（如盈利30%分批止盈）</p>
+<p>设定止盈点（如盈利30%分批止盈）</p>
 </li>
 <li>
-<p><strong>控制仓位规模</strong><br />
-   - 单一资产不超过总资产的20%<br />
-   - 单一行业不超过总资产的30%</p>
+<p><strong>控制仓位规模</strong></p>
+</li>
+<li>单一资产不超过总资产的20%</li>
+<li>
+<p>单一行业不超过总资产的30%</p>
 </li>
 <li>
-<p><strong>谨慎使用杠杆</strong><br />
-   - 杠杆倍数不超过2倍<br />
-   - 留足保证金应对波动</p>
+<p><strong>谨慎使用杠杆</strong></p>
+</li>
+<li>杠杆倍数不超过2倍</li>
+<li>
+<p>留足保证金应对波动</p>
 </li>
 <li>
-<p><strong>多元化投资组合</strong><br />
-   - 不同资产类别：股票、债券、黄金、现金<br />
-   - 不同地区：国内、海外<br />
-   - 不同行业：科技、医疗、消费、金融</p>
+<p><strong>多元化投资组合</strong></p>
 </li>
+<li>不同资产类别：股票、债券、黄金、现金</li>
+<li>不同地区：国内、海外</li>
+<li>不同行业：科技、医疗、消费、金融</li>
 </ol>
 <p><strong>根据个人情况调整配置：</strong></p>
 <ul>
