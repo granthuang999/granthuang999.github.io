@@ -136,12 +136,40 @@ class GMEEK:
 
         payload = {"text": mdstr, "mode": "gfm"}
         headers = {"Authorization": f"token {self.options.github_token}"}
-        try:
-            response = requests.post("https://api.github.com/markdown", json=payload, headers=headers)
-            response.raise_for_status()
-            html_content = response.text
-        except requests.RequestException as e:
-            raise Exception(f"markdown2html error: {e}")
+        
+        # [MODIFIED] Added retry logic and delay to handle rate limits
+        max_retries = 3
+        retry_delay = 5  # Initial retry delay in seconds
+        
+        for attempt in range(max_retries):
+            # [MODIFIED] Add a small delay before every request to respect API limits
+            time.sleep(1) 
+            
+            try:
+                response = requests.post("https://api.github.com/markdown", json=payload, headers=headers)
+                
+                if response.status_code == 200:
+                    html_content = response.text
+                    break
+                elif response.status_code == 403 or response.status_code == 429:
+                    if attempt < max_retries - 1:
+                        print(f"API Rate limit hit (403/429). Sleeping for {retry_delay} seconds before retry...")
+                        time.sleep(retry_delay)
+                        retry_delay *= 2  # Exponential backoff
+                        continue
+                    else:
+                        response.raise_for_status()
+                else:
+                    response.raise_for_status()
+                    
+            except requests.RequestException as e:
+                if attempt < max_retries - 1:
+                    print(f"Request failed: {e}. Retrying in {retry_delay} seconds...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2
+                    continue
+                else:
+                    raise Exception(f"markdown2html error after {max_retries} attempts: {e}")
 
         for placeholder, original_html in html_replacements.items():
             p_wrapped_placeholder = f"<p>{placeholder}</p>"
