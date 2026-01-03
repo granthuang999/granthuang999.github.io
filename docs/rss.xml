@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Sat, 03 Jan 2026 12:46:45 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jan 2026 12:54:00 +0000</lastBuildDate>
     <managingEditor>未来传媒-FutureMedia.Work</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒-FutureMedia.Work</webMaster>
@@ -1595,7 +1595,7 @@
     <item>
       <title>调试</title>
       <link>https://www.futuremedia.work/post/diao-shi.html</link>
-      <description>&lt;div _ngcontent-ng-c2988614715='' class='container'&gt;&lt;message-content _ngcontent-ng-c2988614715='' _nghost-ng-c1532857962='' id='message-content-id-r_1aeba3ab70ddb17e' class='ng-star-inserted'&gt;&lt;div _ngcontent-ng-c1532857962='' inline-copy-host='' class='markdown markdown-main-panel tutor-markdown-rendering enable-updated-hr-color' id='model-response-message-contentr_1aeba3ab70ddb17e' aria-live='off' aria-busy='false' dir='ltr' style='--animation-duration: 600ms; --fade-animation-function: linear;'&gt;&lt;response-element class='' ng-version='0.0.0-PLACEHOLDER'&gt;&lt;code-block _nghost-ng-c3098535048='' class='ng-tns-c3098535048-90 ng-star-inserted' style=''&gt;&lt;div _ngcontent-ng-c3098535048='' class='code-block ng-tns-c3098535048-90 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation' jslog='223238;track:impression,attention;BardVeMetadataKey:[[&amp;quot;r_1aeba3ab70ddb17e&amp;quot;,&amp;quot;c_c1e63df761d30561&amp;quot;,null,&amp;quot;rc_1b4a5ec0aeae13a5&amp;quot;,null,null,&amp;quot;zh&amp;quot;,null,1,null,null,1,1]]' data-hveid='0' decode-data-ved='1' data-ved='0CAAQhtANahgKEwik4P7-se-RAxUAAAAAHQAAAAAQkAE' style='display: block;'&gt;&lt;div _ngcontent-ng-c3098535048='' class='formatted-code-block-internal-container ng-tns-c3098535048-90'&gt;&lt;div _ngcontent-ng-c3098535048='' class='animated-opacity ng-tns-c3098535048-90'&gt;&lt;pre _ngcontent-ng-c3098535048='' class='ng-tns-c3098535048-90'&gt;&lt;code _ngcontent-ng-c3098535048='' role='text' data-test-id='code-content' class='code-container formatted ng-tns-c3098535048-90'&gt;这是一篇用于测试全站样式渲染的体检文章。</description>
+      <description>&lt;p data-pm-slice='0 0 []'&gt;这是一篇全站样式体检文章。</description>
       <guid isPermaLink="true">https://www.futuremedia.work/post/diao-shi.html</guid>
       <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
       <pubDate>Sat, 03 Jan 2026 11:33:46 +0000</pubDate>
