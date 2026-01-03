@@ -9,6 +9,7 @@ import urllib.parse
 import requests
 import argparse
 import html
+import markdown # 引入本地库
 from github import Github, Auth
 from xpinyin import Pinyin
 from feedgen.feed import FeedGenerator
@@ -16,7 +17,7 @@ from jinja2 import Environment, FileSystemLoader
 from transliterate import translit
 from collections import OrderedDict
 
-# --- Constants (No changes) ---
+# --- Constants (保持不变) ---
 i18n={"Search":"Search","switchTheme":"switch theme","home":"home","comments":"comments","run":"run ","days":" days","Previous":"Previous","Next":"Next"}
 i18nCN={"Search":"搜索","switchTheme":"切换主题","home":"首页","comments":"评论","run":"网站运行","days":"天","Previous":"上一页","Next":"下一页"}
 i18nRU={"Search":"Поиск","switchTheme": "Сменить тему","home":"Главная","comments":"Комментарии","run":"работает ","days":" дней","Previous":"Предыдущая","Next":"Следующая"}
@@ -62,7 +63,6 @@ class GMEEK:
 
     def syncStaticAssets(self):
         print("====== syncing static assets ======")
-    # 把 static 目录下的内容直接复制到 docs 根目录
         if os.path.exists(self.static_dir):
             for item in os.listdir(self.static_dir):
                 src = os.path.join(self.static_dir, item)
@@ -73,7 +73,6 @@ class GMEEK:
                     shutil.copy2(src, dst)
             print(f"Copied contents of '{self.static_dir}' to '{self.root_dir}'")
 
-    # 检查并复制根目录下的 images 文件夹
         image_dir = 'images'
         if os.path.exists(image_dir):
             shutil.copytree(
@@ -129,54 +128,44 @@ class GMEEK:
         def Gmeek_html_tag_filter(match):
             nonlocal html_replacements
             text = match.group(1)
-            placeholder = f""
+            placeholder = f"GMEEK-HTML-PLACEHOLDER-{len(html_replacements)}"
             html_replacements[placeholder] = text
-            return f"`{placeholder}`"
+            return placeholder
+        
+        # 1. 预处理 Gmeek 特殊标签，保护视频、iframe 不被渲染坏
         mdstr = re.sub(r'`Gmeek-html(.*?)`', Gmeek_html_tag_filter, mdstr, flags=re.DOTALL)
-
-        payload = {"text": mdstr, "mode": "gfm"}
-        headers = {"Authorization": f"token {self.options.github_token}"}
         
-        # [MODIFIED] Added retry logic and delay to handle rate limits
-        max_retries = 3
-        retry_delay = 5  # Initial retry delay in seconds
+        # 2. 配置 Markdown 扩展，尽可能模仿 GitHub 的原生行为
+        # pymdownx.superfences: 支持嵌套代码块
+        # pymdownx.tasklist: 支持 [ ] 任务列表
+        # pymdownx.magiclink: 自动识别链接
+        # tables: 支持表格
+        extensions = [
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite', # 代码高亮
+            'markdown.extensions.tables',
+            'markdown.extensions.toc',
+            'markdown.extensions.nl2br',
+            'markdown.extensions.sane_lists',
+            'pymdownx.superfences',
+            'pymdownx.tasklist',
+            'pymdownx.magiclink'
+        ]
         
-        for attempt in range(max_retries):
-            # [MODIFIED] Add a small delay before every request to respect API limits
-            time.sleep(1) 
-            
-            try:
-                response = requests.post("https://api.github.com/markdown", json=payload, headers=headers)
-                
-                if response.status_code == 200:
-                    html_content = response.text
-                    break
-                elif response.status_code == 403 or response.status_code == 429:
-                    if attempt < max_retries - 1:
-                        print(f"API Rate limit hit (403/429). Sleeping for {retry_delay} seconds before retry...")
-                        time.sleep(retry_delay)
-                        retry_delay *= 2  # Exponential backoff
-                        continue
-                    else:
-                        response.raise_for_status()
-                else:
-                    response.raise_for_status()
-                    
-            except requests.RequestException as e:
-                if attempt < max_retries - 1:
-                    print(f"Request failed: {e}. Retrying in {retry_delay} seconds...")
-                    time.sleep(retry_delay)
-                    retry_delay *= 2
-                    continue
-                else:
-                    raise Exception(f"markdown2html error after {max_retries} attempts: {e}")
+        try:
+            # 3. 本地渲染，无需联网
+            html_content = markdown.markdown(mdstr, extensions=extensions)
+        except Exception as e:
+            raise Exception(f"Local markdown rendering error: {e}")
 
+        # 4. 还原特殊标签
         for placeholder, original_html in html_replacements.items():
             p_wrapped_placeholder = f"<p>{placeholder}</p>"
             if p_wrapped_placeholder in html_content:
                 html_content = html_content.replace(p_wrapped_placeholder, original_html)
             else:
                 html_content = html_content.replace(placeholder, original_html)
+                
         return html_content
 
     def renderHtml(self,template_name, context, html_dir):
@@ -207,12 +196,10 @@ class GMEEK:
         if issue_data["labels"][0] in self.blogBase["singlePage"]:
             render_dict["bottomText"]=''
 
-        if '<pre class="notranslate">' in render_dict["postBody"]:
+        # 检查是否需要代码高亮样式
+        if 'codehilite' in render_dict["postBody"] or '<pre><code>' in render_dict["postBody"]:
             keys=['sun','moon','sync','home','github','copy','check']
-            if '<div class="highlight' in render_dict["postBody"]:
-                render_dict["highlight"]=1
-            else:
-                render_dict["highlight"]=2
+            render_dict["highlight"]=1
         else:
             keys=['sun','moon','sync','home','github']
             render_dict["highlight"]=0
@@ -496,7 +483,6 @@ class GMEEK:
 
     def runAll(self):
         print("====== start create static html ======")
-        # [关键修正] 运行前清空旧的文章列表数据
         self.blogBase["postListJson"] = {}
         self.blogBase["singeListJson"] = {}
         self.cleanFile()
@@ -530,10 +516,8 @@ class GMEEK:
     
     def runOne(self, number_str):
         print(f"====== start create static html for issue {number_str} ======")
-        # [关键修正] 运行前清空旧的文章列表数据
         self.blogBase["postListJson"] = {}
         self.blogBase["singeListJson"] = {}
-        # [关键修改] runOne 也需要同步静态文件，以发布新图片
         self.syncStaticAssets()
         
         issue = self.repo.get_issue(int(number_str))
