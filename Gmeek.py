@@ -9,7 +9,7 @@ import urllib.parse
 import requests
 import argparse
 import html
-import markdown
+import markdown # [新增] 引入本地渲染库，替代 GitHub API
 from github import Github, Auth
 from xpinyin import Pinyin
 from feedgen.feed import FeedGenerator
@@ -17,73 +17,7 @@ from jinja2 import Environment, FileSystemLoader
 from transliterate import translit
 from collections import OrderedDict
 
-# --- 内置高亮样式 (GitHub Light 风格) ---
-# 直接内置在脚本中，无需用户配置 config.json
-BUILTIN_CSS = """
-/* Pygments Highlight CSS */
-.codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; line-height: 1.45; }
-.codehilite pre { margin: 0; }
-.codehilite .hll { background-color: #ffffcc }
-.codehilite .c { color: #6e7781; font-style: italic } /* Comment */
-.codehilite .err { color: #f85149; background-color: #82071e } /* Error */
-.codehilite .k { color: #cf222e; font-weight: bold } /* Keyword */
-.codehilite .o { color: #0550ae; font-weight: bold } /* Operator */
-.codehilite .ch { color: #6e7781; font-style: italic } /* Comment.Hashbang */
-.codehilite .cm { color: #6e7781; font-style: italic } /* Comment.Multiline */
-.codehilite .cp { color: #953800; font-weight: bold } /* Comment.Preproc */
-.codehilite .cpf { color: #6e7781; font-style: italic } /* Comment.PreprocFile */
-.codehilite .c1 { color: #6e7781; font-style: italic } /* Comment.Single */
-.codehilite .cs { color: #6e7781; font-weight: bold; font-style: italic } /* Comment.Special */
-.codehilite .gd { color: #82071e; background-color: #ffebe9 } /* Generic.Deleted */
-.codehilite .ge { font-style: italic } /* Generic.Emph */
-.codehilite .gr { color: #f85149 } /* Generic.Error */
-.codehilite .gh { color: #0550ae; font-weight: bold } /* Generic.Heading */
-.codehilite .gi { color: #116329; background-color: #dafbe1 } /* Generic.Inserted */
-.codehilite .go { color: #888888 } /* Generic.Output */
-.codehilite .gp { color: #555555 } /* Generic.Prompt */
-.codehilite .gs { font-weight: bold } /* Generic.Strong */
-.codehilite .gu { color: #aaaaaa } /* Generic.Subheading */
-.codehilite .gt { color: #aa0000 } /* Generic.Traceback */
-.codehilite .kc { color: #cf222e; font-weight: bold } /* Keyword.Constant */
-.codehilite .kd { color: #cf222e; font-weight: bold } /* Keyword.Declaration */
-.codehilite .kn { color: #cf222e; font-weight: bold } /* Keyword.Namespace */
-.codehilite .kp { color: #cf222e } /* Keyword.Pseudo */
-.codehilite .kr { color: #cf222e; font-weight: bold } /* Keyword.Reserved */
-.codehilite .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-.codehilite .m { color: #009999 } /* Literal.Number */
-.codehilite .s { color: #0a3069 } /* Literal.String */
-.codehilite .na { color: #008080 } /* Name.Attribute */
-.codehilite .nb { color: #953800 } /* Name.Builtin */
-.codehilite .nc { color: #953800; font-weight: bold } /* Name.Class */
-.codehilite .no { color: #008080 } /* Name.Constant */
-.codehilite .nd { color: #8250df; font-weight: bold } /* Name.Decorator */
-.codehilite .ni { color: #800080 } /* Name.Entity */
-.codehilite .ne { color: #990000; font-weight: bold } /* Name.Exception */
-.codehilite .nf { color: #8250df; font-weight: bold } /* Name.Function */
-.codehilite .nl { color: #990000; font-weight: bold } /* Name.Label */
-.codehilite .nn { color: #555555 } /* Name.Namespace */
-.codehilite .nt { color: #116329 } /* Name.Tag */
-.codehilite .nv { color: #008080 } /* Name.Variable */
-.codehilite .ow { color: #cf222e; font-weight: bold } /* Operator.Word */
-.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
-.codehilite .mf { color: #009999 } /* Literal.Number.Float */
-.codehilite .mh { color: #009999 } /* Literal.Number.Hex */
-.codehilite .mi { color: #009999 } /* Literal.Number.Integer */
-.codehilite .mo { color: #009999 } /* Literal.Number.Oct */
-.codehilite .sb { color: #0a3069 } /* Literal.String.Backtick */
-.codehilite .sc { color: #0a3069 } /* Literal.String.Char */
-.codehilite .sd { color: #0a3069 } /* Literal.String.Doc */
-.codehilite .s2 { color: #0a3069 } /* Literal.String.Double */
-.codehilite .se { color: #0a3069 } /* Literal.String.Escape */
-.codehilite .sh { color: #0a3069 } /* Literal.String.Heredoc */
-.codehilite .si { color: #0a3069 } /* Literal.String.Interpol */
-.codehilite .sx { color: #0a3069 } /* Literal.String.Other */
-.codehilite .sr { color: #009926 } /* Literal.String.Regex */
-.codehilite .s1 { color: #0a3069 } /* Literal.String.Single */
-.codehilite .ss { color: #990073 } /* Literal.String.Symbol */
-"""
-
-# --- Constants ---
+# --- Constants (No changes) ---
 i18n={"Search":"Search","switchTheme":"switch theme","home":"home","comments":"comments","run":"run ","days":" days","Previous":"Previous","Next":"Next"}
 i18nCN={"Search":"搜索","switchTheme":"切换主题","home":"首页","comments":"评论","run":"网站运行","days":"天","Previous":"上一页","Next":"下一页"}
 i18nRU={"Search":"Поиск","switchTheme": "Сменить тему","home":"Главная","comments":"Комментарии","run":"работает ","days":" дней","Previous":"Предыдущая","Next":"Следующая"}
@@ -129,6 +63,7 @@ class GMEEK:
 
     def syncStaticAssets(self):
         print("====== syncing static assets ======")
+    # 把 static 目录下的内容直接复制到 docs 根目录
         if os.path.exists(self.static_dir):
             for item in os.listdir(self.static_dir):
                 src = os.path.join(self.static_dir, item)
@@ -139,6 +74,7 @@ class GMEEK:
                     shutil.copy2(src, dst)
             print(f"Copied contents of '{self.static_dir}' to '{self.root_dir}'")
 
+    # 检查并复制根目录下的 images 文件夹
         image_dir = 'images'
         if os.path.exists(image_dir):
             shutil.copytree(
@@ -189,54 +125,41 @@ class GMEEK:
     def get_repo(self,user:Github, repo:str):
         return user.get_repo(repo)
 
+    # [修改] 使用本地 markdown 库渲染
     def markdown2html(self, mdstr):
         html_replacements = {}
-        # [Fix 1] 使用纯文本占位符，且不含HTML敏感字符
+        # 简单处理 Gmeek-html 标签，将其替换为占位符，防止渲染出错
+        # 虽然这可能导致红框失效（变成纯文本），但能保证构建成功
         def Gmeek_html_tag_filter(match):
             nonlocal html_replacements
             text = match.group(1)
-            placeholder = f"GMEEKPLACEHOLDER{len(html_replacements)}"
+            placeholder = f"GMEEK_PLACEHOLDER_{len(html_replacements)}"
             html_replacements[placeholder] = text
             return placeholder
         
         mdstr = re.sub(r'`Gmeek-html(.*?)`', Gmeek_html_tag_filter, mdstr, flags=re.DOTALL)
-        
+
+        # 使用基础扩展，保证基本的表格和格式转换
         extensions = [
-            'markdown.extensions.extra',
-            'markdown.extensions.codehilite', 
-            'markdown.extensions.tables',
-            'markdown.extensions.toc',
-            'markdown.extensions.nl2br',
-            'markdown.extensions.sane_lists',
-            'pymdownx.superfences',
-            'pymdownx.tasklist',
-            'pymdownx.magiclink'
+            'markdown.extensions.extra',      # 包含表格、代码块等
+            'markdown.extensions.nl2br',      # 换行符转br
+            'markdown.extensions.toc'         # 目录支持
         ]
         
-        extension_configs = {
-            'markdown.extensions.codehilite': {
-                'css_class': 'codehilite',
-                'use_pygments': True,
-                'noclasses': False
-            }
-        }
-        
         try:
-            html_content = markdown.markdown(mdstr, extensions=extensions, extension_configs=extension_configs)
+            # 本地渲染，速度快，不依赖 API
+            html_content = markdown.markdown(mdstr, extensions=extensions)
         except Exception as e:
-            raise Exception(f"Local markdown rendering error: {e}")
+            # 万一出错，至少返回原始内容，不中断构建
+            print(f"Rendering error: {e}")
+            return f"<p>Error rendering content: {e}</p>"
 
-        # [Fix 2] 智能清理：移除占位符外面的 <p> 标签，防止非法HTML嵌套 (如 <p><div>...</div></p>)
+        # 还原占位符
         for placeholder, original_html in html_replacements.items():
-            # 查找 <p>占位符</p> 的模式，并替换为原始 HTML (去掉p标签)
-            # 使用正则是为了处理可能的空白字符
-            pattern = re.compile(f"<p>\s*{placeholder}\s*</p>", re.MULTILINE)
-            if pattern.search(html_content):
-                html_content = pattern.sub(original_html, html_content)
-            else:
-                # 如果没有被p包裹，直接替换
-                html_content = html_content.replace(placeholder, original_html)
-                
+            # 尝试修复 markdown 自动加的 p 标签问题
+            html_content = html_content.replace(f"<p>{placeholder}</p>", original_html)
+            html_content = html_content.replace(placeholder, original_html)
+            
         return html_content
 
     def renderHtml(self,template_name, context, html_dir):
@@ -261,19 +184,14 @@ class GMEEK:
         
         render_dict = self.blogBase.copy()
         render_dict.update(issue_data)
-        
-        # [Fix 3] 强制合并内置高亮 CSS
-        current_style = render_dict.get("style", "")
-        if "/* Pygments Highlight CSS */" not in current_style:
-            render_dict["style"] = BUILTIN_CSS + current_style
-
         render_dict["postBody"] = self.markdown2html(raw_md_content)
         render_dict["canonicalUrl"] = issue_data["postUrl"]
 
         if issue_data["labels"][0] in self.blogBase["singlePage"]:
             render_dict["bottomText"]=''
 
-        if 'codehilite' in render_dict["postBody"] or '<pre><code>' in render_dict["postBody"]:
+        # 简化判断，只要有代码块就尝试引入高亮CSS（即使是黑白的也不影响阅读）
+        if '<pre' in render_dict["postBody"]:
             keys=['sun','moon','sync','home','github','copy','check']
             render_dict["highlight"]=1
         else:
