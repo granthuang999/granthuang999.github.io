@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Sat, 03 Jan 2026 12:00:08 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jan 2026 12:09:45 +0000</lastBuildDate>
     <managingEditor>未来传媒-FutureMedia.Work</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒-FutureMedia.Work</webMaster>
@@ -1595,7 +1595,7 @@
     <item>
       <title>调试</title>
       <link>https://www.futuremedia.work/post/diao-shi.html</link>
-      <description>这是一篇用于测试全站样式渲染的体检文章。</description>
+      <description>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;response-element class='' ng-version='0.0.0-PLACEHOLDER' style='font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;&lt;code-block _nghost-ng-c3098535048='' class='ng-tns-c3098535048-91 ng-star-inserted' style='font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;&lt;div _ngcontent-ng-c3098535048='' class='code-block ng-tns-c3098535048-91 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation' jslog='223238;track:impression,attention;BardVeMetadataKey:[[&amp;quot;r_d8096441b9895935&amp;quot;,&amp;quot;c_c1e63df761d30561&amp;quot;,null,&amp;quot;rc_78fe8b6828467d24&amp;quot;,null,null,&amp;quot;zh&amp;quot;,null,1,null,null,1,0]]' data-hveid='0' decode-data-ved='1' data-ved='0CAAQhtANahgKEwjbt4qIqO-RAxUAAAAAHQAAAAAQlAE' style='display: block; font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;&lt;div _ngcontent-ng-c3098535048='' class='formatted-code-block-internal-container ng-tns-c3098535048-91' style='font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;&lt;div _ngcontent-ng-c3098535048='' class='animated-opacity ng-tns-c3098535048-91' style='font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;&lt;pre _ngcontent-ng-c3098535048='' class='ng-tns-c3098535048-91' style='font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;&lt;code _ngcontent-ng-c3098535048='' role='text' data-test-id='code-content' class='code-container formatted ng-tns-c3098535048-91' style='font-family: &amp;quot;Google Sans Text&amp;quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important;'&gt;这是一篇用于测试全站样式渲染的体检文章。</description>
       <guid isPermaLink="true">https://www.futuremedia.work/post/diao-shi.html</guid>
       <enclosure url="https://www.futuremedia.work/images/big.png" length="0" type="image/png"/>
       <pubDate>Sat, 03 Jan 2026 11:33:46 +0000</pubDate>
