@@ -6,3 +6,4 @@ requests
 transliterate
 markdown
 pymdown-extensions
+Pygments
