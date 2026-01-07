@@ -160,6 +160,6 @@ We may update this privacy policy periodically. Significant changes will be prom
 
 If you have any questions or concerns about this privacy policy, please contact us through:
 
-**邮箱 / Email**: [grant.huang@outlook.com](mailto:grant.huang@outlook.com)
+**邮箱 / Email**: [service@futuremedia.work](mailto:service@futuremedia.work)
 
 **网站 / Website**: [https://futuremedia.work/](https://futuremedia.work/)
