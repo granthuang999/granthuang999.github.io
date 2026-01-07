@@ -48,10 +48,6 @@
 
 [![X (Twitter)](https://img.shields.io/badge/X-关注%20@3fenglife-black?style=for-the-badge&logo=x&logoColor=white)](https://x.com/3fenglife)
 
-[![小红书](https://img.shields.io/badge/小红书-ID:%20T1068367913-FF2442?style=for-the-badge&logo=xiaohongshu&logoColor=white)](https://www.xiaohongshu.com/user/profile/5faf15e00000000001003d6d)
-
-[![微信](https://img.shields.io/badge/微信-takenothingaway-07C160?style=for-the-badge&logo=wechat&logoColor=white)](#)
-
 [![Newsletter](https://img.shields.io/badge/Newsletter-订阅周报-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://3fenglife.substack.com/)
 
 > **防失联建议：** 社交媒体可能会因为各种原因被限流，**订阅 Newsletter** 是最安全的连接方式。
