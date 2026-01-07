@@ -154,7 +154,7 @@ We reserve the right to modify this disclaimer at any time. The modified disclai
 
 If you have any questions about this disclaimer, please contact us:
 
-**邮箱 / Email**: [grant.huang@outlook.com](mailto:grant.huang@outlook.com)
+**邮箱 / Email**: [service@futuremedia.work](mailto:service@futuremedia.work)
 
 **网站 / Website**: [https://futuremedia.work/](https://futuremedia.work/)
 

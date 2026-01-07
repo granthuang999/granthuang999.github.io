@@ -38,7 +38,7 @@
 
 我非常期待能与您交流。如果您对网站内容有任何疑问、建议，或者希望探讨某个特定话题，都非常欢迎您通过以下方式联系我：
 
-电子邮箱: [grant.huang@outlook.com](mailto:grant.huang@outlook.com) 
+电子邮箱: [service@futuremedia.work](mailto:service@futuremedia.work) 
 感谢您的到访，希望“未来传媒”能陪伴您，"用名著智慧洞察人性，用宏观视野规划财富", 一起更好地致敬人生下半场。
 
 ---
