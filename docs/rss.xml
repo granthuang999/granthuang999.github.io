@@ -12,7 +12,7 @@
       <title>avatar</title>
       <link>https://www.futuremedia.work</link>
     </image>
-    <lastBuildDate>Thu, 08 Jan 2026 13:01:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Jan 2026 13:15:47 +0000</lastBuildDate>
     <managingEditor>未来传媒-FutureMedia.Work</managingEditor>
     <ttl>60</ttl>
     <webMaster>未来传媒-FutureMedia.Work</webMaster>
@@ -1679,6 +1679,14 @@
       <guid isPermaLink="true">https://www.futuremedia.work/post/mirage-of-salvation-03-agency-problem.html</guid>
       <enclosure url="https://www.futuremedia.work/images/mirage-of-salvation-03-agency-problem.png" length="0" type="image/png"/>
       <pubDate>Thu, 08 Jan 2026 01:36:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>【三疯观察】数字人民币付息：走向“完全中心化”的最后一步</title>
+      <link>https://www.futuremedia.work/post/digital-rmb-total-centralization.html</link>
+      <description>数字人民币付息的背后，是从半中心化到完全中心化的监管跃迁，深度解析资产如何被锁定在内循环局域网中。</description>
+      <guid isPermaLink="true">https://www.futuremedia.work/post/digital-rmb-total-centralization.html</guid>
+      <enclosure url="https://www.futuremedia.work//images/digital-rmb-total-centralization.png" length="0" type="image/png"/>
+      <pubDate>Thu, 08 Jan 2026 13:13:50 +0000</pubDate>
     </item>
   </channel>
 </rss>
