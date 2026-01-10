@@ -52,18 +52,16 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # ▼▼▼ 修正点：确保这里完整写了 blogBase.json ▼▼▼
-          git add docs/ backup/ blogBase.json
+          # ▼▼▼ 核心修复：改成 git add . (添加所有变动文件，包括 README) ▼▼▼
+          git add .
           if ! git diff --quiet --cached; then
             git commit -m "🎉 chore(full): auto build and update site content"
-            # ▼▼▼ 修正点：先拉取再推送，防止冲突 ▼▼▼
             git pull --rebase
             git push
           else
             echo "No changes to site content to commit."
           fi
 
-      # ▼▼▼ 部署到 VPS ▼▼▼
       - name: Deploy to VPS
         uses: easingthemes/ssh-deploy@v5.0.0
         with:
