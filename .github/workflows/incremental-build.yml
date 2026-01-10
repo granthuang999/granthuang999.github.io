@@ -66,27 +66,3 @@ jobs:
 
       - name: Commit and Push build files
         if: steps.determine_issue.outputs.issue_number != ''
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add docs/ backup/ blogBase.json
-          if ! git diff --quiet --cached; then
-            git commit -m "🚀 chore(incremental): auto build for issue #${{ steps.determine_issue.outputs.issue_number }}"
-            git push
-          else
-            echo "No changes to site content to commit."
-          fi
-
-      # ▼▼▼ 修改部分开始：部署到 VPS ▼▼▼
-      - name: Deploy to VPS
-        if: steps.determine_issue.outputs.issue_number != ''
-        uses: easingthemes/ssh-deploy@v5.0.0
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
-          ARGS: "-avzr --delete"
-          SOURCE: "docs/"
-          REMOTE_HOST: ${{ secrets.VPS_IP }}
-          REMOTE_USER: "root"
-          TARGET: "/var/www/futuremedia/"
-          EXCLUDE: "/dist/, /node_modules/"
-      # ▲▲▲ 修改部分结束 ▲▲▲
