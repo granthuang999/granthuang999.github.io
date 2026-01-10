@@ -16,8 +16,6 @@ jobs:
       (github.event_name == 'issues' || (github.event_name == 'push' && contains(github.event.head_commit.message, '#')))
     permissions:
       contents: write
-      pages: write
-      id-token: write
     steps:
       - name: Checkout main repository
         uses: actions/checkout@v4
@@ -50,7 +48,7 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate HTML for single issue
+      - name: Generate new html (Incremental)
         if: steps.determine_issue.outputs.issue_number != ''
         run: |
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ steps.determine_issue.outputs.issue_number }}'
@@ -79,13 +77,16 @@ jobs:
             echo "No changes to site content to commit."
           fi
 
-      - name: Upload artifact for deployment
+      # ▼▼▼ 修改部分开始：部署到 VPS ▼▼▼
+      - name: Deploy to VPS
         if: steps.determine_issue.outputs.issue_number != ''
-        uses: actions/upload-pages-artifact@v3
+        uses: easingthemes/ssh-deploy@v5.0.0
         with:
-          path: 'docs/'
-
-      - name: Deploy to GitHub Pages
-        if: steps.determine_issue.outputs.issue_number != ''
-        id: deployment
-        uses: actions/deploy-pages@v4
+          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          ARGS: "-avzr --delete"
+          SOURCE: "docs/"
+          REMOTE_HOST: ${{ secrets.VPS_IP }}
+          REMOTE_USER: "root"
+          TARGET: "/var/www/futuremedia/"
+          EXCLUDE: "/dist/, /node_modules/"
+      # ▲▲▲ 修改部分结束 ▲▲▲
