@@ -63,6 +63,7 @@ class GMEEK:
 
     def syncStaticAssets(self):
         print("====== syncing static assets ======")
+    # 把 static 目录下的内容直接复制到 docs 根目录
         if os.path.exists(self.static_dir):
             for item in os.listdir(self.static_dir):
                 src = os.path.join(self.static_dir, item)
@@ -73,6 +74,7 @@ class GMEEK:
                     shutil.copy2(src, dst)
             print(f"Copied contents of '{self.static_dir}' to '{self.root_dir}'")
 
+    # 检查并复制根目录下的 images 文件夹
         image_dir = 'images'
         if os.path.exists(image_dir):
             shutil.copytree(
@@ -133,28 +135,18 @@ class GMEEK:
             return f"`{placeholder}`"
         mdstr = re.sub(r'`Gmeek-html(.*?)`', Gmeek_html_tag_filter, mdstr, flags=re.DOTALL)
 
+        # [修正] 只使用最基本的扩展，避免 No module named 'pymdownx' 报错
         extensions = [
             'markdown.extensions.extra',
             'markdown.extensions.codehilite', 
             'markdown.extensions.tables',
             'markdown.extensions.toc',
             'markdown.extensions.nl2br',
-            'markdown.extensions.sane_lists',
-            'pymdownx.superfences',
-            'pymdownx.tasklist',
-            'pymdownx.magiclink'
+            'markdown.extensions.sane_lists'
         ]
         
-        extension_configs = {
-            'markdown.extensions.codehilite': {
-                'css_class': 'codehilite',
-                'use_pygments': True,
-                'noclasses': False
-            }
-        }
-        
         try:
-            html_content = markdown.markdown(mdstr, extensions=extensions, extension_configs=extension_configs)
+            html_content = markdown.markdown(mdstr, extensions=extensions)
         except Exception as e:
             raise Exception(f"Local markdown rendering error: {e}")
 
