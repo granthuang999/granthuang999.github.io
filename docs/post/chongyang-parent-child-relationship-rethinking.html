@@ -237,6 +237,46 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 .share-button.wechat { background-color: #07C160; }
+
+/* Password Overlay Styles */
+#password-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+[data-color-mode="dark"] #password-overlay {
+    background: rgba(13, 17, 23, 0.95);
+}
+#password-box {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    background: var(--color-canvas-default);
+    border: 1px solid var(--color-border-default);
+}
+#password-input {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid var(--color-border-default);
+    border-radius: 4px;
+    background: var(--color-canvas-subtle);
+    color: var(--color-fg-default);
+}
+#password-btn {
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
+    border: 1px solid var(--color-btn-primary-border);
+    border-radius: 4px;
+}
 </style>
 <style>
 /* 修复本地渲染高亮 */ .codehilite .hll { background-color: #ffffcc } .codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; } .codehilite .c { color: #6a737d; font-style: italic } .codehilite .k { color: #d73a49; font-weight: bold } .codehilite .o { color: #d73a49; font-weight: bold } .codehilite .cm { color: #6a737d; font-style: italic } .codehilite .cp { color: #005cc5; font-weight: bold } .codehilite .c1 { color: #6a737d; font-style: italic } .codehilite .cs { color: #6a737d; font-weight: bold; font-style: italic } .codehilite .gd { color: #b31d28; background-color: #ffeef0 } .codehilite .ge { font-style: italic } .codehilite .gr { color: #b31d28 } .codehilite .gh { color: #005cc5; font-weight: bold } .codehilite .gi { color: #22863a; background-color: #f0fff4 } .codehilite .go { color: #888888 } .codehilite .gp { color: #555555 } .codehilite .gs { font-weight: bold } .codehilite .gu { color: #aaaaaa } .codehilite .gt { color: #aa0000 } .codehilite .kc { color: #d73a49; font-weight: bold } .codehilite .kd { color: #d73a49; font-weight: bold } .codehilite .kn { color: #d73a49; font-weight: bold } .codehilite .kp { color: #d73a49 } .codehilite .kr { color: #d73a49; font-weight: bold } .codehilite .kt { color: #445588; font-weight: bold } .codehilite .m { color: #009999 } .codehilite .s { color: #032f62 } .codehilite .na { color: #008080 } .codehilite .nb { color: #005cc5 } .codehilite .nc { color: #6f42c1; font-weight: bold } .codehilite .no { color: #008080 } .codehilite .nd { color: #6f42c1; font-weight: bold } .codehilite .ni { color: #800080 } .codehilite .ne { color: #990000; font-weight: bold } .codehilite .nf { color: #6f42c1; font-weight: bold } .codehilite .nl { color: #990000; font-weight: bold } .codehilite .nn { color: #555555 } .codehilite .nt { color: #22863a } .codehilite .nv { color: #008080 } .codehilite .ow { color: #d73a49; font-weight: bold } .codehilite .w { color: #bbbbbb } .codehilite .mf { color: #009999 } .codehilite .mh { color: #009999 } .codehilite .mi { color: #009999 } .codehilite .mo { color: #009999 } .codehilite .sb { color: #032f62 } .codehilite .sc { color: #032f62 } .codehilite .sd { color: #032f62 } .codehilite .s2 { color: #032f62 } .codehilite .se { color: #032f62 } .codehilite .sh { color: #032f62 } .codehilite .si { color: #032f62 } .codehilite .sx { color: #032f62 } .codehilite .sr { color: #009926 } .codehilite .s1 { color: #032f62 } .codehilite .ss { color: #990073 } .codehilite .bp { color: #999999 } .codehilite .vc { color: #008080 } .codehilite .vg { color: #008080 } .codehilite .vi { color: #008080 } .codehilite .il { color: #009999 }
@@ -291,6 +331,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
 
+<!-- Password Logic -->
+<div id="password-overlay">
+    <div id="password-box">
+        <h3>🔒 此文章受密码保护</h3>
+        <p>请输入密码查看内容</p>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button id="password-btn" onclick="checkPassword()">解锁</button>
+        <p id="password-error" style="color:red; display:none; margin-top:5px;">密码错误</p>
+    </div>
+</div>
+
 <div class="markdown-body" id="postBody"><h2 id="_1">开场：一个重阳节的追问</h2>
 <p>又到重阳节，朋友圈里满是"陪伴是最长情的告白""百善孝为先"的温情文案。</p>
 <p>但你有没有想过一个问题：<strong>父母与子女之间，最好的关系到底是什么？</strong></p>
@@ -306,27 +357,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>"养儿防老"这个观念，在中国社会流传了几千年，它不是凭空产生的，而是农业社会特定条件下的理性选择。</p>
 <p><strong>农业社会的三大特征：</strong></p>
 <ol>
-<li><strong>生产力低下，个体脆弱</strong></li>
-<li>没有机械化，全靠人力畜力</li>
-<li>一家人勉强维持温饱</li>
 <li>
-<p>任何意外都可能致命</p>
+<p><strong>生产力低下，个体脆弱</strong><br />
+   - 没有机械化，全靠人力畜力<br />
+   - 一家人勉强维持温饱<br />
+   - 任何意外都可能致命</p>
 </li>
 <li>
-<p><strong>缺乏社会保障体系</strong></p>
-</li>
-<li>没有养老保险</li>
-<li>没有医疗保险</li>
-<li>没有失业救济</li>
-<li>
-<p>老无所依是常态</p>
+<p><strong>缺乏社会保障体系</strong><br />
+   - 没有养老保险<br />
+   - 没有医疗保险<br />
+   - 没有失业救济<br />
+   - 老无所依是常态</p>
 </li>
 <li>
-<p><strong>家庭是最小的生产单位</strong></p>
+<p><strong>家庭是最小的生产单位</strong><br />
+   - 父母养育子女，子女长大后参与劳动<br />
+   - 家庭积累的财富是共同创造的<br />
+   - 父母年老后依靠子女，是自然的延续</p>
 </li>
-<li>父母养育子女，子女长大后参与劳动</li>
-<li>家庭积累的财富是共同创造的</li>
-<li>父母年老后依靠子女，是自然的延续</li>
 </ol>
 <p><strong>在这种背景下，"养儿防老"不是道德绑架，而是生存必需。</strong></p>
 <p><strong>数据支撑</strong>：<br />
@@ -350,34 +399,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 id="_5">"养儿防老"的局限性</h3>
 <p>然而，随着时代的变迁，"养儿防老"这个观念开始显露出它的局限性：</p>
 <ol>
-<li><strong>社会保障体系的完善</strong></li>
-<li>养老保险、医疗保险的普及</li>
-<li>老人有了经济独立的可能</li>
 <li>
-<p>不再完全依赖子女</p>
+<p><strong>社会保障体系的完善</strong><br />
+   - 养老保险、医疗保险的普及<br />
+   - 老人有了经济独立的可能<br />
+   - 不再完全依赖子女</p>
 </li>
 <li>
-<p><strong>家庭结构的变化</strong></p>
-</li>
-<li>从大家庭到小家庭</li>
-<li>从多子女到少子女（独生子女政策）</li>
-<li>
-<p>子女养老负担加重</p>
+<p><strong>家庭结构的变化</strong><br />
+   - 从大家庭到小家庭<br />
+   - 从多子女到少子女（独生子女政策）<br />
+   - 子女养老负担加重</p>
 </li>
 <li>
-<p><strong>代际价值观的冲突</strong></p>
-</li>
-<li>父母的期望vs子女的追求</li>
-<li>传统观念vs现代观念</li>
-<li>
-<p>"孝顺"的定义发生变化</p>
+<p><strong>代际价值观的冲突</strong><br />
+   - 父母的期望vs子女的追求<br />
+   - 传统观念vs现代观念<br />
+   - "孝顺"的定义发生变化</p>
 </li>
 <li>
-<p><strong>地理距离的拉大</strong></p>
+<p><strong>地理距离的拉大</strong><br />
+   - 城市化导致子女远离父母<br />
+   - 物理距离使得照料困难<br />
+   - "精神赡养"成为新挑战</p>
 </li>
-<li>城市化导致子女远离父母</li>
-<li>物理距离使得照料困难</li>
-<li>"精神赡养"成为新挑战</li>
 </ol>
 <p><strong>数据支撑</strong>：<br />
 - 《中国家庭发展报告2024》显示，60岁以上老人中，42%与子女分居两地<br />
@@ -517,18 +562,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 1. <strong>父母会计较"投入产出比"</strong><br />
    - "我花了这么多钱供你读书，你就这样回报我？"<br />
    - "我为你付出了青春，你就这样对我？"</p>
-<ol>
-<li><strong>子女会感到压力和内疚</strong></li>
-<li>"我永远还不清父母的养育之恩"</li>
+<ol start="2">
 <li>
-<p>"我做什么都是应该的，因为我欠他们的"</p>
+<p><strong>子女会感到压力和内疚</strong><br />
+   - "我永远还不清父母的养育之恩"<br />
+   - "我做什么都是应该的，因为我欠他们的"</p>
 </li>
 <li>
-<p><strong>关系变成了负担</strong></p>
+<p><strong>关系变成了负担</strong><br />
+   - 父母觉得子女不够孝顺<br />
+   - 子女觉得父母索取无度<br />
+   - 双方都不快乐</p>
 </li>
-<li>父母觉得子女不够孝顺</li>
-<li>子女觉得父母索取无度</li>
-<li>双方都不快乐</li>
 </ol>
 <p><strong>解决方法：放下账本，用爱连接</strong><br />
 - 父母的付出，是因为爱，不是为了回报<br />
@@ -574,49 +619,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p><strong>如何平衡？</strong></p>
 <h3 id="_14">对待父母：尽责但不失自我</h3>
 <ol>
-<li><strong>履行赡养义务，但设定合理边界</strong></li>
-<li>给父母生活费、医药费</li>
-<li>定期探望、陪伴</li>
 <li>
-<p>但不必24小时待命，不必满足父母所有要求</p>
+<p><strong>履行赡养义务，但设定合理边界</strong><br />
+   - 给父母生活费、医药费<br />
+   - 定期探望、陪伴<br />
+   - 但不必24小时待命，不必满足父母所有要求</p>
 </li>
 <li>
-<p><strong>尊重父母，但不盲从</strong></p>
-</li>
-<li>听取父母的建议</li>
-<li>但最终决策权在自己</li>
-<li>
-<p>温和而坚定地坚持自己的选择</p>
+<p><strong>尊重父母，但不盲从</strong><br />
+   - 听取父母的建议<br />
+   - 但最终决策权在自己<br />
+   - 温和而坚定地坚持自己的选择</p>
 </li>
 <li>
-<p><strong>照顾父母，但也照顾自己</strong></p>
+<p><strong>照顾父母，但也照顾自己</strong><br />
+   - 不要因为照顾父母而牺牲自己的健康和家庭<br />
+   - 必要时寻求专业养老服务的帮助<br />
+   - 记住：只有先照顾好自己，才能更好地照顾父母</p>
 </li>
-<li>不要因为照顾父母而牺牲自己的健康和家庭</li>
-<li>必要时寻求专业养老服务的帮助</li>
-<li>记住：只有先照顾好自己，才能更好地照顾父母</li>
 </ol>
 <h3 id="_15">对待子女：爱护但不控制</h3>
 <ol>
-<li><strong>提供支持，但不过度干预</strong></li>
-<li>在子女需要时提供经济和情感支持</li>
-<li>但不强加自己的意愿</li>
 <li>
-<p>相信子女有能力为自己的人生负责</p>
+<p><strong>提供支持，但不过度干预</strong><br />
+   - 在子女需要时提供经济和情感支持<br />
+   - 但不强加自己的意愿<br />
+   - 相信子女有能力为自己的人生负责</p>
 </li>
 <li>
-<p><strong>关心子女，但保持距离</strong></p>
-</li>
-<li>关心子女的生活和工作</li>
-<li>但不过度询问、不过度担心</li>
-<li>
-<p>给子女独立成长的空间</p>
+<p><strong>关心子女，但保持距离</strong><br />
+   - 关心子女的生活和工作<br />
+   - 但不过度询问、不过度担心<br />
+   - 给子女独立成长的空间</p>
 </li>
 <li>
-<p><strong>传递价值观,但尊重差异</strong></p>
+<p><strong>传递价值观,但尊重差异</strong><br />
+   - 分享自己的人生经验和价值观<br />
+   - 但接受子女可能有不同的选择<br />
+   - 理解时代不同，观念也会不同</p>
 </li>
-<li>分享自己的人生经验和价值观</li>
-<li>但接受子女可能有不同的选择</li>
-<li>理解时代不同，观念也会不同</li>
 </ol>
 <hr />
 <h2 id="_16">结语：重阳节的真正意义</h2>
@@ -756,6 +797,27 @@ function addFavorite() {
 </script>
 
 <script>
+// Password Logic
+const articlePassword = "";
+
+function checkPassword() {
+    const input = document.getElementById('password-input').value;
+    if (input === articlePassword) {
+        document.getElementById('password-overlay').style.display = 'none';
+        document.getElementById('postBody').style.display = 'block';
+        localStorage.setItem('unlocked_' + window.location.pathname, 'true');
+    } else {
+        document.getElementById('password-error').style.display = 'block';
+    }
+}
+
+if (articlePassword && articlePassword.trim() !== "" && articlePassword !== "None") {
+    if (localStorage.getItem('unlocked_' + window.location.pathname) !== 'true') {
+        document.getElementById('postBody').style.display = 'none';
+        document.getElementById('password-overlay').style.display = 'flex';
+    }
+}
+
 // 微信分享功能
 function shareToWechat() {
     const postUrl = window.location.href;

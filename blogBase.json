@@ -54,6 +54,84 @@
   "email": "grant.huang@outlook.com",
   "primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
   "postListJson": {
+    "P241": {
+      "htmlDir": "docs/post/common-sense-001-gold-philosophy.html",
+      "labels": [
+        "懒人投资",
+        "随笔"
+      ],
+      "postTitle": "黄金不是投资，它是你给这个荒谬世界投的反对票",
+      "postUrl": "https://www.futuremedia.work/post/common-sense-001-gold-philosophy.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/241",
+      "commentNum": 0,
+      "wordCount": 2036,
+      "createdAt": 1769572720,
+      "top": 0,
+      "description": "为什么说买黄金不是为了赚钱，深度解析黄金的货币本质与避坑指南，它是你给法币世界投的反对票。",
+      "createdDate": "2026-01-28",
+      "isoDate": "2026-01-28T11:58:40+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "/* 修复本地渲染高亮 */ .codehilite .hll { background-color: #ffffcc } .codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; } .codehilite .c { color: #6a737d; font-style: italic } .codehilite .k { color: #d73a49; font-weight: bold } .codehilite .o { color: #d73a49; font-weight: bold } .codehilite .cm { color: #6a737d; font-style: italic } .codehilite .cp { color: #005cc5; font-weight: bold } .codehilite .c1 { color: #6a737d; font-style: italic } .codehilite .cs { color: #6a737d; font-weight: bold; font-style: italic } .codehilite .gd { color: #b31d28; background-color: #ffeef0 } .codehilite .ge { font-style: italic } .codehilite .gr { color: #b31d28 } .codehilite .gh { color: #005cc5; font-weight: bold } .codehilite .gi { color: #22863a; background-color: #f0fff4 } .codehilite .go { color: #888888 } .codehilite .gp { color: #555555 } .codehilite .gs { font-weight: bold } .codehilite .gu { color: #aaaaaa } .codehilite .gt { color: #aa0000 } .codehilite .kc { color: #d73a49; font-weight: bold } .codehilite .kd { color: #d73a49; font-weight: bold } .codehilite .kn { color: #d73a49; font-weight: bold } .codehilite .kp { color: #d73a49 } .codehilite .kr { color: #d73a49; font-weight: bold } .codehilite .kt { color: #445588; font-weight: bold } .codehilite .m { color: #009999 } .codehilite .s { color: #032f62 } .codehilite .na { color: #008080 } .codehilite .nb { color: #005cc5 } .codehilite .nc { color: #6f42c1; font-weight: bold } .codehilite .no { color: #008080 } .codehilite .nd { color: #6f42c1; font-weight: bold } .codehilite .ni { color: #800080 } .codehilite .ne { color: #990000; font-weight: bold } .codehilite .nf { color: #6f42c1; font-weight: bold } .codehilite .nl { color: #990000; font-weight: bold } .codehilite .nn { color: #555555 } .codehilite .nt { color: #22863a } .codehilite .nv { color: #008080 } .codehilite .ow { color: #d73a49; font-weight: bold } .codehilite .w { color: #bbbbbb } .codehilite .mf { color: #009999 } .codehilite .mh { color: #009999 } .codehilite .mi { color: #009999 } .codehilite .mo { color: #009999 } .codehilite .sb { color: #032f62 } .codehilite .sc { color: #032f62 } .codehilite .sd { color: #032f62 } .codehilite .s2 { color: #032f62 } .codehilite .se { color: #032f62 } .codehilite .sh { color: #032f62 } .codehilite .si { color: #032f62 } .codehilite .sx { color: #032f62 } .codehilite .sr { color: #009926 } .codehilite .s1 { color: #032f62 } .codehilite .ss { color: #990073 } .codehilite .bp { color: #999999 } .codehilite .vc { color: #008080 } .codehilite .vg { color: #008080 } .codehilite .vi { color: #008080 } .codehilite .il { color: #009999 }",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/common-sense-001-gold-philosophy.png",
+      "keywords": "黄金,金融常识,避险,法币,通胀,三疯,投资逻辑,货币史",
+      "quote": "",
+      "daily_sentence": "",
+      "password": "123123"
+    },
+    "P240": {
+      "htmlDir": "docs/post/red-chamber-restart-045-survival-art.html",
+      "labels": [
+        "读书智慧",
+        "连载"
+      ],
+      "postTitle": "【红楼重启 044】：大厦崩塌时活得最好的不是柱子，而是墙角的老鼠",
+      "postUrl": "https://www.futuremedia.work/post/red-chamber-restart-045-survival-art.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/240",
+      "commentNum": 0,
+      "wordCount": 2131,
+      "createdAt": 1769571753,
+      "top": 0,
+      "description": "当大厦崩塌时，活下来的不是柱子，而是墙角的老鼠,深度复盘贾芸和小红的生存哲学,卑微、务实与系统外的救生艇。",
+      "createdDate": "2026-01-28",
+      "isoDate": "2026-01-28T11:42:33+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "/* 修复本地渲染高亮 */ .codehilite .hll { background-color: #ffffcc } .codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; } .codehilite .c { color: #6a737d; font-style: italic } .codehilite .k { color: #d73a49; font-weight: bold } .codehilite .o { color: #d73a49; font-weight: bold } .codehilite .cm { color: #6a737d; font-style: italic } .codehilite .cp { color: #005cc5; font-weight: bold } .codehilite .c1 { color: #6a737d; font-style: italic } .codehilite .cs { color: #6a737d; font-weight: bold; font-style: italic } .codehilite .gd { color: #b31d28; background-color: #ffeef0 } .codehilite .ge { font-style: italic } .codehilite .gr { color: #b31d28 } .codehilite .gh { color: #005cc5; font-weight: bold } .codehilite .gi { color: #22863a; background-color: #f0fff4 } .codehilite .go { color: #888888 } .codehilite .gp { color: #555555 } .codehilite .gs { font-weight: bold } .codehilite .gu { color: #aaaaaa } .codehilite .gt { color: #aa0000 } .codehilite .kc { color: #d73a49; font-weight: bold } .codehilite .kd { color: #d73a49; font-weight: bold } .codehilite .kn { color: #d73a49; font-weight: bold } .codehilite .kp { color: #d73a49 } .codehilite .kr { color: #d73a49; font-weight: bold } .codehilite .kt { color: #445588; font-weight: bold } .codehilite .m { color: #009999 } .codehilite .s { color: #032f62 } .codehilite .na { color: #008080 } .codehilite .nb { color: #005cc5 } .codehilite .nc { color: #6f42c1; font-weight: bold } .codehilite .no { color: #008080 } .codehilite .nd { color: #6f42c1; font-weight: bold } .codehilite .ni { color: #800080 } .codehilite .ne { color: #990000; font-weight: bold } .codehilite .nf { color: #6f42c1; font-weight: bold } .codehilite .nl { color: #990000; font-weight: bold } .codehilite .nn { color: #555555 } .codehilite .nt { color: #22863a } .codehilite .nv { color: #008080 } .codehilite .ow { color: #d73a49; font-weight: bold } .codehilite .w { color: #bbbbbb } .codehilite .mf { color: #009999 } .codehilite .mh { color: #009999 } .codehilite .mi { color: #009999 } .codehilite .mo { color: #009999 } .codehilite .sb { color: #032f62 } .codehilite .sc { color: #032f62 } .codehilite .sd { color: #032f62 } .codehilite .s2 { color: #032f62 } .codehilite .se { color: #032f62 } .codehilite .sh { color: #032f62 } .codehilite .si { color: #032f62 } .codehilite .sx { color: #032f62 } .codehilite .sr { color: #009926 } .codehilite .s1 { color: #032f62 } .codehilite .ss { color: #990073 } .codehilite .bp { color: #999999 } .codehilite .vc { color: #008080 } .codehilite .vg { color: #008080 } .codehilite .vi { color: #008080 } .codehilite .il { color: #009999 }",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-045-survival-art.png",
+      "keywords": "红楼梦,贾芸,小红,乱世生存,底层逆袭,三疯,诺亚方舟,生存智慧",
+      "quote": "",
+      "daily_sentence": "",
+      "password": "123123"
+    },
+    "P239": {
+      "htmlDir": "docs/post/economic-prophecy-part2-hyperinflation.html",
+      "labels": [
+        "懒人投资",
+        "随笔"
+      ],
+      "postTitle": "帝国经济预言（下）：当印钞机烧红时，落在你的头顶的是座山",
+      "postUrl": "https://www.futuremedia.work/post/economic-prophecy-part2-hyperinflation.html",
+      "postSourceUrl": "https://github.com/granthuang999/granthuang999.github.io/issues/239",
+      "commentNum": 0,
+      "wordCount": 1596,
+      "createdAt": 1769491539,
+      "top": 0,
+      "description": "通缩之后必有洪水，深度解析从1948年金圆券看帝国经济的终局，当印钞机烧红时，我们该往哪里逃？",
+      "createdDate": "2026-01-27",
+      "isoDate": "2026-01-27T13:25:39+08:00",
+      "dateLabelColor": "#1f883d",
+      "style": "/* 修复本地渲染高亮 */ .codehilite .hll { background-color: #ffffcc } .codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; } .codehilite .c { color: #6a737d; font-style: italic } .codehilite .k { color: #d73a49; font-weight: bold } .codehilite .o { color: #d73a49; font-weight: bold } .codehilite .cm { color: #6a737d; font-style: italic } .codehilite .cp { color: #005cc5; font-weight: bold } .codehilite .c1 { color: #6a737d; font-style: italic } .codehilite .cs { color: #6a737d; font-weight: bold; font-style: italic } .codehilite .gd { color: #b31d28; background-color: #ffeef0 } .codehilite .ge { font-style: italic } .codehilite .gr { color: #b31d28 } .codehilite .gh { color: #005cc5; font-weight: bold } .codehilite .gi { color: #22863a; background-color: #f0fff4 } .codehilite .go { color: #888888 } .codehilite .gp { color: #555555 } .codehilite .gs { font-weight: bold } .codehilite .gu { color: #aaaaaa } .codehilite .gt { color: #aa0000 } .codehilite .kc { color: #d73a49; font-weight: bold } .codehilite .kd { color: #d73a49; font-weight: bold } .codehilite .kn { color: #d73a49; font-weight: bold } .codehilite .kp { color: #d73a49 } .codehilite .kr { color: #d73a49; font-weight: bold } .codehilite .kt { color: #445588; font-weight: bold } .codehilite .m { color: #009999 } .codehilite .s { color: #032f62 } .codehilite .na { color: #008080 } .codehilite .nb { color: #005cc5 } .codehilite .nc { color: #6f42c1; font-weight: bold } .codehilite .no { color: #008080 } .codehilite .nd { color: #6f42c1; font-weight: bold } .codehilite .ni { color: #800080 } .codehilite .ne { color: #990000; font-weight: bold } .codehilite .nf { color: #6f42c1; font-weight: bold } .codehilite .nl { color: #990000; font-weight: bold } .codehilite .nn { color: #555555 } .codehilite .nt { color: #22863a } .codehilite .nv { color: #008080 } .codehilite .ow { color: #d73a49; font-weight: bold } .codehilite .w { color: #bbbbbb } .codehilite .mf { color: #009999 } .codehilite .mh { color: #009999 } .codehilite .mi { color: #009999 } .codehilite .mo { color: #009999 } .codehilite .sb { color: #032f62 } .codehilite .sc { color: #032f62 } .codehilite .sd { color: #032f62 } .codehilite .s2 { color: #032f62 } .codehilite .se { color: #032f62 } .codehilite .sh { color: #032f62 } .codehilite .si { color: #032f62 } .codehilite .sx { color: #032f62 } .codehilite .sr { color: #009926 } .codehilite .s1 { color: #032f62 } .codehilite .ss { color: #990073 } .codehilite .bp { color: #999999 } .codehilite .vc { color: #008080 } .codehilite .vg { color: #008080 } .codehilite .vi { color: #008080 } .codehilite .il { color: #009999 }",
+      "script": "<script src='https://www.futuremedia.work/plugins/GmeekTOC.js'></script>",
+      "head": "",
+      "ogImage": "https://www.futuremedia.work/images/economic-prophecy-part2-hyperinflation.png",
+      "keywords": "中国经济,恶性通胀,金圆券,崩盘,债务危机,三疯,生存指南",
+      "quote": "",
+      "daily_sentence": "",
+      "password": "123123"
+    },
     "P238": {
       "htmlDir": "docs/post/economic-prophecy-part1-stagnation.html",
       "labels": [
@@ -77,7 +155,8 @@
       "ogImage": "https://www.futuremedia.work/images/economic-prophecy-part1-stagnation.png",
       "keywords": "中国经济,通缩,勃列日涅夫,停滞时代,内卷,三疯,垃圾时间",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P237": {
       "htmlDir": "docs/post/red-chamber-restart-044-death-of-matriarch.html",
@@ -102,7 +181,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-044-death-of-matriarch.png",
       "keywords": "红楼梦,贾母之死,政治隐喻,压舱石,时代终结,三疯,元老政治,社会心理",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P236": {
       "htmlDir": "docs/post/red-chamber-restart-043-tanchun-reform-tragedy.html",
@@ -127,7 +207,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-043-tanchun-reform-tragedy.png",
       "keywords": "红楼梦,贾探春,职场管理,降本增效,系统性风险,三疯,沉船逻辑",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P235": {
       "htmlDir": "docs/post/red-chamber-restart-042-jia-zheng-tragedy.html",
@@ -152,7 +233,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-042-jia-zheng-tragedy.png",
       "keywords": "红楼梦,贾政,中年危机,异化,父子关系,三疯,社会心理学",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P234": {
       "htmlDir": "docs/post/red-chamber-restart-040-miao-yu-anxiety.html",
@@ -177,7 +259,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-040-miao-yu-anxiety.png",
       "keywords": "红楼梦,妙玉,中产阶级,阶层焦虑,伪精致,三疯,生活美学",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P233": {
       "htmlDir": "docs/post/red-chamber-restart-039-competence-trap.html",
@@ -202,7 +285,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-039-competence-trap.png",
       "keywords": "红楼梦,王熙凤,能者多劳,职场倦怠,流产,三疯,管理陷阱",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P232": {
       "htmlDir": "docs/post/pdd-fine-signal-2026.html",
@@ -227,7 +311,8 @@
       "ogImage": "https://www.futuremedia.work/images/pdd-fine-signal-2026.png",
       "keywords": "拼多多,反内卷,税务合规,初次分配,居民增收,三疯,宏观经济",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P231": {
       "htmlDir": "docs/post/red-chamber-restart-038-xiaohong-pitch.html",
@@ -252,7 +337,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-038-xiaohong-pitch.png",
       "keywords": "红楼梦,小红,林红玉,越级汇报,电梯演讲,职场突围,三疯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P230": {
       "htmlDir": "docs/post/red-chamber-restart-037-grand-view-raid.html",
@@ -277,7 +363,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-037-grand-view-raid.png",
       "keywords": "红楼梦,抄检大观园,探春,职场内卷,内部审计,三疯,组织衰退",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P229": {
       "htmlDir": "docs/post/red-chamber-restart-036-yuanyang-refusal.html",
@@ -302,7 +389,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-036-yuanyang-refusal.png",
       "keywords": "红楼梦,鸳鸯,职场霸凌,拒绝老板,向上管理,三疯,博弈",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P228": {
       "htmlDir": "docs/post/red-chamber-restart-035-pinger-soft-power.html",
@@ -327,7 +415,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-035-pinger-soft-power.png",
       "keywords": "红楼梦,平儿,向上管理,职场情商,灰度管理,三疯,中层生存",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P227": {
       "htmlDir": "docs/post/red-chamber-restart-034-tanchun-leadership.html",
@@ -352,7 +441,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-034-tanchun-leadership.png",
       "keywords": "红楼梦,探春,项目管理,横向领导力,职场实操,三疯,团队建设",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P226": {
       "htmlDir": "docs/post/redemption-of-mirage-11-sovereign-individual.html",
@@ -377,7 +467,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-11-sovereign-individual.png",
       "keywords": "救赎,主权个体,内部流亡,自由主义,三疯,公民社会,终章",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P225": {
       "htmlDir": "docs/post/redemption-of-mirage-10-father-predator.html",
@@ -402,7 +493,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-10-father-predator.png",
       "keywords": "救赎,社会契约,精神弑父,塔西佗陷阱,三疯,独立人格",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P224": {
       "htmlDir": "docs/post/redemption-of-mirage-09-paying-the-bill.html",
@@ -427,7 +519,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-09-paying-the-bill.png",
       "keywords": "救赎,存量博弈,棘轮效应,经济真相,三疯,盛宴散场",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P223": {
       "htmlDir": "docs/post/red-chamber-restart-033-xiren-tragedy.html",
@@ -452,7 +545,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-033-xiren-tragedy.png",
       "keywords": "红楼梦,袭人,职场忠诚,社畜,王夫人,三疯,职场陷阱",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P222": {
       "htmlDir": "docs/post/redemption-of-mirage-08-cognitive-firewall.html",
@@ -477,7 +571,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-08-cognitive-firewall.png",
       "keywords": "救赎,信息过载,认知防火墙,宏大叙事,三疯,专注力,焦虑",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P221": {
       "htmlDir": "docs/post/red-chamber-restart-032-xfeng-burnout.html",
@@ -502,7 +597,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-032-xfeng-burnout.png",
       "keywords": "红楼梦,王熙凤,职场过劳,微观管理,放权,三疯,中年危机",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P220": {
       "htmlDir": "docs/post/redemption-of-mirage-07-micro-escape.html",
@@ -527,7 +623,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-07-micro-escape.png",
       "keywords": "救赎,微观逃逸,资产安全,认知觉醒,三疯,避险指南",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P219": {
       "htmlDir": "docs/post/red-chamber-restart-031-baochai-professionalism.html",
@@ -552,7 +649,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-031-baochai-professionalism.png",
       "keywords": "红楼梦,薛宝钗,情绪稳定,职场生存,课题分离,三疯,职业化",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P218": {
       "htmlDir": "docs/post/redemption-of-mirage-06-os-conflict.html",
@@ -577,7 +675,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-06-os-conflict.png",
       "keywords": "救赎,认知冲突,体制内,中年危机,三疯,操作系统,大乘叙事",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P217": {
       "htmlDir": "docs/post/red-chamber-restart-030-jiayun-gambling.html",
@@ -602,7 +701,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-030-jiayun-gambling.png",
       "keywords": "红楼梦,贾芸,职场生存,向上社交,带资进组,三疯,搞钱",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P216": {
       "htmlDir": "docs/post/redemption-of-mirage-05-maintenance-cost.html",
@@ -627,7 +727,8 @@
       "ogImage": "https://www.futuremedia.work/images/redemption-of-mirage-05-maintenance-cost.png",
       "keywords": "救赎,系统成本,宏大叙事,官僚主义,中年危机,三疯,社会真相",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P215": {
       "htmlDir": "docs/post/lazy-investor-weekly-31-fomo-control.html",
@@ -652,7 +753,8 @@
       "ogImage": "https://www.futuremedia.work/images/lazy-investor-weekly-31-fomo-control.png",
       "keywords": "A股,15连阳,FOMO,懒人投资,港股,盈富基金,投资心态,三疯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P214": {
       "htmlDir": "docs/post/midlife-maintenance-04-man-cave.html",
@@ -677,7 +779,8 @@
       "ogImage": "https://www.futuremedia.work/images/midlife-maintenance-04-man-cave.png",
       "keywords": "中年维修,男人洞穴,VPS,掌控感,心理健康,三疯,独处",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P213": {
       "htmlDir": "docs/post/red-chamber-restart-029-tanchun-audit.html",
@@ -702,7 +805,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-restart-029-tanchun-audit.png",
       "keywords": "红楼梦,探春,职场管理,供应链审计,中年危机,三疯,灰色收入",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P212": {
       "htmlDir": "docs/post/red-chamber-chapter-28-granny-liu-networking.html",
@@ -727,7 +831,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-28-granny-liu-networking.png",
       "keywords": "红楼梦,刘姥姥,向上社交,情绪价值,商务拓展,三疯,职场启示",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P211": {
       "htmlDir": "docs/post/red-chamber-chapter-27-daiyu-exit-strategy.html",
@@ -752,7 +857,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-27-daiyu-exit-strategy.png",
       "keywords": "红楼梦,林黛玉,葬花,资产清算,耗材觉醒,独立人格,三疯,职场启示",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P210": {
       "htmlDir": "docs/post/mirage-of-salvation-04-infinite-liability.html",
@@ -777,7 +883,8 @@
       "ogImage": "https://www.futuremedia.work/images/mirage-of-salvation-04-infinite-liability.png",
       "keywords": "倒查30年,原罪,大乘逻辑,无限责任,契约精神,三疯,救赎",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P209": {
       "htmlDir": "docs/post/digital-rmb-total-centralization.html",
@@ -802,7 +909,8 @@
       "ogImage": "https://www.futuremedia.work//images/digital-rmb-total-centralization.png",
       "keywords": "数字人民币,e-CNY,完全中心化,财富稀释,挤兑风险,资产控制,三疯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P208": {
       "htmlDir": "docs/post/mirage-of-salvation-03-agency-problem.html",
@@ -827,7 +935,8 @@
       "ogImage": "https://www.futuremedia.work/images/mirage-of-salvation-03-agency-problem.png",
       "keywords": "委托代理问题,官僚主义,集体主义,寻租,特权,三疯,制度分析",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P207": {
       "htmlDir": "docs/post/red-chamber-chapter-26-gatekeeper-risk.html",
@@ -852,7 +961,8 @@
       "ogImage": "../../images/red-chamber-chapter-26-gatekeeper-risk.png",
       "keywords": "红楼梦,晴雯,林黛玉,职场沟通,看门人效应,管理学,误会",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P206": {
       "htmlDir": "docs/post/mirage-of-salvation-02-origin-story.html",
@@ -877,7 +987,8 @@
       "ogImage": "https://www.futuremedia.work/images/mirage-vol-02-bus-vs-walk.png",
       "keywords": "大乘佛教,小乘佛教,巨婴心理,自力救赎,福利主义,三疯,灵魂考古",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P205": {
       "htmlDir": "docs/post/red-chamber-chapter-25-jia-huan-dark-tactics.html",
@@ -902,7 +1013,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-25-candle.png",
       "keywords": "红楼梦,贾环,职场小人,资源匮乏,人性恶,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P204": {
       "htmlDir": "docs/post/red-chamber-chapter-24-jia-yun-hustle.html",
@@ -927,7 +1039,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-24-hustle.png",
       "keywords": "红楼梦,贾芸,王熙凤,职场生存,向上管理,创业思维,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P203": {
       "htmlDir": "docs/post/mirage-of-salvation-01-general-theory.html",
@@ -952,7 +1065,8 @@
       "ogImage": "https://www.futuremedia.work/images/mirage-vol-01-buddha-marx.png",
       "keywords": "大乘佛教,共产主义,代理人风险,中介垄断,权贵资本主义,三疯,灵魂考古",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P202": {
       "htmlDir": "docs/post/red-chamber-chapter-23-monday-escape.html",
@@ -977,7 +1091,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-23-west-chamber.png",
       "keywords": "红楼梦,大观园,西厢记,贾宝玉,林黛玉,精神避难所,摸鱼,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P201": {
       "htmlDir": "docs/post/lazy-investor-weekly-048-venezuela-shock.html",
@@ -1002,7 +1117,8 @@
       "ogImage": "https://www.futuremedia.work/images/weekly-048-oil-shock.png",
       "keywords": "委内瑞拉,马杜罗,石油危机,2025复盘,2026投资展望,资产配置,懒人投资,三疯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P200": {
       "htmlDir": "docs/post/red-chamber-chapter-22-people-pleaser-burnout.html",
@@ -1027,7 +1143,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-22-zen.png",
       "keywords": "红楼梦,贾宝玉,讨好型人格,精神内耗,禅宗,社交倦怠,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P198": {
       "htmlDir": "docs/post/red-chamber-chapter-21-gray-management.html",
@@ -1052,7 +1169,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-21-hair.png",
       "keywords": "红楼梦,平儿,王熙凤,灰度管理,职场情商,向上管理,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P197": {
       "htmlDir": "docs/post/red-chamber-chapter-20-petty-fights.html",
@@ -1077,7 +1195,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-20-cheese.png",
       "keywords": "红楼梦,李嬷嬷,存量博弈,内卷,底层互害,职场政治,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P196": {
       "htmlDir": "docs/post/red-chamber-chapter-19-specific-happiness.html",
@@ -1102,7 +1221,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-19-xiren-home.png",
       "keywords": "红楼梦,贾宝玉,袭人,具体的幸福,新年,拒绝宏大叙事,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P195": {
       "htmlDir": "docs/post/red-chamber-chapter-18-lonely-gala.html",
@@ -1127,7 +1247,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-18-gala.png",
       "keywords": "红楼梦,贾元春,元妃省亲,情绪劳动,跨年,形式主义,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P194": {
       "htmlDir": "docs/post/soul-archaeology-06-redemption-system.html",
@@ -1152,7 +1273,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-06-rebuild.png",
       "keywords": "普世价值,制度重建,信仰,去狼奶,宪政,公民社会,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P193": {
       "htmlDir": "docs/post/soul-archaeology-07-return-to-pre-qin.html",
@@ -1177,7 +1299,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-07-noble-spirit.png",
       "keywords": "先秦精神,贵族,独立人格,墨家,精神复兴,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P192": {
       "htmlDir": "docs/post/soul-archaeology-05-trust-crisis.html",
@@ -1202,7 +1325,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-05-trust-shattered.png",
       "keywords": "历次运动,互害模式,投名状,信任危机,党文化,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P191": {
       "htmlDir": "docs/post/soul-archaeology-04-qin-han-atomization.html",
@@ -1227,7 +1351,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-04-sand-curse.png",
       "keywords": "秦制,商鞅变法,连坐,原子化,儒表法里,冷漠,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P190": {
       "htmlDir": "docs/post/soul-archaeology-03-song-ming-masks.html",
@@ -1252,7 +1377,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-03-hypocrisy-mask.png",
       "keywords": "宋明理学,虚伪,特务政治,双重人格,高情商,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P189": {
       "htmlDir": "docs/post/soul-archaeology-02-qing-dynasty-knees.html",
@@ -1277,7 +1403,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-02-broken-knees.png",
       "keywords": "清朝,奴性,剃发令,主奴结构,心理创伤,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P188": {
       "htmlDir": "docs/post/soul-archaeology-01-survivors-cost.html",
@@ -1302,7 +1429,8 @@
       "ogImage": "https://www.futuremedia.work/images/soul-archaeology-01-evolution.png",
       "keywords": "国民性,制度进化论,幸存者偏差,历史观,三疯读书,逆向驯化",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P187": {
       "htmlDir": "docs/post/red-chamber-chapter-17-toxic-boss.html",
@@ -1327,7 +1455,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-17-boss.png",
       "keywords": "红楼梦,贾政,职场PUA,向上管理,项目验收,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P186": {
       "htmlDir": "docs/post/red-chamber-chapter-16-capex-trap.html",
@@ -1352,7 +1481,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-16-tower.png",
       "keywords": "红楼梦,贾元春,大观园,IPO魔咒,现金流,消费升级,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P185": {
       "htmlDir": "docs/post/red-chamber-chapter-15-vanity-trap.html",
@@ -1377,7 +1507,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-15-real.png",
       "keywords": "红楼梦,王熙凤,职场捧杀,中年感悟,拒绝内耗,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P184": {
       "htmlDir": "docs/post/lazy-investor-weekly-002-2026-outlook.html",
@@ -1402,7 +1533,8 @@
       "ogImage": "https://www.futuremedia.work/images/lazy-investor-weekly-002.png",
       "keywords": "2026宏观预测,资产配置,黄金目标价,美股策略,反内卷,懒人投资,Jason",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P183": {
       "htmlDir": "docs/post/red-chamber-chapter-14-asset-swap-risk.html",
@@ -1427,7 +1559,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-14-asset-swap-risk.png",
       "keywords": "红楼梦,林如海,北静王,资产置换,政治风险,现金流管理,三疯读书,黑天鹅",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P182": {
       "htmlDir": "docs/post/red-chamber-chapter-13-macro-vs-micro.html",
@@ -1452,7 +1585,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-13-macro-vs-micro.png",
       "keywords": "红楼梦,秦可卿托梦,王熙凤,康波周期,家族信托,资产隔离,危机管理,MBA案例,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P181": {
       "htmlDir": "docs/post/rmb-outbound-first-mile-guide.html",
@@ -1477,7 +1611,8 @@
       "ogImage": "https://www.futuremedia.work/images/rmb-outbound-strategy.png",
       "keywords": "资金出海,5万美金购汇额度,香港银行开户,跨境汇款,保诚保险红利,外汇管制",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P180": {
       "htmlDir": "docs/post/virtual-bank-firewall-strategy.html",
@@ -1502,7 +1637,8 @@
       "ogImage": "https://www.futuremedia.work/images/virtual-bank-firewall.png",
       "keywords": "众安银行,ZA Bank,虚拟银行,资金防火墙,香港开户攻略,转数快FPS,资产隔离",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P179": {
       "htmlDir": "docs/post/hk-bank-account-security-guide.html",
@@ -1527,7 +1663,8 @@
       "ogImage": "https://www.futuremedia.work/images/hk-banking-security.png",
       "keywords": "香港银行开户,渣打银行风控,汇丰银行冻结,离岸账户维护,众安银行,反洗钱AML,资产配置",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P178": {
       "htmlDir": "docs/post/red-chamber-chapter-12-risk-and-cashflow.html",
@@ -1552,7 +1689,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-12.png",
       "keywords": "红楼梦,贾瑞,风月宝鉴,林如海,现金流,行为金融学,多巴胺陷阱,止损",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P177": {
       "htmlDir": "docs/post/cash-vs-debt-freedom.html",
@@ -1577,7 +1715,8 @@
       "ogImage": "https://www.futuremedia.work/images/cash-vs-debt-freedom.png",
       "keywords": "现金流,负债陷阱,时间贫穷,财务自由,安全库存,极简主义,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P176": {
       "htmlDir": "docs/post/jiarui-risk-management.html",
@@ -1602,7 +1741,8 @@
       "ogImage": "https://www.futuremedia.work/images/jiarui-mirror.png",
       "keywords": "红楼梦,贾瑞,王熙凤,风险管理,认知偏差,职场潜规则,止损,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P175": {
       "htmlDir": "docs/post/red-chamber-chapter-10-burnout-toxic-people.html",
@@ -1627,7 +1767,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-10-burnout-toxic-people.png",
       "keywords": "红楼梦,秦可卿,高功能焦虑,职场内耗,垃圾人定律,尤氏,管理学,养生,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P174": {
       "htmlDir": "docs/post/sp500-pe-ratio-valuation-warning-2025.html",
@@ -1651,7 +1792,8 @@
       "ogImage": "https://www.futuremedia.work/images/sp500-valuation-warning-22x-pe.png",
       "keywords": "标普500,美股估值,市盈率,席勒PE,长期回报率,资产配置,懒人投资周报,美债,均值回归,RSP",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P172": {
       "htmlDir": "docs/post/nasdaq-100-rebalance-broadcom-weight-cap-new-entries.html",
@@ -1675,7 +1817,8 @@
       "ogImage": "https://www.futuremedia.work/images/nasdaq-rebalance-broadcom-weight-cap-new-entries.png",
       "keywords": "纳指100,纳斯达克调仓,博通,西部数据,希捷,生物制药,美股ETF,懒人投资周报,权重调整,QQQ,半导体存储,Ferrovial",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P171": {
       "htmlDir": "docs/post/jia-school-bullying-class-struggle.html",
@@ -1700,7 +1843,8 @@
       "ogImage": "https://www.futuremedia.work/images/jia-school-bullying-class-struggle.png",
       "keywords": "红楼梦,贾府学堂,校园霸凌,阶层固化,薛蟠,金荣,茗烟,圈子文化,择校,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P170": {
       "htmlDir": "docs/post/gold-jade-marriage-capital-conspiracy.html",
@@ -1725,7 +1869,8 @@
       "ogImage": "https://www.futuremedia.work/images/gold-jade-marriage-capital-conspiracy.png",
       "keywords": "红楼梦,金玉良缘,薛宝钗,资本联姻,借壳上市,情绪价值,贾宝玉,养生,林黛玉,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P169": {
       "htmlDir": "docs/post/jiao-da-drunken-curse-corporate-politics.html",
@@ -1750,7 +1895,8 @@
       "ogImage": "https://www.futuremedia.work/images/jiao-da-drunken-curse-corporate-politics.png",
       "keywords": "红楼梦,焦大醉骂,职场老员工,功高盖主,吹哨人,逆淘汰,职场生存,三疯读书,人情世故",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P168": {
       "htmlDir": "docs/post/liu-laolao-fundraising-strategy.html",
@@ -1775,7 +1921,8 @@
       "ogImage": "https://www.futuremedia.work/images/liu-laolao-fundraising-strategy.png",
       "keywords": "红楼梦,刘姥姥,王熙凤,搞钱,销售技巧,向上社交,逆商,三疯读书,阶层跨越",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P167": {
       "htmlDir": "docs/post/red-chamber-chapter-5-destiny-algorithm.html",
@@ -1800,7 +1947,8 @@
       "ogImage": "https://www.futuremedia.work/images/red-chamber-chapter-5-destiny-algorithm.png",
       "keywords": "红楼梦,贾宝玉,警幻仙姑,金陵十二钗,多巴胺陷阱,反脆弱,命运,太虚幻境,三疯读书,人生哲学",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P166": {
       "htmlDir": "docs/post/protection-list-power-corruption-chapter-4.html",
@@ -1825,7 +1973,8 @@
       "ogImage": "https://www.futuremedia.work/images/protection-list-power-corruption-chapter-4.png",
       "keywords": "红楼梦,护官符,贾雨村,葫芦僧乱判葫芦案,职场潜规则,投名状,阶层固化,薛蟠,人性,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P165": {
       "htmlDir": "docs/post/daiyu-enters-jia-mansion-survival-guide.html",
@@ -1850,7 +1999,8 @@
       "ogImage": "https://www.futuremedia.work/images/daiyu-enters-jia-mansion-survival-guide.png",
       "keywords": "红楼梦,林黛玉,王熙凤,职场新人,高敏感人群,向上管理,人情世故,三疯读书,HSP",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P164": {
       "htmlDir": "docs/post/jia-yucun-career-turnaround-strategy.html",
@@ -1875,7 +2025,8 @@
       "ogImage": "https://www.futuremedia.work/images/jia-yucun-career-turnaround-strategy.png",
       "keywords": "红楼梦,贾雨村,职场危机公关,资源置换,向上社交,冷子兴演说荣国府,弱关系,情报获取,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P163": {
       "htmlDir": "docs/post/zhen-shiyin-middle-class-bankruptcy-lessons.html",
@@ -1900,7 +2051,8 @@
       "ogImage": "https://www.futuremedia.work/images/zhen-shiyin-middle-class-bankruptcy-lessons.png",
       "keywords": "红楼梦,甄士隐,中产返贫,资产配置,天使投资,财务自由,人性,封肃,焦虑,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P162": {
       "htmlDir": "docs/post/why-reread-red-chamber-middle-age-survival-guide.html",
@@ -1925,7 +2077,8 @@
       "ogImage": "https://www.futuremedia.work/images/why-reread-red-chamber-middle-age-survival-guide.png",
       "keywords": "红楼梦,职场生存指南,中产返贫,豪门破产,王熙凤管理学,人情世故,向上管理,情绪内耗,乱世生存,三疯读书",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P161": {
       "htmlDir": "docs/post/lazy-macro-weekly-001-gold-rates-asset-allocation.html",
@@ -1950,7 +2103,8 @@
       "ogImage": "https://www.futuremedia.work/images/lazy-macro-weekly-001-gold-rates-asset-allocation.png",
       "keywords": "懒人投资周报,宏观经济,黄金投资,美债ETF,美联储降息,康波周期,资产配置,财富保值,三疯,Jason",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P160": {
       "htmlDir": "docs/post/👋 -zhi-jing-ren-sheng-xia-ban-chang-：-cong-zhe-li-kai-shi.html",
@@ -1974,7 +2128,8 @@
       "ogImage": "https://www.futuremedia.work/images/product-service.png",
       "keywords": "未来传媒, 中年人, 个人成长, 名著解析,红楼职场, 投资理财, 宏观经济分析,资产配置,懒人投资周报, 名著,财富人生,人生下半场, 探索笔记",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P159": {
       "htmlDir": "docs/post/great-divergence-blueprint-2026.html",
@@ -1999,7 +2154,8 @@
       "ogImage": "https://www.futuremedia.work/images/capital-reset-2026-p0.png",
       "keywords": "未来传媒, 专注中年人, 席勒市盈率, AI泡沫, 资产配置, 黄金, 经济周期",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P158": {
       "htmlDir": "docs/post/ai-college-major-career-impact.html",
@@ -2023,7 +2179,8 @@
       "ogImage": "https://www.futuremedia.work/images/ai-career-choice.png",
       "keywords": "AI,职业规划,教育,专业选择,未来,中年父母,大学,择业,人工智能,职业转型,教育改革,学习能力,技能培养",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P157": {
       "htmlDir": "docs/post/mature-parents-letting-go-child-independence.html",
@@ -2047,7 +2204,8 @@
       "ogImage": "https://www.futuremedia.work/images/parenting-letting-go.png",
       "keywords": "父母与子女,养育,放手,独立,心理分离,成长,亲子关系,教育智慧,生活哲学,中年父母,家庭关系",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P156": {
       "htmlDir": "docs/post/gold-vs-astock-true-judgment.html",
@@ -2071,7 +2229,8 @@
       "ogImage": "https://www.futuremedia.work/images/investment-choice.png",
       "keywords": "黄金,A股,资产配置,独立判断,投资逻辑,中产理财,储蓄转移,科技替代,风险管理,定投策略,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P155": {
       "htmlDir": "docs/post/parenting-yujuzhu-versus-diandizhu.html",
@@ -2095,7 +2254,8 @@
       "ogImage": "https://www.futuremedia.work/images/parenting-choice.png",
       "keywords": "养育观念,托举,兜底,教育焦虑,中年父母,亲子关系,期望管理,心理健康,个性化成长,自由与责任,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P154": {
       "htmlDir": "docs/post/chongyang-parent-child-relationship-rethinking.html",
@@ -2119,7 +2279,8 @@
       "ogImage": "https://www.futuremedia.work/images/chongyang-relationship.png",
       "keywords": "重阳节,亲子关系,养儿防老,父母子女,平等尊重,代际关系,中年困境,赡养义务,情感独立,家庭关系,孝道,现代孝顺,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P153": {
       "htmlDir": "docs/post/chinese-kao-culture-survival-philosophy.html",
@@ -2143,7 +2304,8 @@
       "ogImage": "https://www.futuremedia.work/images/kao-culture-philosophy.png",
       "keywords": "靠文化,生存哲学,阶层分析,底层生存,中层博弈,上层平衡,宗族互助,关系网络,权力制衡,现代转型,中国文化,社会智慧,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P152": {
       "htmlDir": "docs/post/long-arc-petition-five-findings.html",
@@ -2167,7 +2329,8 @@
       "ogImage": "https://www.futuremedia.work/images/long-arc-petition.png",
       "keywords": "应星,群体行动,上访叙事,一次性解决,选择性补偿,中介型行动者,信任重建,制度供给,社会学观察,长期博弈",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P151": {
       "htmlDir": "docs/post/buy-is-risk-sell-is-safe-investing-cognitive-upgrade.html",
@@ -2191,7 +2354,8 @@
       "ogImage": "https://www.futuremedia.work/images/buy-risk-sell-safe.png",
       "keywords": "买入风险,卖出避险,中年投资,风险管理,资产配置,市场情绪,Risk-on,Risk-off,投资心理,风险转移,动态平衡,避险资产,投资认知,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P150": {
       "htmlDir": "docs/post/fiscal-logic-of-central-empires-wealth-protection.html",
@@ -2215,7 +2379,8 @@
       "ogImage": "https://www.futuremedia.work/images/fiscal-logic-empires.png",
       "keywords": "财政逻辑,中央帝国,交子崩盘,告缗令,王莽改制,王朝兴亡,财富保护,货币贬值,中年理财,历史启示,财政危机,郭建龙,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P149": {
       "htmlDir": "docs/post/midlife-deep-recovery-system-beyond-sleep.html",
@@ -2239,7 +2404,8 @@
       "ogImage": "https://www.futuremedia.work/images/deep-recovery-system.png",
       "keywords": "中年疲惫,睡眠质量,能量管理,深度恢复,心理耗竭,意义缺失,主动休息,情绪管理,创造性恢复,第三空间,工作生活平衡,中年危机,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P148": {
       "htmlDir": "docs/post/midlife-inner-peace-fortress-in-chaotic-world.html",
@@ -2263,7 +2429,8 @@
       "ogImage": "https://www.futuremedia.work/images/inner-peace-fortress.png",
       "keywords": "中年焦虑,地缘政治,Gaza冲突,不确定性,内心和平,斯多葛主义,控制二分法,意义疗法,弗兰克尔,信息过载,可控圈,焦虑管理,心理韧性,中年危机,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P147": {
       "htmlDir": "docs/post/yang-zhenning-natural-deism-and-man-god-relations.html",
@@ -2287,7 +2454,8 @@
       "ogImage": "https://www.futuremedia.work/images/1761012605.png",
       "keywords": "杨振宁,造物主,自然神论,泛神论,启示神,人神关系,斯宾诺莎,爱因斯坦,意义危机,物理定律,现代信仰,怀特海,帕斯卡尔,中年哲思,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P146": {
       "htmlDir": "docs/post/philosophy_armor_soft_landing_hard_world.html",
@@ -2311,7 +2479,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760926205.png",
       "keywords": "哲思,斯多葛派,塞内加,不确定性,焦虑,控制二分法,预演不幸,哲学智慧,内心投影,阿兰德波顿,自我掌控,情绪管理,人生困境,心理韧性,成长,生存策略,心外无物,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P145": {
       "htmlDir": "docs/post/inner_world_projection_outer_world_self_mastery.html",
@@ -2335,7 +2504,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760839805.png",
       "keywords": "心外无物,内心投影,世界观,自我修炼,咖啡寓言,情绪管理,信念系统,价值观,认知重构,正念,个人成长,心理韧性,创造性应对,内在世界,外在现实,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P144": {
       "htmlDir": "docs/post/random_walk_idiot_uncertainty_response_strategy.html",
@@ -2359,7 +2529,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760760605.png",
       "keywords": "随机漫步的傻瓜,塔勒布,不确定性,随机性,生存智慧,认知偏差,幸存者偏差,因果关系,经验绑架,短期失败焦虑,恐惧内耗,能力圈,运气圈,无敌心态,价值变现,个人成长,决策,风险管理,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P143": {
       "htmlDir": "docs/post/economic_downturn_inner_loop_employment_investment_strategy.html",
@@ -2383,7 +2554,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760674205.png",
       "keywords": "经济下行,内循环,就业机会,投资策略,个人发展,消费悖论,理性悦己,消费分级,新穷人,鲍曼理论,供应链优化,精奢消费,精神消费,终身学习,可持续发展,个人品牌,技能提升,财富管理,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P142": {
       "htmlDir": "docs/post/consumption_paradox_inner_loop_value_reconstruction.html",
@@ -2407,7 +2579,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760587805.png",
       "keywords": "消费悖论,内循环,消费主义,新穷人,齐格蒙特鲍曼,消费分级,理性悦己,精神满足,体验消费,数字化平台,价值驱动,政策引导,多元价值,需求欲望边界,自我表达,经济增长,个体幸福,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P141": {
       "htmlDir": "docs/post/innovation_creative_destruction_economic_growth_nobel_2025.html",
@@ -2431,7 +2604,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760501405.png",
       "keywords": "2025诺贝尔经济学奖,约尔莫基尔,菲利普阿洪,彼得霍伊特,创新,创造性破坏,经济增长,内生增长模型,研发,生产力,熊彼特,工业革命,技术突破,实证证据,移民创新,政策启示,人工智能,绿色技术,研发投入,教育,开放移民,制度框架,有限政府,不平等,再培训,包容性增长,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P140": {
       "htmlDir": "docs/post/desperate_old_horse_breakthrough_in_repetition.html",
@@ -2455,7 +2629,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760415005.png",
       "keywords": "绝望的老马,价值虚无,尼采,强力意志,拉斯洛,绝望突围,重复困境,中年危机,自我赋权,精神重建,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P139": {
       "htmlDir": "docs/post/future-media-daily-20251011.html",
@@ -2479,7 +2654,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,中美贸易,AI创新,金融市场,互联网热点,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P138": {
       "htmlDir": "docs/post/historical-faultline-silent-roar.html",
@@ -2503,7 +2679,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "历史断裂带,全球秩序,AI革命,金价,地缘政治,能源结构,经济变革",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P137": {
       "htmlDir": "docs/post/original_sin_constitutionalism_power_checks_faith_foundation.html",
@@ -2527,7 +2704,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760328605.png",
       "keywords": "基督教原罪观,现代宪政,权力制衡,人性本恶,三权分立,法治,有限政府,约翰加尔文,詹姆斯麦迪逊,联邦党人文集,西方政治哲学,信仰根基,权力滥用,政治制度",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P136": {
       "htmlDir": "docs/post/comparison_trap_self_order_spiritual_wealth_path.html",
@@ -2551,7 +2729,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760242205.png",
       "keywords": "中年危机,比较陷阱,精神内耗,社交媒体,中产焦虑,内卷化,自我秩序,精神富足,重塑成功,拥抱有限性,正念冥想,数字排毒,长期主义,贡献导向,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P135": {
       "htmlDir": "docs/post/future-media-daily-20251009.html",
@@ -2575,7 +2754,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,中国新闻,AI,金融市场,互联网热点,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P134": {
       "htmlDir": "docs/post/seek_lack_not_completeness.html",
@@ -2599,7 +2779,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760155805.png",
       "keywords": "求缺不求全,人生圆满,知足取舍,中年焦虑,内卷,完美主义,道家智慧,佛学中道,积极心理学,数字排毒,感恩,人际关系,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P133": {
       "htmlDir": "docs/post/transcending_problems_rather_than_solving_them.html",
@@ -2623,7 +2804,8 @@
       "ogImage": "https://www.futuremedia.work/images/1760069405.png",
       "keywords": "升维思维,破局之道,解决问题,个人成长,职场困境,资源稀缺,经济下行,思维模式,中年危机,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P132": {
       "htmlDir": "docs/post/future-media-daily-20251007.html",
@@ -2647,7 +2829,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,国内新闻,AI创新,金融市场,互联网热点,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P131": {
       "htmlDir": "docs/post/why-europe-birthed-scientific-revolution-first-principle-thinking.html",
@@ -2671,7 +2854,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759983005.png",
       "keywords": "科学革命,本源思维,形而上学,欧洲文明,认知差异,逻辑,概念",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P130": {
       "htmlDir": "docs/post/future-media-daily-20251006.html",
@@ -2695,7 +2879,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,国内新闻,AI,金融市场,互联网热点,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P129": {
       "htmlDir": "docs/post/future-media-daily-20251005.html",
@@ -2719,7 +2904,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,国内新闻,AI,金融市场,互联网热点,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P128": {
       "htmlDir": "docs/post/northern_county_power_survival_ambition_decline.html",
@@ -2743,7 +2929,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759896605.png",
       "keywords": "北方县城,权力性生存,编制崇拜,进取心消亡,阶层固化,体制内外,职业选择,青年活力,转型困境,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P127": {
       "htmlDir": "docs/post/stupidity_hidden_enemy_of_good_bonhoeffer_moral_crisis_humanistic_salvation.html",
@@ -2767,7 +2954,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759810205.png",
       "keywords": "朋霍费尔,愚蠢,善的隐匿之敌,道德困境,人文救赎,良知,社会麻木,消费主义,虚无主义,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P126": {
       "htmlDir": "docs/post/midlife-body-partner-mindset.html",
@@ -2791,7 +2979,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759723805.png",
       "keywords": "中年健康,身体和解,衰老焦虑,身心关系,情绪管理,内在沟通,健康管理,自我关怀,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P125": {
       "htmlDir": "docs/post/future-media-daily-news-20251004.html",
@@ -2815,7 +3004,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒,AI教育,Obsidian,麦德姆,全球治理,每日资讯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P124": {
       "htmlDir": "docs/post/future-media-daily-news-20251003.html",
@@ -2839,7 +3029,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒, 每日资讯, AI Agent, 多模态AI, 金融市场, 开源工具, 国际热点",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P123": {
       "htmlDir": "docs/post/future-media-daily-news-20251002.html",
@@ -2863,7 +3054,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒,每日资讯,AI,人工智能,金融市场,科技创新,开源工具,多模态AI",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P122": {
       "htmlDir": "docs/post/futurmedia-daily-news-20251001.html",
@@ -2887,7 +3079,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "美国政府关门,AI杀手级应用,机器人,医疗AI,Penpot,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P121": {
       "htmlDir": "docs/post/future-media-daily-news-20250930.html",
@@ -2911,7 +3104,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒,每日资讯,AI应用,多模态技术,全球金融,国际热点,开源工具,ChatGPT",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P120": {
       "htmlDir": "docs/post/western_civilization_crisis_bounded_pluralism.html",
@@ -2935,7 +3129,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759637405.png",
       "keywords": "价值多元论,西方文明危机,以赛亚伯林,约翰格雷,乔治克劳德,普世价值,文化冲突,价值观撕裂,自由主义,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P119": {
       "htmlDir": "docs/post/taming-power-formation-british-parliament.html",
@@ -2959,7 +3154,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759551005.png",
       "keywords": "英国议会,大宪章,权利法案,权力制衡,政治文明,私有财产,契约精神,道义制约,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P118": {
       "htmlDir": "docs/post/human_hubris_cognitive_bias_self_transcendence.html",
@@ -2983,7 +3179,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759464605.png",
       "keywords": "自以为是,认知偏差,自我超越,元认知,批判性思维,谦逊实践,邓宁克鲁格效应,思维惰性,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P117": {
       "htmlDir": "docs/post/absurd_self_harmony_guide.html",
@@ -3007,7 +3204,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759111805.png",
       "keywords": "荒诞哲学,生命意义,存在主义迷失,价值悬置,荒诞自洽指南,心智反抗,意义脱敏,创造性反抗,共情连接,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P116": {
       "htmlDir": "docs/post/future-media-daily-news-20250929.html",
@@ -3031,7 +3229,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒, 每日资讯, AI, 金融, 国际新闻, 开源工具, 具身智能, Rye",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P115": {
       "htmlDir": "docs/post/future-media-daily-20250928.html",
@@ -3055,7 +3254,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "巴以冲突, TikTok, 区域创新, 5G, AI治理, 具身智能, Obsidian",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P114": {
       "htmlDir": "docs/post/heart-nourished_elder_care_blueprint.html",
@@ -3079,7 +3279,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759378205.png",
       "keywords": "父母养老,孝心焦虑,心享养老计划,陪伴微习惯,倾听式陪伴,数字连接,赋能式支持,家庭关怀,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P113": {
       "htmlDir": "docs/post/anti-fragile-investment-perspective.html",
@@ -3103,7 +3304,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759291805.png",
       "keywords": "反脆弱投资,投资策略,资产配置,杠铃策略,财务冗余,情绪管理,投资迷茫,财富增值,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P112": {
       "htmlDir": "docs/post/future--media-daily-20250926.html",
@@ -3127,7 +3329,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒,每日资讯,AI监管,科技巨头,金融市场,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P111": {
       "htmlDir": "docs/post/cognitive-reframe-compass.html",
@@ -3151,7 +3354,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759205405.png",
       "keywords": "自我设限,认知重构,人生突破,中年成长,心智练习,无限可能,信念溯源,微习惯,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P110": {
       "htmlDir": "docs/post/midlife-future-dweller-mindset.html",
@@ -3175,7 +3379,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759119005.png",
       "keywords": "时代脱节感,成长焦虑,经验主义,未来生活者,归零心态,反向学习,微剂量实验,持续成长,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P109": {
       "htmlDir": "docs/post/future-media-daily-20250925.html",
@@ -3199,7 +3404,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "未来传媒, 每日资讯, 人工智能, 具身智能, 金融市场, 国际热点, 开源工具, JetBrains Academy, 特朗普, 巴勒斯坦",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P108": {
       "htmlDir": "docs/post/future-media-daily-20250924.html",
@@ -3223,7 +3429,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "联合国大会,欧洲罢工,AI,Stable Diffusion,金融市场,比特币,原油,开源工具,Bun,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P107": {
       "htmlDir": "docs/post/future-media-daily-news-20250923.html",
@@ -3247,7 +3454,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "AI, 具身智能, LiteLLM, 国际新闻, 金融市场, 开源工具, 未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P106": {
       "htmlDir": "docs/post/absurd-lucid-living-principle.html",
@@ -3271,7 +3479,8 @@
       "ogImage": "https://www.futuremedia.work/images/1759032600.png",
       "keywords": "加缪,西绪弗斯神话,荒诞哲学,存在焦虑,生命意义,中年困境,清醒生存,自我掌控,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P105": {
       "htmlDir": "docs/post/human-centric-resilience-environmentalism.html",
@@ -3295,7 +3504,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758946200.png",
       "keywords": "环保认知,环保焦虑,人本环保观,西蒙艾利希赌局,终极资源,人类创造力,技术进步,可持续发展,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P104": {
       "htmlDir": "docs/post/midlife-growth-compound-engine.html",
@@ -3319,7 +3529,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758859800.png",
       "keywords": "能力固化,成长焦虑,职业发展,成长复利引擎,持续学习,学习飞轮,中年职场,未来型人才,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P103": {
       "htmlDir": "docs/post/midlife-wealth-hub-strategy.html",
@@ -3343,7 +3554,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758773400.png",
       "keywords": "投资理财,财富管理,资产配置,家庭理财,财务规划,财富中枢策略,风险管理,中年投资,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P102": {
       "htmlDir": "docs/post/midlife-emotional-unloading-technique.html",
@@ -3367,7 +3579,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758687000.png",
       "keywords": "情绪管理,内在消耗,情绪疲惫,情绪卸载术,心理健康,自我疗愈,情绪排毒,专注中年人,未来传媒,内心平静",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P101": {
       "htmlDir": "docs/post/midlife-decision-sandbox-strategy.html",
@@ -3391,7 +3604,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758600600.png",
       "keywords": "决策困境,不确定性,决策焦虑,决策沙盘策略,风险管理,小步快跑,迭代决策,智慧决策者,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P100": {
       "htmlDir": "docs/post/midlife-life-luggage-decluttering.html",
@@ -3415,7 +3629,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758514200.png",
       "keywords": "中年危机,内在消耗,过往和解,情绪管理,个人成长,断舍离,自我疗愈,人生整理,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P99": {
       "htmlDir": "docs/post/midlife-emotional-resonance-compass.html",
@@ -3439,7 +3654,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758024600.png",
       "keywords": "情感麻木,关系断裂,韩江素食者,情感共鸣罗盘,深度对话,视角转换,生命本真,中年情感,人际关系,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P98": {
       "htmlDir": "docs/post/midlife-intellectual-immunity-strategy.html",
@@ -3463,7 +3679,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757938200.png",
       "keywords": "思想专制,伪自由主义,多元旗帜,思想免疫策略,理性辩论,批判性思维,中年困惑,独立思考,人文精神,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P97": {
       "htmlDir": "docs/post/midlife-cognitive-barbell-strategy.html",
@@ -3487,7 +3704,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758427800.png",
       "keywords": "认知升级,信息过载,认知疲劳,认知杠铃策略,深度学习,刻意留白,广度探索,学习方法,专注中年人,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P96": {
       "htmlDir": "docs/post/future-media-daily-news-20250915.html",
@@ -3511,7 +3729,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,AI,科技,金融,开源工具,未来传媒,每日资讯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P94": {
       "htmlDir": "docs/post/daily-news-20250914.html",
@@ -3535,7 +3754,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "每日资讯,AI,人工智能,TikTok,贸易战,金融市场,开源工具",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P92": {
       "htmlDir": "docs/post/future-media-daily-news-20250913.html",
@@ -3559,7 +3779,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "国际新闻,AI,科技,金融,开源工具,未来传媒,每日资讯",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P91": {
       "htmlDir": "docs/post/midlife-peaceful-farewell-plan.html",
@@ -3583,7 +3804,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758341701.png",
       "keywords": "临终关怀,安宁疗护,生前预嘱,死亡教育,中年家庭,父母养老,生命尊严,无悔告别,悲伤处理,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P90": {
       "htmlDir": "docs/post/midlife-emotional-deposit-account.html",
@@ -3607,7 +3829,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758255301.png",
       "keywords": "中年亲情,家庭关系,情感陪伴,情感存款账户,亲子关系,夫妻关系,亲密关系,家庭沟通,家庭幸福,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P89": {
       "htmlDir": "docs/post/midlife-dca-cycle-management.html",
@@ -3631,7 +3854,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758168901.png",
       "keywords": "中年投资,财富焦虑,定投,指数基金,财富增值,资产配置,风险管理,理财策略,财务自由,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P88": {
       "htmlDir": "docs/post/midlife-health-cycle-management.html",
@@ -3655,7 +3879,8 @@
       "ogImage": "https://www.futuremedia.work/images/1758082501.png",
       "keywords": "中年健康,健康焦虑,养生误区,健康周期管理,身体掌控,自我观察,定制健康,生理周期,身心健康,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P86": {
       "htmlDir": "docs/post/weread-shelf-sync.html",
@@ -3679,7 +3904,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "weread，微信读书，微信读书同步，个人书单，中年书单",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P85": {
       "htmlDir": "docs/post/midlife-second-order-learning.html",
@@ -3703,7 +3929,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250910111142-a.png",
       "keywords": "中年学习,终身学习,认知升级,二阶学习法,卡片盒笔记法,费曼学习法,个人知识管理,学习效率,职场成长,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P84": {
       "htmlDir": "docs/post/midlife-energy-socializing.html",
@@ -3727,7 +3954,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757996101.png",
       "keywords": "中年社交,无效社交,能量社交,人脉管理,社交困境,人际关系,个人成长,社群构建,孤独感,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P83": {
       "htmlDir": "docs/post/midlife-deep-time-mastery.html",
@@ -3751,7 +3979,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757909701.png",
       "keywords": "中年时间管理,时间碎片化,假性忙碌,深度时间,卡尔·纽波特,专注力,个人成长,职场效率,自我关怀,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P82": {
       "htmlDir": "docs/post/english-book-download.html",
@@ -3775,7 +4004,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "英语学习，英语自学，雅思，托福，留学，移民，英语口语，英语考试，英语杂志，英语阅读",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P80": {
       "htmlDir": "docs/post/parents-relationship-reconciliation.html",
@@ -3799,7 +4029,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757823301.png",
       "keywords": "中年危机,家庭关系,父母养老,原生家庭,情绪管理,个人成长,哲学思考,代际沟通,和解,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P79": {
       "htmlDir": "docs/post/barbell-strategy-investing.html",
@@ -3823,7 +4054,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757736901.png",
       "keywords": "中年理财,投资策略,资产配置,杠铃策略,纳西姆·塔勒布,风险管理,价值投资,黑天鹅,行为金融学,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P78": {
       "htmlDir": "docs/post/second-level-thinking.html",
@@ -3847,7 +4079,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757650501.png",
       "keywords": "中年理财,投资心理学,价值投资,霍华德·马克斯,第二层次思维,风险管理,逆向思维,决策质量,认知升级,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P77": {
       "htmlDir": "docs/post/life-portfolio-theory.html",
@@ -3871,7 +4104,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757564101.png",
       "keywords": "中年危机,自我成长,人生规划,职业发展,认知升级,意义感,生活方式,个人品牌,心理健康,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P76": {
       "htmlDir": "docs/post/personal-board-directors.html",
@@ -3895,7 +4129,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757477701.png",
       "keywords": "中年危机,职业发展,个人成长,人脉管理,知识管理,认知升级,个人品牌,高效社交,决策质量,未来传媒",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P75": {
       "htmlDir": "docs/post/personal-health-dashboard.html",
@@ -3919,7 +4154,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757391301.png",
       "keywords": "中年健康,预防医学,健康管理,数字健康,智能穿戴,量化自我,个人健康,体检报告,睡眠质量,心率变异性",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P74": {
       "htmlDir": "docs/post/digital-minimalism-focus.html",
@@ -3943,7 +4179,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757304901.png",
       "keywords": "数字极简主义,信息过载,专注力,认知负荷,时间管理,效率提升,中年焦虑,Cal Newport,深度工作,心理健康",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P73": {
       "htmlDir": "docs/post/gold-investment-midlife.html",
@@ -3967,7 +4204,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757218501.png",
       "keywords": "中年理财,黄金投资,资产配置,避险资产,通胀对冲,投资组合,黄金ETF,再平衡,风险管理,财富保值",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P72": {
       "htmlDir": "docs/post/parents-aging-philosophy.html",
@@ -3991,7 +4229,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757132101.png",
       "keywords": "中年危机,父母养老,斯多葛主义,存在主义,意义疗法,情绪管理,个人成长,哲学思考,活出生命的意义,预期性悲痛",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P71": {
       "htmlDir": "docs/post/midlife-friends.html",
@@ -4015,7 +4254,8 @@
       "ogImage": "https://www.futuremedia.work/images/1757045701.png",
       "keywords": "中年危机, 友情, 社交关系, 亚里士多德, 德行之友, 孤独感, 个人成长, 心理学, 社交智慧, 深度社交",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P70": {
       "htmlDir": "docs/post/use-cluade-ai.html",
@@ -4039,7 +4279,8 @@
       "ogImage": "https://www.futuremedia.work/images/1756959301.png",
       "keywords": "中年学习, Claude AI, 深度阅读, 信息过载, AI工作流, 第二大脑, 认知升级, 生产力工具, 知识管理, 决策制定",
       "quote": "中年学习, Claude AI, 深度阅读, 信息过载, AI工作流, 第二大脑, 认知升级, 生产力工具, 知识管理, 决策制定",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P69": {
       "htmlDir": "docs/post/3enemies-for-investment.html",
@@ -4063,7 +4304,8 @@
       "ogImage": "https://www.futuremedia.work/images/1756872901.png",
       "keywords": "中年理财, 投资心理学, 认知偏误, 行为金融学, 损失厌恶, 确认偏误, 投资决策, 风险管理, 丹尼尔·卡尼曼, 资产配置",
       "quote": "心流, 专注力, 中年危机, 工作效率, 个人成长, 身心健康, 时间管理, 心理学, 情绪管理, 生产力",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P68": {
       "htmlDir": "docs/post/flow-state.html",
@@ -4087,7 +4329,8 @@
       "ogImage": "https://www.futuremedia.work/images/1756786501.png",
       "keywords": "心流, 专注力, 中年危机, 工作效率, 个人成长, 身心健康, 时间管理, 心理学, 情绪管理, 生产力",
       "quote": "心流, 专注力, 中年危机, 工作效率, 个人成长, 身心健康, 时间管理, 心理学, 情绪管理, 生产力",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P67": {
       "htmlDir": "docs/post/love-fate.html",
@@ -4111,7 +4354,8 @@
       "ogImage": "https://www.futuremedia.work/images/1756700101.png",
       "keywords": "中年危机, 尼采, 爱命运, Amor Fati, 永恒轮回, 遗憾, 哲学, 斯多葛主义, 存在主义, 内在自由",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P66": {
       "htmlDir": "docs/post/not-miss-NVDA.html",
@@ -4135,7 +4379,8 @@
       "ogImage": "https://www.futuremedia.work/images/1756613701.png",
       "keywords": "中年理财, 投资策略, 结构性机会, 科技采纳S曲线, S-Curve, 英伟达, NVIDIA, 资产配置, 长期投资, 错失恐惧症",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P65": {
       "htmlDir": "docs/post/better-sleeping.html",
@@ -4159,7 +4404,8 @@
       "ogImage": "https://www.futuremedia.work/images/1756527301.png",
       "keywords": "中年健康, 睡眠, 失眠, Matthew Walker, 睡眠重置, 深度睡眠, 皮质醇, 褪黑激素, 睡眠仪式, 专注力",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P63": {
       "htmlDir": "docs/post/debugging-log.html",
@@ -4183,7 +4429,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "网站调试,网站优化,个人博客,Blog",
       "quote": "欢迎你的到来，请你关心和支持本站的成长",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P62": {
       "htmlDir": "docs/post/quantitative-investment.html",
@@ -4207,7 +4454,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250829.png",
       "keywords": "量化投资,算法交易,智能投顾,多因子模型,风险管理,回测验证,quantitative investment,algorithmic trading,robo-advisor,multi-factor model,risk management, backtesting",
       "quote": "量化投资通过数学模型和计算机算法实现理性投资决策，为中年投资者提供规避情绪干扰、实现稳健收益的系统性理财方案。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P61": {
       "htmlDir": "docs/post/cupping-therapy.html",
@@ -4231,7 +4479,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250828.png",
       "keywords": "拔罐疗法,负压原理,气血调理,经络疏通,中医养生,身心调理,cupping therapy,negative pressure principle,qi-blood regulation,meridian unblocking,TCM wellness,physical-mental conditioning",
       "quote": "拔罐疗法通过负压原理促进血液循环、疏通经络，为中年人提供安全有效的身心调理方法，适合现代快节奏生活的养生需求。 ",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P60": {
       "htmlDir": "docs/post/Thinking-Fast-and-Slow.html",
@@ -4255,7 +4504,8 @@
       "ogImage": "https://www.futuremedia.work/images/202508271.png",
       "keywords": "思考快与慢,双系统思维,认知偏误,损失厌恶,框架效应,专家直觉,Thinking Fast and Slow,dual system thinking,cognitive bias,loss aversion,framing effect,expert intuition",
       "quote": "卡尼曼的双系统思维模型为中年决策者提供了识别认知偏误、提升决策质量的科学框架，是应对复杂决策环境的必备工具",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P59": {
       "htmlDir": "docs/post/Wittgensteins.html",
@@ -4279,7 +4529,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250826.png",
       "keywords": "维特根斯坦,语言游戏,家族相似性,私人语言,生活形式,意义即使用,Wittgenstein, language games, family resemblance, private language, forms of life, meaning as use",
       "quote": "维特根斯坦的语言游戏理论揭示了语言的实用性本质，为中年人提供了重新审视沟通方式和思维模式的哲学工具。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P58": {
       "htmlDir": "docs/post/Perplexity-AI.html",
@@ -4303,7 +4554,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250825.png",
       "keywords": "智能搜索,实时信息,引用来源,对话式搜索,信息验证,Perplexity AI,intelligent search,real-time information,source citations,conversational search,information verification",
       "quote": "与传统搜索引擎不同，Perplexity不仅提供链接列表，而是直接给出结构化的答案摘要。这种方式特别适合忙碌的中年专业人士，因为他们往往时间有限，需要快速获取可信的信息。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P57": {
       "htmlDir": "docs/post/Jean-Paul-Sartre.html",
@@ -4327,7 +4579,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250704.png",
       "keywords": "萨特,存在主义,Existence precedes essence,自由,责任, 中年,选择,自我定义,Philosophy,人生意义",
       "quote": "萨特的存在主义提供了重要的人生指导。首先，它告诉我们中年不是结束而是新的开始——我们依然可以选择成为什么样的人。其次，它鼓励我们承担起改变的责任，不要将不满归咎于外部环境。最后，它提醒我们珍视自由意志，勇敢地做出符合内心的选择，即使这些选择可能面临社会压力。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P56": {
       "htmlDir": "docs/post/Mediterranean-Diet.html",
@@ -4351,7 +4604,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250705.png",
       "keywords": "地中海饮食, 健康, 长寿, 营养学, 心血管疾病, 癌症, 橄榄油, 全谷物, 鱼类, 地中海",
       "quote": "哈佛大学的一项研究发现，地中海饮食可以将心脏病风险降低30%，中风风险降低13%。另一项研究表明，这种饮食模式还能改善骨密度，降低某些癌症的发病率。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P55": {
       "htmlDir": "docs/post/Seneca.html",
@@ -4375,7 +4629,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250706.png",
       "keywords": "斯多葛哲学, 塞涅卡, 中年哲学, 人生智慧, 心理健康, 时间管理, Stoic philosophy, Seneca, midlife philosophy, life wisdom, mental health, time management",
       "quote": "塞涅卡的智慧可以帮助我们：重新评估生活优先级，学会在压力中保持内心平静，理解财富和地位的相对价值，以及培养面对生活变化的韧性。正如他所说：每一个新的开始都来自某个其他开始的结束。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P54": {
       "htmlDir": "docs/post/Byung-Chul-Han.html",
@@ -4399,7 +4654,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250707.png",
       "keywords": "韩炳哲, 疲劳社会, Burnout Society, 成就社会, 自我剥削, 透明社会, 数字疲劳, Digital Detox, 中年危机, 哲学",
       "quote": "韩炳哲的思想特别适合在人生中段感到迷茫的读者。他不提供简单的解决方案，而是帮助我们理解现代生活的结构性问题，从而获得一种批判性距离。当中年人明白自己的疲劳不是个人失败，而是社会结构的产物时，就能开始寻求真正的改变。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P53": {
       "htmlDir": "docs/post/Scientific-Walking-Method.html",
@@ -4423,7 +4679,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250708.png",
       "keywords": "科学步行, 中年健康, 心血管运动, 步行减肥, 中年运动方案, 健康生活方式, 抗衰老运动, 压力缓解",
       "quote": "哈佛大学2024年发布的一项历时30年的研究显示，40岁开始保持健康饮食和生活方式的人，在70岁时保持良好身心功能的概率提高43%-84%。同时，斯坦福大学研究发现，人体衰老在44岁和60岁两个节点会出现显著加速，影响81%的生物分子。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P52": {
       "htmlDir": "docs/post/Chrysalis-Wisdom.html",
@@ -4447,7 +4704,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250709.png",
       "keywords": "奇普·康利, 中年的选择, 蝶蛹蜕变, 现代长老学院, Midlife, Wisdom, 12个智慧发现, 情绪韧性, 意义导向, 时间富裕",
       "quote": "中年不是危机，而是蛹变。必须放下年轻时期的思维、习惯、身份认同，因为那些已经无法反映此刻我们是怎样的人",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P51": {
       "htmlDir": "docs/post/tianya-articles.html",
@@ -4471,7 +4729,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "",
       "quote": "忘记过去意味着背叛，换旧也是一种精神",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P50": {
       "htmlDir": "docs/post/Five-Healthy-Habits.html",
@@ -4495,7 +4754,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250711.png",
       "keywords": "中年健康, 哈佛研究, 健康习惯, 慢性疾病, 健康饮食, 规律运动, 健康体重, 心理健康, Personalized Health, 延长寿命",
       "quote": "《从小改变开始：每天增加一份蔬菜，选择楼梯而非电梯，每晚提前15分钟睡觉。研究表明，渐进式改变比激进变化更容易坚持。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P49": {
       "htmlDir": "docs/post/Midlife-A-Philosophical-Guide.html",
@@ -4519,7 +4779,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250712.png",
       "keywords": "中年危机, 哲学, 基兰·塞蒂亚, Midlife, 目标性活动, 非目标性活动, Atelic Activities, 遗憾, 活在当下, 自我探索",
       "quote": "为什么错过某些机会实际上是好事；如何重新评估选择的价值；什么时候应该为犯错感到高兴；如何获得关于死亡的哲学慰藉；以及如何真正活在当下。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P48": {
       "htmlDir": "docs/post/Epicurus.html",
@@ -4543,7 +4804,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250713.png",
       "keywords": "伊壁鸠鲁, 幸福, 缩减规模, Scaling back, 中年生活, 当下, 内在平静, Epicurus, Philosophy, 生活优先级",
       "quote": "对于面临职业压力和家庭责任的中年人，伊壁鸠鲁的哲学提供了一条解脱之道：重新定义成功，从外在成就转向内在平静；从数量追求转向质量体验；从未来焦虑转向当下感恩。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P47": {
       "htmlDir": "docs/post/NotebookLM-Google.html",
@@ -4567,7 +4829,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250714.png",
       "keywords": "NotebookLM, Google AI, 个性化研究, AI工具, 音频概览, 多模态理解, Gemini, 免费, 学习工具, 知识获取",
       "quote": "NotebookLM支持多种格式文档上传，包括PDF文件、网站链接、YouTube视频和音频文件。最独特的功能是音频概览，能将您的资料转换成引人入胜的深度对话，类似播客形式。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P46": {
       "htmlDir": "docs/post/Notion-AI.html",
@@ -4591,7 +4854,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250715.png",
       "keywords": "Notion AI, 知识管理, 生产力, 智能助手, 自动化, 中年专业人士, 工作流程优化, Digital Transformation, Knowledge Management, Productivity",
       "quote": "Notion AI不仅仅是一个工具，更是中年人数字化生活的智能伙伴。它帮助我们在信息爆炸的时代，找回对知识的掌控感，让每一份努力都更有价值。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P45": {
       "htmlDir": "docs/post/Marcus-Aureliuss.html",
@@ -4615,7 +4879,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250716.png",
       "keywords": "马库斯·奥勒留, 斯多噶哲学, stoicism, 沉思录, 控制, 当下, 美德, virtue, 韧性, mindfulness",
       "quote": "记住，人只活在当下这一瞬间，他生命的其余部分要么已经逝去，要么尚未到来。---马库斯·奥勒留",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P44": {
       "htmlDir": "docs/post/Meditations.html",
@@ -4639,7 +4904,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250717.png",
       "keywords": "沉思录, 马库斯·奥勒留, 斯多噶哲学, Meditations, 中年阅读, 内心平静, 接受变化, 可控性, 压力管理, wisdom cultivation",
       "quote": "《沉思录》不仅是一本书，更是一位智者朋友的人生指导。在中年的关键时期，它能帮助我们找到内心的平静和前进的方向。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P43": {
       "htmlDir": "docs/post/Alzheimers-Prevention.html",
@@ -4663,7 +4929,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250718.png",
       "keywords": "阿尔茨海默, 中年健康, 体育锻炼, 大脑健康, β-淀粉样蛋白, beta-amyloid, WHO, 神经可塑性, neuroplasticity, 预防",
       "quote": "中年期是投资大脑健康的黄金时期。科学研究明确告诉我们，规律的运动不仅能让我们保持身体健康，更能有效预防阿尔茨海默病，为晚年的生活质量提供强有力的保障。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P42": {
       "htmlDir": "docs/post/Aristotle.html",
@@ -4687,7 +4954,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250719.png",
       "keywords": "亚里士多德, 实践智慧, practical wisdom, 中年危机, 中庸之道, 德性, virtue, eudaimonia, 友谊, 幸福",
       "quote": "亚里士多德的实践智慧理论为中年人提供了应对职业瓶颈、人际关系和人生意义困惑的哲学工具，通过中庸之道和德性伦理学帮助中年人在复杂现实中做出明智决策。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P41": {
       "htmlDir": "docs/post/Deep-Thinking.html",
@@ -4711,7 +4979,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250720.png",
       "keywords": "深度思考, 中年决策, 系统思维, 批判性思维, 认知偏见, confirmation bias, 责任放大, analytical framework, 决策流程, 思维工具",
       "quote": "《深度思考》通过系统性思维方法训练，帮助中年人在面临职业转型、投资决策和人生规划时，运用逻辑分析和批判性思维做出更明智的选择，避免情绪化和冲动性决策。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P38": {
       "htmlDir": "docs/post/Prostate-Care.html",
@@ -4735,7 +5004,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250721.png",
       "keywords": "前列腺健康, 中年男性, 凯格尔运动, Kegel Exercises, 夜尿, nocturia, 骨盆底肌群, 抗炎饮食, 早期干预, lifestyle modification",
       "quote": "前列腺健康问题影响90%的80岁以上男性，通过科学的凯格尔运动、有氧训练和生活方式调整，40岁后的中年男性可以有效预防前列腺肥大，改善排尿困难，提升生活质量。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P37": {
       "htmlDir": "docs/post/china-ai-status.html",
@@ -4759,7 +5029,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250723.png",
       "keywords": "中国AI, DeepSeek, 史普尼克时刻, Sputnik moment, 具身智能, AI智能体, AI Agents, 投资组合, 职业发展, 地缘政治",
       "quote": "2025年AI领域呈现中美竞争新格局，中国AI企业如DeepSeek等实现关键突破，改变全球AI发展趋势。了解这些变化能帮助中年人把握技术投资机会和职业发展方向。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P36": {
       "htmlDir": "docs/post/chatgpt-tasks-smart-assistant.html",
@@ -4783,7 +5054,8 @@
       "ogImage": "https://www.futuremedia.work/images/2025007241.png",
       "keywords": "ChatGPT Tasks, OpenAI, 自动化, automation, 生产力, productivity, 时间管理, 智能助手, 中年人, 工作流",
       "quote": "ChatGPT Tasks是OpenAI最新推出的智能任务管理工具，通过预设任务自动化处理中年人的日常事务，显著提升工作效率和生活管理水平，让繁忙的中年人从重复性任务中解放出来。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P35": {
       "htmlDir": "docs/post/Fireflies-ai-Smart-Meeting-Assistant.html",
@@ -4807,7 +5079,8 @@
       "ogImage": "https://www.futuremedia.work/images/202507242.png",
       "keywords": "Fireflies.ai, AI会议助理, 智能转录, 自动化, 无缝集成, seamless integration, 多语言能力, 可执行洞察, actionable insights, 生产力",
       "quote": "Fireflies Ai通过自动录音、转录和AI摘要功能，让中年管理者在3分钟内掌握1小时会议要点，减少80%会后整理时间，显著提升工作效率和决策质量。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P34": {
       "htmlDir": "docs/post/Anthropic-Claude-5-Mini-open-source.html",
@@ -4831,7 +5104,8 @@
       "ogImage": "https://www.futuremedia.work/images/202507291.png",
       "keywords": "Claude 5 Mini, 开源模型, 参数效率, parameter efficiency, 本地部署, 数据主权, data sovereignty, AI助手, 成本效益, 深度定制",
       "quote": "Anthropic发布的Claude 5 Mini开源模型仅2B参数却达到接近GPT-3.5的性能，为中年人提供了低成本私有部署AI助手的机会，在数据安全和成本控制方面具有显著优势。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P33": {
       "htmlDir": "docs/post/Hannah-Arendt-philosophy.html",
@@ -4855,7 +5129,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250724.png",
       "keywords": "汉娜·阿伦特, 积极生活, vita activa, 行动, Action, 劳动, 工作, 公共空间, 平庸之恶, 自我显现",
       "quote": "阿伦特的行动理论为中年人摆脱职场异化提供哲学武器，通过参与公共事务、发出独立声音和建立真实关系，重新找回工作和生活的深层意义。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P31": {
       "htmlDir": "docs/post/intermittent-fasting-guide.html",
@@ -4879,7 +5154,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250726.png",
       "keywords": "间歇性禁食, 中年健康, 新陈代谢, 体重管理, 代谢转换, metabolic switching, 荷尔蒙, hormonal profile, 胰岛素敏感性, 可持续健康",
       "quote": "14:10间歇性禁食方案通过每日14小时禁食窗口，能在8周内改善中年人胰岛素敏感性25%，减少内脏脂肪18%，同时避免16:8方案的过度饥饿感，适合中年人长期坚持。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P30": {
       "htmlDir": "docs/post/Cursor-AI-Revitalizes.html",
@@ -4903,7 +5179,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250727.png",
       "keywords": "中年程序员, Cursor AI, 技术淘汰, technological obsolescence, 智能编程伙伴, 编程效率, AI代码补全, 学习效率, 职业竞争力, 软件开发",
       "quote": "Cursor AI通过智能代码补全和自动调试功能，让40+程序员编程效率提升200%，无需学习新语言即可跟上技术潮流，重新找回职场竞争力。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P29": {
       "htmlDir": "docs/post/Meta-AI-Agent.html",
@@ -4927,7 +5204,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250728.png",
       "keywords": "Meta, AI Agent, 社交媒体, 自主行为, autonomous behavior, 个性化, 数据隐私, data privacy, 对话式界面, conversational interface, 数字生活",
       "quote": "Meta最新发布的AI Agent战略将改变社交媒体格局，中年用户需要了解个性化AI助手如何影响信息获取和社交方式，提前适应智能化社交时代。",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P27": {
       "htmlDir": "docs/post/Schopenhauer-Philosophy.html",
@@ -4951,7 +5229,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250729.png",
       "keywords": "叔本华, 意志哲学, 生存意志, will-to-live, 欲望, 精神空虚, 内心平静, 审美体验, 同情心, 中年危机",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P26": {
       "htmlDir": "docs/post/Antifragile.html",
@@ -4975,7 +5254,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250730.png",
       "keywords": "反脆弱, Antifragility, 纳西姆·塔勒布, 不确定性, 杠铃策略, Barbell Strategy, 黑天鹅事件, Black Swan Event, 风险管理, 毒物兴奋效应",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P25": {
       "htmlDir": "docs/post/Lumbar-Disc-Herniation-Rehabilitation.html",
@@ -4999,7 +5279,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250731.png",
       "keywords": "腰椎间盘突出, 康复训练, 核心稳定性, Core Stability, 中年健康, 疼痛管理, muscular corset, 预防复发, nucleus pulposus, 功能训练",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P24": {
       "htmlDir": "docs/post/Digital-Socializing.html",
@@ -5023,7 +5304,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250801.png",
       "keywords": "AI社交助手, 信息过载, 内容策展, 关系管理, 上下文理解, contextual understanding, 个性化, 隐私保护, 写作增强, 数字社交",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P23": {
       "htmlDir": "docs/post/Zhuangzi-Philosophy.html",
@@ -5047,7 +5329,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250802.png",
       "keywords": "庄子, 逍遥游, 无为, wu wei, 精神超脱, spiritual detachment, 中年, 顺其自然, ziran, 内心平静",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P22": {
       "htmlDir": "docs/post/trust-products-and-growth-investing.html",
@@ -5071,7 +5354,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250804.png",
       "keywords": "成长型投资, 信托理财, 养老金投资, 多元化资产配置, 通胀对冲, 风险管理, 核心-卫星, 哑铃型策略, 投资组合, 中年理财",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P21": {
       "htmlDir": "docs/post/post-meal-walking-and-meditation.html",
@@ -5095,7 +5379,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250805.png",
       "keywords": "中年健康, 餐后运动, 冥想, 正念, 电针疗法, 石疗, 综合养生, 血糖控制, 压力管理, 321养生计划",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P20": {
       "htmlDir": "docs/post/Jean-Paul-Sartre-philosophy.html",
@@ -5119,7 +5404,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250806.png",
       "keywords": "存在主义, 萨特, 中年危机, 自由选择, 本真存在, 存在先于本质, 他人即地狱, 存在焦虑, 人生意义, 哲学思考",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P19": {
       "htmlDir": "docs/post/Miro-A-smart-whiteboard.html",
@@ -5143,7 +5429,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250807.png",
       "keywords": "Miro, 在线协作, 白板, 中年专业人士, 远程协作, 战略规划, seamless integration, 异步沟通, 项目管理, 效率提升",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P18": {
       "htmlDir": "docs/post/The-Meaning-of-Living-LifeI.html",
@@ -5167,7 +5454,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250808.png",
       "keywords": "弗兰克尔, 活出生命的意义, 意义疗法, Logotherapy, 求意义意志, Will to Meaning, 存在空虚, 苦难, 中年危机, 人生意义",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P17": {
       "htmlDir": "docs/post/Framer-AI.html",
@@ -5191,7 +5479,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250811.png",
       "keywords": "Framer AI, AI网站生成器, 无需编码, no coding, 落地页, SEO, 中年用户, 生产力工具, 所见即所得, 网站建设",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P16": {
       "htmlDir": "docs/post/Alfred-Adlers-Individual-Psychology.html",
@@ -5215,7 +5504,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250812.png",
       "keywords": "阿德勒, 个体心理学, 自卑感, Inferiority, 补偿, 生活风格, 社会兴趣, Social Interest, 中年危机, 意义感",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P15": {
       "htmlDir": "docs/post/Sapiens-Reframing.html",
@@ -5239,7 +5529,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250813.png",
       "keywords": "人类简史, 赫拉利, 想象秩序, 认知革命, 农耕革命, 科学革命, 数据主权, 算法偏见, 长寿规划, Homo Deus",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P14": {
       "htmlDir": "docs/post/Cryotherapy-Metabolic.html",
@@ -5263,7 +5554,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250814.png",
       "keywords": "冷疗, cryotherapy, 多巴胺, dopamine, 棕色脂肪, brown fat, Huberman Protocol, 中年健康, 新陈代謝, 恢復",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P13": {
       "htmlDir": "docs/post/Laddered-Bond-Funds-plus-TIPS.html",
@@ -5287,7 +5579,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250815.png",
       "keywords": "债券基金, 期限阶梯, TIPS, 通胀保值债券, 投资组合, 现金流, 再平衡, 风险管理, 资产配置, 中年理财",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P12": {
       "htmlDir": "docs/post/Claude-AI-The-Intelligent-Conversational-Partner.html",
@@ -5311,7 +5604,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250818.png",
       "keywords": "Claude AI, Anthropic, 上下文窗口, context window, Constitutional AI, 数据隐私, 多模态分析, AI助手, 生产力工具, 中年管理者",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P11": {
       "htmlDir": "docs/post/Heideggers-Philosophy.html",
@@ -5335,7 +5629,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250819.png",
       "keywords": "海德格尔, 此在, Dasein, 本真存在, Authentic Being, 非本真存在, 沉沦, 向死而生, Being-toward-death, 中年危机",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P10": {
       "htmlDir": "docs/post/Principles-for-decision-make.html",
@@ -5359,7 +5654,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250820.png",
       "keywords": "原则, 瑞·达利欧, 极度求真, Radical Truth, 极度透明, Radical Transparency, 可信度加权, 机器思维, 五步流程, 决策",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P9": {
       "htmlDir": "docs/post/Forest-Bathing-Therapy.html",
@@ -5383,7 +5679,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250821.png",
       "keywords": "森林浴, Shinrin-yoku, 负氧离子, 皮质醇, cortisol, 自然杀伤细胞, NK cells, 植物杀菌素, phytoncides, 身心健康",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P8": {
       "htmlDir": "docs/post/REITs-Investment.html",
@@ -5407,7 +5704,8 @@
       "ogImage": "https://www.futuremedia.work/images/20250822.png",
       "keywords": "REITs, 房地产投资信托基金, 股息收益率, dividend yield, 资产配置, 投资组合, portfolio, 现金流, 中年理财, 利率敏感",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     }
   },
   "singeListJson": {
@@ -5433,7 +5731,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P40": {
       "htmlDir": "docs/link.html",
@@ -5457,7 +5756,8 @@
       "ogImage": "https://www.futuremedia.work/images/big.png",
       "keywords": "",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P5": {
       "htmlDir": "docs/about.html",
@@ -5481,7 +5781,8 @@
       "ogImage": "https://www.futuremedia.work/images/about.png",
       "keywords": "未来传媒, 中年人, 个人成长, AI工具, 身心健康, 投资理财, 宏观经济分析,资产配置,哲学智慧, 名著,财富人生,疯子, 人生下半场, 探索笔记",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P4": {
       "htmlDir": "docs/disclaimer.html",
@@ -5505,7 +5806,8 @@
       "ogImage": "https://www.futuremedia.work/images/Disclaimer.png",
       "keywords": "免责声明, Disclaimer, 专业建议, 法律责任, 风险管理, 信息准确性, 投资理财, 医疗健康, 第三方内容, 使用风险",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P3": {
       "htmlDir": "docs/terms-of-service.html",
@@ -5529,7 +5831,8 @@
       "ogImage": "https://www.futuremedia.work/images/Terms-of-Service.png",
       "keywords": "服务条款, Terms of Service, 用户协议, 知识产权, Intellectual Property, 内容使用规则, 禁止行为, 免责声明, 责任限制, 争议解决",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     },
     "P2": {
       "htmlDir": "docs/privacy-policy.html",
@@ -5553,7 +5856,8 @@
       "ogImage": "https://www.futuremedia.work/images/Privacy-Policy.png",
       "keywords": "隐私政策, Privacy Policy, 信息收集, Cookie, Google Analytics, Google AdSense, 第三方服务, 信息保护, 用户权利, 数据保留",
       "quote": "",
-      "daily_sentence": ""
+      "daily_sentence": "",
+      "password": ""
     }
   },
   "labelColorDict": {

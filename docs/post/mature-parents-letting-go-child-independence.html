@@ -237,6 +237,46 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 .share-button.wechat { background-color: #07C160; }
+
+/* Password Overlay Styles */
+#password-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+[data-color-mode="dark"] #password-overlay {
+    background: rgba(13, 17, 23, 0.95);
+}
+#password-box {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    background: var(--color-canvas-default);
+    border: 1px solid var(--color-border-default);
+}
+#password-input {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid var(--color-border-default);
+    border-radius: 4px;
+    background: var(--color-canvas-subtle);
+    color: var(--color-fg-default);
+}
+#password-btn {
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
+    border: 1px solid var(--color-btn-primary-border);
+    border-radius: 4px;
+}
 </style>
 <style>
 /* 修复本地渲染高亮 */ .codehilite .hll { background-color: #ffffcc } .codehilite { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; } .codehilite .c { color: #6a737d; font-style: italic } .codehilite .k { color: #d73a49; font-weight: bold } .codehilite .o { color: #d73a49; font-weight: bold } .codehilite .cm { color: #6a737d; font-style: italic } .codehilite .cp { color: #005cc5; font-weight: bold } .codehilite .c1 { color: #6a737d; font-style: italic } .codehilite .cs { color: #6a737d; font-weight: bold; font-style: italic } .codehilite .gd { color: #b31d28; background-color: #ffeef0 } .codehilite .ge { font-style: italic } .codehilite .gr { color: #b31d28 } .codehilite .gh { color: #005cc5; font-weight: bold } .codehilite .gi { color: #22863a; background-color: #f0fff4 } .codehilite .go { color: #888888 } .codehilite .gp { color: #555555 } .codehilite .gs { font-weight: bold } .codehilite .gu { color: #aaaaaa } .codehilite .gt { color: #aa0000 } .codehilite .kc { color: #d73a49; font-weight: bold } .codehilite .kd { color: #d73a49; font-weight: bold } .codehilite .kn { color: #d73a49; font-weight: bold } .codehilite .kp { color: #d73a49 } .codehilite .kr { color: #d73a49; font-weight: bold } .codehilite .kt { color: #445588; font-weight: bold } .codehilite .m { color: #009999 } .codehilite .s { color: #032f62 } .codehilite .na { color: #008080 } .codehilite .nb { color: #005cc5 } .codehilite .nc { color: #6f42c1; font-weight: bold } .codehilite .no { color: #008080 } .codehilite .nd { color: #6f42c1; font-weight: bold } .codehilite .ni { color: #800080 } .codehilite .ne { color: #990000; font-weight: bold } .codehilite .nf { color: #6f42c1; font-weight: bold } .codehilite .nl { color: #990000; font-weight: bold } .codehilite .nn { color: #555555 } .codehilite .nt { color: #22863a } .codehilite .nv { color: #008080 } .codehilite .ow { color: #d73a49; font-weight: bold } .codehilite .w { color: #bbbbbb } .codehilite .mf { color: #009999 } .codehilite .mh { color: #009999 } .codehilite .mi { color: #009999 } .codehilite .mo { color: #009999 } .codehilite .sb { color: #032f62 } .codehilite .sc { color: #032f62 } .codehilite .sd { color: #032f62 } .codehilite .s2 { color: #032f62 } .codehilite .se { color: #032f62 } .codehilite .sh { color: #032f62 } .codehilite .si { color: #032f62 } .codehilite .sx { color: #032f62 } .codehilite .sr { color: #009926 } .codehilite .s1 { color: #032f62 } .codehilite .ss { color: #990073 } .codehilite .bp { color: #999999 } .codehilite .vc { color: #008080 } .codehilite .vg { color: #008080 } .codehilite .vi { color: #008080 } .codehilite .il { color: #009999 }
@@ -290,6 +330,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
+
+<!-- Password Logic -->
+<div id="password-overlay">
+    <div id="password-box">
+        <h3>🔒 此文章受密码保护</h3>
+        <p>请输入密码查看内容</p>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button id="password-btn" onclick="checkPassword()">解锁</button>
+        <p id="password-error" style="color:red; display:none; margin-top:5px;">密码错误</p>
+    </div>
+</div>
 
 <div class="markdown-body" id="postBody"><h2 id="_1">开场：一个违反直觉的真相</h2>
 <p>人们常说父母的爱是"无私的"、"无条件的"、"永远陪伴的"。</p>
@@ -395,26 +446,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 - 一个人能够建立自己的价值观</p>
 <p><strong>没有实现心理分离的人，往往会陷入这些困境：</strong></p>
 <ol>
-<li><strong>永远无法建立稳定的亲密关系</strong></li>
-<li>因为他把对父母的依赖转移到了伴侣身上</li>
-<li>他要求伴侣像父母一样无条件地承担责任</li>
 <li>
-<p>结果导致亲密关系总是以破裂告终</p>
+<p><strong>永远无法建立稳定的亲密关系</strong><br />
+   - 因为他把对父母的依赖转移到了伴侣身上<br />
+   - 他要求伴侣像父母一样无条件地承担责任<br />
+   - 结果导致亲密关系总是以破裂告终</p>
 </li>
 <li>
-<p><strong>永远无法做出自己的人生选择</strong></p>
-</li>
-<li>他做每一个决定都在想"父母会怎样评价"</li>
-<li>他无法基于自己的价值观来生活</li>
-<li>
-<p>他活得像是在为父母而活</p>
+<p><strong>永远无法做出自己的人生选择</strong><br />
+   - 他做每一个决定都在想"父母会怎样评价"<br />
+   - 他无法基于自己的价值观来生活<br />
+   - 他活得像是在为父母而活</p>
 </li>
 <li>
-<p><strong>永远无法承受失败</strong></p>
+<p><strong>永远无法承受失败</strong><br />
+   - 因为他把失败理解为"辜负了父母的期望"<br />
+   - 而不是理解为"从中可以学到什么"<br />
+   - 所以每次失败都会导致深度的自责和抑郁</p>
 </li>
-<li>因为他把失败理解为"辜负了父母的期望"</li>
-<li>而不是理解为"从中可以学到什么"</li>
-<li>所以每次失败都会导致深度的自责和抑郁</li>
 </ol>
 <p><strong>这些都是心理健康的表现。</strong></p>
 <p>而心理健康的前提，就是<strong>完成与父母的心理分离</strong>。</p>
@@ -746,6 +795,27 @@ function addFavorite() {
 </script>
 
 <script>
+// Password Logic
+const articlePassword = "";
+
+function checkPassword() {
+    const input = document.getElementById('password-input').value;
+    if (input === articlePassword) {
+        document.getElementById('password-overlay').style.display = 'none';
+        document.getElementById('postBody').style.display = 'block';
+        localStorage.setItem('unlocked_' + window.location.pathname, 'true');
+    } else {
+        document.getElementById('password-error').style.display = 'block';
+    }
+}
+
+if (articlePassword && articlePassword.trim() !== "" && articlePassword !== "None") {
+    if (localStorage.getItem('unlocked_' + window.location.pathname) !== 'true') {
+        document.getElementById('postBody').style.display = 'none';
+        document.getElementById('password-overlay').style.display = 'flex';
+    }
+}
+
 // 微信分享功能
 function shareToWechat() {
     const postUrl = window.location.href;
