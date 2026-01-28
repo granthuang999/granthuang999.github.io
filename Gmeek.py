@@ -63,7 +63,6 @@ class GMEEK:
 
     def syncStaticAssets(self):
         print("====== syncing static assets ======")
-    # 把 static 目录下的内容直接复制到 docs 根目录
         if os.path.exists(self.static_dir):
             for item in os.listdir(self.static_dir):
                 src = os.path.join(self.static_dir, item)
@@ -74,7 +73,6 @@ class GMEEK:
                     shutil.copy2(src, dst)
             print(f"Copied contents of '{self.static_dir}' to '{self.root_dir}'")
 
-    # 检查并复制根目录下的 images 文件夹
         image_dir = 'images'
         if os.path.exists(image_dir):
             shutil.copytree(
@@ -125,41 +123,47 @@ class GMEEK:
     def get_repo(self,user:Github, repo:str):
         return user.get_repo(repo)
 
-    # [修改] 使用本地 markdown 库渲染
     def markdown2html(self, mdstr):
         html_replacements = {}
-        # 简单处理 Gmeek-html 标签，将其替换为占位符，防止渲染出错
-        # 虽然这可能导致红框失效（变成纯文本），但能保证构建成功
         def Gmeek_html_tag_filter(match):
             nonlocal html_replacements
             text = match.group(1)
-            placeholder = f"GMEEK_PLACEHOLDER_{len(html_replacements)}"
+            placeholder = f""
             html_replacements[placeholder] = text
-            return placeholder
-        
+            return f"`{placeholder}`"
         mdstr = re.sub(r'`Gmeek-html(.*?)`', Gmeek_html_tag_filter, mdstr, flags=re.DOTALL)
 
-        # 使用基础扩展，保证基本的表格和格式转换
         extensions = [
-            'markdown.extensions.extra',      # 包含表格、代码块等
-            'markdown.extensions.nl2br',      # 换行符转br
-            'markdown.extensions.toc'         # 目录支持
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite', 
+            'markdown.extensions.tables',
+            'markdown.extensions.toc',
+            'markdown.extensions.nl2br',
+            'markdown.extensions.sane_lists',
+            'pymdownx.superfences',
+            'pymdownx.tasklist',
+            'pymdownx.magiclink'
         ]
         
+        extension_configs = {
+            'markdown.extensions.codehilite': {
+                'css_class': 'codehilite',
+                'use_pygments': True,
+                'noclasses': False
+            }
+        }
+        
         try:
-            # 本地渲染，速度快，不依赖 API
-            html_content = markdown.markdown(mdstr, extensions=extensions)
+            html_content = markdown.markdown(mdstr, extensions=extensions, extension_configs=extension_configs)
         except Exception as e:
-            # 万一出错，至少返回原始内容，不中断构建
-            print(f"Rendering error: {e}")
-            return f"<p>Error rendering content: {e}</p>"
+            raise Exception(f"Local markdown rendering error: {e}")
 
-        # 还原占位符
         for placeholder, original_html in html_replacements.items():
-            # 尝试修复 markdown 自动加的 p 标签问题
-            html_content = html_content.replace(f"<p>{placeholder}</p>", original_html)
-            html_content = html_content.replace(placeholder, original_html)
-            
+            p_wrapped_placeholder = f"<p>{placeholder}</p>"
+            if p_wrapped_placeholder in html_content:
+                html_content = html_content.replace(p_wrapped_placeholder, original_html)
+            else:
+                html_content = html_content.replace(placeholder, original_html)
         return html_content
 
     def renderHtml(self,template_name, context, html_dir):
@@ -190,10 +194,12 @@ class GMEEK:
         if issue_data["labels"][0] in self.blogBase["singlePage"]:
             render_dict["bottomText"]=''
 
-        # 简化判断，只要有代码块就尝试引入高亮CSS（即使是黑白的也不影响阅读）
-        if '<pre' in render_dict["postBody"]:
+        if '<pre class="notranslate">' in render_dict["postBody"]:
             keys=['sun','moon','sync','home','github','copy','check']
-            render_dict["highlight"]=1
+            if '<div class="highlight' in render_dict["postBody"]:
+                render_dict["highlight"]=1
+            else:
+                render_dict["highlight"]=2
         else:
             keys=['sun','moon','sync','home','github']
             render_dict["highlight"]=0
@@ -310,7 +316,8 @@ class GMEEK:
         post_data["isoDate"] = thisTime.isoformat()
         post_data["dateLabelColor"] = self.blogBase["yearColorList"][thisTime.year % len(self.blogBase["yearColorList"])]
 
-        for key in ["style", "script", "head", "ogImage", "keywords", "quote", "daily_sentence"]:
+        # [MODIFIED] Added "password" to allowed keys
+        for key in ["style", "script", "head", "ogImage", "keywords", "quote", "daily_sentence", "password"]:
             post_data[key] = postConfig.get(key, self.blogBase.get(key, ""))
         
         self.blogBase[listJsonName][f"P{issue.number}"] = post_data
@@ -477,6 +484,7 @@ class GMEEK:
 
     def runAll(self):
         print("====== start create static html ======")
+        # [关键修正] 运行前清空旧的文章列表数据
         self.blogBase["postListJson"] = {}
         self.blogBase["singeListJson"] = {}
         self.cleanFile()
@@ -510,8 +518,10 @@ class GMEEK:
     
     def runOne(self, number_str):
         print(f"====== start create static html for issue {number_str} ======")
+        # [关键修正] 运行前清空旧的文章列表数据
         self.blogBase["postListJson"] = {}
         self.blogBase["singeListJson"] = {}
+        # [关键修改] runOne 也需要同步静态文件，以发布新图片
         self.syncStaticAssets()
         
         issue = self.repo.get_issue(int(number_str))
