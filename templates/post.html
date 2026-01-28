@@ -101,6 +101,46 @@
 .share-button.weibo { background-color: #e6162d; }
 .share-button.telegram { background-color: #26A5E4; }
 .share-button.wechat { background-color: #07C160; }
+
+/* Password Overlay Styles */
+#password-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+[data-color-mode="dark"] #password-overlay {
+    background: rgba(13, 17, 23, 0.95);
+}
+#password-box {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    background: var(--color-canvas-default);
+    border: 1px solid var(--color-border-default);
+}
+#password-input {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid var(--color-border-default);
+    border-radius: 4px;
+    background: var(--color-canvas-subtle);
+    color: var(--color-fg-default);
+}
+#password-btn {
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
+    border: 1px solid var(--color-btn-primary-border);
+    border-radius: 4px;
+}
 </style>
 <style>
 {{ blogBase['style']|safe }}
@@ -139,6 +179,17 @@
 </div>
 
 <div id="typeit-animation-container" style="margin-bottom: 24px; min-height: 30px; font-size: 1.2em; font-style: italic; text-align: center;"></div>
+
+<!-- Password Logic -->
+<div id="password-overlay">
+    <div id="password-box">
+        <h3>🔒 此文章受密码保护</h3>
+        <p>请输入密码查看内容</p>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button id="password-btn" onclick="checkPassword()">解锁</button>
+        <p id="password-error" style="color:red; display:none; margin-top:5px;">密码错误</p>
+    </div>
+</div>
 
 <div class="markdown-body" id="postBody">{{ blogBase['postBody']|safe }}</div>
 
@@ -188,6 +239,27 @@
 
 {% block script %}
 <script>
+// Password Logic
+const articlePassword = "{{ blogBase['password'] }}";
+
+function checkPassword() {
+    const input = document.getElementById('password-input').value;
+    if (input === articlePassword) {
+        document.getElementById('password-overlay').style.display = 'none';
+        document.getElementById('postBody').style.display = 'block';
+        localStorage.setItem('unlocked_' + window.location.pathname, 'true');
+    } else {
+        document.getElementById('password-error').style.display = 'block';
+    }
+}
+
+if (articlePassword && articlePassword.trim() !== "" && articlePassword !== "None") {
+    if (localStorage.getItem('unlocked_' + window.location.pathname) !== 'true') {
+        document.getElementById('postBody').style.display = 'none';
+        document.getElementById('password-overlay').style.display = 'flex';
+    }
+}
+
 // 微信分享功能
 function shareToWechat() {
     const postUrl = window.location.href;
