@@ -5,3 +5,4 @@ xpinyin
 requests
 transliterate
 markdown
+pymdown-extensions
