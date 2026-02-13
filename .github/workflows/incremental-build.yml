@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.actor != 'github-actions[bot]' &&
-      github.repository == 'granthuang999/granthuang999.github.io' &&
+      github.repository == 'neverasecond/granthuang999.github.io' &&
       (github.event_name == 'issues' || (github.event_name == 'push' && contains(github.event.head_commit.message, '#')))
     permissions:
       contents: write
