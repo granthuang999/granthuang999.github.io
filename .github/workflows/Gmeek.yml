@@ -18,6 +18,8 @@ jobs:
       (github.event_name != 'push' || !contains(github.event.head_commit.message, '#'))
     permissions:
       contents: write
+      # ▼▼▼ 修复点 1：增加 issues 写入权限解决 403 错误 ▼▼▼
+      issues: write
     steps:
       - name: Checkout main repository
         uses: actions/checkout@v4
@@ -52,12 +54,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # ▼▼▼ 核心修复：改成 git add . (添加所有变动文件，包括 README) ▼▼▼
           git add .
           if ! git diff --quiet --cached; then
             git commit -m "🎉 chore(full): auto build and update site content"
-            git pull --rebase
-            git push
+            # ▼▼▼ 修复点 2：处理 Git 冲突并推送至 main 分支 ▼▼▼
+            git fetch origin main
+            git rebase origin/main || (git rebase --abort && git push origin main --force)
+            git push origin main
           else
             echo "No changes to site content to commit."
           fi
